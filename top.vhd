@@ -14,10 +14,8 @@ library ieee;
 entity top is
 	port (
 		OSC_50	: in	std_logic;
-		--reset    : in std_logic;
-		--output	: out std_logic;
-		SMA_CLKOUT : out std_logic;
-		--temp       : out std_logic
+		SMA_CLKOUT : out std_logic
+
 	);
 end top;
 
@@ -42,16 +40,13 @@ begin
 );
    
 	main : process( c0_out )
-	begin
-		--temp <= OSC_50; 	
+	begin	
 		if rising_edge( c0_out ) then
 			
 			state <= state(14 downto 0) 
 						& (((state(15) xor state(13)) xor state(12)) xor state(10));
 			
 			SMA_CLKOUT <= state(15);
-			--output <= state(15);
-			--SMA_CLKOUT := output;
 			
 		end if;
 	end process;
