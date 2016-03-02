@@ -1,0 +1,450 @@
+Analysis & Synthesis report for a2d
+Mon Feb 22 14:54:52 2016
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis IP Cores Summary
+  6. Source assignments for a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst
+  7. Source assignments for sld_signaltap:auto_signaltap_0
+  8. Parameter Settings for User Entity Instance: a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component
+  9. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Mon Feb 22 14:54:52 2016           ;
+; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
+; Revision Name                      ; a2d                                         ;
+; Top-level Entity Name              ; a2d                                         ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; a2d                ; a2d                ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                      ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                          ; IP Include File ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2d|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2d|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2d|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2d|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2d|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                                                               ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; NOT_GATE_PUSH_BACK              ; OFF   ; -    ; -                                                                                                                                                ;
+; POWER_UP_LEVEL                  ; LOW   ; -    ; -                                                                                                                                                ;
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                                                ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[0]                                                                                                                                      ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0 ;
++-----------------+-------+------+----------------------+
+; Assignment      ; Value ; From ; To                   ;
++-----------------+-------+------+----------------------+
+; MESSAGE_DISABLE ; 13410 ; -    ; -                    ;
++-----------------+-------+------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component ;
++-------------------------+-----------------+-----------------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                                  ;
++-------------------------+-----------------+-----------------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                                ;
+; lpm_hint                ; UNUSED          ; String                                                                ;
+; sld_auto_instance_index ; YES             ; String                                                                ;
+; sld_instance_index      ; 0               ; Signed Integer                                                        ;
+; SLD_NODE_INFO           ; 4746752         ; Signed Integer                                                        ;
+; sld_ir_width            ; 4               ; Signed Integer                                                        ;
+; instance_id             ; a2da            ; String                                                                ;
+; probe_width             ; 14              ; Signed Integer                                                        ;
+; source_width            ; 1               ; Signed Integer                                                        ;
+; source_initial_value    ;  0              ; String                                                                ;
+; enable_metastability    ; NO              ; String                                                                ;
++-------------------------+-----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                                       ;
++-------------------------------------------------+--------------------------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                                              ; Type           ;
++-------------------------------------------------+--------------------------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                                      ; String         ;
+; sld_node_info                                   ; 805334528                                                          ; Untyped        ;
+; SLD_SECTION_ID                                  ; hdl_signaltap_0                                                    ; String         ;
+; SLD_IP_VERSION                                  ; 6                                                                  ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                                  ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                                  ; Signed Integer ;
+; sld_data_bits                                   ; 15                                                                 ; Untyped        ;
+; sld_trigger_bits                                ; 15                                                                 ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                                                 ; Signed Integer ;
+; SLD_NODE_CRC_HIWORD                             ; 41394                                                              ; Signed Integer ;
+; SLD_NODE_CRC_LOWORD                             ; 50132                                                              ; Signed Integer ;
+; sld_incremental_routing                         ; 1                                                                  ; Untyped        ;
+; sld_sample_depth                                ; 128                                                                ; Untyped        ;
+; sld_segment_size                                ; 128                                                                ; Untyped        ;
+; sld_ram_block_type                              ; AUTO                                                               ; Untyped        ;
+; sld_state_bits                                  ; 11                                                                 ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                                                  ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                                  ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                                  ; Signed Integer ;
+; sld_trigger_level                               ; 1                                                                  ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                                                  ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                                  ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                                  ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                                  ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                                  ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                                           ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                                  ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                                                  ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                                               ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                                               ; String         ;
+; sld_inversion_mask_length                       ; 66                                                                 ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000000000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                                  ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                                          ; String         ;
+; sld_state_flow_use_generated                    ; 0                                                                  ; Untyped        ;
+; sld_current_resource_width                      ; 1                                                                  ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                                                ; Untyped        ;
+; sld_storage_qualifier_bits                      ; 15                                                                 ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                                                  ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                                                ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                                  ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                                                  ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                                              ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                                  ; Signed Integer ;
+; SLD_CREATE_MONITOR_INTERFACE                    ; 0                                                                  ; Signed Integer ;
+; SLD_USE_JTAG_SIGNAL_ADAPTER                     ; 1                                                                  ; Signed Integer ;
++-------------------------------------------------+--------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+    Info: Processing started: Mon Feb 22 14:54:30 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off a2d -c a2d
+Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/altera_lite/15.1/quartus/bin64/assignment_defaults.qdf
+Warning (125092): Tcl Script File nco/synthesis/nco.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE nco/synthesis/nco.qip
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (12019): Can't analyze file -- file nco/nco_inst.vhd is missing
+Warning (12019): Can't analyze file -- file nco/nco_inst.v is missing
+Warning (12125): Using design file a2d.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: a2d File: C:/altera_lite/15.1/a2d/a2d.v Line: 6
+Info (12127): Elaborating entity "a2d" for the top level hierarchy
+Warning (10858): Verilog HDL warning at a2d.v(431): object sys_clk used but never assigned File: C:/altera_lite/15.1/a2d/a2d.v Line: 431
+Warning (10030): Net "sys_clk" at a2d.v(431) has no driver or initial value, using a default initial value '0' File: C:/altera_lite/15.1/a2d/a2d.v Line: 431
+Warning (10034): Output port "LEDG[8..7]" at a2d.v(231) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 231
+Warning (10034): Output port "LEDG[0]" at a2d.v(231) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 231
+Warning (10034): Output port "LEDR" at a2d.v(232) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 232
+Warning (10034): Output port "HEX0" at a2d.v(244) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 244
+Warning (10034): Output port "HEX1" at a2d.v(245) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 245
+Warning (10034): Output port "HEX2" at a2d.v(246) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 246
+Warning (10034): Output port "HEX3" at a2d.v(247) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 247
+Warning (10034): Output port "HEX4" at a2d.v(248) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 248
+Warning (10034): Output port "HEX5" at a2d.v(249) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 249
+Warning (10034): Output port "HEX6" at a2d.v(250) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 250
+Warning (10034): Output port "HEX7" at a2d.v(251) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 251
+Warning (10034): Output port "VGA_B" at a2d.v(280) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 280
+Warning (10034): Output port "VGA_G" at a2d.v(283) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 283
+Warning (10034): Output port "VGA_R" at a2d.v(285) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 285
+Warning (10034): Output port "ENET0_TX_DATA" at a2d.v(319) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 319
+Warning (10034): Output port "ENET1_TX_DATA" at a2d.v(338) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 338
+Warning (10034): Output port "OTG_ADDR" at a2d.v(350) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 350
+Warning (10034): Output port "DRAM_ADDR" at a2d.v(362) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 362
+Warning (10034): Output port "DRAM_BA" at a2d.v(363) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 363
+Warning (10034): Output port "DRAM_DQM" at a2d.v(369) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 369
+Warning (10034): Output port "SRAM_ADDR" at a2d.v(374) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 374
+Warning (10034): Output port "FL_ADDR" at a2d.v(383) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 383
+Warning (10034): Output port "DA" at a2d.v(414) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 414
+Warning (10034): Output port "DB" at a2d.v(415) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 415
+Warning (10034): Output port "SMA_CLKOUT" at a2d.v(228) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 228
+Warning (10034): Output port "LCD_BLON" at a2d.v(254) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 254
+Warning (10034): Output port "LCD_EN" at a2d.v(256) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 256
+Warning (10034): Output port "LCD_ON" at a2d.v(257) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 257
+Warning (10034): Output port "LCD_RS" at a2d.v(258) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 258
+Warning (10034): Output port "LCD_RW" at a2d.v(259) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 259
+Warning (10034): Output port "UART_RTS" at a2d.v(263) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 263
+Warning (10034): Output port "UART_TXD" at a2d.v(265) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 265
+Warning (10034): Output port "SD_CLK" at a2d.v(274) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 274
+Warning (10034): Output port "VGA_BLANK_N" at a2d.v(281) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 281
+Warning (10034): Output port "VGA_CLK" at a2d.v(282) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 282
+Warning (10034): Output port "VGA_HS" at a2d.v(284) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 284
+Warning (10034): Output port "VGA_SYNC_N" at a2d.v(286) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 286
+Warning (10034): Output port "VGA_VS" at a2d.v(287) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 287
+Warning (10034): Output port "AUD_DACDAT" at a2d.v(293) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 293
+Warning (10034): Output port "AUD_XCK" at a2d.v(295) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 295
+Warning (10034): Output port "EEP_I2C_SCLK" at a2d.v(298) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 298
+Warning (10034): Output port "I2C_SCLK" at a2d.v(302) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 302
+Warning (10034): Output port "ENET0_GTX_CLK" at a2d.v(306) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 306
+Warning (10034): Output port "ENET0_MDC" at a2d.v(309) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 309
+Warning (10034): Output port "ENET0_RST_N" at a2d.v(311) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 311
+Warning (10034): Output port "ENET0_TX_EN" at a2d.v(320) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 320
+Warning (10034): Output port "ENET0_TX_ER" at a2d.v(321) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 321
+Warning (10034): Output port "ENET1_GTX_CLK" at a2d.v(325) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 325
+Warning (10034): Output port "ENET1_MDC" at a2d.v(328) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 328
+Warning (10034): Output port "ENET1_RST_N" at a2d.v(330) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 330
+Warning (10034): Output port "ENET1_TX_EN" at a2d.v(339) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 339
+Warning (10034): Output port "ENET1_TX_ER" at a2d.v(340) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 340
+Warning (10034): Output port "TD_RESET_N" at a2d.v(346) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 346
+Warning (10034): Output port "OTG_CS_N" at a2d.v(351) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 351
+Warning (10034): Output port "OTG_RD_N" at a2d.v(354) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 354
+Warning (10034): Output port "OTG_RST_N" at a2d.v(355) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 355
+Warning (10034): Output port "OTG_WE_N" at a2d.v(356) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 356
+Warning (10034): Output port "DRAM_CAS_N" at a2d.v(364) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 364
+Warning (10034): Output port "DRAM_CKE" at a2d.v(365) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 365
+Warning (10034): Output port "DRAM_CLK" at a2d.v(366) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 366
+Warning (10034): Output port "DRAM_CS_N" at a2d.v(367) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 367
+Warning (10034): Output port "DRAM_RAS_N" at a2d.v(370) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 370
+Warning (10034): Output port "DRAM_WE_N" at a2d.v(371) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 371
+Warning (10034): Output port "SRAM_CE_N" at a2d.v(375) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 375
+Warning (10034): Output port "SRAM_LB_N" at a2d.v(377) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 377
+Warning (10034): Output port "SRAM_OE_N" at a2d.v(378) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 378
+Warning (10034): Output port "SRAM_UB_N" at a2d.v(379) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 379
+Warning (10034): Output port "SRAM_WE_N" at a2d.v(380) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 380
+Warning (10034): Output port "FL_CE_N" at a2d.v(384) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 384
+Warning (10034): Output port "FL_OE_N" at a2d.v(386) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 386
+Warning (10034): Output port "FL_RST_N" at a2d.v(387) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 387
+Warning (10034): Output port "FL_WE_N" at a2d.v(389) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 389
+Warning (10034): Output port "FL_WP_N" at a2d.v(390) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 390
+Warning (10034): Output port "ADA_OE" at a2d.v(397) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 397
+Warning (10034): Output port "ADA_SPI_CS" at a2d.v(399) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 399
+Warning (10034): Output port "ADB_OE" at a2d.v(402) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 402
+Warning (10034): Output port "ADB_SPI_CS" at a2d.v(404) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 404
+Warning (10034): Output port "AIC_DIN" at a2d.v(406) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 406
+Warning (10034): Output port "AIC_SPI_CS" at a2d.v(410) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 410
+Warning (10034): Output port "AIC_XCLK" at a2d.v(411) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 411
+Warning (10034): Output port "CLKOUT0" at a2d.v(413) has no driver File: C:/altera_lite/15.1/a2d/a2d.v Line: 413
+Warning (12125): Using design file a2d_data_a.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: a2d_data_a File: C:/altera_lite/15.1/a2d/a2d_data_a.v Line: 39
+Info (12128): Elaborating entity "a2d_data_a" for hierarchy "a2d_data_a:a2d_data_a_inst" File: C:/altera_lite/15.1/a2d/a2d.v Line: 487
+Info (12128): Elaborating entity "altsource_probe" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" File: C:/altera_lite/15.1/a2d/a2d_data_a.v Line: 72
+Info (12130): Elaborated megafunction instantiation "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" File: C:/altera_lite/15.1/a2d/a2d_data_a.v Line: 72
+Info (12133): Instantiated megafunction "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" with the following parameter: File: C:/altera_lite/15.1/a2d/a2d_data_a.v Line: 72
+    Info (12134): Parameter "enable_metastability" = "NO"
+    Info (12134): Parameter "instance_id" = "a2da"
+    Info (12134): Parameter "probe_width" = "14"
+    Info (12134): Parameter "sld_auto_instance_index" = "YES"
+    Info (12134): Parameter "sld_instance_index" = "0"
+    Info (12134): Parameter "source_initial_value" = " 0"
+    Info (12134): Parameter "source_width" = "1"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe.v Line: 169
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 228
+Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe.v Line: 205
+Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 508
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 756
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_cu14.tdf
+    Info (12023): Found entity 1: altsyncram_cu14 File: C:/altera_lite/15.1/a2d/db/altsyncram_cu14.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ssc.tdf
+    Info (12023): Found entity 1: mux_ssc File: C:/altera_lite/15.1/a2d/db/mux_ssc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dvf.tdf
+    Info (12023): Found entity 1: decode_dvf File: C:/altera_lite/15.1/a2d/db/decode_dvf.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_egi.tdf
+    Info (12023): Found entity 1: cntr_egi File: C:/altera_lite/15.1/a2d/db/cntr_egi.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_qgc.tdf
+    Info (12023): Found entity 1: cmpr_qgc File: C:/altera_lite/15.1/a2d/db/cmpr_qgc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_i6j.tdf
+    Info (12023): Found entity 1: cntr_i6j File: C:/altera_lite/15.1/a2d/db/cntr_i6j.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_23j.tdf
+    Info (12023): Found entity 1: cntr_23j File: C:/altera_lite/15.1/a2d/db/cntr_23j.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ngc.tdf
+    Info (12023): Found entity 1: cmpr_ngc File: C:/altera_lite/15.1/a2d/db/cmpr_ngc.tdf Line: 23
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
+Info (11170): Start IP generation for the debug fabric within sld_hub.
+Info (11172): 2016.02.22.14:54:47 Progress: Loading sld08cb0afb/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric within sld_hub.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld08cb0afb/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: C:/altera_lite/15.1/a2d/db/ip/sld08cb0afb/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/altera_lite/15.1/a2d/db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/altera_lite/15.1/a2d/db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/altera_lite/15.1/a2d/db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/altera_lite/15.1/a2d/db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 129
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/altera_lite/15.1/a2d/db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/altera_lite/15.1/a2d/db/ip/sld08cb0afb/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Error (12014): Net "ADA_DCO", which fans out to "per_a2da_d[0]", cannot be assigned more than one value File: C:/altera_lite/15.1/a2d/a2d.v Line: 396
+    Error (12015): Net is fed by "a2d_data_a:a2d_data_a_inst|source[0]" File: C:/altera_lite/15.1/a2d/a2d_data_a.v Line: 44
+    Error (12015): Net is fed by "ADA_DCO" File: C:/altera_lite/15.1/a2d/a2d.v Line: 396
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 88 warnings
+    Error: Peak virtual memory: 886 megabytes
+    Error: Processing ended: Mon Feb 22 14:54:52 2016
+    Error: Elapsed time: 00:00:22
+    Error: Total CPU time (on all processors): 00:00:43
+
+
