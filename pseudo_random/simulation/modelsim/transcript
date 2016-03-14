@@ -1,0 +1,2 @@
+# Compile of top.vho was successful.
+vsim +altera -l msim_transcript -do top_run_msim_rtl_vhdl.do work.top

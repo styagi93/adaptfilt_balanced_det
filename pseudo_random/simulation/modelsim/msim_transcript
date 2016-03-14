@@ -1,0 +1,193 @@
+# vsim "+altera" -l msim_transcript -do "top_run_msim_rtl_vhdl.do" work.top 
+# Start time: 15:35:42 on Feb 19,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.top(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
+# Loading cycloneive.cycloneive_ena_reg(behave)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
+# do top_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Modifying C:/altera_lite/15.1/lab2vhdl/simulation/modelsim/xyz.mpf
+# 
+# vcom -93 -work work {C:/altera_lite/15.1/lab2vhdl/top.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:35:45 on Feb 19,2016
+# vcom -reportprogress 300 -93 -work work C:/altera_lite/15.1/lab2vhdl/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity top
+# -- Compiling architecture behavior of top
+# End time: 15:35:45 on Feb 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+add wave -position insertpoint  \
+sim:/top/OSC_50 \
+sim:/top/SMA_CLKOUT
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+run
+# wlfReadDataOverRange: time range is negative or null.
+# wlfReadDataOverRange: time range is negative or null.
+# End time: 15:37:03 on Feb 19,2016, Elapsed time: 0:01:21
+# Errors: 34, Warnings: 0
