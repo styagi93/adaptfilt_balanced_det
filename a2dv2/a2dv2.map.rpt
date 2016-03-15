@@ -1,5 +1,5 @@
 Analysis & Synthesis report for a2dv2
-Mon Feb 22 15:32:12 2016
+Tue Mar 15 11:55:39 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -58,7 +58,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb 22 15:32:12 2016       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 15 11:55:39 2016       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; a2dv2                                       ;
 ; Top-level Entity Name              ; a2dv2                                       ;
@@ -167,7 +167,7 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -178,72 +178,72 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                           ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------+-------------+
-; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                 ; Library     ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------+-------------+
-; a2dv2.v                                                            ; yes             ; Auto-Found Verilog HDL File                  ; C:/altera_lite/15.1/a2dv2/a2dv2.v                                                            ;             ;
-; a2d_data_a.v                                                       ; yes             ; Auto-Found Wizard-Generated File             ; C:/altera_lite/15.1/a2dv2/a2d_data_a.v                                                       ;             ;
-; altsource_probe.v                                                  ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe.v                        ;             ;
-; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd            ;             ;
-; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv        ;             ;
-; altsource_probe_body.vhd                                           ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe_body.vhd                 ;             ;
-; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                           ;             ;
-; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_signaltap.vhd                        ;             ;
-; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                   ;             ;
-; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_ela_control.vhd                      ;             ;
-; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                         ;             ;
-; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_constant.inc                         ;             ;
-; dffeea.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/dffeea.inc                               ;             ;
-; aglobal151.inc                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/aglobal151.inc                           ;             ;
-; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_mbpmg.vhd                            ;             ;
-; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd             ;             ;
-; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd                   ;             ;
-; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf                           ;             ;
-; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/stratix_ram_block.inc                    ;             ;
-; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_mux.inc                              ;             ;
-; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_decode.inc                           ;             ;
-; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/a_rdenreg.inc                            ;             ;
-; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altrom.inc                               ;             ;
-; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altram.inc                               ;             ;
-; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altdpram.inc                             ;             ;
-; db/altsyncram_ku14.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/altsyncram_ku14.tdf                                             ;             ;
-; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altdpram.tdf                             ;             ;
-; memmodes.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/others/maxplus2/memmodes.inc                           ;             ;
-; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/a_hdffe.inc                              ;             ;
-; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/alt_le_rden_reg.inc                      ;             ;
-; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.inc                           ;             ;
-; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_mux.tdf                              ;             ;
-; muxlut.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/muxlut.inc                               ;             ;
-; bypassff.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/bypassff.inc                             ;             ;
-; altshift.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altshift.inc                             ;             ;
-; db/mux_ssc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/mux_ssc.tdf                                                     ;             ;
-; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_decode.tdf                           ;             ;
-; declut.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/declut.inc                               ;             ;
-; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_compare.inc                          ;             ;
-; db/decode_dvf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/decode_dvf.tdf                                                  ;             ;
-; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_counter.tdf                          ;             ;
-; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_add_sub.inc                          ;             ;
-; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/cmpconst.inc                             ;             ;
-; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_counter.inc                          ;             ;
-; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                  ;             ;
-; db/cntr_jgi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/cntr_jgi.tdf                                                    ;             ;
-; db/cmpr_rgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/cmpr_rgc.tdf                                                    ;             ;
-; db/cntr_i6j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/cntr_i6j.tdf                                                    ;             ;
-; db/cntr_egi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/cntr_egi.tdf                                                    ;             ;
-; db/cmpr_qgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/cmpr_qgc.tdf                                                    ;             ;
-; db/cntr_23j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/cntr_23j.tdf                                                    ;             ;
-; db/cmpr_ngc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/altera_lite/15.1/a2dv2/db/cmpr_ngc.tdf                                                    ;             ;
-; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_hub.vhd                              ; altera_sld  ;
-; db/ip/sld56d4e773/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/alt_sld_fab.v                                    ; alt_sld_fab ;
-; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
-; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
-; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
-; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
-; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
-; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                         ;             ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------+-------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                       ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                             ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; a2d_data_a.v                                                       ; yes             ; User Wizard-Generated File                   ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2d_data_a.v                                                       ;             ;
+; a2dv2.v                                                            ; yes             ; User Verilog HDL File                        ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v                                                            ;             ;
+; altsource_probe.v                                                  ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe.v                                                                    ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                                        ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                                    ;             ;
+; altsource_probe_body.vhd                                           ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe_body.vhd                                                             ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                                       ;             ;
+; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_signaltap.vhd                                                                    ;             ;
+; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                                               ;             ;
+; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_ela_control.vhd                                                                  ;             ;
+; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                                                     ;             ;
+; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_constant.inc                                                                     ;             ;
+; dffeea.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/dffeea.inc                                                                           ;             ;
+; aglobal151.inc                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/aglobal151.inc                                                                       ;             ;
+; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_mbpmg.vhd                                                                        ;             ;
+; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                                                         ;             ;
+; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd                                                               ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                       ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                          ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                       ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                        ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altrom.inc                                                                           ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altram.inc                                                                           ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altdpram.inc                                                                         ;             ;
+; db/altsyncram_ku14.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/altsyncram_ku14.tdf                                             ;             ;
+; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altdpram.tdf                                                                         ;             ;
+; memmodes.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/others/maxplus2/memmodes.inc                                                                       ;             ;
+; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/a_hdffe.inc                                                                          ;             ;
+; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/alt_le_rden_reg.inc                                                                  ;             ;
+; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.inc                                                                       ;             ;
+; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_mux.tdf                                                                          ;             ;
+; muxlut.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/muxlut.inc                                                                           ;             ;
+; bypassff.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/bypassff.inc                                                                         ;             ;
+; altshift.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/altshift.inc                                                                         ;             ;
+; db/mux_ssc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/mux_ssc.tdf                                                     ;             ;
+; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_decode.tdf                                                                       ;             ;
+; declut.inc                                                         ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/declut.inc                                                                           ;             ;
+; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_compare.inc                                                                      ;             ;
+; db/decode_dvf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/decode_dvf.tdf                                                  ;             ;
+; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_counter.tdf                                                                      ;             ;
+; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                                      ;             ;
+; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/cmpconst.inc                                                                         ;             ;
+; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_counter.inc                                                                      ;             ;
+; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                                                              ;             ;
+; db/cntr_jgi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cntr_jgi.tdf                                                    ;             ;
+; db/cmpr_rgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cmpr_rgc.tdf                                                    ;             ;
+; db/cntr_i6j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cntr_i6j.tdf                                                    ;             ;
+; db/cntr_egi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cntr_egi.tdf                                                    ;             ;
+; db/cmpr_qgc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cmpr_qgc.tdf                                                    ;             ;
+; db/cntr_23j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cntr_23j.tdf                                                    ;             ;
+; db/cmpr_ngc.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cmpr_ngc.tdf                                                    ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_hub.vhd                                                                          ; altera_sld  ;
+; db/ip/sld56d4e773/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                                     ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 
 
 +------------------------------------------------------------------------+
@@ -373,17 +373,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                        ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                            ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                 ;
-; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
-; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
-; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
-; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                        ;
++--------+------------------------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name                 ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                            ; IP Include File ;
++--------+------------------------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; In-System Sources and Probes ; 9.1     ; N/A          ; N/A          ; |a2dv2|a2d_data_a:a2d_data_a_inst                                                                                                                                                                                                                                          ; a2d_data_a.v    ;
+; Altera ; Signal Tap                   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                 ;
+; Altera ; Signal Tap                   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
+; Altera ; Signal Tap                   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
+; Altera ; Signal Tap                   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
+; Altera ; Signal Tap                   ; N/A     ; N/A          ; Licensed     ; |a2dv2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
++--------+------------------------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -809,51 +810,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Mon Feb 22 15:31:49 2016
+    Info: Processing started: Tue Mar 15 11:55:15 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off a2dv2 -c a2dv2
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (12125): Using design file a2dv2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: a2dv2 File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file a2d_data_a.v
+    Info (12023): Found entity 1: a2d_data_a File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2d_data_a.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file a2dv2.v
+    Info (12023): Found entity 1: a2dv2 File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 6
 Info (12127): Elaborating entity "a2dv2" for the top level hierarchy
-Warning (10858): Verilog HDL warning at a2dv2.v(194): object sys_clk used but never assigned File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 194
-Warning (10030): Net "sys_clk" at a2dv2.v(194) has no driver or initial value, using a default initial value '0' File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 194
-Warning (10034): Output port "LEDG" at a2dv2.v(109) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-Warning (10034): Output port "LEDR" at a2dv2.v(110) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-Warning (10034): Output port "HEX0" at a2dv2.v(119) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 119
-Warning (10034): Output port "HEX1" at a2dv2.v(120) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 120
-Warning (10034): Output port "HEX2" at a2dv2.v(121) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 121
-Warning (10034): Output port "HEX3" at a2dv2.v(122) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 122
-Warning (10034): Output port "HEX4" at a2dv2.v(123) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 123
-Warning (10034): Output port "HEX5" at a2dv2.v(124) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 124
-Warning (10034): Output port "HEX6" at a2dv2.v(125) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 125
-Warning (10034): Output port "HEX7" at a2dv2.v(126) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 126
-Warning (10034): Output port "FL_ADDR" at a2dv2.v(147) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-Warning (10034): Output port "DA" at a2dv2.v(178) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-Warning (10034): Output port "DB" at a2dv2.v(179) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-Warning (10034): Output port "LCD_BLON" at a2dv2.v(129) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 129
-Warning (10034): Output port "LCD_EN" at a2dv2.v(131) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 131
-Warning (10034): Output port "LCD_ON" at a2dv2.v(132) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 132
-Warning (10034): Output port "LCD_RS" at a2dv2.v(133) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 133
-Warning (10034): Output port "LCD_RW" at a2dv2.v(134) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 134
-Warning (10034): Output port "SD_CLK" at a2dv2.v(137) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 137
-Warning (10034): Output port "I2C_SCLK" at a2dv2.v(143) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 143
-Warning (10034): Output port "FL_CE_N" at a2dv2.v(148) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 148
-Warning (10034): Output port "FL_OE_N" at a2dv2.v(150) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 150
-Warning (10034): Output port "FL_RST_N" at a2dv2.v(151) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 151
-Warning (10034): Output port "FL_WE_N" at a2dv2.v(153) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 153
-Warning (10034): Output port "FL_WP_N" at a2dv2.v(154) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 154
-Warning (10034): Output port "ADB_OE" at a2dv2.v(166) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 166
-Warning (10034): Output port "ADB_SPI_CS" at a2dv2.v(168) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 168
-Warning (10034): Output port "AIC_DIN" at a2dv2.v(170) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 170
-Warning (10034): Output port "AIC_SPI_CS" at a2dv2.v(174) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 174
-Warning (10034): Output port "AIC_XCLK" at a2dv2.v(175) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 175
-Warning (10034): Output port "CLKOUT0" at a2dv2.v(177) has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 177
-Warning (12125): Using design file a2d_data_a.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: a2d_data_a File: C:/altera_lite/15.1/a2dv2/a2d_data_a.v Line: 39
-Info (12128): Elaborating entity "a2d_data_a" for hierarchy "a2d_data_a:a2d_data_a_inst" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 242
-Info (12128): Elaborating entity "altsource_probe" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" File: C:/altera_lite/15.1/a2dv2/a2d_data_a.v Line: 72
-Info (12130): Elaborated megafunction instantiation "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" File: C:/altera_lite/15.1/a2dv2/a2d_data_a.v Line: 72
-Info (12133): Instantiated megafunction "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" with the following parameter: File: C:/altera_lite/15.1/a2dv2/a2d_data_a.v Line: 72
+Warning (10858): Verilog HDL warning at a2dv2.v(194): object sys_clk used but never assigned File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 194
+Warning (10030): Net "sys_clk" at a2dv2.v(194) has no driver or initial value, using a default initial value '0' File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 194
+Warning (10034): Output port "LEDG" at a2dv2.v(109) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+Warning (10034): Output port "LEDR" at a2dv2.v(110) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+Warning (10034): Output port "HEX0" at a2dv2.v(119) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 119
+Warning (10034): Output port "HEX1" at a2dv2.v(120) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 120
+Warning (10034): Output port "HEX2" at a2dv2.v(121) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 121
+Warning (10034): Output port "HEX3" at a2dv2.v(122) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 122
+Warning (10034): Output port "HEX4" at a2dv2.v(123) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 123
+Warning (10034): Output port "HEX5" at a2dv2.v(124) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 124
+Warning (10034): Output port "HEX6" at a2dv2.v(125) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 125
+Warning (10034): Output port "HEX7" at a2dv2.v(126) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 126
+Warning (10034): Output port "FL_ADDR" at a2dv2.v(147) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+Warning (10034): Output port "DA" at a2dv2.v(178) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+Warning (10034): Output port "DB" at a2dv2.v(179) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+Warning (10034): Output port "LCD_BLON" at a2dv2.v(129) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 129
+Warning (10034): Output port "LCD_EN" at a2dv2.v(131) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 131
+Warning (10034): Output port "LCD_ON" at a2dv2.v(132) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 132
+Warning (10034): Output port "LCD_RS" at a2dv2.v(133) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 133
+Warning (10034): Output port "LCD_RW" at a2dv2.v(134) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 134
+Warning (10034): Output port "SD_CLK" at a2dv2.v(137) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 137
+Warning (10034): Output port "I2C_SCLK" at a2dv2.v(143) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 143
+Warning (10034): Output port "FL_CE_N" at a2dv2.v(148) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 148
+Warning (10034): Output port "FL_OE_N" at a2dv2.v(150) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 150
+Warning (10034): Output port "FL_RST_N" at a2dv2.v(151) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 151
+Warning (10034): Output port "FL_WE_N" at a2dv2.v(153) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 153
+Warning (10034): Output port "FL_WP_N" at a2dv2.v(154) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 154
+Warning (10034): Output port "ADB_OE" at a2dv2.v(166) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 166
+Warning (10034): Output port "ADB_SPI_CS" at a2dv2.v(168) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 168
+Warning (10034): Output port "AIC_DIN" at a2dv2.v(170) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 170
+Warning (10034): Output port "AIC_SPI_CS" at a2dv2.v(174) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 174
+Warning (10034): Output port "AIC_XCLK" at a2dv2.v(175) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 175
+Warning (10034): Output port "CLKOUT0" at a2dv2.v(177) has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 177
+Info (12128): Elaborating entity "a2d_data_a" for hierarchy "a2d_data_a:a2d_data_a_inst" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 242
+Info (12128): Elaborating entity "altsource_probe" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2d_data_a.v Line: 72
+Info (12130): Elaborated megafunction instantiation "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2d_data_a.v Line: 72
+Info (12133): Instantiated megafunction "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component" with the following parameter: File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2d_data_a.v Line: 72
     Info (12134): Parameter "enable_metastability" = "NO"
     Info (12134): Parameter "instance_id" = "a2da"
     Info (12134): Parameter "probe_width" = "14"
@@ -867,28 +868,28 @@ Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "a2d_data_
 Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 508
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 756
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ku14.tdf
-    Info (12023): Found entity 1: altsyncram_ku14 File: C:/altera_lite/15.1/a2dv2/db/altsyncram_ku14.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_ku14 File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/altsyncram_ku14.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ssc.tdf
-    Info (12023): Found entity 1: mux_ssc File: C:/altera_lite/15.1/a2dv2/db/mux_ssc.tdf Line: 23
+    Info (12023): Found entity 1: mux_ssc File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/mux_ssc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dvf.tdf
-    Info (12023): Found entity 1: decode_dvf File: C:/altera_lite/15.1/a2dv2/db/decode_dvf.tdf Line: 23
+    Info (12023): Found entity 1: decode_dvf File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/decode_dvf.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_jgi.tdf
-    Info (12023): Found entity 1: cntr_jgi File: C:/altera_lite/15.1/a2dv2/db/cntr_jgi.tdf Line: 28
+    Info (12023): Found entity 1: cntr_jgi File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cntr_jgi.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_rgc.tdf
-    Info (12023): Found entity 1: cmpr_rgc File: C:/altera_lite/15.1/a2dv2/db/cmpr_rgc.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_rgc File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cmpr_rgc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_i6j.tdf
-    Info (12023): Found entity 1: cntr_i6j File: C:/altera_lite/15.1/a2dv2/db/cntr_i6j.tdf Line: 26
+    Info (12023): Found entity 1: cntr_i6j File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cntr_i6j.tdf Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_egi.tdf
-    Info (12023): Found entity 1: cntr_egi File: C:/altera_lite/15.1/a2dv2/db/cntr_egi.tdf Line: 28
+    Info (12023): Found entity 1: cntr_egi File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cntr_egi.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_qgc.tdf
-    Info (12023): Found entity 1: cmpr_qgc File: C:/altera_lite/15.1/a2dv2/db/cmpr_qgc.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_qgc File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cmpr_qgc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_23j.tdf
-    Info (12023): Found entity 1: cntr_23j File: C:/altera_lite/15.1/a2dv2/db/cntr_23j.tdf Line: 28
+    Info (12023): Found entity 1: cntr_23j File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cntr_23j.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ngc.tdf
-    Info (12023): Found entity 1: cmpr_ngc File: C:/altera_lite/15.1/a2dv2/db/cmpr_ngc.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_ngc File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Info (11170): Start IP generation for the debug fabric within sld_hub.
-Info (11172): 2016.02.22.15:32:04 Progress: Loading sld56d4e773/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2016.03.15.11:55:30 Progress: Loading sld56d4e773/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -899,212 +900,212 @@ Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification
 Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
 Info (11171): Finished IP generation for the debug fabric within sld_hub.
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld56d4e773/alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab File: C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_ident.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
-    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 129
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 129
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/altera_lite/15.1/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/db/ip/sld56d4e773/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "AD_SCLK" and its non-tri-state driver. File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 157
-    Warning (13035): Inserted always-enabled tri-state buffer between "AD_SDIO" and its non-tri-state driver. File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 158
+    Warning (13035): Inserted always-enabled tri-state buffer between "AD_SCLK" and its non-tri-state driver. File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 157
+    Warning (13035): Inserted always-enabled tri-state buffer between "AD_SDIO" and its non-tri-state driver. File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 158
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "LCD_DATA[0]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 130
-    Warning (13040): bidirectional pin "LCD_DATA[1]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 130
-    Warning (13040): bidirectional pin "LCD_DATA[2]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 130
-    Warning (13040): bidirectional pin "LCD_DATA[3]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 130
-    Warning (13040): bidirectional pin "LCD_DATA[4]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 130
-    Warning (13040): bidirectional pin "LCD_DATA[5]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 130
-    Warning (13040): bidirectional pin "LCD_DATA[6]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 130
-    Warning (13040): bidirectional pin "LCD_DATA[7]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 130
-    Warning (13040): bidirectional pin "SD_CMD" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 138
-    Warning (13040): bidirectional pin "SD_DAT[0]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 139
-    Warning (13040): bidirectional pin "SD_DAT[1]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 139
-    Warning (13040): bidirectional pin "SD_DAT[2]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 139
-    Warning (13040): bidirectional pin "SD_DAT[3]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 139
-    Warning (13040): bidirectional pin "I2C_SDAT" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 144
-    Warning (13040): bidirectional pin "FL_DQ[0]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 149
-    Warning (13040): bidirectional pin "FL_DQ[1]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 149
-    Warning (13040): bidirectional pin "FL_DQ[2]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 149
-    Warning (13040): bidirectional pin "FL_DQ[3]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 149
-    Warning (13040): bidirectional pin "FL_DQ[4]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 149
-    Warning (13040): bidirectional pin "FL_DQ[5]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 149
-    Warning (13040): bidirectional pin "FL_DQ[6]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 149
-    Warning (13040): bidirectional pin "FL_DQ[7]" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 149
-    Warning (13040): bidirectional pin "AIC_BCLK" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 169
-    Warning (13040): bidirectional pin "AIC_LRCIN" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 172
-    Warning (13040): bidirectional pin "AIC_LRCOUT" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 173
-    Warning (13040): bidirectional pin "FPGA_CLK_B_N" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 182
-    Warning (13040): bidirectional pin "FPGA_CLK_B_P" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 183
-    Warning (13040): bidirectional pin "J1_152" has no driver File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 184
+    Warning (13040): bidirectional pin "LCD_DATA[0]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 130
+    Warning (13040): bidirectional pin "LCD_DATA[1]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 130
+    Warning (13040): bidirectional pin "LCD_DATA[2]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 130
+    Warning (13040): bidirectional pin "LCD_DATA[3]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 130
+    Warning (13040): bidirectional pin "LCD_DATA[4]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 130
+    Warning (13040): bidirectional pin "LCD_DATA[5]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 130
+    Warning (13040): bidirectional pin "LCD_DATA[6]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 130
+    Warning (13040): bidirectional pin "LCD_DATA[7]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 130
+    Warning (13040): bidirectional pin "SD_CMD" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 138
+    Warning (13040): bidirectional pin "SD_DAT[0]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 139
+    Warning (13040): bidirectional pin "SD_DAT[1]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 139
+    Warning (13040): bidirectional pin "SD_DAT[2]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 139
+    Warning (13040): bidirectional pin "SD_DAT[3]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 139
+    Warning (13040): bidirectional pin "I2C_SDAT" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 144
+    Warning (13040): bidirectional pin "FL_DQ[0]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 149
+    Warning (13040): bidirectional pin "FL_DQ[1]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 149
+    Warning (13040): bidirectional pin "FL_DQ[2]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 149
+    Warning (13040): bidirectional pin "FL_DQ[3]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 149
+    Warning (13040): bidirectional pin "FL_DQ[4]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 149
+    Warning (13040): bidirectional pin "FL_DQ[5]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 149
+    Warning (13040): bidirectional pin "FL_DQ[6]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 149
+    Warning (13040): bidirectional pin "FL_DQ[7]" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 149
+    Warning (13040): bidirectional pin "AIC_BCLK" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 169
+    Warning (13040): bidirectional pin "AIC_LRCIN" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 172
+    Warning (13040): bidirectional pin "AIC_LRCOUT" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 173
+    Warning (13040): bidirectional pin "FPGA_CLK_B_N" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 182
+    Warning (13040): bidirectional pin "FPGA_CLK_B_P" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 183
+    Warning (13040): bidirectional pin "J1_152" has no driver File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 184
 Warning (13032): The following tri-state nodes are fed by constants
-    Warning (13033): The pin "FPGA_CLK_A_N" is fed by VCC File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 180
-    Warning (13033): The pin "FPGA_CLK_A_P" is fed by GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 181
+    Warning (13033): The pin "FPGA_CLK_A_N" is fed by VCC File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 180
+    Warning (13033): The pin "FPGA_CLK_A_P" is fed by GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 181
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "AD_SCLK~synth" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 157
-    Warning (13010): Node "AD_SDIO~synth" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 158
-    Warning (13010): Node "FPGA_CLK_A_N~synth" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 180
+    Warning (13010): Node "AD_SCLK~synth" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 157
+    Warning (13010): Node "AD_SDIO~synth" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 158
+    Warning (13010): Node "FPGA_CLK_A_N~synth" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 180
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDG[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDG[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDG[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDG[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDG[8]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 109
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 110
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 119
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 119
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 119
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 119
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 119
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 119
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 119
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 120
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 120
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 120
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 120
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 120
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 120
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 120
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 121
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 121
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 121
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 121
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 121
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 121
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 121
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 122
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 122
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 122
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 122
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 122
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 122
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 122
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 123
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 123
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 123
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 123
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 123
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 123
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 123
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 124
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 124
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 124
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 124
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 124
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 124
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 124
-    Warning (13410): Pin "HEX6[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 125
-    Warning (13410): Pin "HEX6[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 125
-    Warning (13410): Pin "HEX6[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 125
-    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 125
-    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 125
-    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 125
-    Warning (13410): Pin "HEX6[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 125
-    Warning (13410): Pin "HEX7[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 126
-    Warning (13410): Pin "HEX7[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 126
-    Warning (13410): Pin "HEX7[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 126
-    Warning (13410): Pin "HEX7[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 126
-    Warning (13410): Pin "HEX7[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 126
-    Warning (13410): Pin "HEX7[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 126
-    Warning (13410): Pin "HEX7[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 126
-    Warning (13410): Pin "LCD_BLON" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 129
-    Warning (13410): Pin "LCD_EN" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 131
-    Warning (13410): Pin "LCD_ON" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 132
-    Warning (13410): Pin "LCD_RS" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 133
-    Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 134
-    Warning (13410): Pin "SD_CLK" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 137
-    Warning (13410): Pin "I2C_SCLK" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 143
-    Warning (13410): Pin "FL_ADDR[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[7]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[8]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[9]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[10]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[11]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[12]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[13]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[14]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[15]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[16]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[17]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[18]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[19]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[20]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[21]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_ADDR[22]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 147
-    Warning (13410): Pin "FL_CE_N" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 148
-    Warning (13410): Pin "FL_OE_N" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 150
-    Warning (13410): Pin "FL_RST_N" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 151
-    Warning (13410): Pin "FL_WE_N" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 153
-    Warning (13410): Pin "FL_WP_N" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 154
-    Warning (13410): Pin "ADA_OE" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 161
-    Warning (13410): Pin "ADA_SPI_CS" is stuck at VCC File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 163
-    Warning (13410): Pin "ADB_OE" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 166
-    Warning (13410): Pin "ADB_SPI_CS" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 168
-    Warning (13410): Pin "AIC_DIN" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 170
-    Warning (13410): Pin "AIC_SPI_CS" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 174
-    Warning (13410): Pin "AIC_XCLK" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 175
-    Warning (13410): Pin "CLKOUT0" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 177
-    Warning (13410): Pin "DA[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[7]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[8]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[9]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[10]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[11]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[12]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DA[13]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 178
-    Warning (13410): Pin "DB[0]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[1]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[2]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[3]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[4]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[5]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[6]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[7]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[8]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[9]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[10]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[11]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[12]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
-    Warning (13410): Pin "DB[13]" is stuck at GND File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "LEDG[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 109
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 110
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 119
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 119
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 119
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 119
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 119
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 119
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 119
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 120
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 120
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 120
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 120
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 120
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 120
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 120
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 121
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 121
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 121
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 121
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 121
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 121
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 121
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 122
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 122
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 122
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 122
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 122
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 122
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 122
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 123
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 123
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 123
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 123
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 123
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 123
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 123
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 124
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 124
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 124
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 124
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 124
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 124
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 124
+    Warning (13410): Pin "HEX6[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 125
+    Warning (13410): Pin "HEX6[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 125
+    Warning (13410): Pin "HEX6[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 125
+    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 125
+    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 125
+    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 125
+    Warning (13410): Pin "HEX6[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 125
+    Warning (13410): Pin "HEX7[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 126
+    Warning (13410): Pin "HEX7[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 126
+    Warning (13410): Pin "HEX7[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 126
+    Warning (13410): Pin "HEX7[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 126
+    Warning (13410): Pin "HEX7[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 126
+    Warning (13410): Pin "HEX7[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 126
+    Warning (13410): Pin "HEX7[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 126
+    Warning (13410): Pin "LCD_BLON" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 129
+    Warning (13410): Pin "LCD_EN" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 131
+    Warning (13410): Pin "LCD_ON" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 132
+    Warning (13410): Pin "LCD_RS" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 133
+    Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 134
+    Warning (13410): Pin "SD_CLK" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 137
+    Warning (13410): Pin "I2C_SCLK" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 143
+    Warning (13410): Pin "FL_ADDR[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[7]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[8]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[9]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[10]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[11]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[12]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[13]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[14]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[15]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[16]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[17]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[18]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[19]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[20]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[21]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_ADDR[22]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 147
+    Warning (13410): Pin "FL_CE_N" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 148
+    Warning (13410): Pin "FL_OE_N" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 150
+    Warning (13410): Pin "FL_RST_N" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 151
+    Warning (13410): Pin "FL_WE_N" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 153
+    Warning (13410): Pin "FL_WP_N" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 154
+    Warning (13410): Pin "ADA_OE" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 161
+    Warning (13410): Pin "ADA_SPI_CS" is stuck at VCC File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 163
+    Warning (13410): Pin "ADB_OE" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 166
+    Warning (13410): Pin "ADB_SPI_CS" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 168
+    Warning (13410): Pin "AIC_DIN" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 170
+    Warning (13410): Pin "AIC_SPI_CS" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 174
+    Warning (13410): Pin "AIC_XCLK" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 175
+    Warning (13410): Pin "CLKOUT0" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 177
+    Warning (13410): Pin "DA[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[7]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[8]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[9]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[10]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[11]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[12]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DA[13]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 178
+    Warning (13410): Pin "DB[0]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[1]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[2]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[3]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[4]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[5]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[6]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[7]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[8]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[9]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[10]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[11]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[12]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
+    Warning (13410): Pin "DB[13]" is stuck at GND File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 179
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (13000): Registers with preset signals will power-up high File: c:/altera_lite/15.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd Line: 350
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -1116,60 +1117,60 @@ Info (35024): Successfully connected in-system debug instance "auto_signaltap_0"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 44 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK2_50" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 105
-    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 106
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 113
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 113
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 113
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[10]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[11]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[12]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[13]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[14]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[15]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[16]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SW[17]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 116
-    Warning (15610): No output dependent on input pin "SD_WP_N" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 140
-    Warning (15610): No output dependent on input pin "FL_RY" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 152
-    Warning (15610): No output dependent on input pin "ADA_OR" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 162
-    Warning (15610): No output dependent on input pin "ADB_D[0]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[1]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[2]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[3]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[4]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[5]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[6]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[7]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[8]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[9]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[10]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[11]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[12]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_D[13]" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 164
-    Warning (15610): No output dependent on input pin "ADB_DCO" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 165
-    Warning (15610): No output dependent on input pin "ADB_OR" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 167
-    Warning (15610): No output dependent on input pin "AIC_DOUT" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 171
-    Warning (15610): No output dependent on input pin "CLKIN1" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 176
-    Warning (15610): No output dependent on input pin "XT_IN_N" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 185
-    Warning (15610): No output dependent on input pin "XT_IN_P" File: C:/altera_lite/15.1/a2dv2/a2dv2.v Line: 186
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 105
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 106
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 113
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 113
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 113
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 116
+    Warning (15610): No output dependent on input pin "SD_WP_N" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 140
+    Warning (15610): No output dependent on input pin "FL_RY" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 152
+    Warning (15610): No output dependent on input pin "ADA_OR" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 162
+    Warning (15610): No output dependent on input pin "ADB_D[0]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[1]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[2]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[3]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[4]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[5]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[6]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[7]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[8]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[9]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[10]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[11]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[12]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_D[13]" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 164
+    Warning (15610): No output dependent on input pin "ADB_DCO" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 165
+    Warning (15610): No output dependent on input pin "ADB_OR" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 167
+    Warning (15610): No output dependent on input pin "AIC_DOUT" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 171
+    Warning (15610): No output dependent on input pin "CLKIN1" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 176
+    Warning (15610): No output dependent on input pin "XT_IN_N" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 185
+    Warning (15610): No output dependent on input pin "XT_IN_P" File: C:/Users/Jesse/github projects/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 186
 Info (21057): Implemented 1296 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 66 input pins
     Info (21059): Implemented 155 output pins
     Info (21060): Implemented 32 bidirectional pins
     Info (21061): Implemented 1014 logic cells
     Info (21064): Implemented 28 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 274 warnings
-    Info: Peak virtual memory: 897 megabytes
-    Info: Processing ended: Mon Feb 22 15:32:12 2016
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:43
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 272 warnings
+    Info: Peak virtual memory: 902 megabytes
+    Info: Processing ended: Tue Mar 15 11:55:39 2016
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:47
 
 

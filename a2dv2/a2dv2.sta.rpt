@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for a2dv2
-Mon Feb 22 15:32:45 2016
+Tue Mar 15 11:56:13 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -111,7 +111,7 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -128,7 +128,7 @@ agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; a2dv2.SDC     ; OK     ; Mon Feb 22 15:32:43 2016 ;
+; a2dv2.SDC     ; OK     ; Tue Mar 15 11:56:11 2016 ;
 +---------------+--------+--------------------------+
 
 
@@ -3382,12 +3382,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Mon Feb 22 15:32:42 2016
+    Info: Processing started: Tue Mar 15 11:56:10 2016
 Info: Command: quartus_sta a2dv2 -c a2dv2
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
-Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity sld_hub
         Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
@@ -3508,8 +3508,8 @@ Info (332114): Report Metastability: Found 31 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 945 megabytes
-    Info: Processing ended: Mon Feb 22 15:32:45 2016
+    Info: Peak virtual memory: 942 megabytes
+    Info: Processing ended: Tue Mar 15 11:56:13 2016
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
