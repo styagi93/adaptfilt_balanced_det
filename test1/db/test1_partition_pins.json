@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "SMA_CLKOUT",
+					"strict" : false
+				},
+				{
 					"name" : "LEDG[1]",
 					"strict" : false
 				},

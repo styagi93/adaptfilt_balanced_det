@@ -1,5 +1,5 @@
 Assembler report for test1
-Wed Mar 16 19:28:11 2016
+Wed Mar 16 19:48:06 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Mar 16 19:28:11 2016 ;
+; Assembler Status      ; Successful - Wed Mar 16 19:48:06 2016 ;
 ; Revision Name         ; test1                                 ;
 ; Top-level Entity Name ; test1                                 ;
 ; Family                ; Cyclone IV E                          ;
@@ -79,8 +79,8 @@ agreement for further details.
 ; Option         ; Setting                                                                               ;
 +----------------+---------------------------------------------------------------------------------------+
 ; Device         ; EP4CE115F29C8                                                                         ;
-; JTAG usercode  ; 0x0057B8B4                                                                            ;
-; Checksum       ; 0x0057B8B4                                                                            ;
+; JTAG usercode  ; 0x0057C8C7                                                                            ;
+; Checksum       ; 0x0057C8C7                                                                            ;
 +----------------+---------------------------------------------------------------------------------------+
 
 
@@ -90,7 +90,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Wed Mar 16 19:28:06 2016
+    Info: Processing started: Wed Mar 16 19:48:02 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off test1 -c test1
 Warning (125092): Tcl Script File nco_1MHz.qip not found
     Info (125063): set_global_assignment -name QIP_FILE nco_1MHz.qip
@@ -115,9 +115,9 @@ Warning (125092): Tcl Script File fir_out.qip not found
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 752 megabytes
-    Info: Processing ended: Wed Mar 16 19:28:11 2016
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 753 megabytes
+    Info: Processing ended: Wed Mar 16 19:48:06 2016
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test1
-Wed Mar 16 19:27:47 2016
+Wed Mar 16 19:47:42 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -54,20 +54,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 16 19:27:47 2016       ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 16 19:47:42 2016       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; test1                                       ;
 ; Top-level Entity Name              ; test1                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 181                                         ;
-;     Total combinational functions  ; 160                                         ;
-;     Dedicated logic registers      ; 102                                         ;
-; Total registers                    ; 102                                         ;
+; Total logic elements               ; 198                                         ;
+;     Total combinational functions  ; 170                                         ;
+;     Dedicated logic registers      ; 119                                         ;
+; Total registers                    ; 119                                         ;
 ; Total pins                         ; 143                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total PLLs                         ; 1                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -211,29 +211,32 @@ agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 181                      ;
+; Estimated Total logic elements              ; 198                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 160                      ;
+; Total combinational functions               ; 170                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 79                       ;
+;     -- 4 input functions                    ; 80                       ;
 ;     -- 3 input functions                    ; 40                       ;
-;     -- <=2 input functions                  ; 41                       ;
+;     -- <=2 input functions                  ; 50                       ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 152                      ;
+;     -- normal mode                          ; 162                      ;
 ;     -- arithmetic mode                      ; 8                        ;
 ;                                             ;                          ;
-; Total registers                             ; 102                      ;
-;     -- Dedicated logic registers            ; 102                      ;
+; Total registers                             ; 119                      ;
+;     -- Dedicated logic registers            ; 119                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 143                      ;
 ;                                             ;                          ;
 ; Embedded Multiplier 9-bit elements          ; 0                        ;
 ;                                             ;                          ;
+; Total PLLs                                  ; 1                        ;
+;     -- PLLs                                 ; 1                        ;
+;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 125                      ;
-; Total fan-out                               ; 1017                     ;
+; Total fan-out                               ; 1067                     ;
 ; Average fan-out                             ; 1.77                     ;
 +---------------------------------------------+--------------------------+
 
@@ -243,12 +246,16 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                               ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |test1                                                                                                                                  ; 160 (3)           ; 102 (0)      ; 0           ; 0            ; 0       ; 0         ; 143  ; 0            ; |test1                                                                                                                                                                                                                                                                                                                                            ; work         ;
+; |test1                                                                                                                                  ; 170 (3)           ; 119 (0)      ; 0           ; 0            ; 0       ; 0         ; 143  ; 0            ; |test1                                                                                                                                                                                                                                                                                                                                            ; work         ;
 ;    |a2d_data_a:a2d_data_a_inst|                                                                                                         ; 43 (0)            ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|a2d_data_a:a2d_data_a_inst                                                                                                                                                                                                                                                                                                                 ; work         ;
 ;       |altsource_probe:altsource_probe_component|                                                                                       ; 43 (0)            ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component                                                                                                                                                                                                                                                                       ; work         ;
 ;          |altsource_probe_body:altsource_probe_body_inst|                                                                               ; 43 (3)            ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst                                                                                                                                                                                                                        ; work         ;
 ;             |altsource_probe_impl:\wider_probe_gen:wider_probe_inst|                                                                    ; 40 (21)           ; 24 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst                                                                                                                                                                 ; work         ;
 ;                |sld_rom_sr:\instance_id_gen:rom_info_inst|                                                                              ; 19 (19)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst                                                                                                                       ; work         ;
+;    |lfsr:u1|                                                                                                                            ; 10 (10)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|lfsr:u1                                                                                                                                                                                                                                                                                                                                    ; work         ;
+;       |PLL2:PLL2_inst|                                                                                                                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|lfsr:u1|PLL2:PLL2_inst                                                                                                                                                                                                                                                                                                                     ; work         ;
+;          |altpll:altpll_component|                                                                                                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|lfsr:u1|PLL2:PLL2_inst|altpll:altpll_component                                                                                                                                                                                                                                                                                             ; work         ;
+;             |PLL2_altpll:auto_generated|                                                                                                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|lfsr:u1|PLL2:PLL2_inst|altpll:altpll_component|PLL2_altpll:auto_generated                                                                                                                                                                                                                                                                  ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 114 (1)           ; 78 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 113 (0)           ; 78 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 113 (0)           ; 78 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab  ;
@@ -353,7 +360,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 102   ;
+; Total registers                              ; 119   ;
 ; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 11    ;
 ; Number of registers using Asynchronous Clear ; 41    ;
@@ -368,10 +375,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; lfsr:u1|state[15]                                                                                                                                                                                                                                                                                                               ; 2       ;
+; lfsr:u1|state[13]                                                                                                                                                                                                                                                                                                               ; 2       ;
+; lfsr:u1|state[11]                                                                                                                                                                                                                                                                                                               ; 1       ;
+; lfsr:u1|state[10]                                                                                                                                                                                                                                                                                                               ; 2       ;
+; lfsr:u1|state[7]                                                                                                                                                                                                                                                                                                                ; 1       ;
+; lfsr:u1|state[6]                                                                                                                                                                                                                                                                                                                ; 1       ;
+; lfsr:u1|state[5]                                                                                                                                                                                                                                                                                                                ; 1       ;
+; lfsr:u1|state[0]                                                                                                                                                                                                                                                                                                                ; 1       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|tdo            ; 1       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
-; Total number of inverted registers = 3                                                                                                                                                                                                                                                                                          ;         ;
+; Total number of inverted registers = 11                                                                                                                                                                                                                                                                                         ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -809,14 +824,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "lfsr:u1"                                                                                                                                                                               ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; clk        ; Input  ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; sma_clkout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lfsr:u1"                                                                                                                                                                        ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------+
@@ -834,22 +848,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 164                         ;
-; cycloneiii_ff         ; 24                          ;
+; cycloneiii_ff         ; 41                          ;
 ;     CLR               ; 2                           ;
 ;     ENA               ; 8                           ;
 ;     ENA CLR           ; 13                          ;
-;     plain             ; 1                           ;
+;     plain             ; 18                          ;
 ; cycloneiii_io_obuf    ; 17                          ;
-; cycloneiii_lcell_comb ; 48                          ;
-;     normal            ; 48                          ;
+; cycloneiii_lcell_comb ; 58                          ;
+;     normal            ; 58                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
+;         1 data inputs ; 11                          ;
 ;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 10                          ;
-;         4 data inputs ; 33                          ;
+;         4 data inputs ; 34                          ;
+; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.32                        ;
+; Average LUT depth     ; 1.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -868,7 +883,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Wed Mar 16 19:27:25 2016
+    Info: Processing started: Wed Mar 16 19:47:23 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test1 -c test1
 Warning (125092): Tcl Script File nco_1MHz.qip not found
     Info (125063): set_global_assignment -name QIP_FILE nco_1MHz.qip
@@ -910,7 +925,6 @@ Warning (10034): Output port "LEDG[0]" at test1.v(76) has no driver File: C:/Use
 Warning (10034): Output port "LEDR" at test1.v(77) has no driver File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 77
 Warning (10034): Output port "DA" at test1.v(116) has no driver File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 116
 Warning (10034): Output port "DB" at test1.v(117) has no driver File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 117
-Warning (10034): Output port "SMA_CLKOUT" at test1.v(73) has no driver File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 73
 Warning (10034): Output port "AIC_DIN" at test1.v(108) has no driver File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 108
 Warning (10034): Output port "AIC_SPI_CS" at test1.v(112) has no driver File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 112
 Warning (10034): Output port "AIC_XCLK" at test1.v(113) has no driver File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 113
@@ -931,7 +945,7 @@ Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy 
 Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe.v Line: 205
 Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 508
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 756
-Info (12128): Elaborating entity "lfsr" for hierarchy "lfsr:u1" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 215
+Info (12128): Elaborating entity "lfsr" for hierarchy "lfsr:u1" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 216
 Info (12128): Elaborating entity "PLL2" for hierarchy "lfsr:u1|PLL2:PLL2_inst" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/lfsr.vhd Line: 26
 Info (12128): Elaborating entity "altpll" for hierarchy "lfsr:u1|PLL2:PLL2_inst|altpll:altpll_component" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/PLL2.v Line: 91
 Info (12130): Elaborated megafunction instantiation "lfsr:u1|PLL2:PLL2_inst|altpll:altpll_component" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/PLL2.v Line: 91
@@ -994,7 +1008,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll2
     Info (12023): Found entity 1: PLL2_altpll File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/db/pll2_altpll.v Line: 30
 Info (12128): Elaborating entity "PLL2_altpll" for hierarchy "lfsr:u1|PLL2:PLL2_inst|altpll:altpll_component|PLL2_altpll:auto_generated" File: c:/altera_lite/15.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (11170): Start IP generation for the debug fabric within sld_hub.
-Info (11172): 2016.03.16.19:27:40 Progress: Loading sld60bba180/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2016.03.16.19:47:36 Progress: Loading sld60bba180/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1017,9 +1031,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/db/ip/sld60bba180/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld60bba180/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/db/ip/sld60bba180/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following PLL node(s):
-        Warning (14320): Synthesized away node "lfsr:u1|PLL2:PLL2_inst|altpll:altpll_component|PLL2_altpll:auto_generated|wire_pll1_clk[0]" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/db/pll2_altpll.v Line: 78
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "AD_SCLK" and its non-tri-state driver. File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 95
@@ -1046,7 +1057,6 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "AD_SDIO~synth" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 96
     Warning (13010): Node "FPGA_CLK_A_N~synth" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 118
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SMA_CLKOUT" is stuck at GND File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 73
     Warning (13410): Pin "LEDG[0]" is stuck at GND File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 76
     Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 76
     Warning (13410): Pin "LEDG[8]" is stuck at GND File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 76
@@ -1107,9 +1117,8 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 14 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 55 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "OSC_50[0]" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 69
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 54 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "OSC_50[1]" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 69
     Warning (15610): No output dependent on input pin "OSC_50[2]" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 69
     Warning (15610): No output dependent on input pin "SMA_CLKIN" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 72
@@ -1164,15 +1173,16 @@ Warning (21074): Design contains 55 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLKIN1" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 114
     Warning (15610): No output dependent on input pin "XT_IN_N" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 123
     Warning (15610): No output dependent on input pin "XT_IN_P" File: C:/Users/Ayush/fpga-spreadspectrum-adaptivefilt/test1/test1.v Line: 124
-Info (21057): Implemented 332 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 350 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 65 input pins
     Info (21059): Implemented 65 output pins
     Info (21060): Implemented 17 bidirectional pins
-    Info (21061): Implemented 184 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 167 warnings
+    Info (21061): Implemented 201 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 161 warnings
     Info: Peak virtual memory: 878 megabytes
-    Info: Processing ended: Wed Mar 16 19:27:47 2016
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:42
+    Info: Processing ended: Wed Mar 16 19:47:42 2016
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:38
 
 

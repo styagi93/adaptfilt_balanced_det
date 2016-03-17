@@ -4,7 +4,7 @@ library ieee;
 entity lfsr is
 	port (
 		clk	: in	std_logic;
-		SMA_CLKOUT : out std_logic
+		outp : out std_logic
 
 	);
 end lfsr;
@@ -36,7 +36,7 @@ begin
 			state <= state(14 downto 0) 
 						& (((state(15) xor state(13)) xor state(12)) xor state(10));
 			
-			SMA_CLKOUT <= state(15);
+			outp <= state(15);
 			
 		end if;
 	end process;

@@ -212,6 +212,7 @@ a2d_data_a	a2d_data_a_inst(
 
 // Instantiating of Pseudo random sequence generator			
 lfsr        u1(
-            .clk(OSC_50));
+            .clk(OSC_50),
+				.outp(SMA_CLKOUT));
 
 endmodule
