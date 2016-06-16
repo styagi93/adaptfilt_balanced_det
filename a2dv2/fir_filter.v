@@ -17,12 +17,12 @@ module fir_filter (
 	// input/output port declarations
 	input					clk;
 	input 	[15:0] 	signal_in;
-	input		[31:0]	filt_coeffs_b [15:0];	// filter coefficients
+	input		[31:0]	filt_coeffs_b [0:15];	// filter coefficients
 	output	[15:0] 	signal_out;
 	
 	// signal declarations
-	reg		[31:0]	buffer [15:0];	// tapped delay line / buffer
-	integer				sum;
+	reg		[31:0]	buffer [0:15];	// tapped delay line / buffer
+	integer				sum,i;
 	
 	
 // implementation
@@ -35,10 +35,11 @@ begin
 	
 	buffer[0]	<= signal_in;
 	
-	for( integer i = 1; i < 32; i = i + 1 ) begin
+	for( i = 1; i < 32; i = i + 1 ) 
+	begin
 		buffer[i]	<= buffer[i-1];
-	end;
-end;
+	end
+end
 
 // multiply and accumulate
 // (this probably won't work, but it's a start)
@@ -46,9 +47,10 @@ always @(posedge( clk ))
 begin
 	sum = 0;
 	
-	for( integer i = 0; i < 32; i = i + 1 )begin
+	for( i = 0; i < 32; i = i + 1 )
+	begin
 		sum = sum + buffer[i] * filt_coeffs_b[i];
-	end;
-	
+	end
 	signal_out <= sum;
-end;
+end
+endmodule
