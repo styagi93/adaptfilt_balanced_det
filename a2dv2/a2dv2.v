@@ -234,7 +234,7 @@ reg [15:0] mem [0:31];
 reg [15:0] mem1 [0:31];
 reg [1:0] state_f = 2'd0;
 wire sw_17_debounced;
-parameter IDLE  = 2'd0,COUNT_ON = 2'd1,WRITE_COEFF = 2'd2 ,INCREMENT_I = 2'd3 ;
+parameter IDLE  = 2'd0,COUNT_ON = 2'd1,WRITE_COEFF = 2'd2;
 reg switch_prev = 0;
 reg [5:0] i = 6'd0;
 
@@ -487,7 +487,7 @@ IDLE:begin
 end
 	
 COUNT_ON: begin
-	if (async_counter != 6'd3) begin
+	if (async_counter != 6'd1) begin
 	async_counter = async_counter +1;
 	end
 	else begin
@@ -499,40 +499,34 @@ COUNT_ON: begin
 
 WRITE_COEFF: 
 begin
-	if ( i == 6'd32)
+	if ( i < 6'd32)
 	begin
-	coeff_in_we <= 1'b0;
-	state_f <= IDLE;
-	end
 	
-	if (sw_17_debounced == 0) 
-		begin
-			if (i < 6'd32 ) 
-				begin
-				coeff_in_we <= 1'b1;
-				coeff_in_address <= i;
-				coeff_in_data <= mem[i];
-				state_f <= INCREMENT_I;
-				end
-		end
-	else 
-		begin
-		if (i < 6'd32 ) 
+		coeff_in_we <= 1'b1;
+	
+		if (sw_17_debounced == 0) 
 			begin
-			coeff_in_we <= 1'b1;
+			coeff_in_address <= i;
+			coeff_in_data <= mem[i];
+			i <=i +1;
+			end
+		else 	
+			begin
 			coeff_in_address <= i;
 			coeff_in_data <= mem1[i];
-			state_f <= INCREMENT_I;	
-			end 
+			i <=i +1;
+		end
+	end
+	else 
+		begin
+		coeff_in_we <= 1'b0;
+		state_f <= IDLE;
 		end
 end
 
-INCREMENT_I: begin
-i <=i +1;
-state_f <= WRITE_COEFF;
-end
 
 default : state_f <= IDLE;
+
 endcase
 end
 
