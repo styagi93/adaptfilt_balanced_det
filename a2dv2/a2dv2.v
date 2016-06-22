@@ -204,6 +204,7 @@ reg			[13:0]	a2da_data;
 
 output reg clk_1khz=0;
 reg [15:0] counter = 16'd0;
+reg [5:0] async_counter= 6'd0;
 output [11:0] NCO_OUT;
 wire NCO_FREQ_UP;
 wire NCO_FREQ_DOWN;
@@ -222,17 +223,92 @@ wire [1:0]  ast_sink_error = 2'b00;
 output  [32:0] ast_source_data;
 output         ast_source_valid;
 output  [1:0]  ast_source_error;
-wire [4:0]  coeff_in_address;
-wire        coeff_in_areset=1'b0;
-wire        coeff_in_read = 1'b0;
-wire [0:0]  coeff_out_valid;
-wire [15:0] coeff_out_data;
-wire [0:0]  coeff_in_we=1'b0;
-wire [15:0] coeff_in_data;
-reg [15:0] mem [0:31] = '{-16'sd1, 16'sd63, -16'sd89, 16'sd3, 16'sd227, -16'sd435, 16'sd301, 16'sd349, -16'sd1202, 16'sd1430, -16'sd247, -16'sd2235, 16'sd4504, -16'sd3920, -16'sd3006, 16'sd32767, 16'sd32767, -16'sd3006, -16'sd3920, 16'sd4504, -16'sd2235, -16'sd247, 16'sd1430, -16'sd1202, 16'sd349, 16'sd301, -16'sd435, 16'sd227, 16'sd3, -16'sd89, 16'sd63, -16'sd1};
-reg [15:0] mem1 [0:31] = '{16'sd309, -16'sd226, -16'sd47, -16'sd349, -16'sd1037, 16'sd1932, 16'sd2737, -16'sd2959, -16'sd2021,-16'sd556, -16'sd4962, 16'sd10950, 16'sd17813, -16'sd24493, -16'sd29815, 16'sd32767, 16'sd32767,-16'sd29815, -16'sd24493, 16'sd17813, 16'sd10950, -16'sd4962, -16'sd556, -16'sd2021, -16'sd2959, 16'sd2737, 16'sd1932, -16'sd1037, -16'sd349, -16'sd47, -16'sd226, 16'sd309};
-integer switch_prev= 0;
-integer i = 0;
+reg [4:0]  coeff_in_address;
+reg        coeff_in_areset=1'b0;
+reg        coeff_in_read = 1'b0;
+reg [0:0]  coeff_out_valid;
+reg [15:0] coeff_out_data;
+reg [0:0]  coeff_in_we=1'b0;
+reg [15:0] coeff_in_data;
+reg [15:0] mem [0:31];
+reg [15:0] mem1 [0:31];
+reg [1:0] state_f = 2'd0;
+wire sw_17_debounced;
+parameter IDLE  = 2'd0,COUNT_ON = 2'd1,WRITE_COEFF = 2'd2 ,INCREMENT_I = 2'd3 ;
+reg switch_prev = 0;
+reg [5:0] i = 6'd0;
+
+
+initial begin
+mem[0]	=	-	16'sd	1	;
+mem[1]	=		16'sd	63	;
+mem[2]	=	-	16'sd	89	;
+mem[3]	=		16'sd	3	;
+mem[4]	=		16'sd	227	;
+mem[5]	=	-	16'sd	435	;
+mem[6]	=		16'sd	301	;
+mem[7]	=		16'sd	349	;
+mem[8]	=	-	16'sd	1202	;
+mem[9]	=		16'sd	1430	;
+mem[10]	=	-	16'sd	247	;
+mem[11]	=	-	16'sd	2235	;
+mem[12]	=		16'sd	4504	;
+mem[13]	=	-	16'sd	3920	;
+mem[14]	=	-	16'sd	3006	;
+mem[15]	=		16'sd	32767	;
+mem[16]	=		16'sd	32767	;
+mem[17]	=	-	16'sd	3006	;
+mem[18]	=	-	16'sd	3920	;
+mem[19]	=		16'sd	4504	;
+mem[20]	=	-	16'sd	2235	;
+mem[21]	=	-	16'sd	247	;
+mem[22]	=		16'sd	1430	;
+mem[23]	=	-	16'sd	1202	;
+mem[24]	=		16'sd	349	;
+mem[25]	=		16'sd	301	;
+mem[26]	=	-	16'sd	435	;
+mem[27]	=		16'sd	227	;
+mem[28]	=		16'sd	3	;
+mem[29]	=	-	16'sd	89	;
+mem[30]	=		16'sd	63	;
+mem[31]	=	-	16'sd	1	;
+
+mem1[0]	=		16'sd	309	;
+mem1[1]	=	-	16'sd	226	;
+mem1[2]	=	-	16'sd	47	;
+mem1[3]	=	-	16'sd	349	;
+mem1[4]	=	-	16'sd	1037	;
+mem1[5]	=		16'sd	1932	;
+mem1[6]	=		16'sd	2737	;
+mem1[7]	=	-	16'sd	2959	;
+mem1[8]	=	-	16'sd	2021	;
+mem1[9]	=	-	16'sd	556	;
+mem1[10]	=	-	16'sd	4962	;
+mem1[11]	=		16'sd	10950	;
+mem1[12]	=		16'sd	17813	;
+mem1[13]	=	-	16'sd	24493	;
+mem1[14]	=	-	16'sd	29815	;
+mem1[15]	=		16'sd	32767	;
+mem1[16]	=		16'sd	32767	;
+mem1[17]	=	-	16'sd	29815	;
+mem1[18]	=	-	16'sd	24493	;
+mem1[19]	=		16'sd	17813	;
+mem1[20]	=		16'sd	10950	;
+mem1[21]	=	-	16'sd	4962	;
+mem1[22]	=	-	16'sd	556	;
+mem1[23]	=	-	16'sd	2021	;
+mem1[24]	=	-	16'sd	2959	;
+mem1[25]	=		16'sd	2737	;
+mem1[26]	=		16'sd	1932	;
+mem1[27]	=	-	16'sd	1037	;
+mem1[28]	=	-	16'sd	349	;
+mem1[29]	=	-	16'sd	47	;
+mem1[30]	=	-	16'sd	226	;
+mem1[31]	=		16'sd	309	;
+
+
+end
+
 
 //=======================================================
 //  Structural coding
@@ -344,14 +420,20 @@ fir_IP_0002 fir_ip_inst (
 	);
 
 	
-always @ (posedge CLOCK_50)
+/*
+	always @ (filter_change_sw)
 begin 
 	if ((filter_change_sw ==1) && (switch_prev ==0))
 	begin
-	coeff_in_areset =1'b1;
-	switch_prev =1;
-	coeff_in_areset = 1'b0;
-	for (i=0; i<32 ; i=i+1)
+	
+	switch_prev <=1;
+	coeff_in_areset <=1'b1;
+
+	temp_b <= 1'b0;
+	temp_a <= temp_b;
+	coeff_in_areset <= temp_a;
+	
+	for (i=5'd0; i<5'd32 ; i=i+1)
 	begin
 		coeff_in_we <= 1'b1;
 		coeff_in_address <= i;
@@ -360,13 +442,19 @@ begin
 	end
 	coeff_in_we <= 1'b0;
 	end
+	
 
 	if ((filter_change_sw ==0) && (switch_prev ==1))
 	begin
-	coeff_in_areset =1'b1;
-	switch_prev =0;
-	coeff_in_areset = 1'b0;
-	for (i=0; i<32 ; i=i+1)
+
+	switch_prev <=0;
+	coeff_in_areset <=1'b1;
+
+	temp_b <= 1'b0;
+	temp_a <= temp_b;
+	coeff_in_areset <= temp_a;
+	
+	for (i=5'd0; i<5'd32 ; i=i+1)
 	begin
 		coeff_in_we <= 1'b1;
 		coeff_in_address <= i;
@@ -375,6 +463,77 @@ begin
 	end
 	coeff_in_we <= 1'b0;
 	end
-end	
+end	*/
+
+// Adding debouncer
+debouncer debounce_sw17 (.clk (CLOCK_50), 
+						  	    .i (filter_change_sw), 
+						  		 .o (sw_17_debounced));
+
+								 
+// State machine for coeff reload
+always @(posedge CLOCK_50) begin
+
+case (state_f)
+
+IDLE:begin
+
+	if (sw_17_debounced != switch_prev)  begin
+	switch_prev <=sw_17_debounced;
+	coeff_in_areset <=1'b1;
+	state_f <= COUNT_ON;
+	async_counter <= 6'd0;			
+	end
+end
+	
+COUNT_ON: begin
+	if (async_counter != 6'd3) begin
+	async_counter = async_counter +1;
+	end
+	else begin
+	i <= 6'd0;
+	state_f <= WRITE_COEFF;
+	coeff_in_areset <= 1'b0;
+	end
+	end
+
+WRITE_COEFF: 
+begin
+	if ( i == 6'd32)
+	begin
+	coeff_in_we <= 1'b0;
+	state_f <= IDLE;
+	end
+	
+	if (sw_17_debounced == 0) 
+		begin
+			if (i < 6'd32 ) 
+				begin
+				coeff_in_we <= 1'b1;
+				coeff_in_address <= i;
+				coeff_in_data <= mem[i];
+				state_f <= INCREMENT_I;
+				end
+		end
+	else 
+		begin
+		if (i < 6'd32 ) 
+			begin
+			coeff_in_we <= 1'b1;
+			coeff_in_address <= i;
+			coeff_in_data <= mem1[i];
+			state_f <= INCREMENT_I;	
+			end 
+		end
+end
+
+INCREMENT_I: begin
+i <=i +1;
+state_f <= WRITE_COEFF;
+end
+
+default : state_f <= IDLE;
+endcase
+end
 
 endmodule
