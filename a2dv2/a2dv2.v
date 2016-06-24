@@ -203,6 +203,7 @@ reg			[13:0]	a2da_data;
 //////////// NCO //////////
 
 output reg clk_1khz=0;
+wire CLOCK_200;
 reg [15:0] counter = 16'd0;
 reg [5:0] async_counter= 6'd0;
 output [11:0] NCO_OUT;
@@ -359,6 +360,10 @@ a2d_data_a	a2d_data_a_inst(
 nco abc_inst (.clk			(CLOCK_50),
 			.phase_incr (NCO_IN),
 			.cos_out  (NCO_OUT));
+			
+PLL_200MHz PLL_200MHz_inst (.inclk0(CLOCK_50),
+				.c0(CLOCK_200),
+				.locked());			
 	
 always @(posedge CLOCK_50)
 begin
@@ -400,7 +405,7 @@ fir_IP_0002 fir_ip_inst (
 */
 	
 	fir_IP_0002 fir_ip_inst (
-		.clk              (CLOCK_50),              //                     clk.clk
+		.clk              (CLOCK_200),              //                     clk.clk
 		.reset_n          (reset_n),          //                     rst.reset_n
 		.ast_sink_data    (NCO_OUT),    //   avalon_streaming_sink.data
 		.ast_sink_valid   (1'b1),   //                        .valid
@@ -409,7 +414,7 @@ fir_IP_0002 fir_ip_inst (
 		.ast_source_valid (ast_source_valid), //                        .valid
 		.ast_source_error (ast_source_error),
 		//                        .error
-		.coeff_in_clk     (CLOCK_50),     //             coeff_clock.clk
+		.coeff_in_clk     (CLOCK_200),     //             coeff_clock.clk
 		.coeff_in_areset  (coeff_in_areset),  //             coeff_reset.reset_n
 		.coeff_in_address (coeff_in_address), //         avalon_mm_slave.address
 		.coeff_in_read    (coeff_in_read),    //                        .read
@@ -472,7 +477,7 @@ debouncer debounce_sw17 (.clk (CLOCK_50),
 
 								 
 // State machine for coeff reload
-always @(posedge CLOCK_50) begin
+always @(posedge CLOCK_200) begin
 
 case (state_f)
 
