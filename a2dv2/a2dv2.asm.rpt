@@ -1,5 +1,5 @@
 Assembler report for a2dv2
-Fri Jun 24 17:28:16 2016
+Wed Jun 29 15:51:41 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jun 24 17:28:16 2016 ;
+; Assembler Status      ; Successful - Wed Jun 29 15:51:41 2016 ;
 ; Revision Name         ; a2dv2                                 ;
 ; Top-level Entity Name ; a2dv2                                 ;
 ; Family                ; Cyclone IV E                          ;
@@ -79,8 +79,8 @@ agreement for further details.
 ; Option         ; Setting                                                                             ;
 +----------------+-------------------------------------------------------------------------------------+
 ; Device         ; EP4CE115F29C7                                                                       ;
-; JTAG usercode  ; 0x0072C957                                                                          ;
-; Checksum       ; 0x0072C957                                                                          ;
+; JTAG usercode  ; 0x0080B387                                                                          ;
+; Checksum       ; 0x0080B387                                                                          ;
 +----------------+-------------------------------------------------------------------------------------+
 
 
@@ -90,14 +90,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Fri Jun 24 17:28:12 2016
+    Info: Processing started: Wed Jun 29 15:51:37 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off a2dv2 -c a2dv2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 760 megabytes
-    Info: Processing ended: Fri Jun 24 17:28:16 2016
+    Info: Peak virtual memory: 768 megabytes
+    Info: Processing ended: Wed Jun 29 15:51:41 2016
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 

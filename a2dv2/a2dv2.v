@@ -93,7 +93,9 @@ module a2dv2(
 	clk_1khz,
 	ast_source_data,
 	ast_source_valid,
-	ast_source_error
+	ast_source_error,
+	DFF_ast_source_data,
+	CLOCK_200	
 );
 
 //=======================================================
@@ -203,27 +205,30 @@ reg			[13:0]	a2da_data;
 //////////// NCO //////////
 
 output reg clk_1khz=0;
-wire CLOCK_200;
+output CLOCK_200;
 reg [15:0] counter = 16'd0;
 reg [5:0] async_counter= 6'd0;
-output [11:0] NCO_OUT;
+output reg [11:0] NCO_OUT;
+reg [11:0] l_NCO_OUT;
 wire NCO_FREQ_UP;
 wire NCO_FREQ_DOWN;
 wire filter_change_sw;
-reg [11:0] NCO_OUT;
 integer temp = 20'b00000000000000000001;
 wire [19:0] NCO_IN;
 assign NCO_IN =temp;
 assign	filter_change_sw	= SW[17];	
+reg l_CLOCK_50;
 
 
 //////////// FIR //////////
 
 
 wire [1:0]  ast_sink_error = 2'b00;
-output  [32:0] ast_source_data;
-output         ast_source_valid;
-output  [1:0]  ast_source_error;
+output reg[32:0] ast_source_data;
+output reg [32:0] DFF_ast_source_data;
+output reg  ast_source_valid;
+reg  l_ast_source_valid;
+output reg  [1:0]  ast_source_error;
 reg [4:0]  coeff_in_address;
 reg        coeff_in_areset=1'b0;
 reg        coeff_in_read = 1'b0;
@@ -238,6 +243,7 @@ wire sw_17_debounced;
 parameter IDLE  = 2'd0,COUNT_ON = 2'd1,WRITE_COEFF = 2'd2;
 reg switch_prev = 0;
 reg [5:0] i = 6'd0;
+reg ast_sink_valid;
 
 
 initial begin
@@ -407,8 +413,8 @@ fir_IP_0002 fir_ip_inst (
 	fir_IP_0002 fir_ip_inst (
 		.clk              (CLOCK_200),              //                     clk.clk
 		.reset_n          (reset_n),          //                     rst.reset_n
-		.ast_sink_data    (NCO_OUT),    //   avalon_streaming_sink.data
-		.ast_sink_valid   (1'b1),   //                        .valid
+		.ast_sink_data    (l_NCO_OUT),    //   avalon_streaming_sink.data
+		.ast_sink_valid   (ast_sink_valid),   //                        .valid
 		.ast_sink_error   (ast_sink_error),   //                        .error
 		.ast_source_data  (ast_source_data),  // avalon_streaming_source.data
 		.ast_source_valid (ast_source_valid), //                        .valid
@@ -534,5 +540,26 @@ default : state_f <= IDLE;
 
 endcase
 end
+
+// to latch the filter's output; confine only to valid values
+always @(posedge CLOCK_200) begin
+l_ast_source_valid <= ast_source_valid;
+DFF_ast_source_data <= DFF_ast_source_data;
+	if ((l_ast_source_valid == 0) && (ast_source_valid == 1)) begin
+	DFF_ast_source_data <= ast_source_data;
+	end
+end 
+
+//to take care of sink_valid generation and latching NCO's o/p
+always @(posedge CLOCK_200) begin
+	l_CLOCK_50 <= CLOCK_50;
+	ast_sink_valid <= 1'b0;
+	l_NCO_OUT <=l_NCO_OUT;
+	if ((l_CLOCK_50 ==0) && (CLOCK_50 ==1)) begin
+		l_NCO_OUT <=NCO_OUT;
+		ast_sink_valid <= 1'b1;
+	end
+end
+
 
 endmodule
