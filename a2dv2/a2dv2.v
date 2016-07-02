@@ -218,6 +218,8 @@ wire [19:0] NCO_IN;
 assign NCO_IN =temp;
 assign	filter_change_sw	= SW[17];	
 reg l_CLOCK_50;
+reg ll_CLOCK_50;
+reg lll_CLOCK_50;
 
 
 //////////// FIR //////////
@@ -553,9 +555,11 @@ end
 //to take care of sink_valid generation and latching NCO's o/p
 always @(posedge CLOCK_200) begin
 	l_CLOCK_50 <= CLOCK_50;
+	ll_CLOCK_50 <= l_CLOCK_50;
+	lll_CLOCK_50 <= ll_CLOCK_50;
 	ast_sink_valid <= 1'b0;
-	l_NCO_OUT <=l_NCO_OUT;
-	if ((l_CLOCK_50 ==0) && (CLOCK_50 ==1)) begin
+	//l_NCO_OUT <=l_NCO_OUT;
+	if ((lll_CLOCK_50 ==0) && (ll_CLOCK_50 ==1)) begin
 		l_NCO_OUT <=NCO_OUT;
 		ast_sink_valid <= 1'b1;
 	end

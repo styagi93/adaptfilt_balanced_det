@@ -71,15 +71,15 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A2        : power  :                   : 3.3V    : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A3        :        :                   :         : 8         :                
-ast_source_error[1]          : A4        : output : 3.3-V LVTTL       :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
 VCCIO8                       : A5        : power  :                   : 3.3V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 8         :                
+DFF_ast_source_data[0]       : A6        : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[30]      : A7        : output : 3.3-V LVTTL       :         : 8         : N              
 I2C_SDAT                     : A8        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : A9        : power  :                   : 3.3V    : 8         :                
-ast_source_data[1]           : A10       : output : 3.3-V LVTTL       :         : 8         : N              
-ast_source_data[31]          : A11       : output : 3.3-V LVTTL       :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 8         :                
+ast_source_data[4]           : A10       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[9]           : A11       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[12]          : A12       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : A13       : power  :                   : 3.3V    : 8         :                
 GND+                         : A14       :        :                   :         : 8         :                
 GND+                         : A15       :        :                   :         : 7         :                
@@ -97,8 +97,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A26       :        :                   :      
 VCCIO7                       : A27       : power  :                   : 2.5V    : 7         :                
 VCCIO2                       : AA1       : power  :                   : 3.3V    : 2         :                
 GND                          : AA2       : gnd    :                   :         :           :                
-DFF_ast_source_data[14]      : AA3       : output : 3.3-V LVTTL       :         : 2         : N              
-ast_source_data[18]          : AA4       : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA3       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA4       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA5       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA6       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA7       :        :                   :         : 2         :                
@@ -123,17 +123,17 @@ HEX2[0]                      : AA25      : output : 2.5 V             :         
 HEX2[1]                      : AA26      : output : 2.5 V             :         : 5         : Y              
 GND                          : AA27      : gnd    :                   :         :           :                
 VCCIO5                       : AA28      : power  :                   : 2.5V    : 5         :                
-DFF_ast_source_data[31]      : AB1       : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[15]      : AB2       : output : 3.3-V LVTTL       :         : 2         : N              
-ast_source_data[12]          : AB3       : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB2       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB5       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB6       :        :                   :         : 2         :                
-DFF_ast_source_data[22]      : AB7       : output : 3.3-V LVTTL       :         : 3         : N              
-DFF_ast_source_data[30]      : AB8       : output : 3.3-V LVTTL       :         : 3         : N              
-DFF_ast_source_data[21]      : AB9       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB7       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 3         :                
 FL_ADDR[9]                   : AB10      : output : 3.3-V LVTTL       :         : 3         : Y              
-DFF_ast_source_data[2]       : AB11      : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB11      :        :                   :         : 3         :                
 FL_ADDR[8]                   : AB12      : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_ADDR[7]                   : AB13      : output : 3.3-V LVTTL       :         : 3         : Y              
 SD_DAT[2]                    : AB14      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
@@ -151,21 +151,21 @@ SW[9]                        : AB25      : input  : 2.5 V             :         
 SW[7]                        : AB26      : input  : 2.5 V             :         : 5         : Y              
 SW[4]                        : AB27      : input  : 2.5 V             :         : 5         : Y              
 SW[0]                        : AB28      : input  : 2.5 V             :         : 5         : Y              
-DFF_ast_source_data[29]      : AC1       : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[20]      : AC2       : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[16]      : AC3       : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC2       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC3       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC4       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC5       :        :                   :         : 2         :                
 GND                          : AC6       : gnd    :                   :         :           :                
-DFF_ast_source_data[17]      : AC7       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC7       :        :                   :         : 3         :                
 FL_ADDR[14]                  : AC8       : output : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : AC9       : gnd    :                   :         :           :                
 FL_WE_N                      : AC10      : output : 3.3-V LVTTL       :         : 3         : Y              
-ast_source_data[23]          : AC11      : output : 3.3-V LVTTL       :         : 3         : N              
+ast_source_data[18]          : AC11      : output : 3.3-V LVTTL       :         : 3         : N              
 FL_ADDR[18]                  : AC12      : output : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : AC13      : gnd    :                   :         :           :                
 SD_DAT[3]                    : AC14      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-ast_source_data[24]          : AC15      : output : 3.3-V LVTTL       :         : 4         : N              
+ast_source_data[2]           : AC15      : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : AC16      : gnd    :                   :         :           :                
 HEX6[6]                      : AC17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[1]                      : AC18      : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -179,9 +179,9 @@ SW[8]                        : AC25      : input  : 2.5 V             :         
 SW[5]                        : AC26      : input  : 2.5 V             :         : 5         : Y              
 SW[2]                        : AC27      : input  : 2.5 V             :         : 5         : Y              
 SW[1]                        : AC28      : input  : 2.5 V             :         : 5         : Y              
-DFF_ast_source_data[12]      : AD1       : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[28]      : AD2       : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[5]       : AD3       : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD2       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD3       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD4       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD5       :        :                   :         : 3         :                
 VCCIO3                       : AD6       : power  :                   : 3.3V    : 3         :                
@@ -193,7 +193,7 @@ FL_ADDR[22]                  : AD11      : output : 3.3-V LVTTL       :         
 FL_ADDR[19]                  : AD12      : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : AD13      : power  :                   : 3.3V    : 3         :                
 SD_CMD                       : AD14      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-ast_source_data[6]           : AD15      : output : 3.3-V LVTTL       :         : 4         : N              
+ast_source_data[7]           : AD15      : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : AD16      : power  :                   : 3.3V    : 4         :                
 HEX7[0]                      : AD17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[0]                      : AD18      : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -207,22 +207,22 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AD25      :        :                   :      
 SW[6]                        : AD26      : input  : 2.5 V             :         : 5         : Y              
 SW[3]                        : AD27      : input  : 2.5 V             :         : 5         : Y              
 CLKOUT0                      : AD28      : output : 2.5 V             :         : 5         : Y              
-ast_source_data[13]          : AE1       : output : 3.3-V LVTTL       :         : 2         : N              
-ast_source_data[26]          : AE2       : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE2       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE3       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE4       :        :                   :         : 3         :                
 CLOCK_200                    : AE5       : output : 3.3-V LVTTL       :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE6       :        :                   :         : 3         :                
-DFF_ast_source_data[25]      : AE7       : output : 3.3-V LVTTL       :         : 3         : N              
-ast_source_data[15]          : AE8       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE7       :        :                   :         : 3         :                
+ast_source_error[1]          : AE8       : output : 3.3-V LVTTL       :         : 3         : N              
 FL_ADDR[10]                  : AE9       : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_ADDR[20]                  : AE10      : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_RST_N                     : AE11      : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_WP_N                      : AE12      : output : 3.3-V LVTTL       :         : 3         : Y              
 SD_CLK                       : AE13      : output : 3.3-V LVTTL       :         : 3         : Y              
 SD_DAT[0]                    : AE14      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-ast_source_data[29]          : AE15      : output : 3.3-V LVTTL       :         : 4         : N              
-ast_source_data[30]          : AE16      : output : 3.3-V LVTTL       :         : 4         : N              
+ast_source_data[14]          : AE15      : output : 3.3-V LVTTL       :         : 4         : N              
+ast_source_data[13]          : AE16      : output : 3.3-V LVTTL       :         : 4         : N              
 HEX7[1]                      : AE17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX4[6]                      : AE18      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX4[4]                      : AE19      : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -241,16 +241,16 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AF3       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF5       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF6       :        :                   :         : 3         :                
-DFF_ast_source_data[18]      : AF7       : output : 3.3-V LVTTL       :         : 3         : N              
-DFF_ast_source_data[11]      : AF8       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF7       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF8       :        :                   :         : 3         :                
 FL_ADDR[11]                  : AF9       : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_DQ[1]                     : AF10      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 FL_DQ[4]                     : AF11      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 FL_DQ[7]                     : AF12      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 SD_DAT[1]                    : AF13      : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 SD_WP_N                      : AF14      : input  : 3.3-V LVTTL       :         : 3         : Y              
-ast_source_data[17]          : AF15      : output : 3.3-V LVTTL       :         : 4         : N              
-ast_source_data[22]          : AF16      : output : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF15      :        :                   :         : 4         :                
+ast_source_data[15]          : AF16      : output : 3.3-V LVTTL       :         : 4         : N              
 HEX7[4]                      : AF17      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX5[5]                      : AF18      : output : 3.3-V LVTTL       :         : 4         : Y              
 HEX4[5]                      : AF19      : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -266,9 +266,9 @@ GND                          : AF28      : gnd    :                   :         
 VCCIO2                       : AG1       : power  :                   : 3.3V    : 2         :                
 GND                          : AG2       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG3       :        :                   :         : 3         :                
-DFF_ast_source_data[6]       : AG4       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG4       :        :                   :         : 3         :                
 GND                          : AG5       : gnd    :                   :         :           :                
-DFF_ast_source_data[4]       : AG6       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG6       :        :                   :         : 3         :                
 FL_CE_N                      : AG7       : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_OE_N                      : AG8       : output : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : AG9       : gnd    :                   :         :           :                
@@ -284,7 +284,7 @@ HEX7[5]                      : AG18      : output : 3.3-V LVTTL       :         
 HEX5[4]                      : AG19      : output : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : AG20      : gnd    :                   :         :           :                
 HEX4[2]                      : AG21      : output : 3.3-V LVTTL       :         : 4         : Y              
-ast_source_data[21]          : AG22      : output : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG22      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4         :                
 GND                          : AG24      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 4         :                
@@ -293,9 +293,9 @@ GND                          : AG27      : gnd    :                   :         
 VCCIO5                       : AG28      : power  :                   : 2.5V    : 5         :                
 VCCIO3                       : AH2       : power  :                   : 3.3V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH3       :        :                   :         : 3         :                
-DFF_ast_source_data[13]      : AH4       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH4       :        :                   :         : 3         :                
 VCCIO3                       : AH5       : power  :                   : 3.3V    : 3         :                
-DFF_ast_source_data[27]      : AH6       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH6       :        :                   :         : 3         :                
 FL_ADDR[1]                   : AH7       : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_DQ[0]                     : AH8       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : AH9       : power  :                   : 3.3V    : 3         :                
@@ -322,12 +322,12 @@ GND                          : B2        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 8         :                
 GND                          : B5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8         :                
+DFF_ast_source_data[16]      : B6        : output : 3.3-V LVTTL       :         : 8         : N              
 I2C_SCLK                     : B7        : output : 3.3-V LVTTL       :         : 8         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B8        :        :                   :         : 8         :                
+DFF_ast_source_data[5]       : B8        : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : B9        : gnd    :                   :         :           :                
-ast_source_data[0]           : B10       : output : 3.3-V LVTTL       :         : 8         : N              
-ast_source_data[4]           : B11       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[1]           : B10       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[6]           : B11       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : B12       : gnd    :                   :         :           :                
 GND                          : B13       : gnd    :                   :         :           :                
 GND+                         : B14       :        :                   :         : 8         :                
@@ -351,14 +351,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : C4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 8         :                
-ast_source_data[7]           : C10       : output : 3.3-V LVTTL       :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C11       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C12       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C13       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 8         :                
+DFF_ast_source_data[14]      : C7        : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[27]      : C8        : output : 3.3-V LVTTL       :         : 8         : N              
+NCO_OUT[11]                  : C9        : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[22]          : C10       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[31]      : C11       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[3]           : C12       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[30]          : C13       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[31]          : C14       : output : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C17       :        :                   :         : 7         :                
@@ -378,15 +378,15 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :      
 GND                          : D3        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D7        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :         : 8         :                
-ast_source_data[27]          : D10       : output : 3.3-V LVTTL       :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D11       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 8         :                
+DFF_ast_source_data[15]      : D6        : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[17]      : D7        : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[28]      : D8        : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[3]       : D9        : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[21]      : D10       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[7]       : D11       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[5]           : D12       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[29]          : D13       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[24]          : D14       : output : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D16       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7         :                
@@ -407,14 +407,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 8         :                
 VCCIO8                       : E6        : power  :                   : 3.3V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
+ast_source_data[10]          : E7        : output : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E8        :        :                   :         : 8         :                
 VCCIO8                       : E9        : power  :                   : 3.3V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E11       :        :                   :         : 8         :                
-ast_source_data[25]          : E12       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[20]      : E10       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[19]      : E11       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[12]      : E12       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : E13       : power  :                   : 3.3V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 8         :                
+ast_source_data[25]          : E14       : output : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 7         :                
 VCCIO7                       : E16       : power  :                   : 2.5V    : 7         :                
 HEX0[2]                      : E17       : output : 2.5 V             :         : 7         : Y              
@@ -435,14 +435,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :      
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : F4        : input  : 3.3-V LVTTL       :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1         :                
 GND                          : F6        : gnd    :                   :         :           :                
-ast_source_error[0]          : F7        : output : 3.3-V LVTTL       :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8         :                
 GND                          : F9        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F10       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F11       :        :                   :         : 8         :                
-ast_source_data[3]           : F12       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[24]      : F10       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[23]      : F11       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[9]       : F12       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : F13       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 8         :                
+ast_source_valid             : F14       : output : 3.3-V LVTTL       :         : 8         : N              
 LEDR[14]                     : F15       : output : 2.5 V             :         : 7         : Y              
 GND                          : F16       : gnd    :                   :         :           :                
 LEDG[8]                      : F17       : output : 2.5 V             :         : 7         : Y              
@@ -457,20 +457,20 @@ ADB_D[10]                    : F25       : input  : 2.5 V             :         
 ADB_D[7]                     : F26       : input  : 2.5 V             :         : 6         : Y              
 ADA_D[7]                     : F27       : input  : 2.5 V             :         : 6         : Y              
 ADA_D[6]                     : F28       : input  : 2.5 V             :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G2        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G3        :        :                   :         : 1         :                
+ast_source_data[32]          : G1        : output : 3.3-V LVTTL       :         : 1         : N              
+ast_source_data[19]          : G2        : output : 3.3-V LVTTL       :         : 1         : N              
+ast_source_error[0]          : G3        : output : 3.3-V LVTTL       :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G4        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G6        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G9        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G10       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G11       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G12       :        :                   :         : 8         :                
-ast_source_data[28]          : G13       : output : 3.3-V LVTTL       :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 8         :                
+DFF_ast_source_data[2]       : G9        : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[18]      : G10       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[11]      : G11       : output : 3.3-V LVTTL       :         : 8         : N              
+DFF_ast_source_data[4]       : G12       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[21]          : G13       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[27]          : G14       : output : 3.3-V LVTTL       :         : 8         : N              
 LEDR[15]                     : G15       : output : 2.5 V             :         : 7         : Y              
 LEDR[16]                     : G16       : output : 2.5 V             :         : 7         : Y              
 LEDR[9]                      : G17       : output : 2.5 V             :         : 7         : Y              
@@ -494,11 +494,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : H6        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H8        :        :                   :         : 8         :                
 GNDA3                        : H9        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H10       :        :                   :         : 8         :                
+DFF_ast_source_data[29]      : H10       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : H11       : power  :                   : 3.3V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H12       :        :                   :         : 8         :                
-ast_source_data[5]           : H13       : output : 3.3-V LVTTL       :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 8         :                
+DFF_ast_source_data[25]      : H12       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[0]           : H13       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[23]          : H14       : output : 3.3-V LVTTL       :         : 8         : N              
 LEDR[17]                     : H15       : output : 2.5 V             :         : 7         : Y              
 LEDR[11]                     : H16       : output : 2.5 V             :         : 7         : Y              
 LEDR[13]                     : H17       : output : 2.5 V             :         : 7         : Y              
@@ -517,16 +517,16 @@ GND+                         : J1        :        :                   :         
 GND                          : J2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J3        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J4        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J5        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J6        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 1         :                
+DFF_ast_source_data[22]      : J5        : output : 3.3-V LVTTL       :         : 1         : N              
+DFF_ast_source_data[10]      : J6        : output : 3.3-V LVTTL       :         : 1         : N              
+DFF_ast_source_data[26]      : J7        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCA3                        : J8        : power  :                   : 2.5V    :           :                
 VCCD_PLL3                    : J9        : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J10       :        :                   :         : 8         :                
+DFF_ast_source_data[6]       : J10       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : J11       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J12       :        :                   :         : 8         :                
-ast_source_data[32]          : J13       : output : 3.3-V LVTTL       :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J14       :        :                   :         : 8         :                
+ast_source_data[28]          : J12       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[16]          : J13       : output : 3.3-V LVTTL       :         : 8         : N              
+ast_source_data[17]          : J14       : output : 3.3-V LVTTL       :         : 8         : N              
 LEDR[10]                     : J15       : output : 2.5 V             :         : 7         : Y              
 LEDR[12]                     : J16       : output : 2.5 V             :         : 7         : Y              
 LEDR[8]                      : J17       : output : 2.5 V             :         : 7         : Y              
@@ -543,12 +543,12 @@ XT_IN_P                      : J27       : input  : 2.5 V             :         
 XT_IN_N                      : J28       : input  : 2.5 V             :         : 6         : Y              
 LCD_DATA[4]                  : K1        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
 LCD_DATA[5]                  : K2        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K3        :        :                   :         : 1         :                
+ast_source_data[8]           : K3        : output : 3.3-V LVTTL       :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K4        :        :                   :         : 1         :                
 VCCIO1                       : K5        : power  :                   : 3.3V    : 1         :                
 GND                          : K6        : gnd    :                   :         :           :                
 LCD_DATA[3]                  : K7        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1         :                
+ast_source_data[26]          : K8        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCCINT                       : K11       : power  :                   : 1.2V    :           :                
@@ -575,8 +575,8 @@ LCD_DATA[0]                  : L3        : bidir  : 3.3-V LVTTL       :         
 LCD_EN                       : L4        : output : 3.3-V LVTTL       :         : 1         : Y              
 LCD_ON                       : L5        : output : 3.3-V LVTTL       :         : 1         : Y              
 LCD_BLON                     : L6        : output : 3.3-V LVTTL       :         : 1         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1         :                
+DFF_ast_source_data[1]       : L7        : output : 3.3-V LVTTL       :         : 1         : N              
+DFF_ast_source_data[32]      : L8        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : L9        : gnd    :                   :         :           :                
 VCCINT                       : L10       : power  :                   : 1.2V    :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -600,11 +600,11 @@ DA[6]                        : L28       : output : 2.5 V             :         
 LCD_RW                       : M1        : output : 3.3-V LVTTL       :         : 1         : Y              
 LCD_RS                       : M2        : output : 3.3-V LVTTL       :         : 1         : Y              
 LCD_DATA[6]                  : M3        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 1         :                
+ast_source_data[11]          : M4        : output : 3.3-V LVTTL       :         : 1         : N              
 LCD_DATA[7]                  : M5        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
 nSTATUS                      : M6        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 1         :                
+NCO_OUT[8]                   : M7        : output : 3.3-V LVTTL       :         : 1         : N              
+NCO_OUT[9]                   : M8        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
 GND                          : M10       : gnd    :                   :         :           :                
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
@@ -627,12 +627,12 @@ ADA_D[1]                     : M27       : input  : 2.5 V             :         
 ADA_D[0]                     : M28       : input  : 2.5 V             :         : 6         : Y              
 VCCIO1                       : N1        : power  :                   : 3.3V    : 1         :                
 GND                          : N2        : gnd    :                   :         :           :                
-NCO_OUT[8]                   : N3        : output : 3.3-V LVTTL       :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 1         :                
+DFF_ast_source_data[8]       : N3        : output : 3.3-V LVTTL       :         : 1         : N              
+DFF_ast_source_data[13]      : N4        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : N5        : power  :                   : 3.3V    : 1         :                
 GND                          : N6        : gnd    :                   :         :           :                
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : N7        : input  : 3.3-V LVTTL       :         : 1         : N              
-NCO_OUT[7]                   : N8        : output : 3.3-V LVTTL       :         : 1         : N              
+NCO_OUT[5]                   : N8        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : N9        : gnd    :                   :         :           :                
 VCCINT                       : N10       : power  :                   : 1.2V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
@@ -653,8 +653,8 @@ DB[5]                        : N25       : output : 2.5 V             :         
 DB[4]                        : N26       : output : 2.5 V             :         : 6         : Y              
 GND                          : N27       : gnd    :                   :         :           :                
 VCCIO6                       : N28       : power  :                   : 2.5V    : 6         :                
-NCO_OUT[9]                   : P1        : output : 3.3-V LVTTL       :         : 1         : N              
-NCO_OUT[6]                   : P2        : output : 3.3-V LVTTL       :         : 1         : N              
+NCO_OUT[3]                   : P1        : output : 3.3-V LVTTL       :         : 1         : N              
+NCO_OUT[0]                   : P2        : output : 3.3-V LVTTL       :         : 1         : N              
 ~ALTERA_DCLK~                : P3        : output : 3.3-V LVTTL       :         : 1         : N              
 nCONFIG                      : P4        :        :                   :         : 1         :                
 altera_reserved_tck          : P5        : input  : 3.3-V LVTTL       :         : 1         : N              
@@ -682,12 +682,12 @@ DB[2]                        : P26       : output : 2.5 V             :         
 DA[11]                       : P27       : output : 2.5 V             :         : 6         : Y              
 DA[10]                       : P28       : output : 2.5 V             :         : 6         : Y              
 NCO_OUT[2]                   : R1        : output : 3.3-V LVTTL       :         : 2         : N              
-NCO_OUT[0]                   : R2        : output : 3.3-V LVTTL       :         : 2         : N              
-NCO_OUT[4]                   : R3        : output : 3.3-V LVTTL       :         : 2         : N              
-NCO_OUT[10]                  : R4        : output : 3.3-V LVTTL       :         : 2         : N              
-ast_source_valid             : R5        : output : 3.3-V LVTTL       :         : 2         : N              
-NCO_OUT[5]                   : R6        : output : 3.3-V LVTTL       :         : 2         : N              
-clk_1khz                     : R7        : output : 3.3-V LVTTL       :         : 2         : N              
+NCO_OUT[4]                   : R2        : output : 3.3-V LVTTL       :         : 2         : N              
+clk_1khz                     : R3        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 2         :                
+NCO_OUT[6]                   : R6        : output : 3.3-V LVTTL       :         : 2         : N              
+NCO_OUT[7]                   : R7        : output : 3.3-V LVTTL       :         : 2         : N              
 nCE                          : R8        :        :                   :         : 1         :                
 GND                          : R9        : gnd    :                   :         :           :                
 VCCINT                       : R10       : power  :                   : 1.2V    :           :                
@@ -711,12 +711,12 @@ DA[3]                        : R27       : output : 2.5 V             :         
 DA[2]                        : R28       : output : 2.5 V             :         : 5         : Y              
 VCCIO2                       : T1        : power  :                   : 3.3V    : 2         :                
 GND                          : T2        : gnd    :                   :         :           :                
-DFF_ast_source_data[8]       : T3        : output : 3.3-V LVTTL       :         : 2         : N              
-NCO_OUT[1]                   : T4        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 2         :                
 VCCIO2                       : T5        : power  :                   : 3.3V    : 2         :                
 GND                          : T6        : gnd    :                   :         :           :                
-ast_source_data[10]          : T7        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[26]      : T8        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T8        :        :                   :         : 2         :                
 VCCINT                       : T9        : power  :                   : 1.2V    :           :                
 GND                          : T10       : gnd    :                   :         :           :                
 VCCINT                       : T11       : power  :                   : 1.2V    :           :                
@@ -737,14 +737,14 @@ DB[11]                       : T25       : output : 2.5 V             :         
 DB[10]                       : T26       : output : 2.5 V             :         : 5         : Y              
 GND                          : T27       : gnd    :                   :         :           :                
 VCCIO5                       : T28       : power  :                   : 2.5V    : 5         :                
-ast_source_data[8]           : U1        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[9]       : U2        : output : 3.3-V LVTTL       :         : 2         : N              
-NCO_OUT[11]                  : U3        : output : 3.3-V LVTTL       :         : 2         : N              
-NCO_OUT[3]                   : U4        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[19]      : U5        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[24]      : U6        : output : 3.3-V LVTTL       :         : 2         : N              
-ast_source_data[19]          : U7        : output : 3.3-V LVTTL       :         : 2         : N              
-ast_source_data[9]           : U8        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U1        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U2        :        :                   :         : 2         :                
+NCO_OUT[10]                  : U3        : output : 3.3-V LVTTL       :         : 2         : N              
+NCO_OUT[1]                   : U4        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U8        :        :                   :         : 2         :                
 GND                          : U9        : gnd    :                   :         :           :                
 VCCINT                       : U10       : power  :                   : 1.2V    :           :                
 GND                          : U11       : gnd    :                   :         :           :                
@@ -765,14 +765,14 @@ DB[9]                        : U25       : output : 2.5 V             :         
 DB[8]                        : U26       : output : 2.5 V             :         : 5         : Y              
 DA[1]                        : U27       : output : 2.5 V             :         : 5         : Y              
 DA[0]                        : U28       : output : 2.5 V             :         : 5         : Y              
-DFF_ast_source_data[32]      : V1        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[1]       : V2        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[7]       : V3        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[10]      : V4        : output : 3.3-V LVTTL       :         : 2         : N              
-ast_source_data[2]           : V5        : output : 3.3-V LVTTL       :         : 2         : N              
-ast_source_data[20]          : V6        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V1        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V4        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V6        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 2         :                
-ast_source_data[16]          : V8        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V8        :        :                   :         : 2         :                
 VCCINT                       : V9        : power  :                   : 1.2V    :           :                
 GND                          : V10       : gnd    :                   :         :           :                
 VCCINT                       : V11       : power  :                   : 1.2V    :           :                
@@ -793,8 +793,8 @@ DA[5]                        : V25       : output : 2.5 V             :         
 DA[4]                        : V26       : output : 2.5 V             :         : 5         : Y              
 AIC_DIN                      : V27       : output : 2.5 V             :         : 5         : Y              
 AIC_LRCIN                    : V28       : bidir  : 2.5 V             :         : 5         : Y              
-DFF_ast_source_data[3]       : W1        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[23]      : W2        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W1        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W4        :        :                   :         : 2         :                
 VCCIO2                       : W5        : power  :                   : 3.3V    : 2         :                
@@ -823,8 +823,8 @@ HEX2[5]                      : W27       : output : 2.5 V             :         
 HEX2[6]                      : W28       : output : 2.5 V             :         : 5         : Y              
 FL_RY                        : Y1        : input  : 3.3-V LVTTL       :         : 2         : Y              
 CLOCK_50                     : Y2        : input  : 3.3-V LVTTL       :         : 2         : Y              
-ast_source_data[11]          : Y3        : output : 3.3-V LVTTL       :         : 2         : N              
-DFF_ast_source_data[0]       : Y4        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y5        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :         : 2         :                
@@ -835,7 +835,7 @@ GND                          : Y11       : gnd    :                   :         
 FL_ADDR[4]                   : Y12       : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_ADDR[2]                   : Y13       : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_ADDR[3]                   : Y14       : output : 3.3-V LVTTL       :         : 3         : Y              
-ast_source_data[14]          : Y15       : output : 3.3-V LVTTL       :         : 3         : N              
+ast_source_data[20]          : Y15       : output : 3.3-V LVTTL       :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4         :                
 GND                          : Y18       : gnd    :                   :         :           :                
