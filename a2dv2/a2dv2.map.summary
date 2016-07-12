@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Jul 01 17:49:24 2016
+Analysis & Synthesis Status : Successful - Tue Jul 12 16:35:51 2016
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : a2dv2
 Top-level Entity Name : a2dv2
 Family : Cyclone IV E
-Total logic elements : 4,413
-    Total combinational functions : 2,180
-    Dedicated logic registers : 3,592
-Total registers : 3592
-Total pins : 332
+Total logic elements : 8,049
+    Total combinational functions : 4,687
+    Dedicated logic registers : 5,572
+Total registers : 5572
+Total pins : 365
 Total virtual pins : 0
-Total memory bits : 23,200
-Embedded Multiplier 9-bit elements : 8
-Total PLLs : 1
+Total memory bits : 45,056
+Embedded Multiplier 9-bit elements : 20
+Total PLLs : 0

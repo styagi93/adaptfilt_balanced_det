@@ -95,7 +95,8 @@ module a2dv2(
 	ast_source_valid,
 	ast_source_error,
 	DFF_ast_source_data,
-	CLOCK_200	
+	CLOCK_450,
+	test_out_data
 );
 
 //=======================================================
@@ -205,7 +206,7 @@ reg			[13:0]	a2da_data;
 //////////// NCO //////////
 
 output reg clk_1khz=0;
-output CLOCK_200;
+output CLOCK_450;
 reg [15:0] counter = 16'd0;
 reg [5:0] async_counter= 6'd0;
 output reg [11:0] NCO_OUT;
@@ -246,74 +247,75 @@ parameter IDLE  = 2'd0,COUNT_ON = 2'd1,WRITE_COEFF = 2'd2;
 reg switch_prev = 0;
 reg [5:0] i = 6'd0;
 reg ast_sink_valid;
+output [32:0] test_out_data;
 
 
 initial begin
-mem[0]	=	-	16'sd	1	;
-mem[1]	=		16'sd	63	;
-mem[2]	=	-	16'sd	89	;
-mem[3]	=		16'sd	3	;
-mem[4]	=		16'sd	227	;
-mem[5]	=	-	16'sd	435	;
-mem[6]	=		16'sd	301	;
-mem[7]	=		16'sd	349	;
-mem[8]	=	-	16'sd	1202	;
-mem[9]	=		16'sd	1430	;
-mem[10]	=	-	16'sd	247	;
-mem[11]	=	-	16'sd	2235	;
-mem[12]	=		16'sd	4504	;
-mem[13]	=	-	16'sd	3920	;
-mem[14]	=	-	16'sd	3006	;
-mem[15]	=		16'sd	32767	;
-mem[16]	=		16'sd	32767	;
-mem[17]	=	-	16'sd	3006	;
-mem[18]	=	-	16'sd	3920	;
-mem[19]	=		16'sd	4504	;
-mem[20]	=	-	16'sd	2235	;
-mem[21]	=	-	16'sd	247	;
-mem[22]	=		16'sd	1430	;
-mem[23]	=	-	16'sd	1202	;
-mem[24]	=		16'sd	349	;
-mem[25]	=		16'sd	301	;
-mem[26]	=	-	16'sd	435	;
-mem[27]	=		16'sd	227	;
-mem[28]	=		16'sd	3	;
-mem[29]	=	-	16'sd	89	;
-mem[30]	=		16'sd	63	;
-mem[31]	=	-	16'sd	1	;
+mem[0]	<=	-	16'sd	1	;
+mem[1]	<=		16'sd	63	;
+mem[2]	<=	-	16'sd	89	;
+mem[3]	<=		16'sd	3	;
+mem[4]	<=		16'sd	227	;
+mem[5]	<=	-	16'sd	435	;
+mem[6]	<=		16'sd	301	;
+mem[7]	<=		16'sd	349	;
+mem[8]	<=	-	16'sd	1202	;
+mem[9]	<=		16'sd	1430	;
+mem[10]	<=	-	16'sd	247	;
+mem[11]	<=	-	16'sd	2235	;
+mem[12]	<=		16'sd	4504	;
+mem[13]	<=	-	16'sd	3920	;
+mem[14]	<=	-	16'sd	3006	;
+mem[15]	<=		16'sd	32767	;
+mem[16]	<=		16'sd	32767	;
+mem[17]	<=	-	16'sd	3006	;
+mem[18]	<=	-	16'sd	3920	;
+mem[19]	<=		16'sd	4504	;
+mem[20]	<=	-	16'sd	2235	;
+mem[21]	<=	-	16'sd	247	;
+mem[22]	<=		16'sd	1430	;
+mem[23]	<=	-	16'sd	1202	;
+mem[24]	<=		16'sd	349	;
+mem[25]	<=		16'sd	301	;
+mem[26]	<=	-	16'sd	435	;
+mem[27]	<=		16'sd	227	;
+mem[28]	<=		16'sd	3	;
+mem[29]	<=	-	16'sd	89	;
+mem[30]	<=		16'sd	63	;
+mem[31]	<=	-	16'sd	1	;
 
-mem1[0]	=		16'sd	309	;
-mem1[1]	=	-	16'sd	226	;
-mem1[2]	=	-	16'sd	47	;
-mem1[3]	=	-	16'sd	349	;
-mem1[4]	=	-	16'sd	1037	;
-mem1[5]	=		16'sd	1932	;
-mem1[6]	=		16'sd	2737	;
-mem1[7]	=	-	16'sd	2959	;
-mem1[8]	=	-	16'sd	2021	;
-mem1[9]	=	-	16'sd	556	;
-mem1[10]	=	-	16'sd	4962	;
-mem1[11]	=		16'sd	10950	;
-mem1[12]	=		16'sd	17813	;
-mem1[13]	=	-	16'sd	24493	;
-mem1[14]	=	-	16'sd	29815	;
-mem1[15]	=		16'sd	32767	;
-mem1[16]	=		16'sd	32767	;
-mem1[17]	=	-	16'sd	29815	;
-mem1[18]	=	-	16'sd	24493	;
-mem1[19]	=		16'sd	17813	;
-mem1[20]	=		16'sd	10950	;
-mem1[21]	=	-	16'sd	4962	;
-mem1[22]	=	-	16'sd	556	;
-mem1[23]	=	-	16'sd	2021	;
-mem1[24]	=	-	16'sd	2959	;
-mem1[25]	=		16'sd	2737	;
-mem1[26]	=		16'sd	1932	;
-mem1[27]	=	-	16'sd	1037	;
-mem1[28]	=	-	16'sd	349	;
-mem1[29]	=	-	16'sd	47	;
-mem1[30]	=	-	16'sd	226	;
-mem1[31]	=		16'sd	309	;
+mem1[0]	<=		16'sd	309	;
+mem1[1]	<=	-	16'sd	226	;
+mem1[2]	<=	-	16'sd	47	;
+mem1[3]	<=	-	16'sd	349	;
+mem1[4]	<=	-	16'sd	1037	;
+mem1[5]	<=		16'sd	1932	;
+mem1[6]	<=		16'sd	2737	;
+mem1[7]	<=	-	16'sd	2959	;
+mem1[8]	<=	-	16'sd	2021	;
+mem1[9]	<=	-	16'sd	556	;
+mem1[10]	<=	-	16'sd	4962	;
+mem1[11]	<=		16'sd	10950	;
+mem1[12]	<=		16'sd	17813	;
+mem1[13]	<=	-	16'sd	24493	;
+mem1[14]	<=	-	16'sd	29815	;
+mem1[15]	<=		16'sd	32767	;
+mem1[16]	<=		16'sd	32767	;
+mem1[17]	<=	-	16'sd	29815	;
+mem1[18]	<=	-	16'sd	24493	;
+mem1[19]	<=		16'sd	17813	;
+mem1[20]	<=		16'sd	10950	;
+mem1[21]	<=	-	16'sd	4962	;
+mem1[22]	<=	-	16'sd	556	;
+mem1[23]	<=	-	16'sd	2021	;
+mem1[24]	<=	-	16'sd	2959	;
+mem1[25]	<=		16'sd	2737	;
+mem1[26]	<=		16'sd	1932	;
+mem1[27]	<=	-	16'sd	1037	;
+mem1[28]	<=	-	16'sd	349	;
+mem1[29]	<=	-	16'sd	47	;
+mem1[30]	<=	-	16'sd	226	;
+mem1[31]	<=		16'sd	309	;
 
 
 end
@@ -368,11 +370,11 @@ a2d_data_a	a2d_data_a_inst(
 nco abc_inst (.clk			(CLOCK_50),
 			.phase_incr (NCO_IN),
 			.cos_out  (NCO_OUT));
-			
+	/*		
 PLL_200MHz PLL_200MHz_inst (.inclk0(CLOCK_50),
-				.c0(CLOCK_200),
+				.c0(CLOCK_450),
 				.locked());			
-	
+	*/
 always @(posedge CLOCK_50)
 begin
 	if (counter == 16'd2500)
@@ -399,7 +401,7 @@ begin
 	end
 end 
 
-/*
+
 fir_IP_0002 fir_ip_inst (
 		.clk              (CLOCK_50),              //                     clk.clk
 		.reset_n          (reset_n),          //                     rst.reset_n
@@ -410,10 +412,10 @@ fir_IP_0002 fir_ip_inst (
 		.ast_source_valid (ast_source_valid), //                        .valid
 		.ast_source_error (ast_source_error)  //                        .error
 	);
-*/
-	
+
+	/*
 	fir_IP_0002 fir_ip_inst (
-		.clk              (CLOCK_200),              //                     clk.clk
+		.clk              (CLOCK_450),              //                     clk.clk
 		.reset_n          (reset_n),          //                     rst.reset_n
 		.ast_sink_data    (l_NCO_OUT),    //   avalon_streaming_sink.data
 		.ast_sink_valid   (ast_sink_valid),   //                        .valid
@@ -422,7 +424,7 @@ fir_IP_0002 fir_ip_inst (
 		.ast_source_valid (ast_source_valid), //                        .valid
 		.ast_source_error (ast_source_error),
 		//                        .error
-		.coeff_in_clk     (CLOCK_200),     //             coeff_clock.clk
+		.coeff_in_clk     (CLOCK_450),     //             coeff_clock.clk
 		.coeff_in_areset  (coeff_in_areset),  //             coeff_reset.reset_n
 		.coeff_in_address (coeff_in_address), //         avalon_mm_slave.address
 		.coeff_in_read    (coeff_in_read),    //                        .read
@@ -431,7 +433,7 @@ fir_IP_0002 fir_ip_inst (
 		.coeff_in_we      (coeff_in_we),      //                        .write
 		.coeff_in_data    (coeff_in_data)     //                        .writedata
 	);
-
+*/
 	
 /*
 	always @ (filter_change_sw)
@@ -477,7 +479,7 @@ begin
 	coeff_in_we <= 1'b0;
 	end
 end	*/
-
+/*
 // Adding debouncer
 debouncer debounce_sw17 (.clk (CLOCK_50), 
 						  	    .i (filter_change_sw), 
@@ -485,7 +487,7 @@ debouncer debounce_sw17 (.clk (CLOCK_50),
 
 								 
 // State machine for coeff reload
-always @(posedge CLOCK_200) begin
+always @(posedge CLOCK_450) begin
 
 case (state_f)
 
@@ -544,7 +546,7 @@ endcase
 end
 
 // to latch the filter's output; confine only to valid values
-always @(posedge CLOCK_200) begin
+always @(posedge CLOCK_450) begin
 l_ast_source_valid <= ast_source_valid;
 DFF_ast_source_data <= DFF_ast_source_data;
 	if ((l_ast_source_valid == 0) && (ast_source_valid == 1)) begin
@@ -553,7 +555,7 @@ DFF_ast_source_data <= DFF_ast_source_data;
 end 
 
 //to take care of sink_valid generation and latching NCO's o/p
-always @(posedge CLOCK_200) begin
+always @(posedge CLOCK_450) begin
 	l_CLOCK_50 <= CLOCK_50;
 	ll_CLOCK_50 <= l_CLOCK_50;
 	lll_CLOCK_50 <= ll_CLOCK_50;
@@ -565,5 +567,11 @@ always @(posedge CLOCK_200) begin
 	end
 end
 
+*/
+
+just_fir just_fir_inst(	.clk(CLOCK_50),
+								.reset(reset_n),
+								.x_in(NCO_OUT),
+								.y_out(test_out_data));
 
 endmodule
