@@ -1,0 +1,25 @@
+set_global_assignment -entity "fir_IP" -library "lib_fir_IP" -name IP_TOOL_NAME "altera_fir_compiler_ii"
+set_global_assignment -entity "fir_IP" -library "lib_fir_IP" -name IP_TOOL_VERSION "16.0"
+set_global_assignment -entity "fir_IP" -library "lib_fir_IP" -name IP_TOOL_ENV "mwpim"
+set_global_assignment -library "lib_fir_IP" -name SPD_FILE [file join $::quartus(sip_path) "fir_IP.spd"]
+
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/dspba_library_package.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/dspba_library.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/auk_dspip_math_pkg_hpfir.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/auk_dspip_lib_pkg_hpfir.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/auk_dspip_avalon_streaming_controller_hpfir.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/auk_dspip_avalon_streaming_sink_hpfir.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/auk_dspip_avalon_streaming_source_hpfir.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/auk_dspip_roundsat_hpfir.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/altera_avalon_sc_fifo.v"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_rtl_core.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_ast.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_nativelink.tcl"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_msim.tcl"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_tb.vhd"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_mlab.m"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_model.m"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_coef_int.txt"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_input.txt"]
+set_global_assignment -library "lib_fir_IP" -name MISC_FILE [file join $::quartus(sip_path) "fir_IP_sim/fir_IP_param.txt"]

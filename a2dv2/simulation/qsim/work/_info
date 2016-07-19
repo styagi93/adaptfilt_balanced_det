@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/simulation/qsim
+va2dv2
+Z1 !s110 1465241094
+!i10b 1
+!s100 HO<D<0hFO:K6:6HKVCl5i0
+IVCA<[4I_4jHW9bef^HZ>R1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1465241093
+8a2dv2.vo
+Fa2dv2.vo
+L0 32
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1465241094.000000
+!s107 a2dv2.vo|
+!s90 -work|work|a2dv2.vo|
+!i113 1
+Z5 o-work work
+va2dv2_vlg_vec_tst
+R1
+!i10b 1
+!s100 3Uz3G26kci<c^SJWz]NNi0
+IYdmO81cQ_H4Xi7Mo2<JP@1
+R2
+R0
+w1465241092
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5

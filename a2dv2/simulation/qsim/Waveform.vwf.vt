@@ -1,0 +1,236 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/06/2016 13:24:52"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          a2dv2
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module a2dv2_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [13:0] ADA_D;
+reg ADA_DCO;
+reg ADA_OR;
+reg [13:0] ADB_D;
+reg ADB_DCO;
+reg ADB_OR;
+reg treg_AD_SCLK;
+reg treg_AD_SDIO;
+reg treg_AIC_BCLK;
+reg AIC_DOUT;
+reg treg_AIC_LRCIN;
+reg treg_AIC_LRCOUT;
+reg CLKIN1;
+reg CLOCK2_50;
+reg CLOCK3_50;
+reg CLOCK_50;
+reg [7:0] treg_FL_DQ;
+reg FL_RY;
+reg treg_FPGA_CLK_A_N;
+reg treg_FPGA_CLK_A_P;
+reg treg_FPGA_CLK_B_N;
+reg treg_FPGA_CLK_B_P;
+reg treg_I2C_SDAT;
+reg treg_J1_152;
+reg [3:0] KEY;
+reg [7:0] treg_LCD_DATA;
+reg NCO_FREQ_DOWN;
+reg NCO_FREQ_UP;
+reg treg_SD_CMD;
+reg [3:0] treg_SD_DAT;
+reg SD_WP_N;
+reg [17:0] SW;
+reg XT_IN_N;
+reg XT_IN_P;
+// wires                                               
+wire ADA_OE;
+wire ADA_SPI_CS;
+wire ADB_OE;
+wire ADB_SPI_CS;
+wire AD_SCLK;
+wire AD_SDIO;
+wire AIC_BCLK;
+wire AIC_DIN;
+wire AIC_LRCIN;
+wire AIC_LRCOUT;
+wire AIC_SPI_CS;
+wire AIC_XCLK;
+wire CLKOUT0;
+wire [13:0] DA;
+wire [13:0] DB;
+wire [22:0] FL_ADDR;
+wire FL_CE_N;
+wire [7:0] FL_DQ;
+wire FL_OE_N;
+wire FL_RST_N;
+wire FL_WE_N;
+wire FL_WP_N;
+wire FPGA_CLK_A_N;
+wire FPGA_CLK_A_P;
+wire FPGA_CLK_B_N;
+wire FPGA_CLK_B_P;
+wire [6:0] HEX0;
+wire [6:0] HEX1;
+wire [6:0] HEX2;
+wire [6:0] HEX3;
+wire [6:0] HEX4;
+wire [6:0] HEX5;
+wire [6:0] HEX6;
+wire [6:0] HEX7;
+wire I2C_SCLK;
+wire I2C_SDAT;
+wire J1_152;
+wire LCD_BLON;
+wire [7:0] LCD_DATA;
+wire LCD_EN;
+wire LCD_ON;
+wire LCD_RS;
+wire LCD_RW;
+wire [8:0] LEDG;
+wire [17:0] LEDR;
+wire [11:0] NCO_OUT;
+wire SD_CLK;
+wire SD_CMD;
+wire [3:0] SD_DAT;
+
+// assign statements (if any)                          
+assign AD_SCLK = treg_AD_SCLK;
+assign AD_SDIO = treg_AD_SDIO;
+assign AIC_BCLK = treg_AIC_BCLK;
+assign AIC_LRCIN = treg_AIC_LRCIN;
+assign AIC_LRCOUT = treg_AIC_LRCOUT;
+assign FL_DQ = treg_FL_DQ;
+assign FPGA_CLK_A_N = treg_FPGA_CLK_A_N;
+assign FPGA_CLK_A_P = treg_FPGA_CLK_A_P;
+assign FPGA_CLK_B_N = treg_FPGA_CLK_B_N;
+assign FPGA_CLK_B_P = treg_FPGA_CLK_B_P;
+assign I2C_SDAT = treg_I2C_SDAT;
+assign J1_152 = treg_J1_152;
+assign LCD_DATA = treg_LCD_DATA;
+assign SD_CMD = treg_SD_CMD;
+assign SD_DAT = treg_SD_DAT;
+a2dv2 i1 (
+// port map - connection between master ports and signals/registers   
+	.ADA_D(ADA_D),
+	.ADA_DCO(ADA_DCO),
+	.ADA_OE(ADA_OE),
+	.ADA_OR(ADA_OR),
+	.ADA_SPI_CS(ADA_SPI_CS),
+	.ADB_D(ADB_D),
+	.ADB_DCO(ADB_DCO),
+	.ADB_OE(ADB_OE),
+	.ADB_OR(ADB_OR),
+	.ADB_SPI_CS(ADB_SPI_CS),
+	.AD_SCLK(AD_SCLK),
+	.AD_SDIO(AD_SDIO),
+	.AIC_BCLK(AIC_BCLK),
+	.AIC_DIN(AIC_DIN),
+	.AIC_DOUT(AIC_DOUT),
+	.AIC_LRCIN(AIC_LRCIN),
+	.AIC_LRCOUT(AIC_LRCOUT),
+	.AIC_SPI_CS(AIC_SPI_CS),
+	.AIC_XCLK(AIC_XCLK),
+	.CLKIN1(CLKIN1),
+	.CLKOUT0(CLKOUT0),
+	.CLOCK2_50(CLOCK2_50),
+	.CLOCK3_50(CLOCK3_50),
+	.CLOCK_50(CLOCK_50),
+	.DA(DA),
+	.DB(DB),
+	.FL_ADDR(FL_ADDR),
+	.FL_CE_N(FL_CE_N),
+	.FL_DQ(FL_DQ),
+	.FL_OE_N(FL_OE_N),
+	.FL_RST_N(FL_RST_N),
+	.FL_RY(FL_RY),
+	.FL_WE_N(FL_WE_N),
+	.FL_WP_N(FL_WP_N),
+	.FPGA_CLK_A_N(FPGA_CLK_A_N),
+	.FPGA_CLK_A_P(FPGA_CLK_A_P),
+	.FPGA_CLK_B_N(FPGA_CLK_B_N),
+	.FPGA_CLK_B_P(FPGA_CLK_B_P),
+	.HEX0(HEX0),
+	.HEX1(HEX1),
+	.HEX2(HEX2),
+	.HEX3(HEX3),
+	.HEX4(HEX4),
+	.HEX5(HEX5),
+	.HEX6(HEX6),
+	.HEX7(HEX7),
+	.I2C_SCLK(I2C_SCLK),
+	.I2C_SDAT(I2C_SDAT),
+	.J1_152(J1_152),
+	.KEY(KEY),
+	.LCD_BLON(LCD_BLON),
+	.LCD_DATA(LCD_DATA),
+	.LCD_EN(LCD_EN),
+	.LCD_ON(LCD_ON),
+	.LCD_RS(LCD_RS),
+	.LCD_RW(LCD_RW),
+	.LEDG(LEDG),
+	.LEDR(LEDR),
+	.NCO_FREQ_DOWN(NCO_FREQ_DOWN),
+	.NCO_FREQ_UP(NCO_FREQ_UP),
+	.NCO_OUT(NCO_OUT),
+	.SD_CLK(SD_CLK),
+	.SD_CMD(SD_CMD),
+	.SD_DAT(SD_DAT),
+	.SD_WP_N(SD_WP_N),
+	.SW(SW),
+	.XT_IN_N(XT_IN_N),
+	.XT_IN_P(XT_IN_P)
+);
+initial 
+begin 
+#3000000 $finish;
+end 
+
+// CLOCK_50
+always
+begin
+	CLOCK_50 = 1'b0;
+	CLOCK_50 = #5000 1'b1;
+	#5000;
+end 
+
+// NCO_FREQ_DOWN
+initial
+begin
+	NCO_FREQ_DOWN = 1'b0;
+	NCO_FREQ_DOWN = #720000 1'b1;
+	NCO_FREQ_DOWN = #880000 1'b0;
+end 
+
+// NCO_FREQ_UP
+initial
+begin
+	NCO_FREQ_UP = 1'b0;
+	NCO_FREQ_UP = #240000 1'b1;
+	NCO_FREQ_UP = #400000 1'b0;
+	NCO_FREQ_UP = #1040000 1'b1;
+	NCO_FREQ_UP = #1240000 1'b0;
+end 
+endmodule
+
