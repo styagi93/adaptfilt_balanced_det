@@ -11,8 +11,8 @@ module a2dv2(
 	CLOCK3_50,
 
 	//////////// LED //////////
-	LEDG,
-	LEDR,
+	//LEDG,
+	//LEDR,
 
 	//////////// KEY //////////
 	KEY,
@@ -21,22 +21,22 @@ module a2dv2(
 	SW,
 
 	//////////// SEG7 //////////
-	HEX0,
-	HEX1,
-	HEX2,
-	HEX3,
-	HEX4,
-	HEX5,
-	HEX6,
-	HEX7,
+	//HEX0,
+	//HEX1,
+	//HEX2,
+	//HEX3,
+	//HEX4,
+	//HEX5,
+	//HEX6,
+	//HEX7,
 
 	//////////// LCD //////////
-	LCD_BLON,
-	LCD_DATA,
-	LCD_EN,
-	LCD_ON,
-	LCD_RS,
-	LCD_RW,
+	//LCD_BLON,
+	//LCD_DATA,
+	//LCD_EN,
+	//LCD_ON,
+	//LCD_RS,
+	//LCD_RW,
 
 	//////////// SDCARD //////////
 	SD_CLK,
@@ -49,56 +49,56 @@ module a2dv2(
 	I2C_SDAT,
 
 	//////////// Flash //////////
-	FL_ADDR,
-	FL_CE_N,
+	//FL_ADDR,
+	//FL_CE_N,
 	FL_DQ,
-	FL_OE_N,
-	FL_RST_N,
+	//FL_OE_N,
+	//FL_RST_N,
 	FL_RY,
-	FL_WE_N,
-	FL_WP_N,
+	//FL_WE_N,
+	//FL_WP_N,
 
 	//////////// HSMC, HSMC connect to DCC - High Speed ADC/DAC //////////
-	AD_SCLK,
-	AD_SDIO,
-	ADA_D,
-	ADA_DCO,
-	ADA_OE,
-	ADA_OR,
-	ADA_SPI_CS,
-	ADB_D,
-	ADB_DCO,
-	ADB_OE,
-	ADB_OR,
-	ADB_SPI_CS,
-	AIC_BCLK,
-	AIC_DIN,
-	AIC_DOUT,
-	AIC_LRCIN,
-	AIC_LRCOUT,
-	AIC_SPI_CS,
-	AIC_XCLK,
-	CLKIN1,
-	CLKOUT0,
-	DA,
-	DB,
-	FPGA_CLK_A_N,
-	FPGA_CLK_A_P,
-	FPGA_CLK_B_N,
-	FPGA_CLK_B_P,
-	J1_152,
-	XT_IN_N,
-	XT_IN_P,
-	NCO_OUT,
+//	AD_SCLK,
+//	AD_SDIO,
+////	ADA_D,
+//	ADA_DCO,
+	//ADA_OE,
+//	ADA_OR,
+	//ADA_SPI_CS,
+//	ADB_D,
+//	ADB_DCO,
+	//ADB_OE,
+//	ADB_OR,
+	//ADB_SPI_CS,
+//	AIC_BCLK,
+	//AIC_DIN,
+//	AIC_DOUT,
+//	AIC_LRCIN,
+//	AIC_LRCOUT,
+	//AIC_SPI_CS,
+	//AIC_XCLK,
+//	CLKIN1,
+//	CLKOUT0,
+	//DA,
+	//DB,
+//	FPGA_CLK_A_N,
+//	FPGA_CLK_A_P,
+//	FPGA_CLK_B_N,
+//	FPGA_CLK_B_P,
+//	J1_152,
+//	XT_IN_N,
+//	XT_IN_P,
+//	NCO_OUT,
 	clk_1khz,
 //	ast_source_data,
-	ast_source_valid,
+//	ast_source_valid,
 //	ast_source_error,
 //	DFF_ast_source_data,
 	CLOCK_40,
 	test_out_data,
 	adaptive_out_data,
-	error_adaptive_out	
+	error_adaptive_out
 );
 
 //=======================================================
@@ -116,8 +116,8 @@ input 		          		CLOCK2_50;
 input 		          		CLOCK3_50;
 
 //////////// LED //////////
-output		     [8:0]		LEDG;
-output		    [17:0]		LEDR;
+//output		     [8:0]		LEDG;
+//output		    [17:0]		LEDR;
 
 //////////// KEY //////////
 input 		     [3:0]		KEY;
@@ -126,22 +126,22 @@ input 		     [3:0]		KEY;
 input 		    [17:0]		SW;
 
 //////////// SEG7 //////////
-output		     [6:0]		HEX0;
-output		     [6:0]		HEX1;
-output		     [6:0]		HEX2;
-output		     [6:0]		HEX3;
-output		     [6:0]		HEX4;
-output		     [6:0]		HEX5;
-output		     [6:0]		HEX6;
-output		     [6:0]		HEX7;
+//output		     [6:0]		HEX0;
+//output		     [6:0]		HEX1;
+//output		     [6:0]		HEX2;
+//output		     [6:0]		HEX3;
+//output		     [6:0]		HEX4;
+//output		     [6:0]		HEX5;
+//output		     [6:0]		HEX6;
+//output		     [6:0]		HEX7;
 
 //////////// LCD //////////
-output		          		LCD_BLON;
-inout 		     [7:0]		LCD_DATA;
-output		          		LCD_EN;
-output		          		LCD_ON;
-output		          		LCD_RS;
-output		          		LCD_RW;
+//output		          		LCD_BLON;
+//inout 		     [7:0]		LCD_DATA;
+//output		          		LCD_EN;
+//output		          		LCD_ON;
+//output		          		LCD_RS;
+//output		          		LCD_RW;
 
 //////////// SDCARD //////////
 output		          		SD_CLK;
@@ -154,46 +154,46 @@ output		          		I2C_SCLK;
 inout 		          		I2C_SDAT;
 
 //////////// Flash //////////
-output		    [22:0]		FL_ADDR;
-output		          		FL_CE_N;
+//output		    [22:0]		FL_ADDR;
+//output		          		FL_CE_N;
 inout 		     [7:0]		FL_DQ;
-output		          		FL_OE_N;
-output		          		FL_RST_N;
+//output		          		FL_OE_N;
+//output		          		FL_RST_N;
 input 		          		FL_RY;
-output		          		FL_WE_N;
-output		          		FL_WP_N;
+//output		          		FL_WE_N;
+//output		          		FL_WP_N;
 
 //////////// HSMC, HSMC connect to DCC - High Speed ADC/DAC //////////
-inout 		          		AD_SCLK;
-inout 		          		AD_SDIO;
-input 		    [13:0]		ADA_D;
-input 		          		ADA_DCO;
-output		          		ADA_OE;
-input 		          		ADA_OR;
-output		          		ADA_SPI_CS;
-input 		    [13:0]		ADB_D;
-input 		          		ADB_DCO;
-output		          		ADB_OE;
-input 		          		ADB_OR;
-output		          		ADB_SPI_CS;
-inout 		          		AIC_BCLK;
-output		          		AIC_DIN;
-input 		          		AIC_DOUT;
-inout 		          		AIC_LRCIN;
-inout 		          		AIC_LRCOUT;
-output		          		AIC_SPI_CS;
-output		          		AIC_XCLK;
-input 		          		CLKIN1;
-output		          		CLKOUT0;
-output		    [13:0]		DA;
-output		    [13:0]		DB;
-inout 		          		FPGA_CLK_A_N;
-inout 		          		FPGA_CLK_A_P;
-inout 		          		FPGA_CLK_B_N;
-inout 		          		FPGA_CLK_B_P;
-inout 		          		J1_152;
-input 		          		XT_IN_N;
-input 		          		XT_IN_P;
+//inout 		          		AD_SCLK;
+//inout 		          		AD_SDIO;
+//input 		    [13:0]		ADA_D;
+//input 		          		ADA_DCO;
+//output		          		ADA_OE;
+//input 		          		ADA_OR;
+//output		          		ADA_SPI_CS;
+//input 		    [13:0]		ADB_D;
+//input 		          		ADB_DCO;
+//output		          		ADB_OE;
+//input 		          		ADB_OR;
+//output		          		ADB_SPI_CS;
+//inout 		          		AIC_BCLK;
+//output		          		AIC_DIN;
+//input 		          		AIC_DOUT;
+//inout 		          		AIC_LRCIN;
+//inout 		          		AIC_LRCOUT;
+//output		          		AIC_SPI_CS;
+//output		          		AIC_XCLK;
+//input 		          		CLKIN1;
+//output		          		CLKOUT0;
+//output		    [13:0]		DA;
+//output		    [13:0]		DB;
+//inout 		          		FPGA_CLK_A_N;
+//inout 		          		FPGA_CLK_A_P;
+//inout 		          		FPGA_CLK_B_N;
+//inout 		          		FPGA_CLK_B_P;
+//inout 		          		J1_152;
+//input 		          		XT_IN_N;
+//input 		          		XT_IN_P;
 
 
 //=======================================================
@@ -211,18 +211,21 @@ output reg clk_1khz=0;
 output CLOCK_40;
 reg [15:0] counter = 16'd0;
 //reg [5:0] async_counter= 6'd0;
-output reg [11:0] NCO_OUT;
-reg [11:0] l_NCO_OUT;
+//output reg [11:0] NCO_OUT;
+//reg [11:0] l_NCO_OUT;
 wire NCO_FREQ_UP;
 wire NCO_FREQ_DOWN;
 //wire filter_change_sw;
-integer temp = 20'b00000000000000000001;
-wire [19:0] NCO_IN;
-assign NCO_IN =temp;
+//integer temp = 20'b00000000000000000001;
+//wire [19:0] NCO_IN;
+//assign NCO_IN =temp;
 assign	filter_change_sw	= SW[17];	
 reg l_CLOCK_50;
 reg ll_CLOCK_50;
 reg lll_CLOCK_50;
+//wire lfsr_out;
+reg signed [11:0] random_seq = 12'd0;
+//reg signed [11:0] l_random_seq;
 
 
 //////////// FIR //////////
@@ -231,7 +234,7 @@ reg lll_CLOCK_50;
 wire [1:0]  ast_sink_error = 2'b00;
 //output reg[32:0] ast_source_data;
 //output reg [32:0] DFF_ast_source_data;
-output reg  ast_source_valid;
+//output reg  ast_source_valid;
 reg  l_ast_source_valid;
 //output reg  [1:0]  ast_source_error;
 reg [4:0]  coeff_in_address;
@@ -253,6 +256,7 @@ output [31:0] test_out_data;
 reg [11:0] desired_data;
 output [31:0] adaptive_out_data;
 output [31:0] error_adaptive_out;
+
 
 
 //initial begin
@@ -343,77 +347,69 @@ assign	AD_SDIO			= SW[1];			// (DCS)Duty Cycle Stabilizer Select
 assign	ADA_OE			= 1'b0;				// enable ADA output
 assign	ADA_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
 
+						
 
-adaptive_fir adaptive_fir_inst(	.clk(CLOCK_40),
-								.reset(reset_n),
-								.x_in(l_NCO_OUT),
-								.d_in(desired_data),
-								.y_out(adaptive_out_data),
-								.e_out(error_adaptive_out));
-								
-								
-
-//--- analog to digital converter capture and sync
-	//--- Channel A
-always @(negedge reset_n or posedge ADA_DCO)
-begin
-	if (!reset_n) begin
-		per_a2da_d	<= 14'd0;
-	end
-	else begin
-		per_a2da_d	<= ADA_D;
-	end
-end
-
-always @(negedge reset_n or posedge sys_clk)
-begin
-	if (!reset_n) begin
-		a2da_data	<= 14'd0;
-	end
-	else begin
-		a2da_data	<= per_a2da_d;
-	end
-end
+////--- analog to digital converter capture and sync
+//	//--- Channel A
+////always @(negedge reset_n or posedge ADA_DCO)
+//begin
+//	if (!reset_n) begin
+//		per_a2da_d	<= 14'd0;
+//	end
+//	else begin
+////		per_a2da_d	<= ADA_D;
+//	end
+//end
+//
+//always @(negedge reset_n or posedge sys_clk)
+//begin
+//	if (!reset_n) begin
+//		a2da_data	<= 14'd0;
+//	end
+//	else begin
+//		a2da_data	<= per_a2da_d;
+//	end
+//end
 
 
 //--- probe points for data capture
 a2d_data_a	a2d_data_a_inst(
 			.probe(a2da_data),
 			.source());
-
+/*
 nco abc_inst (.clk			(CLOCK_40),
 			.phase_incr (NCO_IN),
 			.cos_out  (NCO_OUT));
-	
+	*/
 PLL_200MHz PLL_200MHz_inst (.inclk0(CLOCK_50),
 				.c0(CLOCK_40),
 				.locked());			
 	
-always @(posedge CLOCK_50)
-begin
-	if (counter == 16'd2500)
-	begin
-	clk_1khz <= ~clk_1khz;
-	counter <= 16'd0;
-	end
-	else 
-	begin
-	counter = counter +1;	
-	end	
-end
-
-always @( posedge clk_1khz)
-begin
-	if ((NCO_FREQ_UP ==1) && (NCO_FREQ_DOWN ==0))
-	begin 
-	temp= temp + 1;
-	end
-	
-	if ((NCO_FREQ_DOWN ==1) && (NCO_FREQ_UP ==0))
-	begin 
-	temp= temp - 1;
-	end
-end 
+//always @(posedge CLOCK_50)
+//begin
+//	if (counter == 16'd2500)
+//	begin
+//	clk_1khz <= ~clk_1khz;
+//	counter <= 16'd0;
+//	end
+//	else 
+//	begin
+//	counter = counter +1;	
+//	end	
+//end
+//
+//always @( posedge clk_1khz)
+//begin
+//	if ((NCO_FREQ_UP ==1) && (NCO_FREQ_DOWN ==0))
+//	begin 
+//	temp= temp + 1;
+//	end
+//	
+//	if ((NCO_FREQ_DOWN ==1) && (NCO_FREQ_UP ==0))
+//	begin 
+//	temp= temp - 1;
+//	end
+//end 
 
 
 //fir_IP_0002 fir_ip_inst (
@@ -583,17 +579,30 @@ end
 
 */
 
-always @ (posedge CLOCK_40)
-begin
-l_NCO_OUT <=NCO_OUT;
-desired_data <= test_out_data[31:20];
-end
+//always @ (posedge CLOCK_40)
+//begin
+////l_NCO_OUT <=NCO_OUT;
+////desired_data <= test_out_data[31:20];
+//l_test_out_data <= test_out_data;
+//end
 
 just_fir just_fir_inst(	.clk(CLOCK_40),
 								.reset(reset_n),
-								.x_in(l_NCO_OUT),
+								.x_in(random_seq),
 								.y_out(test_out_data));
 
-								
 
+lfsr lfsrs_inst (	.clk (CLOCK_40),
+						.outp(random_seq[1]));
+
+
+adaptive_fir adaptive_fir_inst(	.clk(CLOCK_40),
+								.reset(reset_n),
+								.x_in(random_seq),
+								.d_in(test_out_data),
+								.y_out(adaptive_out_data),
+								.e_out(error_adaptive_out));					
+								
+								
+						
 endmodule

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/") File("a2dv2.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE22F17) Path("C:/Users/arya1080/Downloads/From saurabh/fpga-spreadspectrum-adaptivefilt/fpga-spreadspectrum-adaptivefilt/a2dv2/") File("a2dv2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
