@@ -1581,5 +1581,5 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_storage_qualif
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_storage_qualifier_in[393] -to error_adaptive_out[7] -section_id lfsr_20_26_20adaptive
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_storage_qualifier_in[394] -to error_adaptive_out[8] -section_id lfsr_20_26_20adaptive
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_storage_qualifier_in[395] -to error_adaptive_out[9] -section_id lfsr_20_26_20adaptive
-set_global_assignment -name SLD_FILE db/stp3_auto_stripped.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/stp3_auto_stripped.stp

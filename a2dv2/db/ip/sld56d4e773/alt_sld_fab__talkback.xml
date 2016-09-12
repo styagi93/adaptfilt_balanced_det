@@ -11,7 +11,7 @@
    <SOPCModuleParameter>
     <C>2</C>
     <Name>DESIGN_HASH</Name>
-    <Value>a849ecaa156c21102eab</Value>
+    <Value>c00a88da1344ed5d9424</Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>3</C>
@@ -26,7 +26,7 @@
    <SOPCModuleParameter>
     <C>5</C>
     <Name>SETTINGS</Name>
-    <Value>{fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 0 ir_width 4 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 4 ir_width 10 psig f63706bb} </Value>
+    <Value>{fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 0 ir_width 4 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 5 ir_width 10 psig f63706bb} </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>6</C>
@@ -41,7 +41,7 @@
    <SOPCModuleParameter>
     <C>8</C>
     <Name>EP_INFOS</Name>
-    <Value>{hpath {a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component} } {hpath {sld_signaltap:auto_signaltap_4} } </Value>
+    <Value>{hpath {a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component} } {hpath {sld_signaltap:lfsr_20_26_20adaptive} } </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>9</C>
@@ -56,7 +56,7 @@
    <SOPCModuleParameter>
     <C>11</C>
     <Name>COMPOSED_SETTINGS</Name>
-    <Value>{fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 0 ir_width 4 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 4 ir_width 10 prefer_host {} } </Value>
+    <Value>{fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 0 ir_width 4 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 5 ir_width 10 prefer_host {} } </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>12</C>
@@ -74,7 +74,7 @@
     <Value>Unknown</Value>
    </SOPCModuleParameter>
   </SOPCModule>
-  <SystemID>83422378</SystemID>
+  <SystemID>535228130</SystemID>
  </SOPCSystem>
  <SchemaVersion>schema_2013-01-18</SchemaVersion>
 </ProgramExecution>
