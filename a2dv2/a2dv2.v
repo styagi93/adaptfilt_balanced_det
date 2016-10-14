@@ -98,7 +98,8 @@ module a2dv2(
 	CLOCK_40,
 	test_out_data,
 	adaptive_out_data,
-	error_adaptive_out	
+	error_adaptive_out,
+		emu
 );
 
 //=======================================================
@@ -223,6 +224,10 @@ assign	filter_change_sw	= SW[17];
 reg l_CLOCK_50;
 reg ll_CLOCK_50;
 reg lll_CLOCK_50;
+//wire lfsr_out;
+reg signed [11:0] random_seq = 12'd0;
+reg  [11:0] FIFO_random_seq [0:17];
+//reg signed [11:0] l_random_seq;
 
 
 //////////// FIR //////////
@@ -253,6 +258,8 @@ output [31:0] test_out_data;
 reg [11:0] desired_data;
 output [31:0] adaptive_out_data;
 output [31:0] error_adaptive_out;
+output [31:0] emu;
+reg			[13:0]			o_sine_p;
 
 
 //initial begin
@@ -334,6 +341,7 @@ output [31:0] error_adaptive_out;
 assign	reset_n			= KEY[3];
 assign	NCO_FREQ_UP			= KEY[2];
 assign	NCO_FREQ_DOWN			= KEY[1];
+assign   sys_clk = CLOCK_40;
 assign	FPGA_CLK_A_P	=  sys_clk;
 assign	FPGA_CLK_A_N	= ~sys_clk;
 
@@ -343,16 +351,21 @@ assign	AD_SDIO			= SW[1];			// (DCS)Duty Cycle Stabilizer Select
 assign	ADA_OE			= 1'b0;				// enable ADA output
 assign	ADA_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
 
+ // assign for DAC output data
+assign	DA = (o_sine_p + 14'b10000000000000);
 
-adaptive_fir adaptive_fir_inst(	.clk(CLOCK_40),
-								.reset(reset_n),
-								.x_in(l_NCO_OUT),
-								.d_in(desired_data),
-								.y_out(adaptive_out_data),
-								.e_out(error_adaptive_out));
-								
-								
-
+						
+always @(negedge reset_n or posedge sys_clk)
+begin
+	if (!reset_n) begin
+		o_sine_p	<= 14'd0;
+	end
+	else begin
+		o_sine_p	<= {2'b00,random_seq};
+	end
+end
+						
+						
 //--- analog to digital converter capture and sync
 	//--- Channel A
 always @(negedge reset_n or posedge ADA_DCO)
@@ -361,7 +374,7 @@ begin
 		per_a2da_d	<= 14'd0;
 	end
 	else begin
-		per_a2da_d	<= ADA_D;
+		per_a2da_d	<= (ADA_D - 14'b10000000000000);
 	end
 end
 
@@ -371,7 +384,7 @@ begin
 		a2da_data	<= 14'd0;
 	end
 	else begin
-		a2da_data	<= per_a2da_d;
+		a2da_data	<= (per_a2da_d ^ 14'b10000000000000);
 	end
 end
 
@@ -380,6 +393,12 @@ end
 a2d_data_a	a2d_data_a_inst(
 			.probe(a2da_data),
 			.source());
+			
+p_sine	p_sine_inst(
+			.probe(o_sine_p),
+			.source());
+			
+			
 
 nco abc_inst (.clk			(CLOCK_40),
 			.phase_incr (NCO_IN),
@@ -586,14 +605,49 @@ end
 always @ (posedge CLOCK_40)
 begin
 l_NCO_OUT <=NCO_OUT;
-desired_data <= test_out_data[31:20];
+//desired_data <= test_out_data[31:20];
+//l_test_out_data <= test_out_data;
 end
 
 just_fir just_fir_inst(	.clk(CLOCK_40),
 								.reset(reset_n),
-								.x_in(l_NCO_OUT),
+								.x_in(random_seq),
 								.y_out(test_out_data));
 
+
+lfsr lfsrs_inst (	.clk (CLOCK_40),
+						.outp(random_seq[1]));
+
+
+adaptive_fir adaptive_fir_inst(	.clk(CLOCK_40),
+								.reset(reset_n),
+								.x_in(FIFO_random_seq[17]),
+								.d_in(a2da_data),
+								.y_out(adaptive_out_data),
+								.e_out(error_adaptive_out),
+								.emu_out(emu));	
+								
+always @(posedge CLOCK_40)
+begin
+FIFO_random_seq[0] <= random_seq;
+FIFO_random_seq[1] <= FIFO_random_seq[0];
+FIFO_random_seq[2] <= FIFO_random_seq[1];
+FIFO_random_seq[3] <= FIFO_random_seq[2];
+FIFO_random_seq[4] <= FIFO_random_seq[3];
+FIFO_random_seq[5] <= FIFO_random_seq[4];
+FIFO_random_seq[6] <= FIFO_random_seq[5];
+FIFO_random_seq[7] <= FIFO_random_seq[6];
+FIFO_random_seq[8] <= FIFO_random_seq[7];
+FIFO_random_seq[9] <= FIFO_random_seq[8];
+FIFO_random_seq[10] <= FIFO_random_seq[9];
+FIFO_random_seq[11] <= FIFO_random_seq[10];
+FIFO_random_seq[12] <= FIFO_random_seq[11];
+FIFO_random_seq[13] <= FIFO_random_seq[12];
+FIFO_random_seq[14] <= FIFO_random_seq[13];
+FIFO_random_seq[15] <= FIFO_random_seq[14];
+FIFO_random_seq[16] <= FIFO_random_seq[15];
+FIFO_random_seq[17] <= FIFO_random_seq[16];
+end
 								
 
 endmodule
