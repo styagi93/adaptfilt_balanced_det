@@ -1,0 +1,18 @@
+# system info p_sine on 2016.09.11.13:27:48
+system_info:
+name,value
+DEVICE,EP4CE115F29C7
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1473622067
+#
+#
+# Files generated for p_sine on 2016.09.11.13:27:48
+files:
+filepath,kind,attributes,module,is_top
+simulation/p_sine.v,VERILOG,,p_sine,true
+simulation/submodules/altsource_probe.v,VERILOG,,altsource_probe,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+p_sine.in_system_sources_probes_0,altsource_probe
