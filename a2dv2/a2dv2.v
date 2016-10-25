@@ -225,8 +225,8 @@ reg l_CLOCK_50;
 reg ll_CLOCK_50;
 reg lll_CLOCK_50;
 //wire lfsr_out;
-reg signed [11:0] random_seq = 12'd0;
-reg  [11:0] FIFO_random_seq [0:17];
+reg  [11:0] random_seq = 12'd0;
+reg  [11:0] FIFO_random_seq [0:20];
 //reg signed [11:0] l_random_seq;
 
 
@@ -256,10 +256,12 @@ reg [5:0] i = 6'd0;
 reg ast_sink_valid;
 output [31:0] test_out_data;
 reg [11:0] desired_data;
-output [31:0] adaptive_out_data;
-output [31:0] error_adaptive_out;
-output [31:0] emu;
+output [42:0] adaptive_out_data;
+output [30:0] error_adaptive_out;
+output [42:0] emu;
 reg			[13:0]			o_sine_p;
+wire [7:0] mu;
+wire [7:0] tap;
 
 
 //initial begin
@@ -616,13 +618,21 @@ just_fir just_fir_inst(	.clk(CLOCK_40),
 
 
 lfsr lfsrs_inst (	.clk (CLOCK_40),
-						.outp(random_seq[1]));
+						.outp(random_seq[10]));
 
+ROM_delta_control delta_control_inst (.address(1'b0),
+												  .clock(CLOCK_40),
+												  .q(mu));
+
+ROM_buffer_tap buffer_control_inst (.address(1'b0),
+												  .clock(CLOCK_40),
+												  .q(tap));
 
 adaptive_fir adaptive_fir_inst(	.clk(CLOCK_40),
 								.reset(reset_n),
-								.x_in(FIFO_random_seq[17]),
+								.x_in(FIFO_random_seq[tap]),
 								.d_in(a2da_data),
+								.mu_in(mu),
 								.y_out(adaptive_out_data),
 								.e_out(error_adaptive_out),
 								.emu_out(emu));	
@@ -647,6 +657,9 @@ FIFO_random_seq[14] <= FIFO_random_seq[13];
 FIFO_random_seq[15] <= FIFO_random_seq[14];
 FIFO_random_seq[16] <= FIFO_random_seq[15];
 FIFO_random_seq[17] <= FIFO_random_seq[16];
+FIFO_random_seq[18] <= FIFO_random_seq[17];
+FIFO_random_seq[19] <= FIFO_random_seq[18];
+FIFO_random_seq[20] <= FIFO_random_seq[19];
 end
 								
 
