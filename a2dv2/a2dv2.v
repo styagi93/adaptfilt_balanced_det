@@ -226,7 +226,7 @@ reg ll_CLOCK_50;
 reg lll_CLOCK_50;
 //wire lfsr_out;
 reg  [11:0] random_seq = 12'd0;
-reg  [11:0] FIFO_random_seq [0:20];
+reg  [11:0] FIFO_random_seq [0:31];
 //reg signed [11:0] l_random_seq;
 
 
@@ -257,7 +257,7 @@ reg ast_sink_valid;
 output [31:0] test_out_data;
 reg [11:0] desired_data;
 output [42:0] adaptive_out_data;
-output [30:0] error_adaptive_out;
+output [32:0] error_adaptive_out;
 output [42:0] emu;
 reg			[13:0]			o_sine_p;
 wire [7:0] mu;
@@ -660,6 +660,17 @@ FIFO_random_seq[17] <= FIFO_random_seq[16];
 FIFO_random_seq[18] <= FIFO_random_seq[17];
 FIFO_random_seq[19] <= FIFO_random_seq[18];
 FIFO_random_seq[20] <= FIFO_random_seq[19];
+FIFO_random_seq[21] <= FIFO_random_seq[20];
+FIFO_random_seq[22] <= FIFO_random_seq[21];
+FIFO_random_seq[23] <= FIFO_random_seq[22];
+FIFO_random_seq[24] <= FIFO_random_seq[23];
+FIFO_random_seq[25] <= FIFO_random_seq[24];
+FIFO_random_seq[26] <= FIFO_random_seq[25];
+FIFO_random_seq[27] <= FIFO_random_seq[26];
+FIFO_random_seq[28] <= FIFO_random_seq[27];
+FIFO_random_seq[29] <= FIFO_random_seq[28];
+FIFO_random_seq[30] <= FIFO_random_seq[29];
+FIFO_random_seq[31] <= FIFO_random_seq[30];
 end
 								
 
