@@ -224,9 +224,8 @@ assign	filter_change_sw	= SW[17];
 reg l_CLOCK_50;
 reg ll_CLOCK_50;
 reg lll_CLOCK_50;
-//wire lfsr_out;
-reg  [11:0] random_seq = 12'd0;
-reg  [11:0] FIFO_random_seq [0:31];
+wire  [0:0] lfsr_out;
+reg  [13:0] FIFO_random_seq [0:31];
 //reg signed [11:0] l_random_seq;
 
 
@@ -348,13 +347,13 @@ assign	FPGA_CLK_A_P	=  sys_clk;
 assign	FPGA_CLK_A_N	= ~sys_clk;
 
  // assign for ADC control signal
-assign	AD_SCLK			= SW[0];			// (DFS)Data Format Select
-assign	AD_SDIO			= SW[1];			// (DCS)Duty Cycle Stabilizer Select
+assign	AD_SCLK			= 1'b1;			// (DFS)Data Format Select
+assign	AD_SDIO			= 1'b1;			// (DCS)Duty Cycle Stabilizer Select
 assign	ADA_OE			= 1'b0;				// enable ADA output
 assign	ADA_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
 
  // assign for DAC output data
-assign	DA = (o_sine_p + 14'b10000000000000);
+assign	DA =  o_sine_p;
 
 						
 always @(negedge reset_n or posedge sys_clk)
@@ -363,7 +362,7 @@ begin
 		o_sine_p	<= 14'd0;
 	end
 	else begin
-		o_sine_p	<= {2'b00,random_seq};
+		o_sine_p	<= (lfsr_out)? 14'b00011111111111 : 14'b11100000000001 ;
 	end
 end
 						
@@ -376,7 +375,7 @@ begin
 		per_a2da_d	<= 14'd0;
 	end
 	else begin
-		per_a2da_d	<= (ADA_D - 14'b10000000000000);
+		per_a2da_d	<=  ADA_D;
 	end
 end
 
@@ -386,7 +385,7 @@ begin
 		a2da_data	<= 14'd0;
 	end
 	else begin
-		a2da_data	<= (per_a2da_d ^ 14'b10000000000000);
+		a2da_data	<=  per_a2da_d;
 	end
 end
 
@@ -613,12 +612,12 @@ end
 
 just_fir just_fir_inst(	.clk(CLOCK_40),
 								.reset(reset_n),
-								.x_in(random_seq),
+								.x_in(o_sine_p),
 								.y_out(test_out_data));
 
 
 lfsr lfsrs_inst (	.clk (CLOCK_40),
-						.outp(random_seq[10]));
+						.outp(lfsr_out));
 
 ROM_delta_control delta_control_inst (.address(1'b0),
 												  .clock(CLOCK_40),
@@ -639,7 +638,7 @@ adaptive_fir adaptive_fir_inst(	.clk(CLOCK_40),
 								
 always @(posedge CLOCK_40)
 begin
-FIFO_random_seq[0] <= random_seq;
+FIFO_random_seq[0] <= o_sine_p;
 FIFO_random_seq[1] <= FIFO_random_seq[0];
 FIFO_random_seq[2] <= FIFO_random_seq[1];
 FIFO_random_seq[3] <= FIFO_random_seq[2];
