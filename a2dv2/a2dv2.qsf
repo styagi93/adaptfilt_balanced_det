@@ -1064,61 +1064,6 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[299
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[300] -to "adaptive_fir:adaptive_fir_inst|f[9][7]" -section_id filter_20readout
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[301] -to "adaptive_fir:adaptive_fir_inst|f[9][8]" -section_id filter_20readout
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[302] -to "adaptive_fir:adaptive_fir_inst|f[9][9]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[303] -to "adaptive_fir:adaptive_fir_inst|x_in[0]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[304] -to "adaptive_fir:adaptive_fir_inst|x_in[10]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[305] -to "adaptive_fir:adaptive_fir_inst|x_in[11]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[306] -to "adaptive_fir:adaptive_fir_inst|x_in[1]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[307] -to "adaptive_fir:adaptive_fir_inst|x_in[2]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[308] -to "adaptive_fir:adaptive_fir_inst|x_in[3]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[309] -to "adaptive_fir:adaptive_fir_inst|x_in[4]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[310] -to "adaptive_fir:adaptive_fir_inst|x_in[5]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[311] -to "adaptive_fir:adaptive_fir_inst|x_in[6]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[312] -to "adaptive_fir:adaptive_fir_inst|x_in[7]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[313] -to "adaptive_fir:adaptive_fir_inst|x_in[8]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[314] -to "adaptive_fir:adaptive_fir_inst|x_in[9]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[315] -to "adaptive_fir:adaptive_fir_inst|y_out[0]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[316] -to "adaptive_fir:adaptive_fir_inst|y_out[10]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[317] -to "adaptive_fir:adaptive_fir_inst|y_out[11]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[318] -to "adaptive_fir:adaptive_fir_inst|y_out[12]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[319] -to "adaptive_fir:adaptive_fir_inst|y_out[13]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[320] -to "adaptive_fir:adaptive_fir_inst|y_out[14]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[321] -to "adaptive_fir:adaptive_fir_inst|y_out[15]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[322] -to "adaptive_fir:adaptive_fir_inst|y_out[16]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[323] -to "adaptive_fir:adaptive_fir_inst|y_out[17]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[324] -to "adaptive_fir:adaptive_fir_inst|y_out[18]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[325] -to "adaptive_fir:adaptive_fir_inst|y_out[19]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[326] -to "adaptive_fir:adaptive_fir_inst|y_out[1]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[327] -to "adaptive_fir:adaptive_fir_inst|y_out[20]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[328] -to "adaptive_fir:adaptive_fir_inst|y_out[21]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[329] -to "adaptive_fir:adaptive_fir_inst|y_out[22]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[330] -to "adaptive_fir:adaptive_fir_inst|y_out[23]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[331] -to "adaptive_fir:adaptive_fir_inst|y_out[24]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[332] -to "adaptive_fir:adaptive_fir_inst|y_out[25]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[333] -to "adaptive_fir:adaptive_fir_inst|y_out[26]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[334] -to "adaptive_fir:adaptive_fir_inst|y_out[27]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[335] -to "adaptive_fir:adaptive_fir_inst|y_out[28]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[336] -to "adaptive_fir:adaptive_fir_inst|y_out[29]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[337] -to "adaptive_fir:adaptive_fir_inst|y_out[2]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[338] -to "adaptive_fir:adaptive_fir_inst|y_out[30]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[339] -to "adaptive_fir:adaptive_fir_inst|y_out[31]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[340] -to "adaptive_fir:adaptive_fir_inst|y_out[32]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[341] -to "adaptive_fir:adaptive_fir_inst|y_out[33]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[342] -to "adaptive_fir:adaptive_fir_inst|y_out[34]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[343] -to "adaptive_fir:adaptive_fir_inst|y_out[35]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[344] -to "adaptive_fir:adaptive_fir_inst|y_out[36]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[345] -to "adaptive_fir:adaptive_fir_inst|y_out[37]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[346] -to "adaptive_fir:adaptive_fir_inst|y_out[38]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[347] -to "adaptive_fir:adaptive_fir_inst|y_out[39]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[348] -to "adaptive_fir:adaptive_fir_inst|y_out[3]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[349] -to "adaptive_fir:adaptive_fir_inst|y_out[40]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[350] -to "adaptive_fir:adaptive_fir_inst|y_out[41]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[351] -to "adaptive_fir:adaptive_fir_inst|y_out[42]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[352] -to "adaptive_fir:adaptive_fir_inst|y_out[4]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[353] -to "adaptive_fir:adaptive_fir_inst|y_out[5]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[354] -to "adaptive_fir:adaptive_fir_inst|y_out[6]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[355] -to "adaptive_fir:adaptive_fir_inst|y_out[7]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[356] -to "adaptive_fir:adaptive_fir_inst|y_out[8]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[357] -to "adaptive_fir:adaptive_fir_inst|y_out[9]" -section_id filter_20readout
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "adaptive_fir:adaptive_fir_inst|d_in[0]" -section_id filter_20readout
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "adaptive_fir:adaptive_fir_inst|d_in[10]" -section_id filter_20readout
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "adaptive_fir:adaptive_fir_inst|d_in[11]" -section_id filter_20readout
@@ -1422,71 +1367,10 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[299] -
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[300] -to "adaptive_fir:adaptive_fir_inst|f[9][7]" -section_id filter_20readout
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[301] -to "adaptive_fir:adaptive_fir_inst|f[9][8]" -section_id filter_20readout
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[302] -to "adaptive_fir:adaptive_fir_inst|f[9][9]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[303] -to "adaptive_fir:adaptive_fir_inst|x_in[0]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[304] -to "adaptive_fir:adaptive_fir_inst|x_in[10]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[305] -to "adaptive_fir:adaptive_fir_inst|x_in[11]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[306] -to "adaptive_fir:adaptive_fir_inst|x_in[1]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[307] -to "adaptive_fir:adaptive_fir_inst|x_in[2]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[308] -to "adaptive_fir:adaptive_fir_inst|x_in[3]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[309] -to "adaptive_fir:adaptive_fir_inst|x_in[4]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[310] -to "adaptive_fir:adaptive_fir_inst|x_in[5]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[311] -to "adaptive_fir:adaptive_fir_inst|x_in[6]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[312] -to "adaptive_fir:adaptive_fir_inst|x_in[7]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[313] -to "adaptive_fir:adaptive_fir_inst|x_in[8]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[314] -to "adaptive_fir:adaptive_fir_inst|x_in[9]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[315] -to "adaptive_fir:adaptive_fir_inst|y_out[0]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[316] -to "adaptive_fir:adaptive_fir_inst|y_out[10]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[317] -to "adaptive_fir:adaptive_fir_inst|y_out[11]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[318] -to "adaptive_fir:adaptive_fir_inst|y_out[12]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[319] -to "adaptive_fir:adaptive_fir_inst|y_out[13]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[320] -to "adaptive_fir:adaptive_fir_inst|y_out[14]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[321] -to "adaptive_fir:adaptive_fir_inst|y_out[15]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[322] -to "adaptive_fir:adaptive_fir_inst|y_out[16]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[323] -to "adaptive_fir:adaptive_fir_inst|y_out[17]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[324] -to "adaptive_fir:adaptive_fir_inst|y_out[18]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[325] -to "adaptive_fir:adaptive_fir_inst|y_out[19]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[326] -to "adaptive_fir:adaptive_fir_inst|y_out[1]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[327] -to "adaptive_fir:adaptive_fir_inst|y_out[20]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[328] -to "adaptive_fir:adaptive_fir_inst|y_out[21]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[329] -to "adaptive_fir:adaptive_fir_inst|y_out[22]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[330] -to "adaptive_fir:adaptive_fir_inst|y_out[23]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[331] -to "adaptive_fir:adaptive_fir_inst|y_out[24]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[332] -to "adaptive_fir:adaptive_fir_inst|y_out[25]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[333] -to "adaptive_fir:adaptive_fir_inst|y_out[26]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[334] -to "adaptive_fir:adaptive_fir_inst|y_out[27]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[335] -to "adaptive_fir:adaptive_fir_inst|y_out[28]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[336] -to "adaptive_fir:adaptive_fir_inst|y_out[29]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[337] -to "adaptive_fir:adaptive_fir_inst|y_out[2]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[338] -to "adaptive_fir:adaptive_fir_inst|y_out[30]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[339] -to "adaptive_fir:adaptive_fir_inst|y_out[31]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[340] -to "adaptive_fir:adaptive_fir_inst|y_out[32]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[341] -to "adaptive_fir:adaptive_fir_inst|y_out[33]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[342] -to "adaptive_fir:adaptive_fir_inst|y_out[34]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[343] -to "adaptive_fir:adaptive_fir_inst|y_out[35]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[344] -to "adaptive_fir:adaptive_fir_inst|y_out[36]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[345] -to "adaptive_fir:adaptive_fir_inst|y_out[37]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[346] -to "adaptive_fir:adaptive_fir_inst|y_out[38]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[347] -to "adaptive_fir:adaptive_fir_inst|y_out[39]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[348] -to "adaptive_fir:adaptive_fir_inst|y_out[3]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[349] -to "adaptive_fir:adaptive_fir_inst|y_out[40]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[350] -to "adaptive_fir:adaptive_fir_inst|y_out[41]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[351] -to "adaptive_fir:adaptive_fir_inst|y_out[42]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[352] -to "adaptive_fir:adaptive_fir_inst|y_out[4]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[353] -to "adaptive_fir:adaptive_fir_inst|y_out[5]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[354] -to "adaptive_fir:adaptive_fir_inst|y_out[6]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[355] -to "adaptive_fir:adaptive_fir_inst|y_out[7]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[356] -to "adaptive_fir:adaptive_fir_inst|y_out[8]" -section_id filter_20readout
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[357] -to "adaptive_fir:adaptive_fir_inst|y_out[9]" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id filter_20readout
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=358" -section_id filter_20readout
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=358" -section_id filter_20readout
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=358" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334535" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id filter_20readout
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id filter_20readout
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=1097" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id filter_20readout
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=512" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id filter_20readout
@@ -1494,39 +1378,22 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to filter_20readout|gnd -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to filter_20readout|vcc -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to filter_20readout|gnd -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to filter_20readout|vcc -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to filter_20readout|gnd -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to filter_20readout|gnd -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to filter_20readout|gnd -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to filter_20readout|gnd -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to filter_20readout|vcc -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to filter_20readout|vcc -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to filter_20readout|vcc -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to filter_20readout|gnd -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to filter_20readout|vcc -section_id filter_20readout
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to filter_20readout|vcc -section_id filter_20readout
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to filter_20readout|vcc -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id filter_20readout
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=512" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id filter_20readout
@@ -1534,5 +1401,140 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id filter_20readout
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id filter_20readout
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[303] -to "adaptive_fir:adaptive_fir_inst|reset" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[304] -to "adaptive_fir:adaptive_fir_inst|x_in[0]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[305] -to "adaptive_fir:adaptive_fir_inst|x_in[10]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[306] -to "adaptive_fir:adaptive_fir_inst|x_in[11]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[307] -to "adaptive_fir:adaptive_fir_inst|x_in[1]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[308] -to "adaptive_fir:adaptive_fir_inst|x_in[2]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[309] -to "adaptive_fir:adaptive_fir_inst|x_in[3]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[310] -to "adaptive_fir:adaptive_fir_inst|x_in[4]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[311] -to "adaptive_fir:adaptive_fir_inst|x_in[5]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[312] -to "adaptive_fir:adaptive_fir_inst|x_in[6]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[313] -to "adaptive_fir:adaptive_fir_inst|x_in[7]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[314] -to "adaptive_fir:adaptive_fir_inst|x_in[8]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[315] -to "adaptive_fir:adaptive_fir_inst|x_in[9]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[316] -to "adaptive_fir:adaptive_fir_inst|y_out[0]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[317] -to "adaptive_fir:adaptive_fir_inst|y_out[10]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[318] -to "adaptive_fir:adaptive_fir_inst|y_out[11]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[319] -to "adaptive_fir:adaptive_fir_inst|y_out[12]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[320] -to "adaptive_fir:adaptive_fir_inst|y_out[13]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[321] -to "adaptive_fir:adaptive_fir_inst|y_out[14]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[322] -to "adaptive_fir:adaptive_fir_inst|y_out[15]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[323] -to "adaptive_fir:adaptive_fir_inst|y_out[16]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[324] -to "adaptive_fir:adaptive_fir_inst|y_out[17]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[325] -to "adaptive_fir:adaptive_fir_inst|y_out[18]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[326] -to "adaptive_fir:adaptive_fir_inst|y_out[19]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[327] -to "adaptive_fir:adaptive_fir_inst|y_out[1]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[328] -to "adaptive_fir:adaptive_fir_inst|y_out[20]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[329] -to "adaptive_fir:adaptive_fir_inst|y_out[21]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[330] -to "adaptive_fir:adaptive_fir_inst|y_out[22]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[331] -to "adaptive_fir:adaptive_fir_inst|y_out[23]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[332] -to "adaptive_fir:adaptive_fir_inst|y_out[24]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[333] -to "adaptive_fir:adaptive_fir_inst|y_out[25]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[334] -to "adaptive_fir:adaptive_fir_inst|y_out[26]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[335] -to "adaptive_fir:adaptive_fir_inst|y_out[27]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[336] -to "adaptive_fir:adaptive_fir_inst|y_out[28]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[337] -to "adaptive_fir:adaptive_fir_inst|y_out[29]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[338] -to "adaptive_fir:adaptive_fir_inst|y_out[2]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[339] -to "adaptive_fir:adaptive_fir_inst|y_out[30]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[340] -to "adaptive_fir:adaptive_fir_inst|y_out[31]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[341] -to "adaptive_fir:adaptive_fir_inst|y_out[32]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[342] -to "adaptive_fir:adaptive_fir_inst|y_out[33]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[343] -to "adaptive_fir:adaptive_fir_inst|y_out[34]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[344] -to "adaptive_fir:adaptive_fir_inst|y_out[35]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[345] -to "adaptive_fir:adaptive_fir_inst|y_out[36]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[346] -to "adaptive_fir:adaptive_fir_inst|y_out[37]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[347] -to "adaptive_fir:adaptive_fir_inst|y_out[38]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[348] -to "adaptive_fir:adaptive_fir_inst|y_out[39]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[349] -to "adaptive_fir:adaptive_fir_inst|y_out[3]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[350] -to "adaptive_fir:adaptive_fir_inst|y_out[40]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[351] -to "adaptive_fir:adaptive_fir_inst|y_out[41]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[352] -to "adaptive_fir:adaptive_fir_inst|y_out[42]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[353] -to "adaptive_fir:adaptive_fir_inst|y_out[4]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[354] -to "adaptive_fir:adaptive_fir_inst|y_out[5]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[355] -to "adaptive_fir:adaptive_fir_inst|y_out[6]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[356] -to "adaptive_fir:adaptive_fir_inst|y_out[7]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[357] -to "adaptive_fir:adaptive_fir_inst|y_out[8]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[358] -to "adaptive_fir:adaptive_fir_inst|y_out[9]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[303] -to "adaptive_fir:adaptive_fir_inst|reset" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[304] -to "adaptive_fir:adaptive_fir_inst|x_in[0]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[305] -to "adaptive_fir:adaptive_fir_inst|x_in[10]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[306] -to "adaptive_fir:adaptive_fir_inst|x_in[11]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[307] -to "adaptive_fir:adaptive_fir_inst|x_in[1]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[308] -to "adaptive_fir:adaptive_fir_inst|x_in[2]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[309] -to "adaptive_fir:adaptive_fir_inst|x_in[3]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[310] -to "adaptive_fir:adaptive_fir_inst|x_in[4]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[311] -to "adaptive_fir:adaptive_fir_inst|x_in[5]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[312] -to "adaptive_fir:adaptive_fir_inst|x_in[6]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[313] -to "adaptive_fir:adaptive_fir_inst|x_in[7]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[314] -to "adaptive_fir:adaptive_fir_inst|x_in[8]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[315] -to "adaptive_fir:adaptive_fir_inst|x_in[9]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[316] -to "adaptive_fir:adaptive_fir_inst|y_out[0]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[317] -to "adaptive_fir:adaptive_fir_inst|y_out[10]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[318] -to "adaptive_fir:adaptive_fir_inst|y_out[11]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[319] -to "adaptive_fir:adaptive_fir_inst|y_out[12]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[320] -to "adaptive_fir:adaptive_fir_inst|y_out[13]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[321] -to "adaptive_fir:adaptive_fir_inst|y_out[14]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[322] -to "adaptive_fir:adaptive_fir_inst|y_out[15]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[323] -to "adaptive_fir:adaptive_fir_inst|y_out[16]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[324] -to "adaptive_fir:adaptive_fir_inst|y_out[17]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[325] -to "adaptive_fir:adaptive_fir_inst|y_out[18]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[326] -to "adaptive_fir:adaptive_fir_inst|y_out[19]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[327] -to "adaptive_fir:adaptive_fir_inst|y_out[1]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[328] -to "adaptive_fir:adaptive_fir_inst|y_out[20]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[329] -to "adaptive_fir:adaptive_fir_inst|y_out[21]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[330] -to "adaptive_fir:adaptive_fir_inst|y_out[22]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[331] -to "adaptive_fir:adaptive_fir_inst|y_out[23]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[332] -to "adaptive_fir:adaptive_fir_inst|y_out[24]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[333] -to "adaptive_fir:adaptive_fir_inst|y_out[25]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[334] -to "adaptive_fir:adaptive_fir_inst|y_out[26]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[335] -to "adaptive_fir:adaptive_fir_inst|y_out[27]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[336] -to "adaptive_fir:adaptive_fir_inst|y_out[28]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[337] -to "adaptive_fir:adaptive_fir_inst|y_out[29]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[338] -to "adaptive_fir:adaptive_fir_inst|y_out[2]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[339] -to "adaptive_fir:adaptive_fir_inst|y_out[30]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[340] -to "adaptive_fir:adaptive_fir_inst|y_out[31]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[341] -to "adaptive_fir:adaptive_fir_inst|y_out[32]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[342] -to "adaptive_fir:adaptive_fir_inst|y_out[33]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[343] -to "adaptive_fir:adaptive_fir_inst|y_out[34]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[344] -to "adaptive_fir:adaptive_fir_inst|y_out[35]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[345] -to "adaptive_fir:adaptive_fir_inst|y_out[36]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[346] -to "adaptive_fir:adaptive_fir_inst|y_out[37]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[347] -to "adaptive_fir:adaptive_fir_inst|y_out[38]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[348] -to "adaptive_fir:adaptive_fir_inst|y_out[39]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[349] -to "adaptive_fir:adaptive_fir_inst|y_out[3]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[350] -to "adaptive_fir:adaptive_fir_inst|y_out[40]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[351] -to "adaptive_fir:adaptive_fir_inst|y_out[41]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[352] -to "adaptive_fir:adaptive_fir_inst|y_out[42]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[353] -to "adaptive_fir:adaptive_fir_inst|y_out[4]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[354] -to "adaptive_fir:adaptive_fir_inst|y_out[5]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[355] -to "adaptive_fir:adaptive_fir_inst|y_out[6]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[356] -to "adaptive_fir:adaptive_fir_inst|y_out[7]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[357] -to "adaptive_fir:adaptive_fir_inst|y_out[8]" -section_id filter_20readout
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[358] -to "adaptive_fir:adaptive_fir_inst|y_out[9]" -section_id filter_20readout
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=359" -section_id filter_20readout
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=359" -section_id filter_20readout
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=359" -section_id filter_20readout
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id filter_20readout
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=1103" -section_id filter_20readout
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=4096" -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to filter_20readout|vcc -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to filter_20readout|vcc -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to filter_20readout|gnd -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to filter_20readout|gnd -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to filter_20readout|gnd -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to filter_20readout|gnd -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to filter_20readout|vcc -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to filter_20readout|vcc -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to filter_20readout|gnd -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to filter_20readout|vcc -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to filter_20readout|vcc -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to filter_20readout|gnd -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to filter_20readout|gnd -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to filter_20readout|gnd -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to filter_20readout|vcc -section_id filter_20readout
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to filter_20readout|gnd -section_id filter_20readout
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=4096" -section_id filter_20readout
 set_global_assignment -name SLD_FILE db/stp3_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
