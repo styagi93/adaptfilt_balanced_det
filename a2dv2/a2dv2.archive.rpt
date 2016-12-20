@@ -1,0 +1,141 @@
+Archive Project report for a2dv2
+Sun Jul 24 21:42:31 2016
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Sun Jul 24 21:42:31 2016 ;
+; Revision Name          ; a2dv2                                 ;
+; Top-level Entity Name  ; a2dv2                                 ;
+; Family                 ; Cyclone IV E                          ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:\\Users\\saurabhg\\Desktop\\fpga-spreadspectrum-adaptivefilt\\a2dv2\\dse\\dse1\\a2dv2.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'a2dv2.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/altera_lite/16.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 823 megabytes
+    Info: Processing ended: Sun Jul 24 21:42:31 2016
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------------------------+
+; Files Archived                                             ;
++------------------------------------------------------------+
+; File Name                                                  ;
++------------------------------------------------------------+
+; a2d_data_a.bsf                                             ;
+; a2d_data_a.qip                                             ;
+; a2d_data_a.v                                               ;
+; a2d_data_a_bb.v                                            ;
+; a2dv2.dse                                                  ;
+; a2dv2.out.sdc                                              ;
+; a2dv2.qpf                                                  ;
+; a2dv2.qsf                                                  ;
+; a2dv2.SDC                                                  ;
+; a2dv2.sdc                                                  ;
+; a2dv2.v                                                    ;
+; a2dv2_assignment_defaults.qdf                              ;
+; adaptive_fir.v                                             ;
+; db/stp3_auto_stripped.stp                                  ;
+; debouncer.vhd                                              ;
+; fir_IP.cmp                                                 ;
+; fir_IP.qip                                                 ;
+; fir_IP.sip                                                 ;
+; fir_IP.spd                                                 ;
+; fir_IP.v                                                   ;
+; fir_IP/altera_avalon_sc_fifo.v                             ;
+; fir_IP/auk_dspip_avalon_streaming_controller_hpfir.vhd     ;
+; fir_IP/auk_dspip_avalon_streaming_sink_hpfir.vhd           ;
+; fir_IP/auk_dspip_avalon_streaming_source_hpfir.vhd         ;
+; fir_IP/auk_dspip_lib_pkg_hpfir.vhd                         ;
+; fir_IP/auk_dspip_math_pkg_hpfir.vhd                        ;
+; fir_IP/auk_dspip_roundsat_hpfir.vhd                        ;
+; fir_IP/dspba_library.vhd                                   ;
+; fir_IP/dspba_library_package.vhd                           ;
+; fir_IP/fir_IP_0002.vhd                                     ;
+; fir_IP/fir_IP_0002_ast.vhd                                 ;
+; fir_IP/fir_IP_0002_rtl_core.vhd                            ;
+; fir_IP_sim/altera_avalon_sc_fifo.v                         ;
+; fir_IP_sim/auk_dspip_avalon_streaming_controller_hpfir.vhd ;
+; fir_IP_sim/auk_dspip_avalon_streaming_sink_hpfir.vhd       ;
+; fir_IP_sim/auk_dspip_avalon_streaming_source_hpfir.vhd     ;
+; fir_IP_sim/auk_dspip_lib_pkg_hpfir.vhd                     ;
+; fir_IP_sim/auk_dspip_math_pkg_hpfir.vhd                    ;
+; fir_IP_sim/auk_dspip_roundsat_hpfir.vhd                    ;
+; fir_IP_sim/dspba_library.vhd                               ;
+; fir_IP_sim/dspba_library_package.vhd                       ;
+; fir_IP_sim/fir_IP.vhd                                      ;
+; fir_IP_sim/fir_IP_ast.vhd                                  ;
+; fir_IP_sim/fir_IP_coef_int.txt                             ;
+; fir_IP_sim/fir_IP_input.txt                                ;
+; fir_IP_sim/fir_IP_mlab.m                                   ;
+; fir_IP_sim/fir_IP_model.m                                  ;
+; fir_IP_sim/fir_IP_msim.tcl                                 ;
+; fir_IP_sim/fir_IP_nativelink.tcl                           ;
+; fir_IP_sim/fir_IP_param.txt                                ;
+; fir_IP_sim/fir_IP_rtl_core.vhd                             ;
+; fir_IP_sim/fir_IP_tb.vhd                                   ;
+; just_fir.v                                                 ;
+; nco.vhd                                                    ;
+; PLL_200MHz.bsf                                             ;
+; PLL_200MHz.cmp                                             ;
+; PLL_200MHz.inc                                             ;
+; PLL_200MHz.ppf                                             ;
+; PLL_200MHz.qip                                             ;
+; PLL_200MHz.v                                               ;
+; PLL_200MHz_bb.v                                            ;
+; PLL_200MHz_inst.v                                          ;
+; PLL_200MHz_syn.v                                           ;
+; stp3.stp                                                   ;
+; Waveform.vwf                                               ;
+; Waveform1.vwf                                              ;
++------------------------------------------------------------+
+
+
