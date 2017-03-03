@@ -57,6 +57,22 @@ module a2dv2(
 	FL_RY,
 	FL_WE_N,
 	FL_WP_N,
+	
+		// Ethernet 0
+  ENET0_MDC,
+  ENET0_MDIO,
+  ENET0_RESET_N,
+	
+	// Ethernet 1
+  ENET1_GTX_CLK,
+  ENET1_MDC,
+  ENET1_MDIO,
+  ENET1_RESET_N,
+  ENET1_RX_CLK,
+  ENET1_RX_DATA,
+  ENET1_RX_DV,
+  ENET1_TX_DATA,
+   ENET1_TX_EN,
 
 	//////////// HSMC, HSMC connect to DCC - High Speed ADC/DAC //////////
 	AD_SCLK,
@@ -95,11 +111,11 @@ module a2dv2(
 	ast_source_valid,
 //	ast_source_error,
 //	DFF_ast_source_data,
-	CLOCK_40,
+	CLOCK_20,
 	test_out_data,
 	adaptive_out_data,
 	error_adaptive_out,
-		emu
+	emu
 );
 
 //=======================================================
@@ -196,6 +212,22 @@ inout 		          		J1_152;
 input 		          		XT_IN_N;
 input 		          		XT_IN_P;
 
+		// Ethernet 0
+output        ENET0_MDC;
+inout         ENET0_MDIO;
+output        ENET0_RESET_N;
+	
+	// Ethernet 1
+output        ENET1_GTX_CLK;
+output        ENET1_MDC;
+inout         ENET1_MDIO;
+output        ENET1_RESET_N;
+input         ENET1_RX_CLK;
+input  [3: 0] ENET1_RX_DATA;
+input         ENET1_RX_DV;
+output [3: 0] ENET1_TX_DATA;
+output        ENET1_TX_EN;
+
 
 //=======================================================
 //  REG/WIRE declarations
@@ -209,7 +241,7 @@ reg			[13:0]	a2da_data;
 //////////// NCO //////////
 
 output reg clk_1khz=0;
-output CLOCK_40;
+output CLOCK_20;
 reg [15:0] counter = 16'd0;
 //reg [5:0] async_counter= 6'd0;
 output reg [11:0] NCO_OUT;
@@ -261,6 +293,28 @@ output [42:0] emu;
 reg			[13:0]			o_sine_p;
 wire [7:0] mu;
 wire [7:0] tap;
+
+
+	wire system_clk, clk_125, clk_25, clk_2p5;
+	wire tx_clk;
+	wire core_reset_n;
+	wire mdc, mdio_in, mdio_oen, mdio_out;
+	wire eth_mode, ena_10;
+
+	assign mdio_in   = ENET1_MDIO;
+	assign ENET0_MDC  = mdc;
+	assign ENET1_MDC  = mdc;
+	assign ENET0_MDIO = mdio_oen ? 1'bz : mdio_out;
+	assign ENET1_MDIO = mdio_oen ? 1'bz : mdio_out;
+	
+	assign ENET0_RESET_N = core_reset_n;
+	assign ENET1_RESET_N = core_reset_n;
+	
+
+	
+	assign tx_clk = eth_mode ? clk_125 :       // GbE Mode   = 125MHz clock
+	                ena_10   ? clk_2p5 :       // 10Mb Mode  = 2.5MHz clock
+	                           clk_25;         // 100Mb Mode = 25 MHz clock
 
 
 //initial begin
@@ -342,7 +396,7 @@ wire [7:0] tap;
 assign	reset_n			= KEY[3];
 assign	NCO_FREQ_UP			= KEY[2];
 assign	NCO_FREQ_DOWN			= KEY[1];
-assign   sys_clk = CLOCK_40;
+assign   sys_clk = CLOCK_20;
 assign	FPGA_CLK_A_P	=  sys_clk;
 assign	FPGA_CLK_A_N	= ~sys_clk;
 
@@ -401,13 +455,19 @@ p_sine	p_sine_inst(
 			
 			
 
-nco abc_inst (.clk			(CLOCK_40),
+nco abc_inst (.clk			(CLOCK_20),
 			.phase_incr (NCO_IN),
 			.cos_out  (NCO_OUT));
 	
-PLL_200MHz PLL_200MHz_inst (.inclk0(CLOCK_50),
-				.c0(CLOCK_40),
-				.locked());			
+PLL_200MHz PLL_200MHz_inst (
+				.inclk0(CLOCK_50),
+				.c0(CLOCK_20),
+				.c1(system_clk),
+				.c2(clk_125),
+				.c3(clk_25),
+				.c4(clk_2p5),
+				.locked(core_reset_n)
+);			
 	
 always @(posedge CLOCK_50)
 begin
@@ -449,7 +509,7 @@ end
 
 	/*
 	fir_IP_0002 fir_ip_inst (
-		.clk              (CLOCK_40),              //                     clk.clk
+		.clk              (CLOCK_20),              //                     clk.clk
 		.reset_n          (reset_n),          //                     rst.reset_n
 		.ast_sink_data    (l_NCO_OUT),    //   avalon_streaming_sink.data
 		.ast_sink_valid   (ast_sink_valid),   //                        .valid
@@ -458,7 +518,7 @@ end
 		.ast_source_valid (ast_source_valid), //                        .valid
 		.ast_source_error (ast_source_error),
 		//                        .error
-		.coeff_in_clk     (CLOCK_40),     //             coeff_clock.clk
+		.coeff_in_clk     (CLOCK_20),     //             coeff_clock.clk
 		.coeff_in_areset  (coeff_in_areset),  //             coeff_reset.reset_n
 		.coeff_in_address (coeff_in_address), //         avalon_mm_slave.address
 		.coeff_in_read    (coeff_in_read),    //                        .read
@@ -521,7 +581,7 @@ debouncer debounce_sw17 (.clk (CLOCK_50),
 
 								 
 // State machine for coeff reload
-always @(posedge CLOCK_40) begin
+always @(posedge CLOCK_20) begin
 
 case (state_f)
 
@@ -580,7 +640,7 @@ endcase
 end
 
 // to latch the filter's output; confine only to valid values
-always @(posedge CLOCK_40) begin
+always @(posedge CLOCK_20) begin
 l_ast_source_valid <= ast_source_valid;
 DFF_ast_source_data <= DFF_ast_source_data;
 	if ((l_ast_source_valid == 0) && (ast_source_valid == 1)) begin
@@ -589,7 +649,7 @@ DFF_ast_source_data <= DFF_ast_source_data;
 end 
 
 //to take care of sink_valid generation and latching NCO's o/p
-always @(posedge CLOCK_40) begin
+always @(posedge CLOCK_20) begin
 	l_CLOCK_50 <= CLOCK_50;
 	ll_CLOCK_50 <= l_CLOCK_50;
 	lll_CLOCK_50 <= ll_CLOCK_50;
@@ -603,31 +663,31 @@ end
 
 */
 
-always @ (posedge CLOCK_40)
+always @ (posedge CLOCK_20)
 begin
 l_NCO_OUT <=NCO_OUT;
 //desired_data <= test_out_data[31:20];
 //l_test_out_data <= test_out_data;
 end
 
-just_fir just_fir_inst(	.clk(CLOCK_40),
+just_fir just_fir_inst(	.clk(CLOCK_20),
 								.reset(reset_n),
 								.x_in(o_sine_p),
 								.y_out(test_out_data));
 
 
-lfsr lfsrs_inst (	.clk (CLOCK_40),
+lfsr lfsrs_inst (	.clk (CLOCK_20),
 						.outp(lfsr_out));
 
 ROM_delta_control delta_control_inst (.address(1'b0),
-												  .clock(CLOCK_40),
+												  .clock(CLOCK_20),
 												  .q(mu));
 
 ROM_buffer_tap buffer_control_inst (.address(1'b0),
-												  .clock(CLOCK_40),
+												  .clock(CLOCK_20),
 												  .q(tap));
 
-adaptive_fir adaptive_fir_inst(	.clk(CLOCK_40),
+adaptive_fir adaptive_fir_inst(	.clk(CLOCK_20),
 								.reset(reset_n),
 								.x_in(FIFO_random_seq[tap]),
 								.d_in(a2da_data),
@@ -636,7 +696,7 @@ adaptive_fir adaptive_fir_inst(	.clk(CLOCK_40),
 								.e_out(error_adaptive_out),
 								.emu_out(emu));	
 								
-always @(posedge CLOCK_40)
+always @(posedge CLOCK_20)
 begin
 FIFO_random_seq[0] <= o_sine_p;
 FIFO_random_seq[1] <= FIFO_random_seq[0];
@@ -673,4 +733,31 @@ FIFO_random_seq[31] <= FIFO_random_seq[30];
 end
 								
 
+	my_ddio_out ddio_out_inst(
+		.datain_h(1'b1),
+		.datain_l(1'b0),
+		.outclock(tx_clk),
+		.dataout(ENET1_GTX_CLK)
+	);
+
+	
+    nios_system system_inst (
+        .clk_clk                                   (system_clk),           //                                   clk.clk
+        .reset_reset_n                             (core_reset_n),      //                                 reset.reset_n
+        .tse_mac_pcs_mac_tx_clock_connection_clk 		(tx_clk), 				// eth_tse_0_pcs_mac_tx_clock_connection.clk
+        .tse_mac_pcs_mac_rx_clock_connection_clk 		(ENET1_RX_CLK), 		// eth_tse_0_pcs_mac_rx_clock_connection.clk
+        .tse_mac_mac_mdio_connection_mdc               (mdc),             	//               tse_mac_mdio_connection.mdc
+        .tse_mac_mac_mdio_connection_mdio_in           (mdio_in),           //                                      .mdio_in
+        .tse_mac_mac_mdio_connection_mdio_out          (mdio_out),          //                                      .mdio_out
+        .tse_mac_mac_mdio_connection_mdio_oen          (mdio_oen),          //                                      .mdio_oen
+        .tse_mac_mac_rgmii_connection_rgmii_in         (ENET1_RX_DATA),     //              tse_mac_rgmii_connection.rgmii_in
+        .tse_mac_mac_rgmii_connection_rgmii_out        (ENET1_TX_DATA),     //                                      .rgmii_out
+        .tse_mac_mac_rgmii_connection_rx_control       (ENET1_RX_DV),       //                                      .rx_control
+        .tse_mac_mac_rgmii_connection_tx_control       (ENET1_TX_EN),       //                                      .tx_control
+
+        .tse_mac_mac_status_connection_eth_mode        (eth_mode),        	//                                      .eth_mode
+        .tse_mac_mac_status_connection_ena_10          (ena_10),          	//                                      .ena_10	  
+    );	
+				
+								
 endmodule
