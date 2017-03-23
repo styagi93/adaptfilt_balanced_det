@@ -16,6 +16,7 @@
 
 FUNCTION PLL_200MHz 
 (
+	areset,
 	inclk0
 )
 

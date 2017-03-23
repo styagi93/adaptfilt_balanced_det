@@ -34,39 +34,52 @@
 //agreement for further details.
 
 
-//altpll bandwidth_type="AUTO" clk0_divide_by=5 clk0_duty_cycle=50 clk0_multiply_by=2 clk0_phase_shift="0" clk1_divide_by=1 clk1_duty_cycle=50 clk1_multiply_by=2 clk1_phase_shift="0" clk2_divide_by=2 clk2_duty_cycle=50 clk2_multiply_by=5 clk2_phase_shift="0" clk3_divide_by=2 clk3_duty_cycle=50 clk3_multiply_by=1 clk3_phase_shift="0" clk4_divide_by=20 clk4_duty_cycle=50 clk4_multiply_by=1 clk4_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone IV E" inclk0_input_frequency=20000 intended_device_family="Cyclone IV E" lpm_hint="CBX_MODULE_PREFIX=PLL_200MHz" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_USED" port_clk2="PORT_USED" port_clk3="PORT_USED" port_clk4="PORT_USED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="OFF" width_clock=5 clk inclk locked
+//altpll bandwidth_type="AUTO" clk0_divide_by=5 clk0_duty_cycle=50 clk0_multiply_by=2 clk0_phase_shift="0" clk1_divide_by=1 clk1_duty_cycle=50 clk1_multiply_by=2 clk1_phase_shift="0" clk2_divide_by=2 clk2_duty_cycle=50 clk2_multiply_by=5 clk2_phase_shift="0" clk3_divide_by=2 clk3_duty_cycle=50 clk3_multiply_by=1 clk3_phase_shift="0" clk4_divide_by=20 clk4_duty_cycle=50 clk4_multiply_by=1 clk4_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone IV E" inclk0_input_frequency=20000 intended_device_family="Cyclone IV E" lpm_hint="CBX_MODULE_PREFIX=PLL_200MHz" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_USED" port_clk2="PORT_USED" port_clk3="PORT_USED" port_clk4="PORT_USED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="OFF" width_clock=5 areset clk inclk locked
 //VERSION_BEGIN 16.0 cbx_altclkbuf 2016:04:27:18:05:34:SJ cbx_altiobuf_bidir 2016:04:27:18:05:34:SJ cbx_altiobuf_in 2016:04:27:18:05:34:SJ cbx_altiobuf_out 2016:04:27:18:05:34:SJ cbx_altpll 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_counter 2016:04:27:18:05:34:SJ cbx_lpm_decode 2016:04:27:18:05:34:SJ cbx_lpm_mux 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_stratixiii 2016:04:27:18:05:34:SJ cbx_stratixv 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
 
 
-//synthesis_resources = cycloneive_pll 1 
+//synthesis_resources = cycloneive_pll 1 reg 1 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
+(* ALTERA_ATTRIBUTE = {"SUPPRESS_DA_RULE_INTERNAL=C104;SUPPRESS_DA_RULE_INTERNAL=R101"} *)
 module  PLL_200MHz_altpll
 	( 
+	areset,
 	clk,
 	inclk,
 	locked) /* synthesis synthesis_clearbox=1 */;
+	input   areset;
 	output   [4:0]  clk;
 	input   [1:0]  inclk;
 	output   locked;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
+	tri0   areset;
 	tri0   [1:0]  inclk;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
 `endif
 
+	reg	pll_lock_sync;
 	wire  [4:0]   wire_pll1_clk;
 	wire  wire_pll1_fbout;
 	wire  wire_pll1_locked;
 
+	// synopsys translate_off
+	initial
+		pll_lock_sync = 0;
+	// synopsys translate_on
+	always @ ( posedge wire_pll1_locked or  posedge areset)
+		if (areset == 1'b1) pll_lock_sync <= 1'b0;
+		else  pll_lock_sync <= 1'b1;
 	cycloneive_pll   pll1
 	( 
 	.activeclock(),
+	.areset(areset),
 	.clk(wire_pll1_clk),
 	.clkbad(),
 	.fbin(wire_pll1_fbout),
@@ -82,7 +95,6 @@ module  PLL_200MHz_altpll
 	// synopsys translate_off
 	`endif
 	,
-	.areset(1'b0),
 	.clkswitch(1'b0),
 	.configupdate(1'b0),
 	.pfdena(1'b1),
@@ -126,7 +138,7 @@ module  PLL_200MHz_altpll
 		pll1.lpm_type = "cycloneive_pll";
 	assign
 		clk = {wire_pll1_clk[4:0]},
-		locked = wire_pll1_locked;
+		locked = (wire_pll1_locked & pll_lock_sync);
 endmodule //PLL_200MHz_altpll
 //VALID FILE
 
@@ -135,6 +147,7 @@ endmodule //PLL_200MHz_altpll
 `timescale 1 ps / 1 ps
 // synopsys translate_on
 module PLL_200MHz (
+	areset,
 	inclk0,
 	c0,
 	c1,
@@ -143,6 +156,7 @@ module PLL_200MHz (
 	c4,
 	locked)/* synthesis synthesis_clearbox = 1 */;
 
+	input	  areset;
 	input	  inclk0;
 	output	  c0;
 	output	  c1;
@@ -150,6 +164,13 @@ module PLL_200MHz (
 	output	  c3;
 	output	  c4;
 	output	  locked;
+`ifndef ALTERA_RESERVED_QIS
+// synopsys translate_off
+`endif
+	tri0	  areset;
+`ifndef ALTERA_RESERVED_QIS
+// synopsys translate_on
+`endif
 
 	wire [0:0] sub_wire2 = 1'h0;
 	wire [4:0] sub_wire3;
@@ -169,6 +190,7 @@ module PLL_200MHz (
 	wire  locked = sub_wire9;
 
 	PLL_200MHz_altpll	PLL_200MHz_altpll_component (
+				.areset (areset),
 				.inclk (sub_wire1),
 				.clk (sub_wire3),
 				.locked (sub_wire9));
@@ -274,7 +296,7 @@ endmodule
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT3 STRING "ps"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT4 STRING "ps"
 // Retrieval info: PRIVATE: PLL_ADVANCED_PARAM_CHECK STRING "0"
-// Retrieval info: PRIVATE: PLL_ARESET_CHECK STRING "0"
+// Retrieval info: PRIVATE: PLL_ARESET_CHECK STRING "1"
 // Retrieval info: PRIVATE: PLL_AUTOPLL_CHECK NUMERIC "1"
 // Retrieval info: PRIVATE: PLL_ENHPLL_CHECK NUMERIC "0"
 // Retrieval info: PRIVATE: PLL_FASTPLL_CHECK NUMERIC "0"
@@ -343,7 +365,7 @@ endmodule
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "NORMAL"
 // Retrieval info: CONSTANT: PLL_TYPE STRING "AUTO"
 // Retrieval info: CONSTANT: PORT_ACTIVECLOCK STRING "PORT_UNUSED"
-// Retrieval info: CONSTANT: PORT_ARESET STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: PORT_ARESET STRING "PORT_USED"
 // Retrieval info: CONSTANT: PORT_CLKBAD0 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_CLKBAD1 STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: PORT_CLKLOSS STRING "PORT_UNUSED"
@@ -386,6 +408,7 @@ endmodule
 // Retrieval info: CONSTANT: SELF_RESET_ON_LOSS_LOCK STRING "OFF"
 // Retrieval info: CONSTANT: WIDTH_CLOCK NUMERIC "5"
 // Retrieval info: USED_PORT: @clk 0 0 5 0 OUTPUT_CLK_EXT VCC "@clk[4..0]"
+// Retrieval info: USED_PORT: areset 0 0 0 0 INPUT GND "areset"
 // Retrieval info: USED_PORT: c0 0 0 0 0 OUTPUT_CLK_EXT VCC "c0"
 // Retrieval info: USED_PORT: c1 0 0 0 0 OUTPUT_CLK_EXT VCC "c1"
 // Retrieval info: USED_PORT: c2 0 0 0 0 OUTPUT_CLK_EXT VCC "c2"
@@ -393,6 +416,7 @@ endmodule
 // Retrieval info: USED_PORT: c4 0 0 0 0 OUTPUT_CLK_EXT VCC "c4"
 // Retrieval info: USED_PORT: inclk0 0 0 0 0 INPUT_CLK_EXT GND "inclk0"
 // Retrieval info: USED_PORT: locked 0 0 0 0 OUTPUT GND "locked"
+// Retrieval info: CONNECT: @areset 0 0 0 0 areset 0 0 0 0
 // Retrieval info: CONNECT: @inclk 0 0 1 1 GND 0 0 0 0
 // Retrieval info: CONNECT: @inclk 0 0 1 0 inclk0 0 0 0 0
 // Retrieval info: CONNECT: c0 0 0 0 0 @clk 0 0 1 0

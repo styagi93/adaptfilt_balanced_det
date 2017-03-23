@@ -1,5 +1,5 @@
 IP Upgrade report for a2dv2
-Fri Oct 21 00:29:45 2016
+Wed Mar 22 23:19:46 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ agreement for further details.
 +----------------------------------------------------------------------------+
 ; IP Upgrade Summary                                                         ;
 +------------------------------+---------------------------------------------+
-; IP Components Upgrade Status ; Failed - Fri Oct 21 00:29:45 2016           ;
+; IP Components Upgrade Status ; Failed - Wed Mar 22 23:19:46 2017           ;
 ; Quartus Prime Version        ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                ; a2dv2                                       ;
 ; Top-level Entity Name        ; a2dv2                                       ;
@@ -48,9 +48,9 @@ agreement for further details.
 +---------------------+
 Info (23030): Evaluation of Tcl script c:/altera_lite/16.0/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 887 megabytes
-    Info: Processing ended: Fri Oct 21 00:29:46 2016
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 903 megabytes
+    Info: Processing ended: Wed Mar 22 23:19:47 2017
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:19
 
 

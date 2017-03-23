@@ -37,6 +37,9 @@ module a2dv2(
 	LCD_ON,
 	LCD_RS,
 	LCD_RW,
+	
+		//////// GPIO //////////
+	GPIO,
 
 	//////////// SDCARD //////////
 	SD_CLK,
@@ -165,6 +168,9 @@ output		          		SD_CLK;
 inout 		          		SD_CMD;
 inout 		     [3:0]		SD_DAT;
 input 		          		SD_WP_N;
+
+//////////// GPIO //////////
+inout		        [35:0]		GPIO;
 
 //////////// I2C for HSMC  //////////
 output		          		I2C_SCLK;
@@ -301,20 +307,20 @@ wire [7:0] tap;
 	wire mdc, mdio_in, mdio_oen, mdio_out;
 	wire eth_mode, ena_10;
 
-	assign mdio_in   = ENET1_MDIO;
-	assign ENET0_MDC  = mdc;
-	assign ENET1_MDC  = mdc;
-	assign ENET0_MDIO = mdio_oen ? 1'bz : mdio_out;
-	assign ENET1_MDIO = mdio_oen ? 1'bz : mdio_out;
-	
-	assign ENET0_RESET_N = core_reset_n;
-	assign ENET1_RESET_N = core_reset_n;
-	
-
-	
-	assign tx_clk = eth_mode ? clk_125 :       // GbE Mode   = 125MHz clock
-	                ena_10   ? clk_2p5 :       // 10Mb Mode  = 2.5MHz clock
-	                           clk_25;         // 100Mb Mode = 25 MHz clock
+//	assign mdio_in   = ENET1_MDIO;
+//	assign ENET0_MDC  = mdc;
+//	assign ENET1_MDC  = mdc;
+//	assign ENET0_MDIO = mdio_oen ? 1'bz : mdio_out;
+//	assign ENET1_MDIO = mdio_oen ? 1'bz : mdio_out;
+//	
+//	assign ENET0_RESET_N = core_reset_n;
+//	assign ENET1_RESET_N = core_reset_n;
+//	
+//
+//	
+//	assign tx_clk = eth_mode ? clk_125 :       // GbE Mode   = 125MHz clock
+//	                ena_10   ? clk_2p5 :       // 10Mb Mode  = 2.5MHz clock
+//	                           clk_25;         // 100Mb Mode = 25 MHz clock
 
 
 //initial begin
@@ -460,6 +466,7 @@ nco abc_inst (.clk			(CLOCK_20),
 			.cos_out  (NCO_OUT));
 	
 PLL_200MHz PLL_200MHz_inst (
+				.areset	(~KEY[0]),
 				.inclk0(CLOCK_50),
 				.c0(CLOCK_20),
 				.c1(system_clk),
@@ -733,31 +740,39 @@ FIFO_random_seq[31] <= FIFO_random_seq[30];
 end
 								
 
-	my_ddio_out ddio_out_inst(
-		.datain_h(1'b1),
-		.datain_l(1'b0),
-		.outclock(tx_clk),
-		.dataout(ENET1_GTX_CLK)
-	);
-
-	
-    nios_system system_inst (
-        .clk_clk                                   (system_clk),           //                                   clk.clk
-        .reset_reset_n                             (core_reset_n),      //                                 reset.reset_n
-        .tse_mac_pcs_mac_tx_clock_connection_clk 		(tx_clk), 				// eth_tse_0_pcs_mac_tx_clock_connection.clk
-        .tse_mac_pcs_mac_rx_clock_connection_clk 		(ENET1_RX_CLK), 		// eth_tse_0_pcs_mac_rx_clock_connection.clk
-        .tse_mac_mac_mdio_connection_mdc               (mdc),             	//               tse_mac_mdio_connection.mdc
-        .tse_mac_mac_mdio_connection_mdio_in           (mdio_in),           //                                      .mdio_in
-        .tse_mac_mac_mdio_connection_mdio_out          (mdio_out),          //                                      .mdio_out
-        .tse_mac_mac_mdio_connection_mdio_oen          (mdio_oen),          //                                      .mdio_oen
-        .tse_mac_mac_rgmii_connection_rgmii_in         (ENET1_RX_DATA),     //              tse_mac_rgmii_connection.rgmii_in
-        .tse_mac_mac_rgmii_connection_rgmii_out        (ENET1_TX_DATA),     //                                      .rgmii_out
-        .tse_mac_mac_rgmii_connection_rx_control       (ENET1_RX_DV),       //                                      .rx_control
-        .tse_mac_mac_rgmii_connection_tx_control       (ENET1_TX_EN),       //                                      .tx_control
-
-        .tse_mac_mac_status_connection_eth_mode        (eth_mode),        	//                                      .eth_mode
-        .tse_mac_mac_status_connection_ena_10          (ena_10),          	//                                      .ena_10	  
-    );	
+//	my_ddio_out ddio_out_inst(
+//		.datain_h(1'b1),
+//		.datain_l(1'b0),
+//		.outclock(tx_clk),
+//		.dataout(ENET1_GTX_CLK)
+//	);
+//
+//	
+//    nios_system system_inst (
+//        .clk_clk                                   (system_clk),           //                                   clk.clk
+//        .reset_reset_n                             (core_reset_n),      //                                 reset.reset_n
+//        .tse_mac_pcs_mac_tx_clock_connection_clk 		(tx_clk), 				// eth_tse_0_pcs_mac_tx_clock_connection.clk
+//        .tse_mac_pcs_mac_rx_clock_connection_clk 		(ENET1_RX_CLK), 		// eth_tse_0_pcs_mac_rx_clock_connection.clk
+//        .tse_mac_mac_mdio_connection_mdc               (mdc),             	//               tse_mac_mdio_connection.mdc
+//        .tse_mac_mac_mdio_connection_mdio_in           (mdio_in),           //                                      .mdio_in
+//        .tse_mac_mac_mdio_connection_mdio_out          (mdio_out),          //                                      .mdio_out
+//        .tse_mac_mac_mdio_connection_mdio_oen          (mdio_oen),          //                                      .mdio_oen
+//        .tse_mac_mac_rgmii_connection_rgmii_in         (ENET1_RX_DATA),     //              tse_mac_rgmii_connection.rgmii_in
+//        .tse_mac_mac_rgmii_connection_rgmii_out        (ENET1_TX_DATA),     //                                      .rgmii_out
+//        .tse_mac_mac_rgmii_connection_rx_control       (ENET1_RX_DV),       //                                      .rx_control
+//        .tse_mac_mac_rgmii_connection_tx_control       (ENET1_TX_EN),       //                                      .tx_control
+//
+//        .tse_mac_mac_status_connection_eth_mode        (eth_mode),        	//                                      .eth_mode
+//        .tse_mac_mac_status_connection_ena_10          (ena_10),          	//                                      .ena_10	  
+//    );	
 				
-								
+///////////////GPIO////////////////
+	assign GPIO[0] = CLOCK_20;
+	assign GPIO[1] = CLOCK_20;
+	assign GPIO[2] = CLOCK_20;
+	assign GPIO[35:3] = 33'bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz;
+
+/////////////////////////////////////////
+
+				
 endmodule
