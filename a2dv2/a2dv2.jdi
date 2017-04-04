@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="fe4308155bc74608185d"/>
+    <hash md5_digest_80b="63c46be83b452bc3cac8"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="a2dv2.sof" usercode="0xFFFFFFFF"/>
@@ -385,7 +385,7 @@
   <sld_infos>
     <sld_info hpath="p_sine:p_sine_inst" name="p_sine_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME p_sine HAS_SOPCINFO 1 GENERATION_ID 1490247783"/>
+        <assignment_value text="QSYS_NAME p_sine HAS_SOPCINFO 1 GENERATION_ID 1491274590"/>
       </assignment_values>
       <parameters/>
     </sld_info>

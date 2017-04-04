@@ -472,7 +472,7 @@ PLL_200MHz PLL_200MHz_inst (
 				.c1(system_clk),
 				.c2(clk_125),
 				.c3(clk_25),
-				.c4(clk_2p5),
+				.c4(clk_10mhz),
 				.locked(core_reset_n)
 );			
 	
@@ -766,11 +766,30 @@ end
 //        .tse_mac_mac_status_connection_ena_10          (ena_10),          	//                                      .ena_10	  
 //    );	
 				
-///////////////GPIO////////////////
-	assign GPIO[0] = CLOCK_20;
-	assign GPIO[1] = CLOCK_20;
-	assign GPIO[2] = CLOCK_20;
-	assign GPIO[35:3] = 33'bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz;
+///////////////GPIO control////////////////
+wire clk_10mhz;
+reg [7:0] temp_counter = 8'd0;
+
+assign GPIO[35:9] = 27'bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz;
+	
+	
+ FIFO fifo_1 (
+	.data(temp_counter),
+	.rdclk(GPIO[8]),
+	.rdreq(GPIO[8]),
+	.wrclk(clk_10mhz),
+	.wrreq(clk_10mhz),
+	.q(GPIO[7:0]),
+	.rdempty(LEDG[0]),
+	.wrfull(LEDR[17])
+	);
+	
+	
+	always @(posedge clk_10mhz)
+	begin
+	temp_counter= temp_counter + 2'd1;
+	
+	end	
 
 /////////////////////////////////////////
 

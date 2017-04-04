@@ -136,7 +136,7 @@ module PLL_200MHz (
 		altpll_component.clk3_duty_cycle = 50,
 		altpll_component.clk3_multiply_by = 1,
 		altpll_component.clk3_phase_shift = "0",
-		altpll_component.clk4_divide_by = 20,
+		altpll_component.clk4_divide_by = 5,
 		altpll_component.clk4_duty_cycle = 50,
 		altpll_component.clk4_multiply_by = 1,
 		altpll_component.clk4_phase_shift = "0",
@@ -227,7 +227,7 @@ endmodule
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE1 STRING "100.000000"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE2 STRING "125.000000"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE3 STRING "25.000000"
-// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE4 STRING "2.500000"
+// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE4 STRING "10.000000"
 // Retrieval info: PRIVATE: EXPLICIT_SWITCHOVER_COUNTER STRING "0"
 // Retrieval info: PRIVATE: EXT_FEEDBACK_RADIO STRING "0"
 // Retrieval info: PRIVATE: GLOCKED_COUNTER_EDIT_CHANGED STRING "1"
@@ -268,7 +268,7 @@ endmodule
 // Retrieval info: PRIVATE: OUTPUT_FREQ1 STRING "100.00000000"
 // Retrieval info: PRIVATE: OUTPUT_FREQ2 STRING "125.00000000"
 // Retrieval info: PRIVATE: OUTPUT_FREQ3 STRING "25.00000000"
-// Retrieval info: PRIVATE: OUTPUT_FREQ4 STRING "2.50000000"
+// Retrieval info: PRIVATE: OUTPUT_FREQ4 STRING "10.00000000"
 // Retrieval info: PRIVATE: OUTPUT_FREQ_MODE0 STRING "0"
 // Retrieval info: PRIVATE: OUTPUT_FREQ_MODE1 STRING "1"
 // Retrieval info: PRIVATE: OUTPUT_FREQ_MODE2 STRING "1"
@@ -351,7 +351,7 @@ endmodule
 // Retrieval info: CONSTANT: CLK3_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK3_MULTIPLY_BY NUMERIC "1"
 // Retrieval info: CONSTANT: CLK3_PHASE_SHIFT STRING "0"
-// Retrieval info: CONSTANT: CLK4_DIVIDE_BY NUMERIC "20"
+// Retrieval info: CONSTANT: CLK4_DIVIDE_BY NUMERIC "5"
 // Retrieval info: CONSTANT: CLK4_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK4_MULTIPLY_BY NUMERIC "1"
 // Retrieval info: CONSTANT: CLK4_PHASE_SHIFT STRING "0"
@@ -426,7 +426,7 @@ endmodule
 // Retrieval info: GEN_FILE: TYPE_NORMAL PLL_200MHz.ppf TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL PLL_200MHz.inc TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL PLL_200MHz.cmp TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL PLL_200MHz.bsf TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL PLL_200MHz.bsf FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL PLL_200MHz_inst.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL PLL_200MHz_bb.v FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL PLL_200MHz_syn.v TRUE
