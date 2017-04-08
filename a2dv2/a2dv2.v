@@ -770,19 +770,19 @@ end
 wire clk_10mhz;
 reg [7:0] temp_counter = 8'd0;
 
-assign GPIO[35:9] = 27'bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz;
+assign GPIO[7:0] = temp_counter;
 	
 	
- FIFO fifo_1 (
-	.data(temp_counter),
-	.rdclk(GPIO[8]),
-	.rdreq(GPIO[8]),
-	.wrclk(clk_10mhz),
-	.wrreq(clk_10mhz),
-	.q(GPIO[7:0]),
-	.rdempty(LEDG[0]),
-	.wrfull(LEDR[17])
-	);
+// FIFO fifo_1 (
+//	.data(temp_counter),
+//	.rdclk(GPIO[8]),
+//	.rdreq(1'b1),
+//	.wrclk(clk_10mhz),
+//	.wrreq(1'b1),
+//	.q(GPIO[7:0]),
+//	.rdempty(LEDG[0]),
+//	.wrfull(LEDR[17])
+//	);
 	
 	
 	always @(posedge clk_10mhz)
