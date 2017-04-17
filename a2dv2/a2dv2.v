@@ -677,10 +677,10 @@ l_NCO_OUT <=NCO_OUT;
 //l_test_out_data <= test_out_data;
 end
 
-just_fir just_fir_inst(	.clk(CLOCK_20),
-								.reset(reset_n),
-								.x_in(o_sine_p),
-								.y_out(test_out_data));
+//just_fir just_fir_inst(	.clk(CLOCK_20),
+//								.reset(reset_n),
+//								.x_in(o_sine_p),
+//								.y_out(test_out_data));
 
 
 lfsr lfsrs_inst (	.clk (CLOCK_20),
@@ -694,14 +694,32 @@ ROM_buffer_tap buffer_control_inst (.address(1'b0),
 												  .clock(CLOCK_20),
 												  .q(tap));
 
-adaptive_fir adaptive_fir_inst(	.clk(CLOCK_20),
+adaptive_fir adaptive_fir_inst(	
+								.clk(CLOCK_20),
 								.reset(reset_n),
 								.x_in(FIFO_random_seq[tap]),
 								.d_in(a2da_data),
 								.mu_in(mu),
 								.y_out(adaptive_out_data),
 								.e_out(error_adaptive_out),
-								.emu_out(emu));	
+								.emu_out(emu),
+								.f_0(f_0),
+								.f_1(f_1),
+								.f_2(f_2),
+								.f_3(f_3),
+								.f_4(f_4),
+								.f_5(f_5),
+								.f_6(f_6),
+								.f_7(f_7),
+								.f_8(f_8),
+								.f_9(f_9),
+								.f_10(f_10),
+								.f_11(f_11),
+								.f_12(f_12),
+								.f_13(f_13),
+								.f_14(f_14),
+								.f_15(f_15)
+								);	
 								
 always @(posedge CLOCK_20)
 begin
@@ -770,7 +788,7 @@ end
 wire clk_10mhz;
 reg [7:0] temp_counter = 8'd0;
 
-assign GPIO[7:0] = temp_counter;
+//assign GPIO[7:0] = temp_counter;
 	
 	
  FIFO fifo_1 (
@@ -791,7 +809,66 @@ assign GPIO[7:0] = temp_counter;
 	
 	end	
 
-/////////////////////////////////////////
+///////////////////////////CIC/////////////////////////
+wire [15:0] f_0;
+wire [15:0] f_1;
+wire [15:0] f_2;
+wire [15:0] f_3;
+wire [15:0] f_4;
+wire [15:0] f_5;
+wire [15:0] f_6;
+wire [15:0] f_7;
+wire [15:0] f_8;
+wire [15:0] f_9;
+wire [15:0] f_10;
+wire [15:0] f_11;
+wire [15:0] f_12;
+wire [15:0] f_13;
+wire [15:0] f_14;
+wire [15:0] f_15;
+wire in_ready;
+wire [15:0] out_data;
+wire [1:0] out_error;
+wire out_valid;
+wire out_startofpacket;
+wire out_endofpacket;
+wire out_channel;
+
+
+ CIC u0 (
+	  .in_error          (2'd0),          //  av_st_in.error
+	  .in_valid          (1'd1),          //          .valid
+	  .in_ready          (in_ready),          //          .ready
+	  .in0_data          (f_0),          //          .in0_data
+	  .in1_data          (f_1),          //          .in1_data
+	  .in2_data          (f_2),          //          .in2_data
+	  .in3_data          (f_3),          //          .in3_data
+	  .in4_data          (f_4),          //          .in4_data
+	  .in5_data          (f_5),          //          .in5_data
+	  .in6_data          (f_6),          //          .in6_data
+	  .in7_data          (f_7),          //          .in7_data
+	  .in8_data          (f_8),          //          .in8_data
+	  .in9_data          (f_9),          //          .in9_data
+	  .in10_data         (f_10),         //          .in10_data
+	  .in11_data         (f_11),         //          .in11_data
+	  .in12_data         (f_12),         //          .in12_data
+	  .in13_data         (f_13),         //          .in13_data
+	  .in14_data         (f_14),         //          .in14_data
+	  .in15_data         (f_15),         //          .in15_data
+	  .out_data          (out_data),          // av_st_out.out_data
+	  .out_error         (out_error),         //          .error
+	  .out_valid         (out_valid),         //          .valid
+	  .out_ready         (1'b1),         //          .ready
+	  .out_startofpacket (out_startofpacket), //          .startofpacket
+	  .out_endofpacket   (out_endofpacket),   //          .endofpacket
+	  .out_channel       (out_channel),       //          .channel
+	  .clk               (CLOCK_20),               //     clock.clk
+	  .reset_n           (reset_n)            //     reset.reset_n
+ );
+
+
+
+//////////////////////////////////////////////////////
 
 				
 endmodule

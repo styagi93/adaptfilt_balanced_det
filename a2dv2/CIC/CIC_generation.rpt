@@ -33,7 +33,7 @@ Info: For information on how to simulate your IP, see the explanatory comments i
 Info: Finished: Create Modelsim Project.
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC.qsys --synthesis=VERILOG --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC.qsys --synthesis=VERILOG --greybox --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading a2dv2/CIC.qsys
 Progress: Reading input file
 Progress: Adding cic_ii_0 [altera_cic_ii 16.0]
@@ -45,5 +45,7 @@ Progress: Done reading input file
 Info: CIC: Generating CIC "CIC" for QUARTUS_SYNTH
 Info: cic_ii_0: "CIC" instantiated altera_cic_ii "cic_ii_0"
 Info: CIC: Done "CIC" with 2 modules, 30 files
+Info: Generating third-party timing and resource estimation model ...
+Info: Done generating third-party timing and resource estimation model.
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

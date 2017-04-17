@@ -9,7 +9,23 @@ input signed [13:0] d_in,
 input [7:0] mu_in,
 output reg signed [42:0] y_out,
 output reg signed [32:0] e_out,
-output reg signed [42:0] emu_out
+output reg signed [42:0] emu_out,
+output  signed [15:0] f_0,
+output  signed [15:0] f_1,
+output  signed [15:0] f_2,
+output  signed [15:0] f_3,
+output  signed [15:0] f_4,
+output  signed [15:0] f_5,
+output  signed [15:0] f_6,
+output  signed [15:0] f_7,
+output  signed [15:0] f_8,
+output  signed [15:0] f_9,
+output  signed [15:0] f_10,
+output  signed [15:0] f_11,
+output  signed [15:0] f_12,
+output  signed [15:0] f_13,
+output  signed [15:0] f_14,
+output  signed [15:0] f_15
 );
 
 //regs and wire declarations:
@@ -21,6 +37,23 @@ wire signed [32:0] emu;
 reg signed [44:0] xemu [0:L-1];
 wire signed [42:0] y;
 wire signed [32:0] e;
+
+assign f_0 = f[0];
+assign f_1 = f[1];
+assign f_2 = f[2];
+assign f_3 = f[3];
+assign f_4 = f[4];
+assign f_5 = f[5];
+assign f_6 = f[6];
+assign f_7 = f[7];
+assign f_8 = f[8];
+assign f_9 = f[9];
+assign f_10 = f[10];
+assign f_11 = f[11];
+assign f_12 = f[12];
+assign f_13 = f[13];
+assign f_14 = f[14];
+assign f_15 = f[15];
 
 initial begin
 	d <= 14'd0;

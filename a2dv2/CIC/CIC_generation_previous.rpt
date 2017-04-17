@@ -1,0 +1,49 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading a2dv2/CIC.qsys
+Progress: Reading input file
+Progress: Adding cic_ii_0 [altera_cic_ii 16.0]
+Progress: Parameterizing module cic_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: CIC: Generating CIC "CIC" for SIM_VERILOG
+Info: cic_ii_0: "CIC" instantiated altera_cic_ii "cic_ii_0"
+Info: CIC: Done "CIC" with 2 modules, 60 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC\CIC.spd --output-directory=C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC\CIC.spd --output-directory=C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/simulation/.
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC.qsys --synthesis=VERILOG --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading a2dv2/CIC.qsys
+Progress: Reading input file
+Progress: Adding cic_ii_0 [altera_cic_ii 16.0]
+Progress: Parameterizing module cic_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: CIC: Generating CIC "CIC" for QUARTUS_SYNTH
+Info: cic_ii_0: "CIC" instantiated altera_cic_ii "cic_ii_0"
+Info: CIC: Done "CIC" with 2 modules, 30 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
