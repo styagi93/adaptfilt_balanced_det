@@ -408,7 +408,7 @@ assign	FPGA_CLK_A_N	= ~sys_clk;
 
  // assign for ADC control signal
 assign	AD_SCLK			= 1'b1;			// (DFS)Data Format Select
-assign	AD_SDIO			= 1'b1;			// (DCS)Duty Cycle Stabilizer Select
+assign	AD_SDIO			= 1'b0;			// (DCS)Duty Cycle Stabilizer Select
 assign	ADA_OE			= 1'b0;				// enable ADA output
 assign	ADA_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
 
@@ -798,7 +798,7 @@ reg [7:0] temp_counter = 8'd0;
 	.wrclk(clk_10mhz),
 	.wrreq(1'b1),
 	.q(GPIO[7:0]),
-	.rdempty(LEDG[0]),
+	.rdempty(GPIO[9]),
 	.wrfull(LEDR[17])
 	);
 	
@@ -869,6 +869,23 @@ wire out_channel;
 
 
 //////////////////////////////////////////////////////
+
+
+///////////////////////////PROTOCOL/////////////////////
+//reg [31:0] cic_encoded_data = 32'd0;
+//
+//always @ (posedge out_valid)
+//begin
+//cic_encoded_data <= {out_data[15:12],2'b11,out_channel[3],buffer_empty,
+//							out_data[11:8],2'b10,out_channel[2],buffer_empty,
+//							out_data[7:4],2'b01,out_channel[1],buffer_empty,
+//							out_data[3:0],2'b00,out_channel[0],buffer_empty};
+//
+////pass to FIFO
+//
+//end
+
+////////////////////////////////////////////////////////
 
 				
 endmodule

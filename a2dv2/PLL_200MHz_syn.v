@@ -34,7 +34,7 @@
 //agreement for further details.
 
 
-//altpll bandwidth_type="AUTO" clk0_divide_by=5 clk0_duty_cycle=50 clk0_multiply_by=2 clk0_phase_shift="0" clk1_divide_by=1 clk1_duty_cycle=50 clk1_multiply_by=2 clk1_phase_shift="0" clk2_divide_by=2 clk2_duty_cycle=50 clk2_multiply_by=5 clk2_phase_shift="0" clk3_divide_by=2 clk3_duty_cycle=50 clk3_multiply_by=1 clk3_phase_shift="0" clk4_divide_by=10 clk4_duty_cycle=50 clk4_multiply_by=1 clk4_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone IV E" inclk0_input_frequency=20000 intended_device_family="Cyclone IV E" lpm_hint="CBX_MODULE_PREFIX=PLL_200MHz" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_USED" port_clk2="PORT_USED" port_clk3="PORT_USED" port_clk4="PORT_USED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="OFF" width_clock=5 areset clk inclk locked
+//altpll bandwidth_type="AUTO" clk0_divide_by=25 clk0_duty_cycle=50 clk0_multiply_by=1 clk0_phase_shift="0" clk1_divide_by=1 clk1_duty_cycle=50 clk1_multiply_by=2 clk1_phase_shift="0" clk2_divide_by=2 clk2_duty_cycle=50 clk2_multiply_by=5 clk2_phase_shift="0" clk3_divide_by=2 clk3_duty_cycle=50 clk3_multiply_by=1 clk3_phase_shift="0" clk4_divide_by=25 clk4_duty_cycle=50 clk4_multiply_by=1 clk4_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone IV E" inclk0_input_frequency=20000 intended_device_family="Cyclone IV E" lpm_hint="CBX_MODULE_PREFIX=PLL_200MHz" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_USED" port_clk2="PORT_USED" port_clk3="PORT_USED" port_clk4="PORT_USED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="OFF" width_clock=5 areset clk inclk locked
 //VERSION_BEGIN 16.0 cbx_altclkbuf 2016:04:27:18:05:34:SJ cbx_altiobuf_bidir 2016:04:27:18:05:34:SJ cbx_altiobuf_in 2016:04:27:18:05:34:SJ cbx_altiobuf_out 2016:04:27:18:05:34:SJ cbx_altpll 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_counter 2016:04:27:18:05:34:SJ cbx_lpm_decode 2016:04:27:18:05:34:SJ cbx_lpm_mux 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_stratixiii 2016:04:27:18:05:34:SJ cbx_stratixv 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
@@ -110,9 +110,9 @@ module  PLL_200MHz_altpll
 	);
 	defparam
 		pll1.bandwidth_type = "auto",
-		pll1.clk0_divide_by = 5,
+		pll1.clk0_divide_by = 25,
 		pll1.clk0_duty_cycle = 50,
-		pll1.clk0_multiply_by = 2,
+		pll1.clk0_multiply_by = 1,
 		pll1.clk0_phase_shift = "0",
 		pll1.clk1_divide_by = 1,
 		pll1.clk1_duty_cycle = 50,
@@ -126,7 +126,7 @@ module  PLL_200MHz_altpll
 		pll1.clk3_duty_cycle = 50,
 		pll1.clk3_multiply_by = 1,
 		pll1.clk3_phase_shift = "0",
-		pll1.clk4_divide_by = 10,
+		pll1.clk4_divide_by = 25,
 		pll1.clk4_duty_cycle = 50,
 		pll1.clk4_multiply_by = 1,
 		pll1.clk4_phase_shift = "0",
@@ -226,11 +226,11 @@ endmodule
 // Retrieval info: PRIVATE: DUTY_CYCLE2 STRING "50.00000000"
 // Retrieval info: PRIVATE: DUTY_CYCLE3 STRING "50.00000000"
 // Retrieval info: PRIVATE: DUTY_CYCLE4 STRING "50.00000000"
-// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE0 STRING "20.000000"
+// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE0 STRING "2.000000"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE1 STRING "100.000000"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE2 STRING "125.000000"
 // Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE3 STRING "25.000000"
-// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE4 STRING "5.000000"
+// Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE4 STRING "2.000000"
 // Retrieval info: PRIVATE: EXPLICIT_SWITCHOVER_COUNTER STRING "0"
 // Retrieval info: PRIVATE: EXT_FEEDBACK_RADIO STRING "0"
 // Retrieval info: PRIVATE: GLOCKED_COUNTER_EDIT_CHANGED STRING "1"
@@ -261,7 +261,7 @@ endmodule
 // Retrieval info: PRIVATE: MIRROR_CLK2 STRING "0"
 // Retrieval info: PRIVATE: MIRROR_CLK3 STRING "0"
 // Retrieval info: PRIVATE: MIRROR_CLK4 STRING "0"
-// Retrieval info: PRIVATE: MULT_FACTOR0 NUMERIC "20"
+// Retrieval info: PRIVATE: MULT_FACTOR0 NUMERIC "2"
 // Retrieval info: PRIVATE: MULT_FACTOR1 NUMERIC "1"
 // Retrieval info: PRIVATE: MULT_FACTOR2 NUMERIC "5"
 // Retrieval info: PRIVATE: MULT_FACTOR3 NUMERIC "1"
@@ -271,7 +271,7 @@ endmodule
 // Retrieval info: PRIVATE: OUTPUT_FREQ1 STRING "100.00000000"
 // Retrieval info: PRIVATE: OUTPUT_FREQ2 STRING "125.00000000"
 // Retrieval info: PRIVATE: OUTPUT_FREQ3 STRING "25.00000000"
-// Retrieval info: PRIVATE: OUTPUT_FREQ4 STRING "5.00000000"
+// Retrieval info: PRIVATE: OUTPUT_FREQ4 STRING "2.00000000"
 // Retrieval info: PRIVATE: OUTPUT_FREQ_MODE0 STRING "0"
 // Retrieval info: PRIVATE: OUTPUT_FREQ_MODE1 STRING "1"
 // Retrieval info: PRIVATE: OUTPUT_FREQ_MODE2 STRING "1"
@@ -338,9 +338,9 @@ endmodule
 // Retrieval info: PRIVATE: ZERO_DELAY_RADIO STRING "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: BANDWIDTH_TYPE STRING "AUTO"
-// Retrieval info: CONSTANT: CLK0_DIVIDE_BY NUMERIC "5"
+// Retrieval info: CONSTANT: CLK0_DIVIDE_BY NUMERIC "25"
 // Retrieval info: CONSTANT: CLK0_DUTY_CYCLE NUMERIC "50"
-// Retrieval info: CONSTANT: CLK0_MULTIPLY_BY NUMERIC "2"
+// Retrieval info: CONSTANT: CLK0_MULTIPLY_BY NUMERIC "1"
 // Retrieval info: CONSTANT: CLK0_PHASE_SHIFT STRING "0"
 // Retrieval info: CONSTANT: CLK1_DIVIDE_BY NUMERIC "1"
 // Retrieval info: CONSTANT: CLK1_DUTY_CYCLE NUMERIC "50"
@@ -354,7 +354,7 @@ endmodule
 // Retrieval info: CONSTANT: CLK3_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK3_MULTIPLY_BY NUMERIC "1"
 // Retrieval info: CONSTANT: CLK3_PHASE_SHIFT STRING "0"
-// Retrieval info: CONSTANT: CLK4_DIVIDE_BY NUMERIC "10"
+// Retrieval info: CONSTANT: CLK4_DIVIDE_BY NUMERIC "25"
 // Retrieval info: CONSTANT: CLK4_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK4_MULTIPLY_BY NUMERIC "1"
 // Retrieval info: CONSTANT: CLK4_PHASE_SHIFT STRING "0"

@@ -1,7 +1,5 @@
 
 module CIC (
-	clk,
-	reset_n,
 	in_error,
 	in_valid,
 	in_ready,
@@ -27,10 +25,10 @@ module CIC (
 	out_ready,
 	out_startofpacket,
 	out_endofpacket,
-	out_channel);	
+	out_channel,
+	clk,
+	reset_n);	
 
-	input		clk;
-	input		reset_n;
 	input	[1:0]	in_error;
 	input		in_valid;
 	output		in_ready;
@@ -57,4 +55,6 @@ module CIC (
 	output		out_startofpacket;
 	output		out_endofpacket;
 	output	[3:0]	out_channel;
+	input		clk;
+	input		reset_n;
 endmodule

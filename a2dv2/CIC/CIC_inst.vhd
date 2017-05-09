@@ -1,7 +1,5 @@
 	component CIC is
 		port (
-			clk               : in  std_logic                     := 'X';             -- clk
-			reset_n           : in  std_logic                     := 'X';             -- reset_n
 			in_error          : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- error
 			in_valid          : in  std_logic                     := 'X';             -- valid
 			in_ready          : out std_logic;                                        -- ready
@@ -27,14 +25,14 @@
 			out_ready         : in  std_logic                     := 'X';             -- ready
 			out_startofpacket : out std_logic;                                        -- startofpacket
 			out_endofpacket   : out std_logic;                                        -- endofpacket
-			out_channel       : out std_logic_vector(3 downto 0)                      -- channel
+			out_channel       : out std_logic_vector(3 downto 0);                     -- channel
+			clk               : in  std_logic                     := 'X';             -- clk
+			reset_n           : in  std_logic                     := 'X'              -- reset_n
 		);
 	end component CIC;
 
 	u0 : component CIC
 		port map (
-			clk               => CONNECTED_TO_clk,               --     clock.clk
-			reset_n           => CONNECTED_TO_reset_n,           --     reset.reset_n
 			in_error          => CONNECTED_TO_in_error,          --  av_st_in.error
 			in_valid          => CONNECTED_TO_in_valid,          --          .valid
 			in_ready          => CONNECTED_TO_in_ready,          --          .ready
@@ -60,6 +58,8 @@
 			out_ready         => CONNECTED_TO_out_ready,         --          .ready
 			out_startofpacket => CONNECTED_TO_out_startofpacket, --          .startofpacket
 			out_endofpacket   => CONNECTED_TO_out_endofpacket,   --          .endofpacket
-			out_channel       => CONNECTED_TO_out_channel        --          .channel
+			out_channel       => CONNECTED_TO_out_channel,       --          .channel
+			clk               => CONNECTED_TO_clk,               --     clock.clk
+			reset_n           => CONNECTED_TO_reset_n            --     reset.reset_n
 		);
 

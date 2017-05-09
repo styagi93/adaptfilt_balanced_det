@@ -34,17 +34,17 @@
 //agreement for further details.
 
 
-//dcfifo_mixed_widths DEVICE_FAMILY="Cyclone IV E" LPM_NUMWORDS=4096 LPM_SHOWAHEAD="ON" LPM_WIDTH=8 LPM_WIDTH_R=8 LPM_WIDTHU=12 LPM_WIDTHU_R=12 OVERFLOW_CHECKING="ON" RDSYNC_DELAYPIPE=5 UNDERFLOW_CHECKING="ON" USE_EAB="ON" WRSYNC_DELAYPIPE=5 data q rdclk rdempty rdreq wrclk wrfull wrreq INTENDED_DEVICE_FAMILY="Cyclone IV E" ALTERA_INTERNAL_OPTIONS=AUTO_SHIFT_REGISTER_RECOGNITION=OFF
+//dcfifo_mixed_widths DEVICE_FAMILY="Cyclone IV E" LPM_NUMWORDS=512 LPM_SHOWAHEAD="ON" LPM_WIDTH=8 LPM_WIDTH_R=8 LPM_WIDTHU=9 LPM_WIDTHU_R=9 OVERFLOW_CHECKING="ON" RDSYNC_DELAYPIPE=8 UNDERFLOW_CHECKING="ON" USE_EAB="ON" WRSYNC_DELAYPIPE=8 data q rdclk rdempty rdreq wrclk wrfull wrreq INTENDED_DEVICE_FAMILY="Cyclone IV E" ALTERA_INTERNAL_OPTIONS=AUTO_SHIFT_REGISTER_RECOGNITION=OFF
 //VERSION_BEGIN 16.0 cbx_a_gray2bin 2016:04:27:18:05:34:SJ cbx_a_graycounter 2016:04:27:18:05:34:SJ cbx_altdpram 2016:04:27:18:05:34:SJ cbx_altera_syncram 2016:04:27:18:05:34:SJ cbx_altera_syncram_nd_impl 2016:04:27:18:05:34:SJ cbx_altsyncram 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_dcfifo 2016:04:27:18:05:34:SJ cbx_fifo_common 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_counter 2016:04:27:18:05:34:SJ cbx_lpm_decode 2016:04:27:18:05:34:SJ cbx_lpm_mux 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_scfifo 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_stratixiii 2016:04:27:18:05:34:SJ cbx_stratixv 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
 
 
 
-//a_graycounter DEVICE_FAMILY="Cyclone IV E" PVALUE=1 WIDTH=13 clock cnt_en q
+//a_graycounter DEVICE_FAMILY="Cyclone IV E" PVALUE=1 WIDTH=10 clock cnt_en q
 //VERSION_BEGIN 16.0 cbx_a_gray2bin 2016:04:27:18:05:34:SJ cbx_a_graycounter 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ  VERSION_END
 
-//synthesis_resources = reg 18 
+//synthesis_resources = reg 14 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
@@ -56,7 +56,7 @@ module  FIFO_a_graycounter
 	q) /* synthesis synthesis_clearbox=1 */;
 	input   clock;
 	input   cnt_en;
-	output   [12:0]  q;
+	output   [9:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -65,11 +65,11 @@ module  FIFO_a_graycounter
 // synopsys translate_on
 `endif
 
-	reg	[12:0]	counter5a;
+	reg	[9:0]	counter5a;
 	(* ALTERA_ATTRIBUTE = {"POWER_UP_LEVEL=HIGH"} *)
 	reg	parity6;
-	reg	[3:0]	sub_parity7a;
-	wire  [12:0]  cntr_cout;
+	reg	[2:0]	sub_parity7a;
+	wire  [9:0]  cntr_cout;
 	wire  parity_cout;
 	wire sclr;
 	wire updown;
@@ -153,31 +153,7 @@ module  FIFO_a_graycounter
 	always @ ( posedge clock)
 		
 			if (sclr == 1'b1) counter5a[9:9] <= 1'b0;
-			else  counter5a[9:9] <= (counter5a[9:9] ^ (counter5a[8:8] & cntr_cout[8]));
-	// synopsys translate_off
-	initial
-		counter5a[10:10] = 0;
-	// synopsys translate_on
-	always @ ( posedge clock)
-		
-			if (sclr == 1'b1) counter5a[10:10] <= 1'b0;
-			else  counter5a[10:10] <= (counter5a[10:10] ^ (counter5a[9:9] & cntr_cout[9]));
-	// synopsys translate_off
-	initial
-		counter5a[11:11] = 0;
-	// synopsys translate_on
-	always @ ( posedge clock)
-		
-			if (sclr == 1'b1) counter5a[11:11] <= 1'b0;
-			else  counter5a[11:11] <= (counter5a[11:11] ^ (counter5a[10:10] & cntr_cout[10]));
-	// synopsys translate_off
-	initial
-		counter5a[12:12] = 0;
-	// synopsys translate_on
-	always @ ( posedge clock)
-		
-			if (sclr == 1'b1) counter5a[12:12] <= 1'b0;
-			else  counter5a[12:12] <= (counter5a[12:12] ^ cntr_cout[11]);
+			else  counter5a[9:9] <= (counter5a[9:9] ^ cntr_cout[8]);
 	// synopsys translate_off
 	initial
 		parity6 = {1{1'b1}};
@@ -185,7 +161,7 @@ module  FIFO_a_graycounter
 	always @ ( posedge clock)
 		
 			if (sclr == 1'b1) parity6 <= 1'b0;
-			else  parity6 <= ((cnt_en & (((sub_parity7a[0] ^ sub_parity7a[1]) ^ sub_parity7a[2]) ^ sub_parity7a[3])) | ((~ cnt_en) & parity6));
+			else  parity6 <= ((cnt_en & ((sub_parity7a[0] ^ sub_parity7a[1]) ^ sub_parity7a[2])) | ((~ cnt_en) & parity6));
 	// synopsys translate_off
 	initial
 		sub_parity7a[0:0] = 0;
@@ -209,17 +185,9 @@ module  FIFO_a_graycounter
 	always @ ( posedge clock)
 		
 			if (sclr == 1'b1) sub_parity7a[2:2] <= 1'b0;
-			else  sub_parity7a[2:2] <= ((cnt_en & (((counter5a[8] ^ counter5a[9]) ^ counter5a[10]) ^ counter5a[11])) | ((~ cnt_en) & sub_parity7a[2:2]));
-	// synopsys translate_off
-	initial
-		sub_parity7a[3:3] = 0;
-	// synopsys translate_on
-	always @ ( posedge clock)
-		
-			if (sclr == 1'b1) sub_parity7a[3:3] <= 1'b0;
-			else  sub_parity7a[3:3] <= ((cnt_en & counter5a[12]) | ((~ cnt_en) & sub_parity7a[3:3]));
+			else  sub_parity7a[2:2] <= ((cnt_en & (counter5a[8] ^ counter5a[9])) | ((~ cnt_en) & sub_parity7a[2:2]));
 	assign
-		cntr_cout = {1'b0, (cntr_cout[10] & (~ counter5a[10:10])), (cntr_cout[9] & (~ counter5a[9:9])), (cntr_cout[8] & (~ counter5a[8:8])), (cntr_cout[7] & (~ counter5a[7:7])), (cntr_cout[6] & (~ counter5a[6:6])), (cntr_cout[5] & (~ counter5a[5:5])), (cntr_cout[4] & (~ counter5a[4:4])), (cntr_cout[3] & (~ counter5a[3:3])), (cntr_cout[2] & (~ counter5a[2:2])), (cntr_cout[1] & (~ counter5a[1:1])), (cntr_cout[0] & (~ counter5a[0:0])), (cnt_en & parity_cout)},
+		cntr_cout = {1'b0, (cntr_cout[7] & (~ counter5a[7:7])), (cntr_cout[6] & (~ counter5a[6:6])), (cntr_cout[5] & (~ counter5a[5:5])), (cntr_cout[4] & (~ counter5a[4:4])), (cntr_cout[3] & (~ counter5a[3:3])), (cntr_cout[2] & (~ counter5a[2:2])), (cntr_cout[1] & (~ counter5a[1:1])), (cntr_cout[0] & (~ counter5a[0:0])), (cnt_en & parity_cout)},
 		parity_cout = (((~ parity6) ^ updown) & cnt_en),
 		q = counter5a,
 		sclr = 1'b0,
@@ -227,10 +195,10 @@ module  FIFO_a_graycounter
 endmodule //FIFO_a_graycounter
 
 
-//a_graycounter DEVICE_FAMILY="Cyclone IV E" PVALUE=1 WIDTH=13 clock cnt_en q ALTERA_INTERNAL_OPTIONS=suppress_da_rule_internal=S102
+//a_graycounter DEVICE_FAMILY="Cyclone IV E" PVALUE=1 WIDTH=10 clock cnt_en q ALTERA_INTERNAL_OPTIONS=suppress_da_rule_internal=S102
 //VERSION_BEGIN 16.0 cbx_a_gray2bin 2016:04:27:18:05:34:SJ cbx_a_graycounter 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ  VERSION_END
 
-//synthesis_resources = reg 18 
+//synthesis_resources = reg 14 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
@@ -242,7 +210,7 @@ module  FIFO_a_graycounter1
 	q) /* synthesis synthesis_clearbox=1 */;
 	input   clock;
 	input   cnt_en;
-	output   [12:0]  q;
+	output   [9:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -251,11 +219,11 @@ module  FIFO_a_graycounter1
 // synopsys translate_on
 `endif
 
-	reg	[12:0]	counter8a;
+	reg	[9:0]	counter8a;
 	(* ALTERA_ATTRIBUTE = {"POWER_UP_LEVEL=HIGH"} *)
 	reg	parity9;
-	reg	[3:0]	sub_parity10a;
-	wire  [12:0]  cntr_cout;
+	reg	[2:0]	sub_parity10a;
+	wire  [9:0]  cntr_cout;
 	wire  parity_cout;
 	wire sclr;
 	wire updown;
@@ -339,31 +307,7 @@ module  FIFO_a_graycounter1
 	always @ ( posedge clock)
 		
 			if (sclr == 1'b1) counter8a[9:9] <= 1'b0;
-			else  counter8a[9:9] <= (counter8a[9:9] ^ (counter8a[8:8] & cntr_cout[8]));
-	// synopsys translate_off
-	initial
-		counter8a[10:10] = 0;
-	// synopsys translate_on
-	always @ ( posedge clock)
-		
-			if (sclr == 1'b1) counter8a[10:10] <= 1'b0;
-			else  counter8a[10:10] <= (counter8a[10:10] ^ (counter8a[9:9] & cntr_cout[9]));
-	// synopsys translate_off
-	initial
-		counter8a[11:11] = 0;
-	// synopsys translate_on
-	always @ ( posedge clock)
-		
-			if (sclr == 1'b1) counter8a[11:11] <= 1'b0;
-			else  counter8a[11:11] <= (counter8a[11:11] ^ (counter8a[10:10] & cntr_cout[10]));
-	// synopsys translate_off
-	initial
-		counter8a[12:12] = 0;
-	// synopsys translate_on
-	always @ ( posedge clock)
-		
-			if (sclr == 1'b1) counter8a[12:12] <= 1'b0;
-			else  counter8a[12:12] <= (counter8a[12:12] ^ cntr_cout[11]);
+			else  counter8a[9:9] <= (counter8a[9:9] ^ cntr_cout[8]);
 	// synopsys translate_off
 	initial
 		parity9 = {1{1'b1}};
@@ -371,7 +315,7 @@ module  FIFO_a_graycounter1
 	always @ ( posedge clock)
 		
 			if (sclr == 1'b1) parity9 <= 1'b0;
-			else  parity9 <= ((cnt_en & (((sub_parity10a[0] ^ sub_parity10a[1]) ^ sub_parity10a[2]) ^ sub_parity10a[3])) | ((~ cnt_en) & parity9));
+			else  parity9 <= ((cnt_en & ((sub_parity10a[0] ^ sub_parity10a[1]) ^ sub_parity10a[2])) | ((~ cnt_en) & parity9));
 	// synopsys translate_off
 	initial
 		sub_parity10a[0:0] = 0;
@@ -395,17 +339,9 @@ module  FIFO_a_graycounter1
 	always @ ( posedge clock)
 		
 			if (sclr == 1'b1) sub_parity10a[2:2] <= 1'b0;
-			else  sub_parity10a[2:2] <= ((cnt_en & (((counter8a[8] ^ counter8a[9]) ^ counter8a[10]) ^ counter8a[11])) | ((~ cnt_en) & sub_parity10a[2:2]));
-	// synopsys translate_off
-	initial
-		sub_parity10a[3:3] = 0;
-	// synopsys translate_on
-	always @ ( posedge clock)
-		
-			if (sclr == 1'b1) sub_parity10a[3:3] <= 1'b0;
-			else  sub_parity10a[3:3] <= ((cnt_en & counter8a[12]) | ((~ cnt_en) & sub_parity10a[3:3]));
+			else  sub_parity10a[2:2] <= ((cnt_en & (counter8a[8] ^ counter8a[9])) | ((~ cnt_en) & sub_parity10a[2:2]));
 	assign
-		cntr_cout = {1'b0, (cntr_cout[10] & (~ counter8a[10:10])), (cntr_cout[9] & (~ counter8a[9:9])), (cntr_cout[8] & (~ counter8a[8:8])), (cntr_cout[7] & (~ counter8a[7:7])), (cntr_cout[6] & (~ counter8a[6:6])), (cntr_cout[5] & (~ counter8a[5:5])), (cntr_cout[4] & (~ counter8a[4:4])), (cntr_cout[3] & (~ counter8a[3:3])), (cntr_cout[2] & (~ counter8a[2:2])), (cntr_cout[1] & (~ counter8a[1:1])), (cntr_cout[0] & (~ counter8a[0:0])), (cnt_en & parity_cout)},
+		cntr_cout = {1'b0, (cntr_cout[7] & (~ counter8a[7:7])), (cntr_cout[6] & (~ counter8a[6:6])), (cntr_cout[5] & (~ counter8a[5:5])), (cntr_cout[4] & (~ counter8a[4:4])), (cntr_cout[3] & (~ counter8a[3:3])), (cntr_cout[2] & (~ counter8a[2:2])), (cntr_cout[1] & (~ counter8a[1:1])), (cntr_cout[0] & (~ counter8a[0:0])), (cnt_en & parity_cout)},
 		parity_cout = (((~ parity9) ^ updown) & cnt_en),
 		q = counter8a,
 		sclr = 1'b0,
@@ -413,10 +349,10 @@ module  FIFO_a_graycounter1
 endmodule //FIFO_a_graycounter1
 
 
-//altsyncram ADDRESS_REG_B="CLOCK1" CLOCK_ENABLE_INPUT_B="BYPASS" DEVICE_FAMILY="Cyclone IV E" ENABLE_ECC="FALSE" OPERATION_MODE="DUAL_PORT" OUTDATA_REG_B="UNREGISTERED" WIDTH_A=8 WIDTH_B=8 WIDTH_BYTEENA_A=1 WIDTH_ECCSTATUS=2 WIDTHAD_A=12 WIDTHAD_B=12 address_a address_b addressstall_b clock0 clock1 data_a q_b wren_a
+//altsyncram ADDRESS_REG_B="CLOCK1" CLOCK_ENABLE_INPUT_B="BYPASS" DEVICE_FAMILY="Cyclone IV E" ENABLE_ECC="FALSE" OPERATION_MODE="DUAL_PORT" OUTDATA_REG_B="UNREGISTERED" WIDTH_A=8 WIDTH_B=8 WIDTH_BYTEENA_A=1 WIDTH_ECCSTATUS=2 WIDTHAD_A=9 WIDTHAD_B=9 address_a address_b addressstall_b clock0 clock1 data_a q_b wren_a
 //VERSION_BEGIN 16.0 cbx_altera_syncram_nd_impl 2016:04:27:18:05:34:SJ cbx_altsyncram 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_decode 2016:04:27:18:05:34:SJ cbx_lpm_mux 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_stratixiii 2016:04:27:18:05:34:SJ cbx_stratixv 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 
-//synthesis_resources = M9K 4 
+//synthesis_resources = M9K 1 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
@@ -431,8 +367,8 @@ module  FIFO_altsyncram
 	data_a,
 	q_b,
 	wren_a) /* synthesis synthesis_clearbox=1 */;
-	input   [11:0]  address_a;
-	input   [11:0]  address_b;
+	input   [8:0]  address_a;
+	input   [8:0]  address_b;
 	input   addressstall_b;
 	input   clock0;
 	input   clock1;
@@ -442,7 +378,7 @@ module  FIFO_altsyncram
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
-	tri1   [11:0]  address_b;
+	tri1   [8:0]  address_b;
 	tri0   addressstall_b;
 	tri1   clock0;
 	tri1   clock1;
@@ -460,19 +396,19 @@ module  FIFO_altsyncram
 	wire  [0:0]   wire_ram_block11a_5portbdataout;
 	wire  [0:0]   wire_ram_block11a_6portbdataout;
 	wire  [0:0]   wire_ram_block11a_7portbdataout;
-	wire  [11:0]  address_a_wire;
-	wire  [11:0]  address_b_wire;
+	wire  [8:0]  address_a_wire;
+	wire  [8:0]  address_b_wire;
 
 	cycloneive_ram_block   ram_block11a_0
 	( 
 	.clk0(clock0),
 	.clk1(clock1),
 	.ena0(wren_a),
-	.portaaddr({address_a_wire[11:0]}),
+	.portaaddr({address_a_wire[8:0]}),
 	.portadatain({data_a[0]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[11:0]}),
+	.portbaddr({address_b_wire[8:0]}),
 	.portbaddrstall(addressstall_b),
 	.portbdataout(wire_ram_block11a_0portbdataout[0:0]),
 	.portbre(1'b1)
@@ -509,22 +445,22 @@ module  FIFO_altsyncram
 		ram_block11a_0.logical_ram_name = "ALTSYNCRAM",
 		ram_block11a_0.mixed_port_feed_through_mode = "dont_care",
 		ram_block11a_0.operation_mode = "dual_port",
-		ram_block11a_0.port_a_address_width = 12,
+		ram_block11a_0.port_a_address_width = 9,
 		ram_block11a_0.port_a_data_width = 1,
 		ram_block11a_0.port_a_first_address = 0,
 		ram_block11a_0.port_a_first_bit_number = 0,
-		ram_block11a_0.port_a_last_address = 4095,
-		ram_block11a_0.port_a_logical_ram_depth = 4096,
+		ram_block11a_0.port_a_last_address = 511,
+		ram_block11a_0.port_a_logical_ram_depth = 512,
 		ram_block11a_0.port_a_logical_ram_width = 8,
 		ram_block11a_0.port_b_address_clear = "none",
 		ram_block11a_0.port_b_address_clock = "clock1",
-		ram_block11a_0.port_b_address_width = 12,
+		ram_block11a_0.port_b_address_width = 9,
 		ram_block11a_0.port_b_data_out_clear = "none",
 		ram_block11a_0.port_b_data_width = 1,
 		ram_block11a_0.port_b_first_address = 0,
 		ram_block11a_0.port_b_first_bit_number = 0,
-		ram_block11a_0.port_b_last_address = 4095,
-		ram_block11a_0.port_b_logical_ram_depth = 4096,
+		ram_block11a_0.port_b_last_address = 511,
+		ram_block11a_0.port_b_logical_ram_depth = 512,
 		ram_block11a_0.port_b_logical_ram_width = 8,
 		ram_block11a_0.port_b_read_enable_clock = "clock1",
 		ram_block11a_0.ram_block_type = "AUTO",
@@ -534,11 +470,11 @@ module  FIFO_altsyncram
 	.clk0(clock0),
 	.clk1(clock1),
 	.ena0(wren_a),
-	.portaaddr({address_a_wire[11:0]}),
+	.portaaddr({address_a_wire[8:0]}),
 	.portadatain({data_a[1]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[11:0]}),
+	.portbaddr({address_b_wire[8:0]}),
 	.portbaddrstall(addressstall_b),
 	.portbdataout(wire_ram_block11a_1portbdataout[0:0]),
 	.portbre(1'b1)
@@ -575,22 +511,22 @@ module  FIFO_altsyncram
 		ram_block11a_1.logical_ram_name = "ALTSYNCRAM",
 		ram_block11a_1.mixed_port_feed_through_mode = "dont_care",
 		ram_block11a_1.operation_mode = "dual_port",
-		ram_block11a_1.port_a_address_width = 12,
+		ram_block11a_1.port_a_address_width = 9,
 		ram_block11a_1.port_a_data_width = 1,
 		ram_block11a_1.port_a_first_address = 0,
 		ram_block11a_1.port_a_first_bit_number = 1,
-		ram_block11a_1.port_a_last_address = 4095,
-		ram_block11a_1.port_a_logical_ram_depth = 4096,
+		ram_block11a_1.port_a_last_address = 511,
+		ram_block11a_1.port_a_logical_ram_depth = 512,
 		ram_block11a_1.port_a_logical_ram_width = 8,
 		ram_block11a_1.port_b_address_clear = "none",
 		ram_block11a_1.port_b_address_clock = "clock1",
-		ram_block11a_1.port_b_address_width = 12,
+		ram_block11a_1.port_b_address_width = 9,
 		ram_block11a_1.port_b_data_out_clear = "none",
 		ram_block11a_1.port_b_data_width = 1,
 		ram_block11a_1.port_b_first_address = 0,
 		ram_block11a_1.port_b_first_bit_number = 1,
-		ram_block11a_1.port_b_last_address = 4095,
-		ram_block11a_1.port_b_logical_ram_depth = 4096,
+		ram_block11a_1.port_b_last_address = 511,
+		ram_block11a_1.port_b_logical_ram_depth = 512,
 		ram_block11a_1.port_b_logical_ram_width = 8,
 		ram_block11a_1.port_b_read_enable_clock = "clock1",
 		ram_block11a_1.ram_block_type = "AUTO",
@@ -600,11 +536,11 @@ module  FIFO_altsyncram
 	.clk0(clock0),
 	.clk1(clock1),
 	.ena0(wren_a),
-	.portaaddr({address_a_wire[11:0]}),
+	.portaaddr({address_a_wire[8:0]}),
 	.portadatain({data_a[2]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[11:0]}),
+	.portbaddr({address_b_wire[8:0]}),
 	.portbaddrstall(addressstall_b),
 	.portbdataout(wire_ram_block11a_2portbdataout[0:0]),
 	.portbre(1'b1)
@@ -641,22 +577,22 @@ module  FIFO_altsyncram
 		ram_block11a_2.logical_ram_name = "ALTSYNCRAM",
 		ram_block11a_2.mixed_port_feed_through_mode = "dont_care",
 		ram_block11a_2.operation_mode = "dual_port",
-		ram_block11a_2.port_a_address_width = 12,
+		ram_block11a_2.port_a_address_width = 9,
 		ram_block11a_2.port_a_data_width = 1,
 		ram_block11a_2.port_a_first_address = 0,
 		ram_block11a_2.port_a_first_bit_number = 2,
-		ram_block11a_2.port_a_last_address = 4095,
-		ram_block11a_2.port_a_logical_ram_depth = 4096,
+		ram_block11a_2.port_a_last_address = 511,
+		ram_block11a_2.port_a_logical_ram_depth = 512,
 		ram_block11a_2.port_a_logical_ram_width = 8,
 		ram_block11a_2.port_b_address_clear = "none",
 		ram_block11a_2.port_b_address_clock = "clock1",
-		ram_block11a_2.port_b_address_width = 12,
+		ram_block11a_2.port_b_address_width = 9,
 		ram_block11a_2.port_b_data_out_clear = "none",
 		ram_block11a_2.port_b_data_width = 1,
 		ram_block11a_2.port_b_first_address = 0,
 		ram_block11a_2.port_b_first_bit_number = 2,
-		ram_block11a_2.port_b_last_address = 4095,
-		ram_block11a_2.port_b_logical_ram_depth = 4096,
+		ram_block11a_2.port_b_last_address = 511,
+		ram_block11a_2.port_b_logical_ram_depth = 512,
 		ram_block11a_2.port_b_logical_ram_width = 8,
 		ram_block11a_2.port_b_read_enable_clock = "clock1",
 		ram_block11a_2.ram_block_type = "AUTO",
@@ -666,11 +602,11 @@ module  FIFO_altsyncram
 	.clk0(clock0),
 	.clk1(clock1),
 	.ena0(wren_a),
-	.portaaddr({address_a_wire[11:0]}),
+	.portaaddr({address_a_wire[8:0]}),
 	.portadatain({data_a[3]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[11:0]}),
+	.portbaddr({address_b_wire[8:0]}),
 	.portbaddrstall(addressstall_b),
 	.portbdataout(wire_ram_block11a_3portbdataout[0:0]),
 	.portbre(1'b1)
@@ -707,22 +643,22 @@ module  FIFO_altsyncram
 		ram_block11a_3.logical_ram_name = "ALTSYNCRAM",
 		ram_block11a_3.mixed_port_feed_through_mode = "dont_care",
 		ram_block11a_3.operation_mode = "dual_port",
-		ram_block11a_3.port_a_address_width = 12,
+		ram_block11a_3.port_a_address_width = 9,
 		ram_block11a_3.port_a_data_width = 1,
 		ram_block11a_3.port_a_first_address = 0,
 		ram_block11a_3.port_a_first_bit_number = 3,
-		ram_block11a_3.port_a_last_address = 4095,
-		ram_block11a_3.port_a_logical_ram_depth = 4096,
+		ram_block11a_3.port_a_last_address = 511,
+		ram_block11a_3.port_a_logical_ram_depth = 512,
 		ram_block11a_3.port_a_logical_ram_width = 8,
 		ram_block11a_3.port_b_address_clear = "none",
 		ram_block11a_3.port_b_address_clock = "clock1",
-		ram_block11a_3.port_b_address_width = 12,
+		ram_block11a_3.port_b_address_width = 9,
 		ram_block11a_3.port_b_data_out_clear = "none",
 		ram_block11a_3.port_b_data_width = 1,
 		ram_block11a_3.port_b_first_address = 0,
 		ram_block11a_3.port_b_first_bit_number = 3,
-		ram_block11a_3.port_b_last_address = 4095,
-		ram_block11a_3.port_b_logical_ram_depth = 4096,
+		ram_block11a_3.port_b_last_address = 511,
+		ram_block11a_3.port_b_logical_ram_depth = 512,
 		ram_block11a_3.port_b_logical_ram_width = 8,
 		ram_block11a_3.port_b_read_enable_clock = "clock1",
 		ram_block11a_3.ram_block_type = "AUTO",
@@ -732,11 +668,11 @@ module  FIFO_altsyncram
 	.clk0(clock0),
 	.clk1(clock1),
 	.ena0(wren_a),
-	.portaaddr({address_a_wire[11:0]}),
+	.portaaddr({address_a_wire[8:0]}),
 	.portadatain({data_a[4]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[11:0]}),
+	.portbaddr({address_b_wire[8:0]}),
 	.portbaddrstall(addressstall_b),
 	.portbdataout(wire_ram_block11a_4portbdataout[0:0]),
 	.portbre(1'b1)
@@ -773,22 +709,22 @@ module  FIFO_altsyncram
 		ram_block11a_4.logical_ram_name = "ALTSYNCRAM",
 		ram_block11a_4.mixed_port_feed_through_mode = "dont_care",
 		ram_block11a_4.operation_mode = "dual_port",
-		ram_block11a_4.port_a_address_width = 12,
+		ram_block11a_4.port_a_address_width = 9,
 		ram_block11a_4.port_a_data_width = 1,
 		ram_block11a_4.port_a_first_address = 0,
 		ram_block11a_4.port_a_first_bit_number = 4,
-		ram_block11a_4.port_a_last_address = 4095,
-		ram_block11a_4.port_a_logical_ram_depth = 4096,
+		ram_block11a_4.port_a_last_address = 511,
+		ram_block11a_4.port_a_logical_ram_depth = 512,
 		ram_block11a_4.port_a_logical_ram_width = 8,
 		ram_block11a_4.port_b_address_clear = "none",
 		ram_block11a_4.port_b_address_clock = "clock1",
-		ram_block11a_4.port_b_address_width = 12,
+		ram_block11a_4.port_b_address_width = 9,
 		ram_block11a_4.port_b_data_out_clear = "none",
 		ram_block11a_4.port_b_data_width = 1,
 		ram_block11a_4.port_b_first_address = 0,
 		ram_block11a_4.port_b_first_bit_number = 4,
-		ram_block11a_4.port_b_last_address = 4095,
-		ram_block11a_4.port_b_logical_ram_depth = 4096,
+		ram_block11a_4.port_b_last_address = 511,
+		ram_block11a_4.port_b_logical_ram_depth = 512,
 		ram_block11a_4.port_b_logical_ram_width = 8,
 		ram_block11a_4.port_b_read_enable_clock = "clock1",
 		ram_block11a_4.ram_block_type = "AUTO",
@@ -798,11 +734,11 @@ module  FIFO_altsyncram
 	.clk0(clock0),
 	.clk1(clock1),
 	.ena0(wren_a),
-	.portaaddr({address_a_wire[11:0]}),
+	.portaaddr({address_a_wire[8:0]}),
 	.portadatain({data_a[5]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[11:0]}),
+	.portbaddr({address_b_wire[8:0]}),
 	.portbaddrstall(addressstall_b),
 	.portbdataout(wire_ram_block11a_5portbdataout[0:0]),
 	.portbre(1'b1)
@@ -839,22 +775,22 @@ module  FIFO_altsyncram
 		ram_block11a_5.logical_ram_name = "ALTSYNCRAM",
 		ram_block11a_5.mixed_port_feed_through_mode = "dont_care",
 		ram_block11a_5.operation_mode = "dual_port",
-		ram_block11a_5.port_a_address_width = 12,
+		ram_block11a_5.port_a_address_width = 9,
 		ram_block11a_5.port_a_data_width = 1,
 		ram_block11a_5.port_a_first_address = 0,
 		ram_block11a_5.port_a_first_bit_number = 5,
-		ram_block11a_5.port_a_last_address = 4095,
-		ram_block11a_5.port_a_logical_ram_depth = 4096,
+		ram_block11a_5.port_a_last_address = 511,
+		ram_block11a_5.port_a_logical_ram_depth = 512,
 		ram_block11a_5.port_a_logical_ram_width = 8,
 		ram_block11a_5.port_b_address_clear = "none",
 		ram_block11a_5.port_b_address_clock = "clock1",
-		ram_block11a_5.port_b_address_width = 12,
+		ram_block11a_5.port_b_address_width = 9,
 		ram_block11a_5.port_b_data_out_clear = "none",
 		ram_block11a_5.port_b_data_width = 1,
 		ram_block11a_5.port_b_first_address = 0,
 		ram_block11a_5.port_b_first_bit_number = 5,
-		ram_block11a_5.port_b_last_address = 4095,
-		ram_block11a_5.port_b_logical_ram_depth = 4096,
+		ram_block11a_5.port_b_last_address = 511,
+		ram_block11a_5.port_b_logical_ram_depth = 512,
 		ram_block11a_5.port_b_logical_ram_width = 8,
 		ram_block11a_5.port_b_read_enable_clock = "clock1",
 		ram_block11a_5.ram_block_type = "AUTO",
@@ -864,11 +800,11 @@ module  FIFO_altsyncram
 	.clk0(clock0),
 	.clk1(clock1),
 	.ena0(wren_a),
-	.portaaddr({address_a_wire[11:0]}),
+	.portaaddr({address_a_wire[8:0]}),
 	.portadatain({data_a[6]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[11:0]}),
+	.portbaddr({address_b_wire[8:0]}),
 	.portbaddrstall(addressstall_b),
 	.portbdataout(wire_ram_block11a_6portbdataout[0:0]),
 	.portbre(1'b1)
@@ -905,22 +841,22 @@ module  FIFO_altsyncram
 		ram_block11a_6.logical_ram_name = "ALTSYNCRAM",
 		ram_block11a_6.mixed_port_feed_through_mode = "dont_care",
 		ram_block11a_6.operation_mode = "dual_port",
-		ram_block11a_6.port_a_address_width = 12,
+		ram_block11a_6.port_a_address_width = 9,
 		ram_block11a_6.port_a_data_width = 1,
 		ram_block11a_6.port_a_first_address = 0,
 		ram_block11a_6.port_a_first_bit_number = 6,
-		ram_block11a_6.port_a_last_address = 4095,
-		ram_block11a_6.port_a_logical_ram_depth = 4096,
+		ram_block11a_6.port_a_last_address = 511,
+		ram_block11a_6.port_a_logical_ram_depth = 512,
 		ram_block11a_6.port_a_logical_ram_width = 8,
 		ram_block11a_6.port_b_address_clear = "none",
 		ram_block11a_6.port_b_address_clock = "clock1",
-		ram_block11a_6.port_b_address_width = 12,
+		ram_block11a_6.port_b_address_width = 9,
 		ram_block11a_6.port_b_data_out_clear = "none",
 		ram_block11a_6.port_b_data_width = 1,
 		ram_block11a_6.port_b_first_address = 0,
 		ram_block11a_6.port_b_first_bit_number = 6,
-		ram_block11a_6.port_b_last_address = 4095,
-		ram_block11a_6.port_b_logical_ram_depth = 4096,
+		ram_block11a_6.port_b_last_address = 511,
+		ram_block11a_6.port_b_logical_ram_depth = 512,
 		ram_block11a_6.port_b_logical_ram_width = 8,
 		ram_block11a_6.port_b_read_enable_clock = "clock1",
 		ram_block11a_6.ram_block_type = "AUTO",
@@ -930,11 +866,11 @@ module  FIFO_altsyncram
 	.clk0(clock0),
 	.clk1(clock1),
 	.ena0(wren_a),
-	.portaaddr({address_a_wire[11:0]}),
+	.portaaddr({address_a_wire[8:0]}),
 	.portadatain({data_a[7]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[11:0]}),
+	.portbaddr({address_b_wire[8:0]}),
 	.portbaddrstall(addressstall_b),
 	.portbdataout(wire_ram_block11a_7portbdataout[0:0]),
 	.portbre(1'b1)
@@ -971,22 +907,22 @@ module  FIFO_altsyncram
 		ram_block11a_7.logical_ram_name = "ALTSYNCRAM",
 		ram_block11a_7.mixed_port_feed_through_mode = "dont_care",
 		ram_block11a_7.operation_mode = "dual_port",
-		ram_block11a_7.port_a_address_width = 12,
+		ram_block11a_7.port_a_address_width = 9,
 		ram_block11a_7.port_a_data_width = 1,
 		ram_block11a_7.port_a_first_address = 0,
 		ram_block11a_7.port_a_first_bit_number = 7,
-		ram_block11a_7.port_a_last_address = 4095,
-		ram_block11a_7.port_a_logical_ram_depth = 4096,
+		ram_block11a_7.port_a_last_address = 511,
+		ram_block11a_7.port_a_logical_ram_depth = 512,
 		ram_block11a_7.port_a_logical_ram_width = 8,
 		ram_block11a_7.port_b_address_clear = "none",
 		ram_block11a_7.port_b_address_clock = "clock1",
-		ram_block11a_7.port_b_address_width = 12,
+		ram_block11a_7.port_b_address_width = 9,
 		ram_block11a_7.port_b_data_out_clear = "none",
 		ram_block11a_7.port_b_data_width = 1,
 		ram_block11a_7.port_b_first_address = 0,
 		ram_block11a_7.port_b_first_bit_number = 7,
-		ram_block11a_7.port_b_last_address = 4095,
-		ram_block11a_7.port_b_logical_ram_depth = 4096,
+		ram_block11a_7.port_b_last_address = 511,
+		ram_block11a_7.port_b_logical_ram_depth = 512,
 		ram_block11a_7.port_b_logical_ram_width = 8,
 		ram_block11a_7.port_b_read_enable_clock = "clock1",
 		ram_block11a_7.ram_block_type = "AUTO",
@@ -998,14 +934,14 @@ module  FIFO_altsyncram
 endmodule //FIFO_altsyncram
 
 
-//dffpipe DELAY=2 WIDTH=13 clock d q ALTERA_INTERNAL_OPTIONS=X_ON_VIOLATION_OPTION=OFF;SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON;DONT_MERGE_REGISTER=ON;ADV_NETLIST_OPT_ALLOWED=NEVER_ALLOW
+//dffpipe DELAY=5 WIDTH=10 clock d q ALTERA_INTERNAL_OPTIONS=X_ON_VIOLATION_OPTION=OFF;SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON;DONT_MERGE_REGISTER=ON;ADV_NETLIST_OPT_ALLOWED=NEVER_ALLOW
 //VERSION_BEGIN 16.0 cbx_a_gray2bin 2016:04:27:18:05:34:SJ cbx_a_graycounter 2016:04:27:18:05:34:SJ cbx_altdpram 2016:04:27:18:05:34:SJ cbx_altera_syncram 2016:04:27:18:05:34:SJ cbx_altera_syncram_nd_impl 2016:04:27:18:05:34:SJ cbx_altsyncram 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_dcfifo 2016:04:27:18:05:34:SJ cbx_fifo_common 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_counter 2016:04:27:18:05:34:SJ cbx_lpm_decode 2016:04:27:18:05:34:SJ cbx_lpm_mux 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_scfifo 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_stratixiii 2016:04:27:18:05:34:SJ cbx_stratixv 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 
 
-//dffpipe DELAY=2 WIDTH=13 clock d q ALTERA_INTERNAL_OPTIONS=AUTO_SHIFT_REGISTER_RECOGNITION=OFF
+//dffpipe DELAY=5 WIDTH=10 clock d q ALTERA_INTERNAL_OPTIONS=AUTO_SHIFT_REGISTER_RECOGNITION=OFF
 //VERSION_BEGIN 16.0 cbx_mgl 2016:04:27:18:06:48:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 
-//synthesis_resources = reg 26 
+//synthesis_resources = reg 50 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
@@ -1016,8 +952,8 @@ module  FIFO_dffpipe
 	d,
 	q) /* synthesis synthesis_clearbox=1 */;
 	input   clock;
-	input   [12:0]  d;
-	output   [12:0]  q;
+	input   [9:0]  d;
+	output   [9:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -1026,8 +962,11 @@ module  FIFO_dffpipe
 // synopsys translate_on
 `endif
 
-	reg	[12:0]	dffe13a;
-	reg	[12:0]	dffe14a;
+	reg	[9:0]	dffe13a;
+	reg	[9:0]	dffe14a;
+	reg	[9:0]	dffe15a;
+	reg	[9:0]	dffe16a;
+	reg	[9:0]	dffe17a;
 	wire clrn;
 	wire ena;
 	wire prn;
@@ -1038,26 +977,50 @@ module  FIFO_dffpipe
 		dffe13a = 0;
 	// synopsys translate_on
 	always @ ( posedge clock or  negedge prn or  negedge clrn)
-		if (prn == 1'b0) dffe13a <= {13{1'b1}};
-		else if (clrn == 1'b0) dffe13a <= 13'b0;
-		else if  (ena == 1'b1)   dffe13a <= (d & {13{(~ sclr)}});
+		if (prn == 1'b0) dffe13a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe13a <= 10'b0;
+		else if  (ena == 1'b1)   dffe13a <= (d & {10{(~ sclr)}});
 	// synopsys translate_off
 	initial
 		dffe14a = 0;
 	// synopsys translate_on
 	always @ ( posedge clock or  negedge prn or  negedge clrn)
-		if (prn == 1'b0) dffe14a <= {13{1'b1}};
-		else if (clrn == 1'b0) dffe14a <= 13'b0;
-		else if  (ena == 1'b1)   dffe14a <= (dffe13a & {13{(~ sclr)}});
+		if (prn == 1'b0) dffe14a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe14a <= 10'b0;
+		else if  (ena == 1'b1)   dffe14a <= (dffe13a & {10{(~ sclr)}});
+	// synopsys translate_off
+	initial
+		dffe15a = 0;
+	// synopsys translate_on
+	always @ ( posedge clock or  negedge prn or  negedge clrn)
+		if (prn == 1'b0) dffe15a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe15a <= 10'b0;
+		else if  (ena == 1'b1)   dffe15a <= (dffe14a & {10{(~ sclr)}});
+	// synopsys translate_off
+	initial
+		dffe16a = 0;
+	// synopsys translate_on
+	always @ ( posedge clock or  negedge prn or  negedge clrn)
+		if (prn == 1'b0) dffe16a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe16a <= 10'b0;
+		else if  (ena == 1'b1)   dffe16a <= (dffe15a & {10{(~ sclr)}});
+	// synopsys translate_off
+	initial
+		dffe17a = 0;
+	// synopsys translate_on
+	always @ ( posedge clock or  negedge prn or  negedge clrn)
+		if (prn == 1'b0) dffe17a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe17a <= 10'b0;
+		else if  (ena == 1'b1)   dffe17a <= (dffe16a & {10{(~ sclr)}});
 	assign
 		clrn = 1'b1,
 		ena = 1'b1,
 		prn = 1'b1,
-		q = dffe14a,
+		q = dffe17a,
 		sclr = 1'b0;
 endmodule //FIFO_dffpipe
 
-//synthesis_resources = reg 26 
+//synthesis_resources = reg 50 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
@@ -1068,10 +1031,10 @@ module  FIFO_alt_synch_pipe
 	d,
 	q) /* synthesis synthesis_clearbox=1 */;
 	input   clock;
-	input   [12:0]  d;
-	output   [12:0]  q;
+	input   [9:0]  d;
+	output   [9:0]  q;
 
-	wire  [12:0]   wire_dffpipe12_q;
+	wire  [9:0]   wire_dffpipe12_q;
 
 	FIFO_dffpipe   dffpipe12
 	( 
@@ -1083,14 +1046,14 @@ module  FIFO_alt_synch_pipe
 endmodule //FIFO_alt_synch_pipe
 
 
-//dffpipe DELAY=2 WIDTH=13 clock d q ALTERA_INTERNAL_OPTIONS=X_ON_VIOLATION_OPTION=OFF;SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON;DONT_MERGE_REGISTER=ON;ADV_NETLIST_OPT_ALLOWED=NEVER_ALLOW
+//dffpipe DELAY=5 WIDTH=10 clock d q ALTERA_INTERNAL_OPTIONS=X_ON_VIOLATION_OPTION=OFF;SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON;DONT_MERGE_REGISTER=ON;ADV_NETLIST_OPT_ALLOWED=NEVER_ALLOW
 //VERSION_BEGIN 16.0 cbx_a_gray2bin 2016:04:27:18:05:34:SJ cbx_a_graycounter 2016:04:27:18:05:34:SJ cbx_altdpram 2016:04:27:18:05:34:SJ cbx_altera_syncram 2016:04:27:18:05:34:SJ cbx_altera_syncram_nd_impl 2016:04:27:18:05:34:SJ cbx_altsyncram 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_dcfifo 2016:04:27:18:05:34:SJ cbx_fifo_common 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_counter 2016:04:27:18:05:34:SJ cbx_lpm_decode 2016:04:27:18:05:34:SJ cbx_lpm_mux 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_scfifo 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_stratixiii 2016:04:27:18:05:34:SJ cbx_stratixv 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 
 
-//dffpipe DELAY=2 WIDTH=13 clock d q ALTERA_INTERNAL_OPTIONS=AUTO_SHIFT_REGISTER_RECOGNITION=OFF
+//dffpipe DELAY=5 WIDTH=10 clock d q ALTERA_INTERNAL_OPTIONS=AUTO_SHIFT_REGISTER_RECOGNITION=OFF
 //VERSION_BEGIN 16.0 cbx_mgl 2016:04:27:18:06:48:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 
-//synthesis_resources = reg 26 
+//synthesis_resources = reg 50 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
@@ -1101,8 +1064,8 @@ module  FIFO_dffpipe1
 	d,
 	q) /* synthesis synthesis_clearbox=1 */;
 	input   clock;
-	input   [12:0]  d;
-	output   [12:0]  q;
+	input   [9:0]  d;
+	output   [9:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -1111,8 +1074,11 @@ module  FIFO_dffpipe1
 // synopsys translate_on
 `endif
 
-	reg	[12:0]	dffe16a;
-	reg	[12:0]	dffe17a;
+	reg	[9:0]	dffe19a;
+	reg	[9:0]	dffe20a;
+	reg	[9:0]	dffe21a;
+	reg	[9:0]	dffe22a;
+	reg	[9:0]	dffe23a;
 	wire clrn;
 	wire ena;
 	wire prn;
@@ -1120,29 +1086,53 @@ module  FIFO_dffpipe1
 
 	// synopsys translate_off
 	initial
-		dffe16a = 0;
+		dffe19a = 0;
 	// synopsys translate_on
 	always @ ( posedge clock or  negedge prn or  negedge clrn)
-		if (prn == 1'b0) dffe16a <= {13{1'b1}};
-		else if (clrn == 1'b0) dffe16a <= 13'b0;
-		else if  (ena == 1'b1)   dffe16a <= (d & {13{(~ sclr)}});
+		if (prn == 1'b0) dffe19a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe19a <= 10'b0;
+		else if  (ena == 1'b1)   dffe19a <= (d & {10{(~ sclr)}});
 	// synopsys translate_off
 	initial
-		dffe17a = 0;
+		dffe20a = 0;
 	// synopsys translate_on
 	always @ ( posedge clock or  negedge prn or  negedge clrn)
-		if (prn == 1'b0) dffe17a <= {13{1'b1}};
-		else if (clrn == 1'b0) dffe17a <= 13'b0;
-		else if  (ena == 1'b1)   dffe17a <= (dffe16a & {13{(~ sclr)}});
+		if (prn == 1'b0) dffe20a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe20a <= 10'b0;
+		else if  (ena == 1'b1)   dffe20a <= (dffe19a & {10{(~ sclr)}});
+	// synopsys translate_off
+	initial
+		dffe21a = 0;
+	// synopsys translate_on
+	always @ ( posedge clock or  negedge prn or  negedge clrn)
+		if (prn == 1'b0) dffe21a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe21a <= 10'b0;
+		else if  (ena == 1'b1)   dffe21a <= (dffe20a & {10{(~ sclr)}});
+	// synopsys translate_off
+	initial
+		dffe22a = 0;
+	// synopsys translate_on
+	always @ ( posedge clock or  negedge prn or  negedge clrn)
+		if (prn == 1'b0) dffe22a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe22a <= 10'b0;
+		else if  (ena == 1'b1)   dffe22a <= (dffe21a & {10{(~ sclr)}});
+	// synopsys translate_off
+	initial
+		dffe23a = 0;
+	// synopsys translate_on
+	always @ ( posedge clock or  negedge prn or  negedge clrn)
+		if (prn == 1'b0) dffe23a <= {10{1'b1}};
+		else if (clrn == 1'b0) dffe23a <= 10'b0;
+		else if  (ena == 1'b1)   dffe23a <= (dffe22a & {10{(~ sclr)}});
 	assign
 		clrn = 1'b1,
 		ena = 1'b1,
 		prn = 1'b1,
-		q = dffe17a,
+		q = dffe23a,
 		sclr = 1'b0;
 endmodule //FIFO_dffpipe1
 
-//synthesis_resources = reg 26 
+//synthesis_resources = reg 50 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
@@ -1153,22 +1143,22 @@ module  FIFO_alt_synch_pipe1
 	d,
 	q) /* synthesis synthesis_clearbox=1 */;
 	input   clock;
-	input   [12:0]  d;
-	output   [12:0]  q;
+	input   [9:0]  d;
+	output   [9:0]  q;
 
-	wire  [12:0]   wire_dffpipe15_q;
+	wire  [9:0]   wire_dffpipe18_q;
 
-	FIFO_dffpipe1   dffpipe15
+	FIFO_dffpipe1   dffpipe18
 	( 
 	.clock(clock),
 	.d(d),
-	.q(wire_dffpipe15_q));
+	.q(wire_dffpipe18_q));
 	assign
-		q = wire_dffpipe15_q;
+		q = wire_dffpipe18_q;
 endmodule //FIFO_alt_synch_pipe1
 
 
-//lpm_compare DEVICE_FAMILY="Cyclone IV E" LPM_WIDTH=7 aeb dataa datab
+//lpm_compare DEVICE_FAMILY="Cyclone IV E" LPM_WIDTH=5 aeb dataa datab
 //VERSION_BEGIN 16.0 cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ  VERSION_END
 
 //synthesis_resources = 
@@ -1181,67 +1171,29 @@ module  FIFO_cmpr
 	dataa,
 	datab) /* synthesis synthesis_clearbox=1 */;
 	output   aeb;
-	input   [6:0]  dataa;
-	input   [6:0]  datab;
+	input   [4:0]  dataa;
+	input   [4:0]  datab;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
-	tri0   [6:0]  dataa;
-	tri0   [6:0]  datab;
+	tri0   [4:0]  dataa;
+	tri0   [4:0]  datab;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
 `endif
 
 	wire  [0:0]  aeb_result_wire;
 	wire  [0:0]  aneb_result_wire;
-	wire  [17:0]  data_wire;
-	wire  eq_wire;
-
-	assign
-		aeb = eq_wire,
-		aeb_result_wire = (~ aneb_result_wire),
-		aneb_result_wire = (((data_wire[0] | data_wire[1]) | data_wire[2]) | data_wire[3]),
-		data_wire = {datab[6], dataa[6], datab[5], dataa[5], datab[4], dataa[4], datab[3], dataa[3], datab[2], dataa[2], datab[1], dataa[1], datab[0], dataa[0], (data_wire[16] ^ data_wire[17]), ((data_wire[12] ^ data_wire[13]) | (data_wire[14] ^ data_wire[15])), ((data_wire[8] ^ data_wire[9]) | (data_wire[10] ^ data_wire[11])), ((data_wire[4] ^ data_wire[5]) | (data_wire[6] ^ data_wire[7]))},
-		eq_wire = aeb_result_wire;
-endmodule //FIFO_cmpr
-
-
-//lpm_compare DEVICE_FAMILY="Cyclone IV E" LPM_WIDTH=6 aeb dataa datab
-//VERSION_BEGIN 16.0 cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ  VERSION_END
-
-//synthesis_resources = 
-//synopsys translate_off
-`timescale 1 ps / 1 ps
-//synopsys translate_on
-module  FIFO_cmpr1
-	( 
-	aeb,
-	dataa,
-	datab) /* synthesis synthesis_clearbox=1 */;
-	output   aeb;
-	input   [5:0]  dataa;
-	input   [5:0]  datab;
-`ifndef ALTERA_RESERVED_QIS
-// synopsys translate_off
-`endif
-	tri0   [5:0]  dataa;
-	tri0   [5:0]  datab;
-`ifndef ALTERA_RESERVED_QIS
-// synopsys translate_on
-`endif
-
-	wire  [0:0]  aeb_result_wire;
-	wire  [0:0]  aneb_result_wire;
-	wire  [14:0]  data_wire;
+	wire  [12:0]  data_wire;
 	wire  eq_wire;
 
 	assign
 		aeb = eq_wire,
 		aeb_result_wire = (~ aneb_result_wire),
 		aneb_result_wire = ((data_wire[0] | data_wire[1]) | data_wire[2]),
-		data_wire = {datab[5], dataa[5], datab[4], dataa[4], datab[3], dataa[3], datab[2], dataa[2], datab[1], dataa[1], datab[0], dataa[0], ((data_wire[11] ^ data_wire[12]) | (data_wire[13] ^ data_wire[14])), ((data_wire[7] ^ data_wire[8]) | (data_wire[9] ^ data_wire[10])), ((data_wire[3] ^ data_wire[4]) | (data_wire[5] ^ data_wire[6]))},
+		data_wire = {datab[4], dataa[4], datab[3], dataa[3], datab[2], dataa[2], datab[1], dataa[1], datab[0], dataa[0], (data_wire[11] ^ data_wire[12]), ((data_wire[7] ^ data_wire[8]) | (data_wire[9] ^ data_wire[10])), ((data_wire[3] ^ data_wire[4]) | (data_wire[5] ^ data_wire[6]))},
 		eq_wire = aeb_result_wire;
-endmodule //FIFO_cmpr1
+endmodule //FIFO_cmpr
 
 
 //lpm_mux DEVICE_FAMILY="Cyclone IV E" LPM_SIZE=2 LPM_WIDTH=1 LPM_WIDTHS=1 data result sel
@@ -1270,20 +1222,20 @@ module  FIFO_mux
 
 	wire  [0:0]  result_node;
 	wire  [0:0]  sel_node;
-	wire  [1:0]  w_data463w;
+	wire  [1:0]  w_data366w;
 
 	assign
 		result = result_node,
-		result_node = {((sel_node & w_data463w[1]) | ((~ sel_node) & w_data463w[0]))},
+		result_node = {((sel_node & w_data366w[1]) | ((~ sel_node) & w_data366w[0]))},
 		sel_node = {sel[0]},
-		w_data463w = {data[1:0]};
+		w_data366w = {data[1:0]};
 endmodule //FIFO_mux
 
-//synthesis_resources = lut 4 M9K 4 reg 157 
+//synthesis_resources = lut 4 M9K 1 reg 182 
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
-(* ALTERA_ATTRIBUTE = {"AUTO_SHIFT_REGISTER_RECOGNITION=OFF;REMOVE_DUPLICATE_REGISTERS=OFF;SYNCHRONIZER_IDENTIFICATION=OFF;SYNCHRONIZATION_REGISTER_CHAIN_LENGTH = 3;suppress_da_rule_internal=d101;suppress_da_rule_internal=d102;suppress_da_rule_internal=d103;-name CUT ON -from rdptr_g -to ws_dgrp|FIFO_dffpipe1:dffpipe15|dffe16a;-name SDC_STATEMENT \"set_false_path -from *rdptr_g* -to *ws_dgrp|FIFO_dffpipe1:dffpipe15|dffe16a* \";-name CUT ON -from delayed_wrptr_g -to rs_dgwp|FIFO_dffpipe:dffpipe12|dffe13a;-name SDC_STATEMENT \"set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|FIFO_dffpipe:dffpipe12|dffe13a* \""} *)
+(* ALTERA_ATTRIBUTE = {"AUTO_SHIFT_REGISTER_RECOGNITION=OFF;REMOVE_DUPLICATE_REGISTERS=OFF;SYNCHRONIZER_IDENTIFICATION=OFF;SYNCHRONIZATION_REGISTER_CHAIN_LENGTH = 6;suppress_da_rule_internal=d101;suppress_da_rule_internal=d102;suppress_da_rule_internal=d103;-name CUT ON -from rdptr_g -to ws_dgrp|FIFO_dffpipe1:dffpipe18|dffe19a;-name SDC_STATEMENT \"set_false_path -from *rdptr_g* -to *ws_dgrp|FIFO_dffpipe1:dffpipe18|dffe19a* \";-name CUT ON -from delayed_wrptr_g -to rs_dgwp|FIFO_dffpipe:dffpipe12|dffe13a;-name SDC_STATEMENT \"set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|FIFO_dffpipe:dffpipe12|dffe13a* \""} *)
 module  FIFO_dcfifo
 	( 
 	data,
@@ -1303,27 +1255,27 @@ module  FIFO_dcfifo
 	output   wrfull;
 	input   wrreq;
 
-	wire  [12:0]   wire_rdptr_g1p_q;
-	wire  [12:0]   wire_wrptr_g1p_q;
+	wire  [9:0]   wire_rdptr_g1p_q;
+	wire  [9:0]   wire_wrptr_g1p_q;
 	wire  [7:0]   wire_fifo_ram_q_b;
-	reg	[12:0]	delayed_wrptr_g;
+	reg	[9:0]	delayed_wrptr_g;
 	(* ALTERA_ATTRIBUTE = {"SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON;POWER_UP_LEVEL=HIGH"} *)
 	reg	rdemp_eq_comp_lsb_aeb;
 	(* ALTERA_ATTRIBUTE = {"SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON;POWER_UP_LEVEL=HIGH"} *)
 	reg	rdemp_eq_comp_msb_aeb;
-	reg	[12:0]	rdptr_g;
+	reg	[9:0]	rdptr_g;
 	(* ALTERA_ATTRIBUTE = {"SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON"} *)
-	reg	[12:0]	rs_dgwp_reg;
+	reg	[9:0]	rs_dgwp_reg;
 	(* ALTERA_ATTRIBUTE = {"SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON"} *)
 	reg	wrfull_eq_comp_lsb_mux_reg;
 	(* ALTERA_ATTRIBUTE = {"SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON"} *)
 	reg	wrfull_eq_comp_msb_mux_reg;
 	(* ALTERA_ATTRIBUTE = {"suppress_da_rule_internal=S102;POWER_UP_LEVEL=LOW"} *)
-	reg	[12:0]	wrptr_g;
+	reg	[9:0]	wrptr_g;
 	(* ALTERA_ATTRIBUTE = {"SYNCHRONIZER_IDENTIFICATION=FORCED_IF_ASYNCHRONOUS;PRESERVE_REGISTER=ON"} *)
-	reg	[12:0]	ws_dgrp_reg;
-	wire  [12:0]   wire_rs_dgwp_q;
-	wire  [12:0]   wire_ws_dgrp_q;
+	reg	[9:0]	ws_dgrp_reg;
+	wire  [9:0]   wire_rs_dgwp_q;
+	wire  [9:0]   wire_ws_dgrp_q;
 	wire  wire_rdempty_eq_comp1_lsb_aeb;
 	wire  wire_rdempty_eq_comp1_msb_aeb;
 	wire  wire_rdempty_eq_comp_lsb_aeb;
@@ -1338,12 +1290,12 @@ module  FIFO_dcfifo
 	wire  [0:0]   wire_wrfull_eq_comp_msb_mux_result;
 	wire  int_rdempty;
 	wire  int_wrfull;
-	wire  [11:0]  ram_address_a;
-	wire  [11:0]  ram_address_b;
+	wire  [8:0]  ram_address_a;
+	wire  [8:0]  ram_address_b;
 	wire  valid_rdreq;
 	wire  valid_wrreq;
-	wire  [12:0]  wrptr_g1s;
-	wire  [12:0]  wrptr_gs;
+	wire  [9:0]  wrptr_g1s;
+	wire  [9:0]  wrptr_gs;
 
 	FIFO_a_graycounter   rdptr_g1p
 	( 
@@ -1432,43 +1384,43 @@ module  FIFO_dcfifo
 	FIFO_cmpr   rdempty_eq_comp1_lsb
 	( 
 	.aeb(wire_rdempty_eq_comp1_lsb_aeb),
-	.dataa(wire_rs_dgwp_q[6:0]),
-	.datab(wire_rdptr_g1p_q[6:0]));
-	FIFO_cmpr1   rdempty_eq_comp1_msb
+	.dataa(wire_rs_dgwp_q[4:0]),
+	.datab(wire_rdptr_g1p_q[4:0]));
+	FIFO_cmpr   rdempty_eq_comp1_msb
 	( 
 	.aeb(wire_rdempty_eq_comp1_msb_aeb),
-	.dataa(wire_rs_dgwp_q[12:7]),
-	.datab(wire_rdptr_g1p_q[12:7]));
+	.dataa(wire_rs_dgwp_q[9:5]),
+	.datab(wire_rdptr_g1p_q[9:5]));
 	FIFO_cmpr   rdempty_eq_comp_lsb
 	( 
 	.aeb(wire_rdempty_eq_comp_lsb_aeb),
-	.dataa(wire_rs_dgwp_q[6:0]),
-	.datab(rdptr_g[6:0]));
-	FIFO_cmpr1   rdempty_eq_comp_msb
+	.dataa(wire_rs_dgwp_q[4:0]),
+	.datab(rdptr_g[4:0]));
+	FIFO_cmpr   rdempty_eq_comp_msb
 	( 
 	.aeb(wire_rdempty_eq_comp_msb_aeb),
-	.dataa(wire_rs_dgwp_q[12:7]),
-	.datab(rdptr_g[12:7]));
+	.dataa(wire_rs_dgwp_q[9:5]),
+	.datab(rdptr_g[9:5]));
 	FIFO_cmpr   wrfull_eq_comp1_lsb
 	( 
 	.aeb(wire_wrfull_eq_comp1_lsb_aeb),
-	.dataa(wire_ws_dgrp_q[6:0]),
-	.datab(wrptr_g1s[6:0]));
-	FIFO_cmpr1   wrfull_eq_comp1_msb
+	.dataa(wire_ws_dgrp_q[4:0]),
+	.datab(wrptr_g1s[4:0]));
+	FIFO_cmpr   wrfull_eq_comp1_msb
 	( 
 	.aeb(wire_wrfull_eq_comp1_msb_aeb),
-	.dataa(wire_ws_dgrp_q[12:7]),
-	.datab(wrptr_g1s[12:7]));
+	.dataa(wire_ws_dgrp_q[9:5]),
+	.datab(wrptr_g1s[9:5]));
 	FIFO_cmpr   wrfull_eq_comp_lsb
 	( 
 	.aeb(wire_wrfull_eq_comp_lsb_aeb),
-	.dataa(wire_ws_dgrp_q[6:0]),
-	.datab(wrptr_gs[6:0]));
-	FIFO_cmpr1   wrfull_eq_comp_msb
+	.dataa(wire_ws_dgrp_q[4:0]),
+	.datab(wrptr_gs[4:0]));
+	FIFO_cmpr   wrfull_eq_comp_msb
 	( 
 	.aeb(wire_wrfull_eq_comp_msb_aeb),
-	.dataa(wire_ws_dgrp_q[12:7]),
-	.datab(wrptr_gs[12:7]));
+	.dataa(wire_ws_dgrp_q[9:5]),
+	.datab(wrptr_gs[9:5]));
 	FIFO_mux   rdemp_eq_comp_lsb_mux
 	( 
 	.data({wire_rdempty_eq_comp1_lsb_aeb, wire_rdempty_eq_comp_lsb_aeb}),
@@ -1493,14 +1445,14 @@ module  FIFO_dcfifo
 		int_rdempty = (rdemp_eq_comp_lsb_aeb & rdemp_eq_comp_msb_aeb),
 		int_wrfull = (wrfull_eq_comp_lsb_mux_reg & wrfull_eq_comp_msb_mux_reg),
 		q = wire_fifo_ram_q_b,
-		ram_address_a = {(wrptr_g[12] ^ wrptr_g[11]), wrptr_g[10:0]},
-		ram_address_b = {(wire_rdptr_g1p_q[12] ^ wire_rdptr_g1p_q[11]), wire_rdptr_g1p_q[10:0]},
+		ram_address_a = {(wrptr_g[9] ^ wrptr_g[8]), wrptr_g[7:0]},
+		ram_address_b = {(wire_rdptr_g1p_q[9] ^ wire_rdptr_g1p_q[8]), wire_rdptr_g1p_q[7:0]},
 		rdempty = int_rdempty,
 		valid_rdreq = (rdreq & (~ int_rdempty)),
 		valid_wrreq = (wrreq & (~ int_wrfull)),
 		wrfull = int_wrfull,
-		wrptr_g1s = {(~ wire_wrptr_g1p_q[12]), (~ wire_wrptr_g1p_q[11]), wire_wrptr_g1p_q[10:0]},
-		wrptr_gs = {(~ wrptr_g[12]), (~ wrptr_g[11]), wrptr_g[10:0]};
+		wrptr_g1s = {(~ wire_wrptr_g1p_q[9]), (~ wire_wrptr_g1p_q[8]), wire_wrptr_g1p_q[7:0]},
+		wrptr_gs = {(~ wrptr_g[9]), (~ wrptr_g[8]), wrptr_g[7:0]};
 endmodule //FIFO_dcfifo
 //VALID FILE
 
@@ -1555,7 +1507,7 @@ endmodule
 // Retrieval info: PRIVATE: AlmostFullThr NUMERIC "-1"
 // Retrieval info: PRIVATE: CLOCKS_ARE_SYNCHRONIZED NUMERIC "0"
 // Retrieval info: PRIVATE: Clock NUMERIC "4"
-// Retrieval info: PRIVATE: Depth NUMERIC "4096"
+// Retrieval info: PRIVATE: Depth NUMERIC "512"
 // Retrieval info: PRIVATE: Empty NUMERIC "1"
 // Retrieval info: PRIVATE: Full NUMERIC "1"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
@@ -1583,16 +1535,16 @@ endmodule
 // Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
-// Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "4096"
+// Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "512"
 // Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "ON"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "dcfifo"
 // Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "8"
-// Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "12"
+// Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "9"
 // Retrieval info: CONSTANT: OVERFLOW_CHECKING STRING "ON"
-// Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "5"
+// Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "8"
 // Retrieval info: CONSTANT: UNDERFLOW_CHECKING STRING "ON"
 // Retrieval info: CONSTANT: USE_EAB STRING "ON"
-// Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "5"
+// Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "8"
 // Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL "data[7..0]"
 // Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL "q[7..0]"
 // Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL "rdclk"
