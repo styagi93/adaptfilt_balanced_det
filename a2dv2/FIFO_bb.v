@@ -60,9 +60,9 @@ endmodule
 // Retrieval info: PRIVATE: AlmostEmptyThr NUMERIC "-1"
 // Retrieval info: PRIVATE: AlmostFull NUMERIC "0"
 // Retrieval info: PRIVATE: AlmostFullThr NUMERIC "-1"
-// Retrieval info: PRIVATE: CLOCKS_ARE_SYNCHRONIZED NUMERIC "0"
+// Retrieval info: PRIVATE: CLOCKS_ARE_SYNCHRONIZED NUMERIC "1"
 // Retrieval info: PRIVATE: Clock NUMERIC "4"
-// Retrieval info: PRIVATE: Depth NUMERIC "512"
+// Retrieval info: PRIVATE: Depth NUMERIC "128"
 // Retrieval info: PRIVATE: Empty NUMERIC "1"
 // Retrieval info: PRIVATE: Full NUMERIC "1"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
@@ -90,16 +90,16 @@ endmodule
 // Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
-// Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "512"
+// Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "128"
 // Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "ON"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "dcfifo"
 // Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "8"
-// Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "9"
+// Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "7"
 // Retrieval info: CONSTANT: OVERFLOW_CHECKING STRING "ON"
-// Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "8"
+// Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "3"
 // Retrieval info: CONSTANT: UNDERFLOW_CHECKING STRING "ON"
 // Retrieval info: CONSTANT: USE_EAB STRING "ON"
-// Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "8"
+// Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "3"
 // Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL "data[7..0]"
 // Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL "q[7..0]"
 // Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL "rdclk"
@@ -117,8 +117,8 @@ endmodule
 // Retrieval info: CONNECT: rdempty 0 0 0 0 @rdempty 0 0 0 0
 // Retrieval info: CONNECT: wrfull 0 0 0 0 @wrfull 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL FIFO.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL FIFO.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL FIFO.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL FIFO.inc TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL FIFO.cmp TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL FIFO.bsf FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_inst.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL FIFO_bb.v TRUE

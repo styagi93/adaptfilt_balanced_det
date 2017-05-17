@@ -787,6 +787,7 @@ end
 ///////////////GPIO control////////////////
 wire clk_10mhz;
 reg [7:0] temp_counter = 8'd0;
+assign GPIO[35] = clk_10mhz;
 
 //assign GPIO[7:0] = temp_counter;
 	
@@ -799,11 +800,11 @@ reg [7:0] temp_counter = 8'd0;
 	.wrreq(1'b1),
 	.q(GPIO[7:0]),
 	.rdempty(GPIO[9]),
-	.wrfull(LEDR[17])
+	.wrfull(GPIO[10])
 	);
 	
 	
-	always @(posedge clk_10mhz)
+	always @(negedge clk_10mhz)
 	begin
 	temp_counter= temp_counter + 2'd1;
 	

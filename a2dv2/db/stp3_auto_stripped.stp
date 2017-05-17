@@ -134,9 +134,9 @@
       <trigger CRC="3C112A7E" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2016/09/28 16:23:11  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_out="active high" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_out="active high"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -919,9 +919,9 @@
       <trigger CRC="232DEB65" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2016/07/01 16:00:37  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="128" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -1265,7 +1265,8 @@
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'debouncer:debounce_sw17|o' == either edge
             <power_up enabled="yes">
-            </power_up><op_node/>
+            </power_up>
+            <op_node/>
           </level>
           <custom_flow_control>
             <runtime_configurable comparison_operator="yes" counter_action="no" flag_action="no" logical_operator="yes" numerical_value="yes" state_transition="yes"/>
@@ -1282,7 +1283,6 @@ trigger;]]>
             <pwr_up_transitional>111111111111111111111111111111111111111111</pwr_up_transitional>
           </transitional>
           <storage_qualifier_level type="basic">'debouncer:debounce_sw17|o' == either edge
-            
             
             <power_up>
             </power_up>
@@ -1990,9 +1990,9 @@ trigger;]]>
       <trigger CRC="EE654A09" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2016/07/13 18:00:09  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="transitional" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -4380,9 +4380,9 @@ trigger;]]>
       <trigger CRC="196D9EF3" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2016/07/19 17:37:12  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="transitional" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -6890,9 +6890,9 @@ trigger;]]>
       <trigger CRC="61B9136E" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2016/08/09 17:37:21  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="128" storage_mode="transitional" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -6932,7 +6932,7 @@ trigger;]]>
       <single attribute="zoom offset numerator" value="16352"/>
     </position_info>
   </instance>
-  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="AD/DA" source_file="sld_signaltap.vhd">
+  <instance enabled="true" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="AD/DA" source_file="sld_signaltap.vhd">
     <node_ip_info instance_id="6" mfg_id="110" node_id="0" version="6"/>
     <signal_set global_temp="1" is_expanded="true" name="signal_set: 2017/04/16 22:57:55  #0">
       <clock name="CLOCK_20" polarity="posedge" tap_mode="classic"/>
@@ -7319,9 +7319,9 @@ trigger;]]>
       <trigger CRC="76F53A39" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2017/04/16 22:57:55  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="256" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -8764,7 +8764,7 @@ trigger;]]>
             <node data_index="70" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[10][1]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="70" tap_mode="classic" trigger_index="70" type="unknown"/>
             <node data_index="63" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[10][0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="63" tap_mode="classic" trigger_index="63" type="unknown"/>
           </node>
-          <node is_selected="false" level-0="alt_or" name="adaptive_fir:adaptive_fir_inst|f[11][15..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="register">
+          <node is_selected="true" level-0="alt_or" name="adaptive_fir:adaptive_fir_inst|f[11][15..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="register">
             <node data_index="85" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][15]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="85" tap_mode="classic" trigger_index="85" type="unknown"/>
             <node data_index="84" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][14]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="84" tap_mode="classic" trigger_index="84" type="unknown"/>
             <node data_index="83" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][13]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="83" tap_mode="classic" trigger_index="83" type="unknown"/>
@@ -9169,7 +9169,7 @@ trigger;]]>
             <net data_index="70" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[10][1]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="70" tap_mode="classic" trigger_index="70" type="unknown"/>
             <net data_index="63" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[10][0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="63" tap_mode="classic" trigger_index="63" type="unknown"/>
           </bus>
-          <bus is_selected="false" level-0="alt_or" name="adaptive_fir:adaptive_fir_inst|f[11][15..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="register">
+          <bus is_selected="true" level-0="alt_or" name="adaptive_fir:adaptive_fir_inst|f[11][15..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="register">
             <net data_index="85" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][15]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="85" tap_mode="classic" trigger_index="85" type="unknown"/>
             <net data_index="84" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][14]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="84" tap_mode="classic" trigger_index="84" type="unknown"/>
             <net data_index="83" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][13]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="83" tap_mode="classic" trigger_index="83" type="unknown"/>
@@ -9574,7 +9574,7 @@ trigger;]]>
             <net data_index="70" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[10][1]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="70" tap_mode="classic" trigger_index="70" type="unknown"/>
             <net data_index="63" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[10][0]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="63" tap_mode="classic" trigger_index="63" type="unknown"/>
           </bus>
-          <bus is_selected="false" level-0="alt_or" name="adaptive_fir:adaptive_fir_inst|f[11][15..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="register">
+          <bus is_selected="true" level-0="alt_or" name="adaptive_fir:adaptive_fir_inst|f[11][15..0]" order="msb_to_lsb" radix="signed_dec" storage-0="alt_or" storage-1="alt_or" storage-2="alt_or" type="register">
             <net data_index="85" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][15]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="85" tap_mode="classic" trigger_index="85" type="unknown"/>
             <net data_index="84" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][14]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="84" tap_mode="classic" trigger_index="84" type="unknown"/>
             <net data_index="83" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="adaptive_fir:adaptive_fir_inst|f[11][13]" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="83" tap_mode="classic" trigger_index="83" type="unknown"/>
@@ -9672,9 +9672,9 @@ trigger;]]>
       <trigger CRC="367AB051" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2017/05/02 21:23:22  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1024" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -9700,7 +9700,7 @@ trigger;]]>
       </trigger>
     </signal_set>
     <position_info>
-      <single attribute="active tab" value="1"/>
+      <single attribute="active tab" value="0"/>
       <single attribute="data horizontal scroll position" value="4"/>
       <single attribute="data vertical scroll position" value="3"/>
       <single attribute="setup horizontal scroll position" value="0"/>
@@ -11550,9 +11550,9 @@ trigger;]]>
       <trigger CRC="432D62E3" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2017/04/17 20:16:48  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up><op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -11756,7 +11756,8 @@ trigger;]]>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'CIC:u0|out_channel[0]' == low &amp;&amp; 'CIC:u0|out_channel[1]' == low &amp;&amp; 'CIC:u0|out_channel[2]' == low &amp;&amp; 'CIC:u0|out_channel[3]' == low &amp;&amp; 'CIC:u0|out_valid' == falling edge
             <power_up enabled="yes">
-            </power_up><op_node>
+            </power_up>
+            <op_node>
               <op_node left="490" top="222" type="Advanced Trigger Level Result"/>
             </op_node>
           </level>
@@ -11796,7 +11797,7 @@ trigger;]]>
     </position_info>
   </instance>
   <global_info>
-    <single attribute="active instance" value="9"/>
+    <single attribute="active instance" value="7"/>
     <single attribute="config widget visible" value="1"/>
     <single attribute="data log widget visible" value="1"/>
     <single attribute="hierarchy widget height" value="95"/>
