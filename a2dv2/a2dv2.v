@@ -108,13 +108,13 @@ module a2dv2(
 	J1_152,
 	XT_IN_N,
 	XT_IN_P,
-	NCO_OUT,
-	clk_1khz,
+//	NCO_OUT,
+// clk_1khz,
 //	ast_source_data,
 	ast_source_valid,
 //	ast_source_error,
 //	DFF_ast_source_data,
-	CLOCK_20,
+//	CLOCK_20,
 	test_out_data,
 	adaptive_out_data,
 	error_adaptive_out,
@@ -246,19 +246,19 @@ reg			[13:0]	a2da_data;
 
 //////////// NCO //////////
 
-output reg clk_1khz=0;
-output CLOCK_20;
-reg [15:0] counter = 16'd0;
+//output reg clk_1khz=0;
+//output CLOCK_20;
+//reg [15:0] counter = 16'd0;
 //reg [5:0] async_counter= 6'd0;
-output reg [11:0] NCO_OUT;
-reg [11:0] l_NCO_OUT;
-wire NCO_FREQ_UP;
-wire NCO_FREQ_DOWN;
+//output reg [11:0] NCO_OUT;
+//reg [11:0] l_NCO_OUT;
+//wire NCO_FREQ_UP;
+//wire NCO_FREQ_DOWN;
 //wire filter_change_sw;
-integer temp = 20'b00000000000000000001;
-wire [19:0] NCO_IN;
-assign NCO_IN =temp;
-assign	filter_change_sw	= SW[17];	
+//integer temp = 20'b00000000000000000001;
+//wire [19:0] NCO_IN;
+//assign NCO_IN =temp;
+//assign	filter_change_sw	= SW[17];	
 reg l_CLOCK_50;
 reg ll_CLOCK_50;
 reg lll_CLOCK_50;
@@ -299,11 +299,12 @@ output [42:0] emu;
 reg			[13:0]			o_sine_p;
 wire [7:0] mu;
 wire [7:0] tap;
+wire CLOCK_20;
 
 
 	wire system_clk, clk_125, clk_25, clk_2p5;
 	wire tx_clk;
-	wire core_reset_n;
+//	wire core_reset_n;
 	wire mdc, mdio_in, mdio_oen, mdio_out;
 	wire eth_mode, ena_10;
 
@@ -400,15 +401,16 @@ wire [7:0] tap;
 
 //--- globa signal assign
 assign	reset_n			= KEY[3];
-assign	NCO_FREQ_UP			= KEY[2];
-assign	NCO_FREQ_DOWN			= KEY[1];
+//assign	NCO_FREQ_UP			= KEY[2];
+//assign	NCO_FREQ_DOWN			= KEY[1];
 assign   sys_clk = CLOCK_20;
-assign	FPGA_CLK_A_P	=  sys_clk;
-assign	FPGA_CLK_A_N	= ~sys_clk;
+assign	FPGA_CLK_A_P	=  ~sys_clk;
+assign	FPGA_CLK_A_N	=  sys_clk;
+assign	LEDG[3]			=  ADA_OR;
 
  // assign for ADC control signal
 assign	AD_SCLK			= 1'b1;			// (DFS)Data Format Select
-assign	AD_SDIO			= 1'b0;			// (DCS)Duty Cycle Stabilizer Select
+assign	AD_SDIO			= 1'b1;			// (DCS)Duty Cycle Stabilizer Select
 assign	ADA_OE			= 1'b0;				// enable ADA output
 assign	ADA_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
 
@@ -461,46 +463,46 @@ p_sine	p_sine_inst(
 			
 			
 
-nco abc_inst (.clk			(CLOCK_20),
-			.phase_incr (NCO_IN),
-			.cos_out  (NCO_OUT));
+//nco abc_inst (.clk			(CLOCK_20),
+//			.phase_incr (NCO_IN),
+//			.cos_out  (NCO_OUT));
 	
 PLL_200MHz PLL_200MHz_inst (
 				.areset	(~KEY[0]),
 				.inclk0(CLOCK_50),
 				.c0(CLOCK_20),
-				.c1(system_clk),
-				.c2(clk_125),
-				.c3(clk_25),
+//				.c1(system_clk),
+//				.c2(clk_125),
+//				.c3(clk_25),
 				.c4(clk_10mhz),
-				.locked(core_reset_n)
+				.locked(LEDG[1])
 );			
 	
-always @(posedge CLOCK_50)
-begin
-	if (counter == 16'd2500)
-	begin
-	clk_1khz <= ~clk_1khz;
-	counter <= 16'd0;
-	end
-	else 
-	begin
-	counter = counter +1;	
-	end	
-end
-
-always @( posedge clk_1khz)
-begin
-	if ((NCO_FREQ_UP ==1) && (NCO_FREQ_DOWN ==0))
-	begin 
-	temp= temp + 1;
-	end
-	
-	if ((NCO_FREQ_DOWN ==1) && (NCO_FREQ_UP ==0))
-	begin 
-	temp= temp - 1;
-	end
-end 
+//always @(posedge CLOCK_50)
+//begin
+//	if (counter == 16'd2500)
+//	begin
+//	clk_1khz <= ~clk_1khz;
+//	counter <= 16'd0;
+//	end
+//	else 
+//	begin
+//	counter = counter +1;	
+//	end	
+//end
+//
+//always @( posedge clk_1khz)
+//begin
+//	if ((NCO_FREQ_UP ==1) && (NCO_FREQ_DOWN ==0))
+//	begin 
+//	temp= temp + 1;
+//	end
+//	
+//	if ((NCO_FREQ_DOWN ==1) && (NCO_FREQ_UP ==0))
+//	begin 
+//	temp= temp - 1;
+//	end
+//end 
 
 
 //fir_IP_0002 fir_ip_inst (
@@ -670,12 +672,12 @@ end
 
 */
 
-always @ (posedge CLOCK_20)
-begin
-l_NCO_OUT <=NCO_OUT;
-//desired_data <= test_out_data[31:20];
-//l_test_out_data <= test_out_data;
-end
+//always @ (posedge CLOCK_20)
+//begin
+//l_NCO_OUT <=NCO_OUT;
+////desired_data <= test_out_data[31:20];
+////l_test_out_data <= test_out_data;
+//end
 
 //just_fir just_fir_inst(	.clk(CLOCK_20),
 //								.reset(reset_n),

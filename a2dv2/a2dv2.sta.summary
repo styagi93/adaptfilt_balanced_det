@@ -3,47 +3,79 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : 16.186
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
-Slack : 40.738
+Slack : 0.792
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 439.360
+Slack : 3.184
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 35.067
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'ADA_DCO'
+Slack : 44.139
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'GPIO[8]'
+Slack : 96.020
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
-Slack : 499.238
+Slack : 249.232
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.267
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.397
+Slack : 0.277
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
-Slack : 0.402
+Slack : 0.381
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'GPIO[8]'
 Slack : 0.440
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 1.265
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ADA_DCO'
+Slack : 2.085
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.840
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'ADA_DCO'
+Slack : 3.473
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 93.564
+Slack : 93.693
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.181
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
-Slack : 1.494
+Slack : 1.258
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'ADA_DCO'
+Slack : 3.073
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.645
+Slack : 9.819
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK2_50'
@@ -54,36 +86,60 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK3_50'
 Slack : 16.000
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.494
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 24.611
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 249.611
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ADA_DCO'
+Slack : 24.764
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA_CLK_A_N'
+Slack : 45.790
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA_CLK_A_P'
+Slack : 45.790
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO[8]'
+Slack : 49.665
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
-Slack : 499.708
+Slack : 249.709
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : 16.545
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 41.478
+Slack : 1.463
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 444.633
+Slack : 3.755
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 36.177
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'ADA_DCO'
+Slack : 44.774
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'GPIO[8]'
+Slack : 96.392
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
-Slack : 499.301
+Slack : 249.300
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.268
+Slack : 0.281
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
@@ -91,23 +147,47 @@ Slack : 0.353
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.353
+Slack : 0.354
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Type  : Slow 1200mV 0C Model Hold 'GPIO[8]'
 Slack : 0.387
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 1.091
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ADA_DCO'
+Slack : 1.804
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.752
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'ADA_DCO'
+Slack : 4.180
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 94.146
+Slack : 94.232
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.941
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 1.366
+Slack : 1.158
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'ADA_DCO'
+Slack : 2.870
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.636
+Slack : 9.799
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK2_50'
@@ -118,60 +198,108 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK3_50'
 Slack : 16.000
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.409
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 24.632
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 249.631
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADA_DCO'
+Slack : 24.782
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK_A_N'
+Slack : 45.790
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK_A_P'
+Slack : 45.790
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO[8]'
+Slack : 49.694
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
-Slack : 499.709
+Slack : 249.709
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : 18.014
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 45.632
+Slack : 3.477
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 469.405
+Slack : 5.473
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 41.295
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'ADA_DCO'
+Slack : 46.034
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'GPIO[8]'
+Slack : 98.095
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
-Slack : 499.555
+Slack : 249.550
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.089
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.168
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
-Slack : 0.181
+Slack : 0.091
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'GPIO[8]'
 Slack : 0.201
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Hold 'ADA_DCO'
+Slack : 0.506
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.084
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'ADA_DCO'
+Slack : 5.639
+TNS   : 0.000
+
 Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 96.457
+Slack : 96.543
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.150
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.712
+Slack : 0.588
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ADA_DCO'
+Slack : 0.911
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.267
+Slack : 9.400
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK2_50'
@@ -182,16 +310,32 @@ Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK3_50'
 Slack : 16.000
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ADA_DCO'
+Slack : 24.442
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 24.749
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK_A_N'
+Slack : 46.000
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK_A_P'
+Slack : 46.000
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO[8]'
+Slack : 49.198
+TNS   : 0.000
+
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
 Slack : 49.283
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 249.750
-TNS   : 0.000
-
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[4]'
-Slack : 499.753
+Slack : 249.755
 TNS   : 0.000
 
 ------------------------------------------------------------

@@ -22,9 +22,6 @@ FUNCTION PLL_200MHz
 
 RETURNS (
 	c0,
-	c1,
-	c2,
-	c3,
 	c4,
 	locked
 );

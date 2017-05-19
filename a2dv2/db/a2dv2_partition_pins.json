@@ -4,6 +4,14 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "LEDG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[3]",
+					"strict" : false
+				},
+				{
 					"name" : "DA[0]",
 					"strict" : false
 				},
@@ -57,58 +65,6 @@
 				},
 				{
 					"name" : "DA[13]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[1]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[2]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[3]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[4]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[5]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[6]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[7]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[8]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[9]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[10]",
-					"strict" : false
-				},
-				{
-					"name" : "NCO_OUT[11]",
-					"strict" : false
-				},
-				{
-					"name" : "clk_1khz",
 					"strict" : false
 				},
 				{
@@ -632,11 +588,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "ADA_OR",
+					"strict" : false
+				},
+				{
 					"name" : "KEY[3]",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
@@ -697,14 +657,6 @@
 				},
 				{
 					"name" : "ADA_D[9]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[2]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[1]",
 					"strict" : false
 				},
 				{
