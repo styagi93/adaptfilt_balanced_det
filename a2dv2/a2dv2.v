@@ -62,20 +62,20 @@ module a2dv2(
 	FL_WP_N,
 	
 		// Ethernet 0
-  ENET0_MDC,
-  ENET0_MDIO,
-  ENET0_RESET_N,
-	
-	// Ethernet 1
-  ENET1_GTX_CLK,
-  ENET1_MDC,
-  ENET1_MDIO,
-  ENET1_RESET_N,
-  ENET1_RX_CLK,
-  ENET1_RX_DATA,
-  ENET1_RX_DV,
-  ENET1_TX_DATA,
-   ENET1_TX_EN,
+//  ENET0_MDC,
+//  ENET0_MDIO,
+//  ENET0_RESET_N,
+//	
+//	// Ethernet 1
+//  ENET1_GTX_CLK,
+//  ENET1_MDC,
+//  ENET1_MDIO,
+//  ENET1_RESET_N,
+//  ENET1_RX_CLK,
+//  ENET1_RX_DATA,
+//  ENET1_RX_DV,
+//  ENET1_TX_DATA,
+//   ENET1_TX_EN,
 
 	//////////// HSMC, HSMC connect to DCC - High Speed ADC/DAC //////////
 	AD_SCLK,
@@ -219,20 +219,20 @@ input 		          		XT_IN_N;
 input 		          		XT_IN_P;
 
 		// Ethernet 0
-output        ENET0_MDC;
-inout         ENET0_MDIO;
-output        ENET0_RESET_N;
-	
-	// Ethernet 1
-output        ENET1_GTX_CLK;
-output        ENET1_MDC;
-inout         ENET1_MDIO;
-output        ENET1_RESET_N;
-input         ENET1_RX_CLK;
-input  [3: 0] ENET1_RX_DATA;
-input         ENET1_RX_DV;
-output [3: 0] ENET1_TX_DATA;
-output        ENET1_TX_EN;
+//output        ENET0_MDC;
+//inout         ENET0_MDIO;
+//output        ENET0_RESET_N;
+//	
+//	// Ethernet 1
+//output        ENET1_GTX_CLK;
+//output        ENET1_MDC;
+//inout         ENET1_MDIO;
+//output        ENET1_RESET_N;
+//input         ENET1_RX_CLK;
+//input  [3: 0] ENET1_RX_DATA;
+//input         ENET1_RX_DV;
+//output [3: 0] ENET1_TX_DATA;
+//output        ENET1_TX_EN;
 
 
 //=======================================================
@@ -247,7 +247,7 @@ reg			[13:0]	a2da_data;
 //////////// NCO //////////
 
 //output reg clk_1khz=0;
-//output CLOCK_20;
+//  output CLOCK_20;
 //reg [15:0] counter = 16'd0;
 //reg [5:0] async_counter= 6'd0;
 //output reg [11:0] NCO_OUT;
@@ -300,13 +300,15 @@ reg			[13:0]			o_sine_p;
 wire [7:0] mu;
 wire [7:0] tap;
 wire CLOCK_20;
+wire adc_clock;
+reg [2:0] phasecounterselect = 3'b001;
 
 
-	wire system_clk, clk_125, clk_25, clk_2p5;
-	wire tx_clk;
-//	wire core_reset_n;
-	wire mdc, mdio_in, mdio_oen, mdio_out;
-	wire eth_mode, ena_10;
+//	wire system_clk, clk_125, clk_25, clk_2p5;
+//	wire tx_clk;
+////	wire core_reset_n;
+//	wire mdc, mdio_in, mdio_oen, mdio_out;
+//	wire eth_mode, ena_10;
 
 //	assign mdio_in   = ENET1_MDIO;
 //	assign ENET0_MDC  = mdc;
@@ -404,8 +406,8 @@ assign	reset_n			= KEY[3];
 //assign	NCO_FREQ_UP			= KEY[2];
 //assign	NCO_FREQ_DOWN			= KEY[1];
 assign   sys_clk = CLOCK_20;
-assign	FPGA_CLK_A_P	=  ~sys_clk;
-assign	FPGA_CLK_A_N	=  sys_clk;
+assign	FPGA_CLK_A_P	=  CLOCK_20;
+assign	FPGA_CLK_A_N	=  ~CLOCK_20;
 assign	LEDG[3]			=  ADA_OR;
 
  // assign for ADC control signal
@@ -415,7 +417,7 @@ assign	ADA_OE			= 1'b0;				// enable ADA output
 assign	ADA_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
 
  // assign for DAC output data
-assign	DA =  o_sine_p;
+  assign	DA =  o_sine_p;
 
 						
 always @(negedge reset_n or posedge sys_clk)
@@ -471,11 +473,16 @@ PLL_200MHz PLL_200MHz_inst (
 				.areset	(~KEY[0]),
 				.inclk0(CLOCK_50),
 				.c0(CLOCK_20),
-//				.c1(system_clk),
+//				.c1(adc_clock),
 //				.c2(clk_125),
 //				.c3(clk_25),
-				.c4(clk_10mhz),
-				.locked(LEDG[1])
+//				.c4(clk_10mhz),
+				.locked(LEDG[1]),
+//				.phasecounterselect(phasecounterselect),
+//				.phasestep(~KEY[1]),
+//				.phaseupdown(1'b1),
+//				.scanclk(CLOCK_50),
+//				.phasedone(LEDR[10])
 );			
 	
 //always @(posedge CLOCK_50)
@@ -787,31 +794,38 @@ end
 //    );	
 				
 ///////////////GPIO control////////////////
-wire clk_10mhz;
-reg [7:0] temp_counter = 8'd0;
-assign GPIO[35] = clk_10mhz;
-
-//assign GPIO[7:0] = temp_counter;
+//wire clk_10mhz;
+//reg [7:0] temp_counter = 8'd0;
+//wire overflow;
+//reg overflw_reg;
+//assign GPIO[35] = clk_10mhz;
+//
+////assign GPIO[7:0] = temp_counter;
+//	
+//	
+// FIFO fifo_1 (
+//	.data({overflw_reg,temp_counter}),
+//	.rdclk(GPIO[8]),
+//	.rdreq(1'b1),
+//	.wrclk(clk_10mhz),
+//	.wrreq(1'b1),
+//	.q({GPIO[10],GPIO[7:0]}),
+//	.rdempty(GPIO[9]),
+//	.wrfull(overflow)
+//	);
+//	
+//	
+//	always @(negedge clk_10mhz)
+//	begin
+//	temp_counter <= temp_counter + 2'd1;
+//	end	
+//		
+//	always @(posedge clk_10mhz)
+//	begin
+//	overflw_reg <= overflow;
+//	end	
 	
-	
- FIFO fifo_1 (
-	.data(temp_counter),
-	.rdclk(GPIO[8]),
-	.rdreq(1'b1),
-	.wrclk(clk_10mhz),
-	.wrreq(1'b1),
-	.q(GPIO[7:0]),
-	.rdempty(GPIO[9]),
-	.wrfull(GPIO[10])
-	);
-	
-	
-	always @(negedge clk_10mhz)
-	begin
-	temp_counter= temp_counter + 2'd1;
-	
-	end	
-
+////////////////////////////////////////////////////////
 ///////////////////////////CIC/////////////////////////
 wire [15:0] f_0;
 wire [15:0] f_1;
@@ -835,7 +849,7 @@ wire [1:0] out_error;
 wire out_valid;
 wire out_startofpacket;
 wire out_endofpacket;
-wire out_channel;
+wire [3:0] out_channel;
 
 
  CIC u0 (
@@ -875,18 +889,43 @@ wire out_channel;
 
 
 ///////////////////////////PROTOCOL/////////////////////
-//reg [31:0] cic_encoded_data = 32'd0;
-//
-//always @ (posedge out_valid)
-//begin
-//cic_encoded_data <= {out_data[15:12],2'b11,out_channel[3],buffer_empty,
-//							out_data[11:8],2'b10,out_channel[2],buffer_empty,
-//							out_data[7:4],2'b01,out_channel[1],buffer_empty,
-//							out_data[3:0],2'b00,out_channel[0],buffer_empty};
-//
-////pass to FIFO
-//
-//end
+reg [47:0] cic_encoded_data = 47'd0;
+reg overflw_reg;
+wire overflow;
+wire [2:0] dummy;
+
+always @ (negedge out_valid)
+begin
+cic_encoded_data <= {3'd0,overflw_reg,out_channel,out_data[3:0],
+							3'd0,overflw_reg,out_channel,out_data[7:4],
+							3'd0,overflw_reg,out_channel,out_data[11:8],
+							3'd0,overflw_reg,out_channel,out_data[15:12]			//MSB				
+							};
+end
+
+//pass to FIFO
+
+
+ FIFO fifo_1 (
+	.data(cic_encoded_data),
+	.rdclk(GPIO[8]),
+	.rdreq(1'b1),
+	.wrclk(out_valid),
+	.wrreq(1'b1),
+	.q({dummy,GPIO[10],GPIO[7:0]}), 
+	.rdempty(GPIO[9]),
+	.wrfull(overflow)
+	);
+	
+	
+always @(posedge out_valid)
+begin
+overflw_reg <= overflow;
+end
+	
+
+	
+//check wr_clk min pulse width
 
 ////////////////////////////////////////////////////////
 

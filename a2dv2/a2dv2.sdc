@@ -49,13 +49,13 @@ set_input_delay -add_delay -max -clock CLOCK_50 1.000 {KEY[0] KEY[3]}
 
 set_input_delay -add_delay -min -clock CLOCK_50 -1.000 {KEY[0] KEY[3]}
 
-set_input_delay -add_delay -max -clock altera_reserved_tck 1.000 {get_ports altera_reserved_tdi }
+set_input_delay -add_delay -max -clock altera_reserved_tck 1.000 { altera_reserved_tdi }
 
-set_input_delay -add_delay -min -clock altera_reserved_tck -1.000 {get_ports altera_reserved_tdi }
+set_input_delay -add_delay -min -clock altera_reserved_tck -1.000 { altera_reserved_tdi }
 
-set_input_delay -add_delay -max -clock altera_reserved_tck 1.000 {get_ports altera_reserved_tms }
+set_input_delay -add_delay -max -clock altera_reserved_tck 1.000 { altera_reserved_tms }
 
-set_input_delay -add_delay -min -clock altera_reserved_tck -1.000 {get_ports altera_reserved_tms }
+set_input_delay -add_delay -min -clock altera_reserved_tck -1.000 { altera_reserved_tms }
 
 
 
@@ -67,11 +67,11 @@ set_output_delay -add_delay -max -clock CLOCK_50 1.000 {DA[*]    GPIO[*] LEDG[*]
 
 set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {DA[*]    GPIO[*] LEDG[*] adaptive_out_data[*] emu[*] error_adaptive_out[*]}
 
-set_output_delay -add_delay -max -clock altera_reserved_tck 1.000 {get_ports altera_reserved_tdo }
+set_output_delay -add_delay -max -clock altera_reserved_tck 1.000 { altera_reserved_tdo }
 
-set_output_delay -add_delay -min -clock altera_reserved_tck -1.000 {get_ports altera_reserved_tdo }
+set_output_delay -add_delay -min -clock altera_reserved_tck -1.000 { altera_reserved_tdo }
 
-set_output_delay -add_delay -max -clock CLOCK_50 0.000 {get_ports FPGA_CLK_A_N FPGA_CLK_A_P }
+set_output_delay -add_delay -max -clock CLOCK_50 0.000 { FPGA_CLK_A_N FPGA_CLK_A_P }
 
 set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {get_ports FPGA_CLK_A_N FPGA_CLK_A_P }
 
