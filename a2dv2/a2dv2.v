@@ -243,6 +243,8 @@ wire						reset_n;
 wire						sys_clk;
 reg			[13:0]	per_a2da_d;
 reg			[13:0]	a2da_data;
+reg			[13:0]	per_a2db_d;
+reg			[13:0]	a2db_data;
 
 //////////// NCO //////////
 
@@ -408,13 +410,18 @@ assign	reset_n			= KEY[3];
 assign   sys_clk = CLOCK_20;
 assign	FPGA_CLK_A_P	=  CLOCK_20;
 assign	FPGA_CLK_A_N	=  ~CLOCK_20;
+assign	FPGA_CLK_B_P	=  CLOCK_20;
+assign	FPGA_CLK_B_N	=  ~CLOCK_20;
 assign	LEDG[3]			=  ADA_OR;
+assign	LEDG[4]			=  ADB_OR;
 
  // assign for ADC control signal
 assign	AD_SCLK			= 1'b1;			// (DFS)Data Format Select
 assign	AD_SDIO			= 1'b1;			// (DCS)Duty Cycle Stabilizer Select
 assign	ADA_OE			= 1'b0;				// enable ADA output
 assign	ADA_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
+assign	ADB_OE			= 1'b0;				// enable ADA output
+assign	ADB_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
 
  // assign for DAC output data
   assign	DA =  o_sine_p;
@@ -453,11 +460,36 @@ begin
 	end
 end
 
+	//--- Channel B
+always @(negedge reset_n or posedge ADB_DCO)
+begin
+	if (!reset_n) begin
+		per_a2db_d	<= 14'd0;
+	end
+	else begin
+		per_a2db_d	<=  ADB_D;
+	end
+end
+
+always @(negedge reset_n or posedge sys_clk)
+begin
+	if (!reset_n) begin
+		a2db_data	<= 14'd0;
+	end
+	else begin
+		a2db_data	<=  per_a2db_d;
+	end
+end
+
 
 //--- probe points for data capture
 a2d_data_a	a2d_data_a_inst(
 			.probe(a2da_data),
 			.source());
+			
+a2d_data_a	a2d_data_b_inst(
+			.probe(a2db_data),
+			.source());			
 			
 p_sine	p_sine_inst(
 			.probe(o_sine_p),
@@ -729,10 +761,13 @@ adaptive_fir adaptive_fir_inst(
 								.f_14(f_14),
 								.f_15(f_15)
 								);	
+
+reg ADC_CHB_SEL = 1'b1;
 								
 always @(posedge CLOCK_20)
 begin
-FIFO_random_seq[0] <= o_sine_p;
+
+FIFO_random_seq[0] <= (ADC_CHB_SEL)? a2db_data : o_sine_p;
 FIFO_random_seq[1] <= FIFO_random_seq[0];
 FIFO_random_seq[2] <= FIFO_random_seq[1];
 FIFO_random_seq[3] <= FIFO_random_seq[2];

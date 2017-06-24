@@ -12,6 +12,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDG[4]",
+					"strict" : false
+				},
+				{
 					"name" : "DA[0]",
 					"strict" : false
 				},
@@ -592,6 +596,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "ADB_OR",
+					"strict" : false
+				},
+				{
 					"name" : "KEY[3]",
 					"strict" : false
 				},
@@ -657,6 +665,66 @@
 				},
 				{
 					"name" : "ADA_D[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_DCO",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ADB_D[9]",
 					"strict" : false
 				},
 				{
