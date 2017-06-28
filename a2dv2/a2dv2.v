@@ -734,12 +734,24 @@ ROM_delta_control delta_control_inst (.address(1'b0),
 ROM_buffer_tap buffer_control_inst (.address(1'b0),
 												  .clock(CLOCK_20),
 												  .q(tap));
+//////////////////////////////////////////////////////
+///////////DELAYING 'd' ///////////////////////////
+reg  [13:0] delayed_reg_d [0:1];
+
+always @(posedge CLOCK_20 )
+begin
+delayed_reg_d[0] <= a2da_data;
+delayed_reg_d[1] <= delayed_reg_d[0];
+end
+
+//////////////////////////////////////////////////////////
+
 
 adaptive_fir adaptive_fir_inst(	
 								.clk(CLOCK_20),
 								.reset(reset_n),
 								.x_in(FIFO_random_seq[tap]),
-								.d_in(a2da_data),
+								.d_in(delayed_reg_d[1]),
 								.mu_in(mu),
 								.y_out(adaptive_out_data),
 								.e_out(error_adaptive_out),
@@ -928,6 +940,7 @@ reg [47:0] cic_encoded_data = 47'd0;
 reg overflw_reg;
 wire overflow;
 wire [2:0] dummy;
+wire [3:0] dummy2;
 
 always @ (negedge out_valid)
 begin
@@ -947,11 +960,13 @@ end
 	.rdreq(1'b1),
 	.wrclk(out_valid),
 	.wrreq(1'b1),
-	.q({dummy,GPIO[10],GPIO[7:0]}), 
+//	.q({dummy,GPIO[10],GPIO[7:0]}),      //temp change PUT BACK LATER
+	.q({dummy2,GPIO[7:0]}),    ///NOT NEEDED
 	.rdempty(GPIO[9]),
 	.wrfull(overflow)
 	);
 	
+assign GPIO[10] = GPIO [9];
 	
 always @(posedge out_valid)
 begin
