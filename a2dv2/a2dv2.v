@@ -774,7 +774,8 @@ adaptive_fir adaptive_fir_inst(
 								.f_15(f_15)
 								);	
 
-reg ADC_CHB_SEL = 1'b1;
+wire ADC_CHB_SEL;
+assign ADC_CHB_SEL = SW[16];
 								
 always @(posedge CLOCK_20)
 begin
@@ -934,13 +935,107 @@ wire [3:0] out_channel;
 
 //////////////////////////////////////////////////////
 
+/////////////////////Adding multiplexer for CIC debugging///////////////////
+
+(* noprune *) reg [15:0] CIC_data [0:15];
+(* noprune *) reg [0:0] CIC_data_valid [0:15];
+
+always @(posedge out_valid) begin
+
+case (out_channel)
+
+4'd0 : begin
+ CIC_data [0] <= out_data;
+ CIC_data_valid [0]  <= out_valid;
+ end
+ 
+4'd1 : begin
+CIC_data [1] <= out_data;
+CIC_data_valid [1]  <= out_valid;
+end
+
+4'd2 : begin
+CIC_data [2] <= out_data;
+CIC_data_valid [2]  <= out_valid;
+end
+
+4'd3 : begin
+CIC_data [3] <= out_data;
+CIC_data_valid [3]  <= out_valid;
+end
+
+4'd4 : begin
+CIC_data [4] <= out_data;
+CIC_data_valid [4]  <= out_valid;
+end
+
+4'd5 : begin
+CIC_data [5] <= out_data;
+CIC_data_valid [5]  <= out_valid;
+end
+
+4'd6 : begin
+CIC_data [6] <= out_data;
+CIC_data_valid [6]  <= out_valid;
+end
+
+4'd7 : begin
+CIC_data [7] <= out_data;
+CIC_data_valid [7]  <= out_valid;
+end
+
+4'd8 : begin
+CIC_data [8] <= out_data;
+CIC_data_valid [8]  <= out_valid;
+end
+
+4'd9 : begin
+CIC_data [9] <= out_data;
+CIC_data_valid [9]  <= out_valid;
+end
+
+4'd10 : begin
+CIC_data [10] <= out_data;
+CIC_data_valid [10]  <= out_valid;
+end
+
+4'd11 : begin
+CIC_data [11] <= out_data;
+CIC_data_valid [11]  <= out_valid;
+end
+
+4'd12 : begin
+CIC_data [12] <= out_data;
+CIC_data_valid [12]  <= out_valid;
+end
+
+4'd13 : begin
+CIC_data [13] <= out_data;
+CIC_data_valid [13]  <= out_valid;
+end
+
+4'd14 : begin
+CIC_data [14] <= out_data;
+CIC_data_valid [14]  <= out_valid;
+end
+
+4'd15 : begin
+CIC_data [15] <= out_data;
+CIC_data_valid [15]  <= out_valid;
+end 
+ 
+
+endcase
+end
+
+//////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////PROTOCOL/////////////////////
 reg [47:0] cic_encoded_data = 47'd0;
 reg overflw_reg;
 wire overflow;
 wire [2:0] dummy;
-wire [3:0] dummy2;
+
 
 always @ (negedge out_valid)
 begin
@@ -960,13 +1055,12 @@ end
 	.rdreq(1'b1),
 	.wrclk(out_valid),
 	.wrreq(1'b1),
-//	.q({dummy,GPIO[10],GPIO[7:0]}),      //temp change PUT BACK LATER
-	.q({dummy2,GPIO[7:0]}),    ///NOT NEEDED
-	.rdempty(GPIO[9]),
+	.q({dummy,GPIO[10],GPIO[7:0]}),   
+	.rdempty(GPIO[11]),
 	.wrfull(overflow)
 	);
 	
-assign GPIO[10] = GPIO [9];
+
 	
 always @(posedge out_valid)
 begin

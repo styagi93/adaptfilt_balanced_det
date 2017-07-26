@@ -11,12 +11,12 @@
    <SOPCModuleParameter>
     <C>2</C>
     <Name>DESIGN_HASH</Name>
-    <Value>21c39d79185f1a00281f</Value>
+    <Value>f6eb1d1bc05da0d647de</Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>3</C>
     <Name>NODE_COUNT</Name>
-    <Value>7</Value>
+    <Value>8</Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>4</C>
@@ -26,12 +26,12 @@
    <SOPCModuleParameter>
     <C>5</C>
     <Name>SETTINGS</Name>
-    <Value>{fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 0 ir_width 4 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 1 ir_width 4 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 2 ir_width 4 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 1 ir_width 8 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 1 version 0 instance 0 ir_width 2 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 7 ir_width 10 psig f63706bb} </Value>
+    <Value>{fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 0 ir_width 4 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 1 ir_width 4 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 2 ir_width 4 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 1 ir_width 8 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 1 version 0 instance 0 ir_width 2 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 7 ir_width 10 psig f63706bb} {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 10 ir_width 10 psig f63706bb} </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>6</C>
     <Name>CLOCKS</Name>
-    <Value>{id {} } {id {} } {id {} } {id {} } {id {} } {id {} } {id {} } </Value>
+    <Value>{id {} } {id {} } {id {} } {id {} } {id {} } {id {} } {id {} } {id {} } </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>7</C>
@@ -41,7 +41,7 @@
    <SOPCModuleParameter>
     <C>8</C>
     <Name>EP_INFOS</Name>
-    <Value>{hpath {a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component} } {hpath {a2d_data_a:a2d_data_b_inst|altsource_probe:altsource_probe_component} } {hpath {p_sine:p_sine_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl} } {hpath {ROM_delta_control:delta_control_inst|altsyncram:altsyncram_component|altsyncram_cmb1:auto_generated|sld_mod_ram_rom:mgl_prim2} } {hpath {ROM_buffer_tap:buffer_control_inst|altsyncram:altsyncram_component|altsyncram_1ib1:auto_generated|sld_mod_ram_rom:mgl_prim2} } {hpath {pzdyqx:nabboc} } {hpath {sld_signaltap:filter_20readout} } </Value>
+    <Value>{hpath {a2d_data_a:a2d_data_a_inst|altsource_probe:altsource_probe_component} } {hpath {a2d_data_a:a2d_data_b_inst|altsource_probe:altsource_probe_component} } {hpath {p_sine:p_sine_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl} } {hpath {ROM_delta_control:delta_control_inst|altsyncram:altsyncram_component|altsyncram_cmb1:auto_generated|sld_mod_ram_rom:mgl_prim2} } {hpath {ROM_buffer_tap:buffer_control_inst|altsyncram:altsyncram_component|altsyncram_1ib1:auto_generated|sld_mod_ram_rom:mgl_prim2} } {hpath {pzdyqx:nabboc} } {hpath {sld_signaltap:filter_20readout} } {hpath {sld_signaltap:mux_CIC} } </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>9</C>
@@ -56,7 +56,7 @@
    <SOPCModuleParameter>
     <C>11</C>
     <Name>COMPOSED_SETTINGS</Name>
-    <Value>{fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 0 ir_width 4 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 1 ir_width 4 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 2 ir_width 4 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 1 ir_width 8 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 1 version 0 instance 0 ir_width 2 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 7 ir_width 10 prefer_host {} } </Value>
+    <Value>{fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 0 ir_width 4 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 1 ir_width 4 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 9 version 0 instance 2 ir_width 4 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 1 ir_width 8 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 1 version 0 instance 0 ir_width 2 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 7 ir_width 10 prefer_host {} } {fabric sld dir agent mfr_code 110 type_code 0 version 6 instance 10 ir_width 10 prefer_host {} } </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>12</C>
@@ -74,7 +74,7 @@
     <Value>Unknown</Value>
    </SOPCModuleParameter>
   </SOPCModule>
-  <SystemID>1895626832</SystemID>
+  <SystemID>2112395244</SystemID>
  </SOPCSystem>
  <SchemaVersion>schema_2013-01-18</SchemaVersion>
 </ProgramExecution>
