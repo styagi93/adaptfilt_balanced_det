@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="CIC" kind="CIC" version="1.0" fabric="QSYS">
  <!-- Format version 16.0 211 (Future versions may contain additional information.) -->
- <!-- 2017.04.26.19:38:50 -->
+ <!-- 2017.07.31.17:06:52 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1493257130</value>
+  <value>1501542412</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -150,7 +150,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="RCF_FIX">
    <type>int</type>
-   <value>1000</value>
+   <value>992</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -174,7 +174,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="RCF_MIN">
    <type>int</type>
-   <value>1000</value>
+   <value>992</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -182,7 +182,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="RCF_MAX">
    <type>int</type>
-   <value>1000</value>
+   <value>992</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -286,7 +286,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="REQ_DIF_MEM">
    <type>java.lang.String</type>
-   <value>auto</value>
+   <value>logic_element</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

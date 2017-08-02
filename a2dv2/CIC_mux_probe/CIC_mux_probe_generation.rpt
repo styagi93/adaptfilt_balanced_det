@@ -1,0 +1,50 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC_mux_probe.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC_mux_probe\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading a2dv2/CIC_mux_probe.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 16.0]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: CIC_mux_probe: Generating CIC_mux_probe "CIC_mux_probe" for SIM_VERILOG
+Info: in_system_sources_probes_0: "CIC_mux_probe" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: CIC_mux_probe: Done "CIC_mux_probe" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC_mux_probe\CIC_mux_probe.spd --output-directory=C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC_mux_probe/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC_mux_probe\CIC_mux_probe.spd --output-directory=C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC_mux_probe/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC_mux_probe/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC_mux_probe/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC_mux_probe/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC_mux_probe/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC_mux_probe/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC_mux_probe/simulation/.
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC_mux_probe.qsys --synthesis=VERILOG --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\CIC_mux_probe\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading a2dv2/CIC_mux_probe.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 16.0]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: CIC_mux_probe: Generating CIC_mux_probe "CIC_mux_probe" for QUARTUS_SYNTH
+Info: in_system_sources_probes_0: "CIC_mux_probe" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: CIC_mux_probe: Done "CIC_mux_probe" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

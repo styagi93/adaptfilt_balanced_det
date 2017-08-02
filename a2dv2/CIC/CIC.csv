@@ -1,12 +1,12 @@
-# system info CIC on 2017.04.26.19:38:50
+# system info CIC on 2017.07.31.17:06:51
 system_info:
 name,value
 DEVICE,EP4CE115F29C7
 DEVICE_FAMILY,Cyclone IV E
-GENERATION_ID,1493257129
+GENERATION_ID,1501542410
 #
 #
-# Files generated for CIC on 2017.04.26.19:38:50
+# Files generated for CIC on 2017.07.31.17:06:51
 files:
 filepath,kind,attributes,module,is_top
 simulation/CIC.v,VERILOG,,CIC,true

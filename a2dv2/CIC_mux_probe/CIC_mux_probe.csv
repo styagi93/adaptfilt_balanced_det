@@ -1,0 +1,18 @@
+# system info CIC_mux_probe on 2017.07.26.01:31:50
+system_info:
+name,value
+DEVICE,EP4CE115F29C7
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1501054309
+#
+#
+# Files generated for CIC_mux_probe on 2017.07.26.01:31:50
+files:
+filepath,kind,attributes,module,is_top
+simulation/CIC_mux_probe.v,VERILOG,,CIC_mux_probe,true
+simulation/submodules/altsource_probe.v,VERILOG,,altsource_probe,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+CIC_mux_probe.in_system_sources_probes_0,altsource_probe

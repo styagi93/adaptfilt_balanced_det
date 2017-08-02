@@ -2,7 +2,7 @@
 setenv('path', ['C:\altera_lite\16.0\quartus\bin64;' getenv('path')]);
 addpath 'C:\altera_lite\16.0\quartus\bin64';
 alt_signaltap_run('VERBOSE_ON')
-while(1)
+% while(1)
 % for i = (1:20) 
 tic;
 data = alt_signaltap_run ('C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\stp3.stp', 'signed', 'filter readout' );
@@ -26,6 +26,6 @@ subplot(3,1,3);stem(b);title('Coefficients');ylabel('normalized response');xlabe
 % axis ([0 16 -1 1]);
 %drawnow;
 % stem (b);
-end
+% end
 
 %%alt_signaltap_run('END_CONNECTION');

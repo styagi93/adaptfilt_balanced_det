@@ -52,8 +52,8 @@ module CIC_cic_ii_0 (
     parameter STAGES        =  1;
     parameter D_DELAY              =  1;
     parameter VRC_EN   =  0;
-    parameter RCF_MAX         =  1000;
-    parameter RCF_MIN         =  1000;
+    parameter RCF_MAX         =  992;
+    parameter RCF_MIN         =  992;
     parameter INTERFACES    =  16;
     parameter CH_PER_INT  =  1;
     parameter INT_USE_MEM      =  "false";

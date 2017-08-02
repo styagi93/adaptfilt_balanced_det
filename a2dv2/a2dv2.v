@@ -940,7 +940,7 @@ wire [3:0] out_channel;
 (* noprune *) reg [15:0] CIC_data [0:15];
 (* noprune *) reg [0:0] CIC_data_valid [0:15];
 
-always @(posedge out_valid) begin
+always @(negedge out_valid) begin
 
 case (out_channel)
 
