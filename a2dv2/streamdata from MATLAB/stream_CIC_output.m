@@ -2,7 +2,7 @@
 setenv('path', ['C:\altera_lite\16.0\quartus\bin64;' getenv('path')]);
 addpath 'C:\altera_lite\16.0\quartus\bin64';
 alt_signaltap_run('VERBOSE_ON')
-% while(1)
+while(1)
 % for (k=1:30)
 tic;
 data = alt_signaltap_run ('C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\stp3.stp', 'signed', 'CIC output only' );
@@ -19,9 +19,9 @@ for (i=1:(size(data,1)))
         
     end
 end
-coeff_hist(k,:) = coeff;
+% coeff_hist(k,:) = coeff;
 % end
 plot (coeff);
-% end
+end
 
 %%alt_signaltap_run('END_CONNECTION');

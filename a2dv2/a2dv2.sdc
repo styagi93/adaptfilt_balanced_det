@@ -15,11 +15,9 @@ create_clock -period 50 [get_ports ADB_DCO]
 create_clock -period 50 [get_ports FPGA_CLK_A_P]
 create_clock -period 50 [get_ports FPGA_CLK_A_N]
 
-create_clock -period 50 [get_ports out_valid]
-
-create_clock -period 50 [get_ports CIC:u0|CIC_cic_ii_0:cic_ii_0|alt_cic_core:core|auk_dspip_avalon_streaming_source:output_source_1|source_valid_s]
-
 create_clock -period 100 [get_ports GPIO[8]]
+
+create_clock -name {CIC:u0|CIC_cic_ii_0:cic_ii_0|alt_cic_core:core|auk_dspip_avalon_streaming_source:output_source_1|source_valid_s} -period 50 -add
 
 
 #**************************************************************

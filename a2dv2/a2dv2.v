@@ -875,23 +875,26 @@ end
 	
 ////////////////////////////////////////////////////////
 ///////////////////////////CIC/////////////////////////
-wire [15:0] f_0;
-wire [15:0] f_1;
-wire [15:0] f_2;
-wire [15:0] f_3;
-wire [15:0] f_4;
-wire [15:0] f_5;
-wire [15:0] f_6;
-wire [15:0] f_7;
-wire [15:0] f_8;
-wire [15:0] f_9;
-wire [15:0] f_10;
-wire [15:0] f_11;
-wire [15:0] f_12;
-wire [15:0] f_13;
-wire [15:0] f_14;
-wire [15:0] f_15;
+(*keep*) wire [15:0] f_0;
+(*keep*) wire [15:0] f_1;
+(*keep*) wire [15:0] f_2;
+(*keep*) wire [15:0] f_3;
+(*keep*) wire [15:0] f_4;
+(*keep*) wire [15:0] f_5;
+(*keep*) wire [15:0] f_6;
+(*keep*) wire [15:0] f_7;
+(*keep*) wire [15:0] f_8;
+(*keep*) wire [15:0] f_9;
+(*keep*) wire [15:0] f_10;
+(*keep*) wire [15:0] f_11;
+(*keep*) wire [15:0] f_12;
+(*keep*) wire [15:0] f_13;
+(*keep*) wire [15:0] f_14;
+(*keep*) wire [15:0] f_15;
 wire in_ready;
+wire CIC_out_ready = 1'b1;
+wire CIC_in_valid = 1'b1;
+wire [1:0] CIC_in_error = 2'b0;
 wire [15:0] out_data;
 wire [1:0] out_error;
 wire out_valid;
@@ -901,8 +904,8 @@ wire [3:0] out_channel;
 
 
  CIC u0 (
-	  .in_error          (2'd0),          //  av_st_in.error
-	  .in_valid          (1'd1),          //          .valid
+	  .in_error          (CIC_in_error),          //  av_st_in.error
+	  .in_valid          (CIC_in_valid),          //          .valid
 	  .in_ready          (in_ready),          //          .ready
 	  .in0_data          (f_0),          //          .in0_data
 	  .in1_data          (f_1),          //          .in1_data
@@ -923,7 +926,7 @@ wire [3:0] out_channel;
 	  .out_data          (out_data),          // av_st_out.out_data
 	  .out_error         (out_error),         //          .error
 	  .out_valid         (out_valid),         //          .valid
-	  .out_ready         (1'b1),         //          .ready
+	  .out_ready         (CIC_out_ready),         //          .ready
 	  .out_startofpacket (out_startofpacket), //          .startofpacket
 	  .out_endofpacket   (out_endofpacket),   //          .endofpacket
 	  .out_channel       (out_channel),       //          .channel
