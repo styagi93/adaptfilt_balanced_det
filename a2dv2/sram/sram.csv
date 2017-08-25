@@ -1,0 +1,18 @@
+# system info sram on 2017.08.21.01:09:20
+system_info:
+name,value
+DEVICE,EP4CE115F29C7
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1503299359
+#
+#
+# Files generated for sram on 2017.08.21.01:09:20
+files:
+filepath,kind,attributes,module,is_top
+simulation/sram.v,VERILOG,,sram,true
+simulation/submodules/sram_sram_0.v,VERILOG,,sram_sram_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+sram.sram_0,sram_sram_0

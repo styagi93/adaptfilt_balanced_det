@@ -61,6 +61,15 @@ module a2dv2(
 	FL_WE_N,
 	FL_WP_N,
 	
+	//////////// SRAM //////////
+	SRAM_ADDR,
+	SRAM_CE_N,
+	SRAM_DQ,
+	SRAM_LB_N,
+	SRAM_OE_N,
+	SRAM_UB_N,
+	SRAM_WE_N,
+	
 		// Ethernet 0
 //  ENET0_MDC,
 //  ENET0_MDIO,
@@ -171,6 +180,15 @@ input 		          		SD_WP_N;
 
 //////////// GPIO //////////
 inout		        [35:0]		GPIO;
+
+//////////// SRAM //////////
+output		    [19:0]		SRAM_ADDR;
+output		          		SRAM_CE_N;
+inout 		    [15:0]		SRAM_DQ;
+output		          		SRAM_LB_N;
+output		          		SRAM_OE_N;
+output		          		SRAM_UB_N;
+output		          		SRAM_WE_N;
 
 //////////// I2C for HSMC  //////////
 output		          		I2C_SCLK;
@@ -1119,6 +1137,48 @@ end
 //check wr_clk min pulse width
 
 ////////////////////////////////////////////////////////
+////////////Transfer to SRAM////////////////////////////
+
+reg [20:0] sram_address = 21'd0;
+
+
+sram sram0(
+				.address(sram_address),       //  avalon_sram_slave.address
+				.byteenable(2'b11),    //                   .byteenable
+				.read(),          //                   .read
+				.write((sram_address >= 21'd1048576) ? 1'b0 : out_valid),         //                   .write
+				.writedata(temp_counter),     //                   .writedata
+				.readdata(),      //                   .readdata
+				.readdatavalid(), //                   .readdatavalid
+				.clk(CLOCK_20),           //                clk.clk
+				.SRAM_DQ(SRAM_DQ),       // external_interface.DQ
+				.SRAM_ADDR(SRAM_ADDR),     //                   .ADDR
+				.SRAM_LB_N(SRAM_LB_N),     //                   .LB_N
+				.SRAM_UB_N(SRAM_UB_N),     //                   .UB_N
+				.SRAM_CE_N(SRAM_CE_N),     //                   .CE_N
+				.SRAM_OE_N(SRAM_OE_N),     //                   .OE_N
+				.SRAM_WE_N(SRAM_WE_N),     //                   .WE_N
+				.reset(KEY[3])
+);				
+		
+		
+always @ (negedge out_valid /*or negedge frame_reset*/) ///add negedge reset support
+begin
+
+if (sram_address < 21'd1048576)         ////////////// 256*256*16 = 1048576
+	sram_address <= sram_address + 1'd1;
+end
+
+reg [19:0] temp_counter = 19'b0;
+
+always @(posedge out_valid)
+begin
+temp_counter <= temp_counter + 1'b1;
+end
+
+
+		
+///////////////////////////////////////////////////////////////
 
 				
 endmodule

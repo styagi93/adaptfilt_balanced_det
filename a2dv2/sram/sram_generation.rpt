@@ -1,0 +1,52 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading a2dv2/sram.qsys
+Progress: Reading input file
+Progress: Adding sram_0 [altera_up_avalon_sram 15.1]
+Progress: Parameterizing module sram_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: sram: Generating sram "sram" for SIM_VERILOG
+Info: sram_0: Starting Generation of SRAM or SSRAM Controller
+Info: sram_0: "sram" instantiated altera_up_avalon_sram "sram_0"
+Info: sram: Done "sram" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram\sram.spd --output-directory=C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram\sram.spd --output-directory=C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram/simulation/.
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram.qsys --synthesis=VERILOG --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading a2dv2/sram.qsys
+Progress: Reading input file
+Progress: Adding sram_0 [altera_up_avalon_sram 15.1]
+Progress: Parameterizing module sram_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: sram: Generating sram "sram" for QUARTUS_SYNTH
+Info: sram_0: Starting Generation of SRAM or SSRAM Controller
+Info: sram_0: "sram" instantiated altera_up_avalon_sram "sram_0"
+Info: sram: Done "sram" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

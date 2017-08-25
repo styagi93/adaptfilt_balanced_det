@@ -17,8 +17,6 @@ create_clock -period 50 [get_ports FPGA_CLK_A_N]
 
 create_clock -period 100 [get_ports GPIO[8]]
 
-create_clock -name {CIC:u0|CIC_cic_ii_0:cic_ii_0|alt_cic_core:core|auk_dspip_avalon_streaming_source:output_source_1|source_valid_s} -period 50 -add
-
 
 #**************************************************************
 # Create Generated Clock
@@ -52,9 +50,9 @@ set_input_delay -add_delay -max -clock ADB_DCO 1.000 {ADB_D[*] ADB_OR}
 
 set_input_delay -add_delay -min -clock ADB_DCO -1.000 {ADB_D[*] ADB_OR}
 
-set_input_delay -add_delay -max -clock CLOCK_50 1.000 {KEY[0] KEY[3] SW[16]}
+set_input_delay -add_delay -max -clock CLOCK_50 1.000 {KEY[0] KEY[3] SW[16] SRAM_DQ[*]}
 
-set_input_delay -add_delay -min -clock CLOCK_50 -1.000 {KEY[0] KEY[3] SW[16]}
+set_input_delay -add_delay -min -clock CLOCK_50 -1.000 {KEY[0] KEY[3] SW[16] SRAM_DQ[*]}
 
 set_input_delay -add_delay -max -clock altera_reserved_tck 1.000 { altera_reserved_tdi }
 
@@ -78,9 +76,9 @@ set_output_delay -add_delay -max -clock altera_reserved_tck 1.000 { altera_reser
 
 set_output_delay -add_delay -min -clock altera_reserved_tck -1.000 { altera_reserved_tdo }
 
-set_output_delay -add_delay -max -clock CLOCK_50 0.000 { FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N }
+set_output_delay -add_delay -max -clock CLOCK_50 0.000 { FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*]}
 
-set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {get_ports FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N }
+set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {get_ports FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*]}
 
 
 #**************************************************************
