@@ -76,9 +76,9 @@ set_output_delay -add_delay -max -clock altera_reserved_tck 1.000 { altera_reser
 
 set_output_delay -add_delay -min -clock altera_reserved_tck -1.000 { altera_reserved_tdo }
 
-set_output_delay -add_delay -max -clock CLOCK_50 0.000 { FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*]}
+set_output_delay -add_delay -max -clock CLOCK_50 0.000 { FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*] SRAM_OE_N}
 
-set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {get_ports FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*]}
+set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {get_ports FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*] SRAM_OE_N}
 
 
 #**************************************************************

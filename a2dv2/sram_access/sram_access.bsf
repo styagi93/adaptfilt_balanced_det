@@ -1,0 +1,167 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 496 376)
+	(text "sram_access" (rect 209 -1 264 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 360 20 372)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 208 72)(line_width 1))
+	)
+	(port
+		(pt 0 248)
+		(input)
+		(text "bridge_input_conduit_address[20..0]" (rect 0 0 142 12)(font "Arial" (font_size 8)))
+		(text "bridge_input_conduit_address[20..0]" (rect 4 237 214 248)(font "Arial" (font_size 8)))
+		(line (pt 0 248)(pt 208 248)(line_width 3))
+	)
+	(port
+		(pt 0 264)
+		(input)
+		(text "bridge_input_conduit_byte_enable[1..0]" (rect 0 0 153 12)(font "Arial" (font_size 8)))
+		(text "bridge_input_conduit_byte_enable[1..0]" (rect 4 253 232 264)(font "Arial" (font_size 8)))
+		(line (pt 0 264)(pt 208 264)(line_width 3))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "bridge_input_conduit_read" (rect 0 0 103 12)(font "Arial" (font_size 8)))
+		(text "bridge_input_conduit_read" (rect 4 269 154 280)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 208 280)(line_width 1))
+	)
+	(port
+		(pt 0 296)
+		(input)
+		(text "bridge_input_conduit_write" (rect 0 0 103 12)(font "Arial" (font_size 8)))
+		(text "bridge_input_conduit_write" (rect 4 285 160 296)(font "Arial" (font_size 8)))
+		(line (pt 0 296)(pt 208 296)(line_width 1))
+	)
+	(port
+		(pt 0 312)
+		(input)
+		(text "bridge_input_conduit_write_data[15..0]" (rect 0 0 149 12)(font "Arial" (font_size 8)))
+		(text "bridge_input_conduit_write_data[15..0]" (rect 4 301 232 312)(font "Arial" (font_size 8)))
+		(line (pt 0 312)(pt 208 312)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(output)
+		(text "sram_conduit_ADDR[19..0]" (rect 0 0 114 12)(font "Arial" (font_size 8)))
+		(text "sram_conduit_ADDR[19..0]" (rect 4 117 148 128)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 208 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(output)
+		(text "sram_conduit_LB_N" (rect 0 0 84 12)(font "Arial" (font_size 8)))
+		(text "sram_conduit_LB_N" (rect 4 133 106 144)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 208 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(output)
+		(text "sram_conduit_UB_N" (rect 0 0 86 12)(font "Arial" (font_size 8)))
+		(text "sram_conduit_UB_N" (rect 4 149 106 160)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 208 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(output)
+		(text "sram_conduit_CE_N" (rect 0 0 87 12)(font "Arial" (font_size 8)))
+		(text "sram_conduit_CE_N" (rect 4 165 106 176)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 208 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "sram_conduit_OE_N" (rect 0 0 87 12)(font "Arial" (font_size 8)))
+		(text "sram_conduit_OE_N" (rect 4 181 106 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 208 192)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(output)
+		(text "sram_conduit_WE_N" (rect 0 0 90 12)(font "Arial" (font_size 8)))
+		(text "sram_conduit_WE_N" (rect 4 197 106 208)(font "Arial" (font_size 8)))
+		(line (pt 0 208)(pt 208 208)(line_width 1))
+	)
+	(port
+		(pt 0 328)
+		(output)
+		(text "bridge_input_conduit_acknowledge" (rect 0 0 135 12)(font "Arial" (font_size 8)))
+		(text "bridge_input_conduit_acknowledge" (rect 4 317 196 328)(font "Arial" (font_size 8)))
+		(line (pt 0 328)(pt 208 328)(line_width 1))
+	)
+	(port
+		(pt 0 344)
+		(output)
+		(text "bridge_input_conduit_read_data[15..0]" (rect 0 0 149 12)(font "Arial" (font_size 8)))
+		(text "bridge_input_conduit_read_data[15..0]" (rect 4 333 226 344)(font "Arial" (font_size 8)))
+		(line (pt 0 344)(pt 208 344)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(bidir)
+		(text "sram_conduit_DQ[15..0]" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "sram_conduit_DQ[15..0]" (rect 4 101 136 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 208 112)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 193 43 404 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 213 67 444 144)(font "Arial" (color 0 0 0)))
+		(text "sram_conduit" (rect 130 83 332 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "DQ" (rect 213 107 438 224)(font "Arial" (color 0 0 0)))
+		(text "ADDR" (rect 213 123 450 256)(font "Arial" (color 0 0 0)))
+		(text "LB_N" (rect 213 139 450 288)(font "Arial" (color 0 0 0)))
+		(text "UB_N" (rect 213 155 450 320)(font "Arial" (color 0 0 0)))
+		(text "CE_N" (rect 213 171 450 352)(font "Arial" (color 0 0 0)))
+		(text "OE_N" (rect 213 187 450 384)(font "Arial" (color 0 0 0)))
+		(text "WE_N" (rect 213 203 450 416)(font "Arial" (color 0 0 0)))
+		(text "bridge_input_conduit" (rect 88 219 296 451)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "address" (rect 213 243 468 496)(font "Arial" (color 0 0 0)))
+		(text "byte_enable" (rect 213 259 492 528)(font "Arial" (color 0 0 0)))
+		(text "read" (rect 213 275 450 560)(font "Arial" (color 0 0 0)))
+		(text "write" (rect 213 291 456 592)(font "Arial" (color 0 0 0)))
+		(text "write_data" (rect 213 307 486 624)(font "Arial" (color 0 0 0)))
+		(text "acknowledge" (rect 213 323 492 656)(font "Arial" (color 0 0 0)))
+		(text "read_data" (rect 213 339 480 688)(font "Arial" (color 0 0 0)))
+		(text " system " (rect 461 360 970 730)(font "Arial" ))
+		(line (pt 208 32)(pt 288 32)(line_width 1))
+		(line (pt 288 32)(pt 288 360)(line_width 1))
+		(line (pt 208 360)(pt 288 360)(line_width 1))
+		(line (pt 208 32)(pt 208 360)(line_width 1))
+		(line (pt 209 52)(pt 209 76)(line_width 1))
+		(line (pt 210 52)(pt 210 76)(line_width 1))
+		(line (pt 209 92)(pt 209 212)(line_width 1))
+		(line (pt 210 92)(pt 210 212)(line_width 1))
+		(line (pt 209 228)(pt 209 348)(line_width 1))
+		(line (pt 210 228)(pt 210 348)(line_width 1))
+		(line (pt 0 0)(pt 496 0)(line_width 1))
+		(line (pt 496 0)(pt 496 376)(line_width 1))
+		(line (pt 0 376)(pt 496 376)(line_width 1))
+		(line (pt 0 0)(pt 0 376)(line_width 1))
+	)
+)

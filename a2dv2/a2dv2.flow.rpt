@@ -1,5 +1,5 @@
 Flow report for a2dv2
-Wed Aug 23 19:21:42 2017
+Tue Aug 29 02:17:15 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Aug 23 19:21:30 2017       ;
+; Flow Status                        ; Successful - Tue Aug 29 02:17:01 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; a2dv2                                       ;
 ; Top-level Entity Name              ; a2dv2                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 13,766 / 114,480 ( 12 % )                   ;
-;     Total combinational functions  ; 9,685 / 114,480 ( 8 % )                     ;
-;     Dedicated logic registers      ; 9,723 / 114,480 ( 8 % )                     ;
-; Total registers                    ; 9723                                        ;
+; Total logic elements               ; 14,877 / 114,480 ( 13 % )                   ;
+;     Total combinational functions  ; 10,694 / 114,480 ( 9 % )                    ;
+;     Dedicated logic registers      ; 10,341 / 114,480 ( 9 % )                    ;
+; Total registers                    ; 10341                                       ;
 ; Total pins                         ; 478 / 529 ( 90 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 37,648 / 3,981,312 ( < 1 % )                ;
+; Total memory bits                  ; 38,160 / 3,981,312 ( < 1 % )                ;
 ; Embedded Multiplier 9-bit elements ; 96 / 532 ( 18 % )                           ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 +------------------------------------+---------------------------------------------+
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/23/2017 19:18:16 ;
+; Start date & time ; 08/29/2017 02:13:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; a2dv2               ;
 +-------------------+---------------------+
@@ -76,13 +76,13 @@ agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+---------------------+
 ; Assignment Name                     ; Value                                                                                                                                                               ; Default Value ; Entity Name ; Section Id          ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+---------------------+
-; COMPILER_SIGNATURE_ID               ; 88398802590963.150353749503860                                                                                                                                      ; --            ; --          ; --                  ;
+; COMPILER_SIGNATURE_ID               ; 88398803683689.150399439106804                                                                                                                                      ; --            ; --          ; --                  ;
 ; EDA_OUTPUT_DATA_FORMAT              ; None                                                                                                                                                                ; --            ; --          ; eda_simulation      ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                                                                                  ; --            ; --          ; --                  ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                                                                                  ; --            ; --          ; --                  ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                                                                   ; --            ; --          ; --                  ;
-; MISC_FILE                           ; sram/synthesis/../sram.cmp                                                                                                                                          ; --            ; --          ; --                  ;
-; MISC_FILE                           ; sram/synthesis/../../sram.qsys                                                                                                                                      ; --            ; --          ; --                  ;
+; MISC_FILE                           ; sram_access/synthesis/../sram_access.cmp                                                                                                                            ; --            ; --          ; --                  ;
+; MISC_FILE                           ; sram_access/synthesis/../../sram_access.qsys                                                                                                                        ; --            ; --          ; --                  ;
 ; MISC_FILE                           ; CIC/synthesis/../CIC.cmp                                                                                                                                            ; --            ; --          ; --                  ;
 ; MISC_FILE                           ; CIC/synthesis/../../CIC.qsys                                                                                                                                        ; --            ; --          ; --                  ;
 ; MISC_FILE                           ; a2d_data_a.bsf                                                                                                                                                      ; --            ; --          ; --                  ;
@@ -140,11 +140,11 @@ agreement for further details.
 ; PARTITION_NETLIST_TYPE              ; SOURCE                                                                                                                                                              ; --            ; --          ; Top                 ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                                                                                                 ; --            ; --          ; --                  ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                                                                               ; --            ; --          ; --                  ;
-; SLD_FILE                            ; sram/synthesis/sram.debuginfo                                                                                                                                       ; --            ; --          ; --                  ;
+; SLD_FILE                            ; sram_access/synthesis/sram_access.debuginfo                                                                                                                         ; --            ; --          ; --                  ;
 ; SLD_FILE                            ; CIC/synthesis/CIC.debuginfo                                                                                                                                         ; --            ; --          ; --                  ;
 ; SLD_FILE                            ; db/stp3_auto_stripped.stp                                                                                                                                           ; --            ; --          ; --                  ;
 ; SLD_INFO                            ; QSYS_NAME CIC HAS_SOPCINFO 1 GENERATION_ID 1502268978                                                                                                               ; --            ; CIC         ; --                  ;
-; SLD_INFO                            ; QSYS_NAME sram HAS_SOPCINFO 1 GENERATION_ID 1503299364                                                                                                              ; --            ; sram        ; --                  ;
+; SLD_INFO                            ; QSYS_NAME sram_access HAS_SOPCINFO 1 GENERATION_ID 1503980979                                                                                                       ; --            ; sram_access ; --                  ;
 ; SLD_NODE_CREATOR_ID                 ; 110                                                                                                                                                                 ; --            ; --          ; temp                ;
 ; SLD_NODE_CREATOR_ID                 ; 110                                                                                                                                                                 ; --            ; --          ; CIC_20output_20only ;
 ; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                                                                                       ; --            ; --          ; temp                ;
@@ -199,7 +199,7 @@ agreement for further details.
 ; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                                                                                                ; --            ; --          ; CIC_20output_20only ;
 ; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                                                                                                        ; --            ; --          ; CIC_20output_20only ;
 ; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                                                                                                       ; --            ; --          ; CIC_20output_20only ;
-; SOPCINFO_FILE                       ; sram/synthesis/../../sram.sopcinfo                                                                                                                                  ; --            ; --          ; --                  ;
+; SOPCINFO_FILE                       ; sram_access/synthesis/../../sram_access.sopcinfo                                                                                                                    ; --            ; --          ; --                  ;
 ; SOPCINFO_FILE                       ; CIC/synthesis/../../CIC.sopcinfo                                                                                                                                    ; --            ; --          ; --                  ;
 ; SPD_FILE                            ; fir_IP.spd                                                                                                                                                          ; --            ; --          ; --                  ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                                                                                                                  ; --            ; --          ; --                  ;
@@ -214,11 +214,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:50     ; 1.0                     ; 1147 MB             ; 00:02:32                           ;
-; Fitter                    ; 00:01:10     ; 1.1                     ; 2027 MB             ; 00:01:37                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 809 MB              ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:11     ; 1.8                     ; 1077 MB             ; 00:00:14                           ;
-; Total                     ; 00:03:16     ; --                      ; --                  ; 00:04:28                           ;
+; Analysis & Synthesis      ; 00:02:11     ; 1.0                     ; 1178 MB             ; 00:02:38                           ;
+; Fitter                    ; 00:01:19     ; 1.1                     ; 2045 MB             ; 00:01:44                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 810 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:12     ; 1.7                     ; 1087 MB             ; 00:00:14                           ;
+; Total                     ; 00:03:47     ; --                      ; --                  ; 00:04:41                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -227,10 +227,10 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; ENS12249         ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; ENS12249         ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; ENS12249         ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; ENS12249         ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ENS12198         ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ENS12198         ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ENS12198         ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ENS12198         ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

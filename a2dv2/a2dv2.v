@@ -1142,25 +1142,27 @@ end
 reg [20:0] sram_address = 21'd0;
 
 
-sram sram0(
-				.address(sram_address),       //  avalon_sram_slave.address
-				.byteenable(2'b11),    //                   .byteenable
-				.read(),          //                   .read
-				.write((sram_address >= 21'd1048576) ? 1'b0 : out_valid),         //                   .write
-				.writedata(temp_counter),     //                   .writedata
-				.readdata(),      //                   .readdata
-				.readdatavalid(), //                   .readdatavalid
-				.clk(CLOCK_20),           //                clk.clk
-				.SRAM_DQ(SRAM_DQ),       // external_interface.DQ
-				.SRAM_ADDR(SRAM_ADDR),     //                   .ADDR
-				.SRAM_LB_N(SRAM_LB_N),     //                   .LB_N
-				.SRAM_UB_N(SRAM_UB_N),     //                   .UB_N
-				.SRAM_CE_N(SRAM_CE_N),     //                   .CE_N
-				.SRAM_OE_N(SRAM_OE_N),     //                   .OE_N
-				.SRAM_WE_N(SRAM_WE_N),     //                   .WE_N
-				.reset(KEY[3])
-);				
-		
+sram_access sram_abc (
+							.bridge_input_conduit_address(sram_address),     // bridge_input_conduit.address
+							.bridge_input_conduit_byte_enable(2'b11), //                     .byte_enable
+							.bridge_input_conduit_read(),        //                     .read
+							.bridge_input_conduit_write((sram_address >= 21'd1048576) ? 1'b0 : out_valid),       //                     .write
+							.bridge_input_conduit_write_data(temp_counter),  //                     .write_data
+							.bridge_input_conduit_acknowledge(), //                     .acknowledge
+							.bridge_input_conduit_read_data(),   //                     .read_data
+							.clk_clk(CLOCK_20),                          //                  clk.clk
+							.sram_conduit_DQ(SRAM_DQ),                  //         sram_conduit.DQ
+							.sram_conduit_ADDR(SRAM_ADDR),                //                     .ADDR
+							.sram_conduit_LB_N(SRAM_LB_N),                //                     .LB_N
+							.sram_conduit_UB_N(SRAM_UB_N),                //                     .UB_N
+							.sram_conduit_CE_N(SRAM_CE_N),                //                     .CE_N
+							.sram_conduit_OE_N(SRAM_OE_N),                //                     .OE_N
+							.sram_conduit_WE_N(SRAM_WE_N)                 //                     .WE_N
+	);
+
+
+
+
 		
 always @ (negedge out_valid /*or negedge frame_reset*/) ///add negedge reset support
 begin
@@ -1169,16 +1171,12 @@ if (sram_address < 21'd1048576)         ////////////// 256*256*16 = 1048576
 	sram_address <= sram_address + 1'd1;
 end
 
-reg [19:0] temp_counter = 19'b0;
+reg [19:0] temp_counter = 20'd0;
 
 always @(posedge out_valid)
 begin
-temp_counter <= temp_counter + 1'b1;
+temp_counter <= temp_counter + 1'd1;
 end
 
-
-		
-///////////////////////////////////////////////////////////////
-
-				
+	
 endmodule

@@ -104,6 +104,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SRAM_OE_N",
+					"strict" : false
+				},
+				{
 					"name" : "SRAM_UB_N",
 					"strict" : false
 				},

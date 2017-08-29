@@ -1,0 +1,84 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading a2dv2/sram_access.qsys
+Progress: Reading input file
+Progress: Adding clock [clock_source 16.0]
+Progress: Parameterizing module clock
+Progress: Adding jtag_master [altera_jtag_avalon_master 16.0]
+Progress: Parameterizing module jtag_master
+Progress: Adding sram [altera_up_avalon_sram 15.1]
+Progress: Parameterizing module sram
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: sram_access.: You have exported the interface jtag_master.master but not its associated reset interface.  Export jtag_master.clk_reset
+Warning: sram_access.: You have exported the interface sram.avalon_sram_slave but not its associated reset interface.  Export the driver(s) of sram.reset
+Info: sram_access: Generating sram_access "sram_access" for SIM_VERILOG
+Info: jtag_master: "sram_access" instantiated altera_jtag_avalon_master "jtag_master"
+Info: sram: Starting Generation of SRAM or SSRAM Controller
+Info: sram: "sram_access" instantiated altera_up_avalon_sram "sram"
+Info: rst_controller: "sram_access" instantiated altera_reset_controller "rst_controller"
+Info: jtag_phy_embedded_in_jtag_master: "jtag_master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Info: timing_adt: "jtag_master" instantiated timing_adapter "timing_adt"
+Info: fifo: "jtag_master" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: "jtag_master" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: "jtag_master" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: "jtag_master" instantiated altera_avalon_packets_to_master "transacto"
+Info: b2p_adapter: "jtag_master" instantiated channel_adapter "b2p_adapter"
+Info: p2b_adapter: "jtag_master" instantiated channel_adapter "p2b_adapter"
+Info: sram_access: Done "sram_access" with 12 modules, 24 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access\sram_access.spd --output-directory=C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access\sram_access.spd --output-directory=C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	11 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/.
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access.qsys --synthesis=VERILOG --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading a2dv2/sram_access.qsys
+Progress: Reading input file
+Progress: Adding clock [clock_source 16.0]
+Progress: Parameterizing module clock
+Progress: Adding jtag_master [altera_jtag_avalon_master 16.0]
+Progress: Parameterizing module jtag_master
+Progress: Adding sram [altera_up_avalon_sram 15.1]
+Progress: Parameterizing module sram
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: sram_access.: You have exported the interface jtag_master.master but not its associated reset interface.  Export jtag_master.clk_reset
+Warning: sram_access.: You have exported the interface sram.avalon_sram_slave but not its associated reset interface.  Export the driver(s) of sram.reset
+Info: sram_access: Generating sram_access "sram_access" for QUARTUS_SYNTH
+Info: jtag_master: "sram_access" instantiated altera_jtag_avalon_master "jtag_master"
+Info: sram: Starting Generation of SRAM or SSRAM Controller
+Info: sram: "sram_access" instantiated altera_up_avalon_sram "sram"
+Info: rst_controller: "sram_access" instantiated altera_reset_controller "rst_controller"
+Info: jtag_phy_embedded_in_jtag_master: "jtag_master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Info: timing_adt: "jtag_master" instantiated timing_adapter "timing_adt"
+Info: fifo: "jtag_master" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: "jtag_master" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: "jtag_master" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: "jtag_master" instantiated altera_avalon_packets_to_master "transacto"
+Info: b2p_adapter: "jtag_master" instantiated channel_adapter "b2p_adapter"
+Info: p2b_adapter: "jtag_master" instantiated channel_adapter "p2b_adapter"
+Info: sram_access: Done "sram_access" with 12 modules, 24 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

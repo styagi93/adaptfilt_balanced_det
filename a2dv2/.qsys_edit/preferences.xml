@@ -3,12 +3,17 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="31" />
+   <connections preferredWidth="111" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library expandedCategories="Library,Project" />
+ <library
+   expandedCategories="Library/University Program/Audio &amp; Video,Library/University Program/Audio &amp; Video/Video,Library,Library/University Program/Bridges,Library/University Program,Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library/Basic Functions/Bridges and Adaptors,Project,Library/Basic Functions" />
  <window width="1280" height="984" x="0" y="0" />
- <generation block_symbol_file="0" simulation="VERILOG" greybox="0" />
+ <generation
+   block_symbol_file="0"
+   simulation="VERILOG"
+   greybox="0"
+   path="_PROJECT_NAME_" />
  <hdlexample language="VERILOG" />
 </preferences>

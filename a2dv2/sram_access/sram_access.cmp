@@ -1,0 +1,20 @@
+	component sram_access is
+		port (
+			bridge_input_conduit_address     : in    std_logic_vector(20 downto 0) := (others => 'X'); -- address
+			bridge_input_conduit_byte_enable : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- byte_enable
+			bridge_input_conduit_read        : in    std_logic                     := 'X';             -- read
+			bridge_input_conduit_write       : in    std_logic                     := 'X';             -- write
+			bridge_input_conduit_write_data  : in    std_logic_vector(15 downto 0) := (others => 'X'); -- write_data
+			bridge_input_conduit_acknowledge : out   std_logic;                                        -- acknowledge
+			bridge_input_conduit_read_data   : out   std_logic_vector(15 downto 0);                    -- read_data
+			clk_clk                          : in    std_logic                     := 'X';             -- clk
+			sram_conduit_DQ                  : inout std_logic_vector(15 downto 0) := (others => 'X'); -- DQ
+			sram_conduit_ADDR                : out   std_logic_vector(19 downto 0);                    -- ADDR
+			sram_conduit_LB_N                : out   std_logic;                                        -- LB_N
+			sram_conduit_UB_N                : out   std_logic;                                        -- UB_N
+			sram_conduit_CE_N                : out   std_logic;                                        -- CE_N
+			sram_conduit_OE_N                : out   std_logic;                                        -- OE_N
+			sram_conduit_WE_N                : out   std_logic                                         -- WE_N
+		);
+	end component sram_access;
+
