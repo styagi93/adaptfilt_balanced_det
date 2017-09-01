@@ -7,8 +7,7 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/University Program/Audio &amp; Video,Library/University Program/Audio &amp; Video/Video,Library,Library/University Program/Bridges,Library/University Program,Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library/Basic Functions/Bridges and Adaptors,Project,Library/Basic Functions" />
+ <library expandedCategories="Library,Project" />
  <window width="1280" height="984" x="0" y="0" />
  <generation
    block_symbol_file="0"

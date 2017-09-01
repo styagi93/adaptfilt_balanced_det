@@ -1,12 +1,12 @@
-# system info sram_access on 2017.08.28.22:29:37
+# system info sram_access on 2017.09.01.03:49:56
 system_info:
 name,value
 DEVICE,EP4CE115F29C7
 DEVICE_FAMILY,Cyclone IV E
-GENERATION_ID,1503980971
+GENERATION_ID,1504259392
 #
 #
-# Files generated for sram_access on 2017.08.28.22:29:37
+# Files generated for sram_access on 2017.09.01.03:49:56
 files:
 filepath,kind,attributes,module,is_top
 simulation/sram_access.v,VERILOG,,sram_access,true

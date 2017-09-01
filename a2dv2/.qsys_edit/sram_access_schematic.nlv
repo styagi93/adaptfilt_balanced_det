@@ -3,22 +3,23 @@
 preplace inst sram_access.jtag_master.b2p_adapter -pg 1
 preplace inst sram_access.jtag_master.transacto -pg 1
 preplace inst sram_access.jtag_master.timing_adt -pg 1
-preplace inst sram_access.sram -pg 1 -lvl 3 -y 140
-preplace inst sram_access.clock -pg 1 -lvl 2 -y 70
+preplace inst sram_access.sram -pg 1 -lvl 3 -y 180
+preplace inst sram_access.clock -pg 1 -lvl 2 -y 110
 preplace inst sram_access.jtag_master.b2p -pg 1
 preplace inst sram_access.jtag_master.p2b -pg 1
 preplace inst sram_access.jtag_master.p2b_adapter -pg 1
 preplace inst sram_access.jtag_master.jtag_phy_embedded_in_jtag_master -pg 1
 preplace inst sram_access.jtag_master.clk_src -pg 1
 preplace inst sram_access -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst sram_access.jtag_master -pg 1 -lvl 3 -y 50
+preplace inst sram_access.bridge -pg 1 -lvl 3 -y 280
+preplace inst sram_access.jtag_master -pg 1 -lvl 3 -y 70
 preplace inst sram_access.jtag_master.clk_rst -pg 1
 preplace inst sram_access.jtag_master.fifo -pg 1
-preplace netloc EXPORT<net_container>sram_access</net_container>(MASTER)jtag_master.master,(MASTER)sram_access.jtag_master) 1 3 1 N
-preplace netloc EXPORT<net_container>sram_access</net_container>(SLAVE)sram_access.sram_slave,(SLAVE)sram.avalon_sram_slave) 1 0 3 NJ 150 NJ 150 NJ
-preplace netloc INTERCONNECT<net_container>sram_access</net_container>(SLAVE)sram.reset,(SLAVE)jtag_master.clk_reset,(SLAVE)clock.clk_in_reset,(MASTER)clock.clk_reset,(MASTER)jtag_master.master_reset) 1 1 3 140 60 520 130 780
-preplace netloc EXPORT<net_container>sram_access</net_container>(SLAVE)sram_access.sram_conduit,(SLAVE)sram.external_interface) 1 0 3 NJ 190 NJ 190 NJ
-preplace netloc EXPORT<net_container>sram_access</net_container>(SLAVE)clock.clk_in,(SLAVE)sram_access.clk) 1 0 2 NJ 80 NJ
-preplace netloc FAN_OUT<net_container>sram_access</net_container>(MASTER)clock.clk,(SLAVE)sram.clk,(SLAVE)jtag_master.clk) 1 2 1 540
-levelinfo -pg 1 0 90 900
-levelinfo -hier sram_access 100 120 350 620 800
+preplace netloc EXPORT<net_container>sram_access</net_container>(SLAVE)sram_access.bridge_input_conduit,(SLAVE)bridge.external_interface) 1 0 3 NJ 310 NJ 310 NJ
+preplace netloc INTERCONNECT<net_container>sram_access</net_container>(SLAVE)sram.reset,(MASTER)jtag_master.master_reset,(MASTER)clock.clk_reset,(SLAVE)jtag_master.clk_reset,(SLAVE)clock.clk_in_reset,(SLAVE)bridge.reset) 1 1 3 190 100 570 30 940
+preplace netloc EXPORT<net_container>sram_access</net_container>(SLAVE)sram_access.sram_conduit,(SLAVE)sram.external_interface) 1 0 3 NJ 230 NJ 230 NJ
+preplace netloc EXPORT<net_container>sram_access</net_container>(SLAVE)clock.clk_in,(SLAVE)sram_access.clk) 1 0 2 NJ 120 NJ
+preplace netloc FAN_OUT<net_container>sram_access</net_container>(MASTER)clock.clk,(SLAVE)jtag_master.clk,(SLAVE)bridge.clk,(SLAVE)sram.clk) 1 2 1 590
+preplace netloc FAN_IN<net_container>sram_access</net_container>(SLAVE)sram.avalon_sram_slave,(MASTER)bridge.avalon_master,(MASTER)jtag_master.master) 1 2 2 610 170 920
+levelinfo -pg 1 0 140 980
+levelinfo -hier sram_access 150 170 400 690 960

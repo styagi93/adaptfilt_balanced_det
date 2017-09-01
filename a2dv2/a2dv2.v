@@ -1139,18 +1139,18 @@ end
 ////////////////////////////////////////////////////////
 ////////////Transfer to SRAM////////////////////////////
 
-reg [20:0] sram_address = 21'd0;
+reg [21:0] sram_address = 22'd0;
 
 
 sram_access sram_abc (
-							.bridge_input_conduit_address(sram_address),     // bridge_input_conduit.address
-							.bridge_input_conduit_byte_enable(2'b11), //                     .byte_enable
+							.bridge_input_conduit_address((sram_address >= 22'd2097152) ? 21'bzzzzzzzzzzzzzzzzzzzz : sram_address),     // bridge_input_conduit.address
+							.bridge_input_conduit_byte_enable((sram_address >= 22'd2097152) ? 2'bzz : 2'b11), //                     .byte_enable
 							.bridge_input_conduit_read(),        //                     .read
-							.bridge_input_conduit_write((sram_address >= 21'd1048576) ? 1'b0 : out_valid),       //                     .write
-							.bridge_input_conduit_write_data(temp_counter),  //                     .write_data
+							.bridge_input_conduit_write((sram_address >= 22'd2097152) ? 1'bz : out_valid),       //                     .write
+							.bridge_input_conduit_write_data((sram_address >= 22'd2097152) ? 16'bzzzzzzzzzzzzzzzz : out_data),  //                     .write_data
 							.bridge_input_conduit_acknowledge(), //                     .acknowledge
 							.bridge_input_conduit_read_data(),   //                     .read_data
-							.clk_clk(CLOCK_20),                          //                  clk.clk
+							.clk_clk(CLOCK_50),                          //                  clk.clk
 							.sram_conduit_DQ(SRAM_DQ),                  //         sram_conduit.DQ
 							.sram_conduit_ADDR(SRAM_ADDR),                //                     .ADDR
 							.sram_conduit_LB_N(SRAM_LB_N),                //                     .LB_N
@@ -1167,15 +1167,17 @@ sram_access sram_abc (
 always @ (negedge out_valid /*or negedge frame_reset*/) ///add negedge reset support
 begin
 
-if (sram_address < 21'd1048576)         ////////////// 256*256*16 = 1048576
-	sram_address <= sram_address + 1'd1;
+if (sram_address < 22'd2097152)         ////////////// 256*256*16 = 1048576 * 2 (for byte addressing) = 2097152
+	sram_address <= sram_address + 2'b10;
 end
 
 reg [19:0] temp_counter = 20'd0;
+reg [19:0] temp_counter1 = 20'd0;
 
 always @(posedge out_valid)
 begin
 temp_counter <= temp_counter + 1'd1;
+temp_counter1 <= temp_counter;
 end
 
 	

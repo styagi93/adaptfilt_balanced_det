@@ -154,12 +154,12 @@
    version="16.0"
    start="clock.clk_reset"
    end="jtag_master.clk_reset" />
- <connection kind="reset" version="16.0" start="clock.clk_reset" end="sram.reset" />
  <connection
    kind="reset"
    version="16.0"
    start="clock.clk_reset"
    end="bridge.reset" />
+ <connection kind="reset" version="16.0" start="clock.clk_reset" end="sram.reset" />
  <connection
    kind="reset"
    version="16.0"
@@ -174,12 +174,12 @@
    kind="reset"
    version="16.0"
    start="jtag_master.master_reset"
-   end="sram.reset" />
+   end="bridge.reset" />
  <connection
    kind="reset"
    version="16.0"
    start="jtag_master.master_reset"
-   end="bridge.reset" />
+   end="sram.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

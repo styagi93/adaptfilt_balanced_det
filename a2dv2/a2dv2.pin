@@ -70,16 +70,16 @@ CHIP  "a2dv2"  ASSIGNED TO AN: EP4CE115F29C7
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A2        : power  :                   : 3.3V    : 8         :                
-test_out_data[0]             : A3        : output : 3.3-V LVTTL       :         : 8         : N              
-test_out_data[20]            : A4        : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[18]       : A3        : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[4]         : A4        : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : A5        : power  :                   : 3.3V    : 8         :                
-adaptive_out_data[12]        : A6        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[28]        : A7        : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[21]       : A6        : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[14]        : A7        : output : 3.3-V LVTTL       :         : 8         : N              
 I2C_SDAT                     : A8        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : A9        : power  :                   : 3.3V    : 8         :                
-emu[25]                      : A10       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[37]                      : A11       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[2]                       : A12       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[31]        : A10       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[21]        : A11       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[30]        : A12       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : A13       : power  :                   : 3.3V    : 8         :                
 GND+                         : A14       :        :                   :         : 8         :                
 GND+                         : A15       :        :                   :         : 7         :                
@@ -97,11 +97,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A26       :        :                   :      
 VCCIO7                       : A27       : power  :                   : 2.5V    : 7         :                
 VCCIO2                       : AA1       : power  :                   : 3.3V    : 2         :                
 GND                          : AA2       : gnd    :                   :         :           :                
-test_out_data[9]             : AA3       : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[26]            : AA3       : output : 3.3-V LVTTL       :         : 2         : N              
 SRAM_ADDR[14]                : AA4       : output : 3.3-V LVTTL       :         : 2         : Y              
 test_out_data[15]            : AA5       : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[8]             : AA6       : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[31]            : AA7       : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[11]            : AA6       : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[28]            : AA7       : output : 3.3-V LVTTL       :         : 2         : N              
 FL_ADDR[16]                  : AA8       : output : 3.3-V LVTTL       :         : 3         : Y              
 GNDA1                        : AA9       : gnd    :                   :         :           :                
 FL_ADDR[12]                  : AA10      : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -123,9 +123,9 @@ HEX2[0]                      : AA25      : output : 2.5 V             :         
 HEX2[1]                      : AA26      : output : 2.5 V             :         : 5         : Y              
 GND                          : AA27      : gnd    :                   :         :           :                
 VCCIO5                       : AA28      : power  :                   : 2.5V    : 5         :                
-emu[21]                      : AB1       : output : 3.3-V LVTTL       :         : 2         : N              
-emu[13]                      : AB2       : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[24]            : AB3       : output : 3.3-V LVTTL       :         : 2         : N              
+emu[33]                      : AB1       : output : 3.3-V LVTTL       :         : 2         : N              
+emu[40]                      : AB2       : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[16]            : AB3       : output : 3.3-V LVTTL       :         : 2         : N              
 SRAM_ADDR[12]                : AB4       : output : 3.3-V LVTTL       :         : 2         : Y              
 SRAM_ADDR[6]                 : AB5       : output : 3.3-V LVTTL       :         : 2         : Y              
 SRAM_ADDR[4]                 : AB6       : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -151,8 +151,8 @@ SW[9]                        : AB25      : input  : 2.5 V             :         
 SW[7]                        : AB26      : input  : 2.5 V             :         : 5         : Y              
 SW[4]                        : AB27      : input  : 2.5 V             :         : 5         : Y              
 SW[0]                        : AB28      : input  : 2.5 V             :         : 5         : Y              
-emu[42]                      : AC1       : output : 3.3-V LVTTL       :         : 2         : N              
-emu[36]                      : AC2       : output : 3.3-V LVTTL       :         : 2         : N              
+emu[34]                      : AC1       : output : 3.3-V LVTTL       :         : 2         : N              
+emu[39]                      : AC2       : output : 3.3-V LVTTL       :         : 2         : N              
 SRAM_ADDR[13]                : AC3       : output : 3.3-V LVTTL       :         : 2         : Y              
 SRAM_UB_N                    : AC4       : output : 3.3-V LVTTL       :         : 2         : Y              
 SRAM_ADDR[7]                 : AC5       : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -229,7 +229,7 @@ HEX4[4]                      : AE19      : output : 3.3-V LVTTL       :         
 GPIO[30]                     : AE20      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[15]                     : AE21      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[18]                     : AE22      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-emu[3]                       : AE23      : output : 3.3-V LVTTL       :         : 4         : N              
+test_out_data[23]            : AE23      : output : 3.3-V LVTTL       :         : 4         : N              
 GPIO[27]                     : AE24      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[25]                     : AE25      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 ADA_D[13]                    : AE26      : input  : 2.5 V             :         : 5         : Y              
@@ -319,15 +319,15 @@ GPIO[33]                     : AH26      : bidir  : 3.3-V LVTTL       :         
 VCCIO4                       : AH27      : power  :                   : 3.3V    : 4         :                
 VCCIO1                       : B1        : power  :                   : 3.3V    : 1         :                
 GND                          : B2        : gnd    :                   :         :           :                
-test_out_data[19]            : B3        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[17]        : B4        : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[15]       : B3        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[30]                      : B4        : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : B5        : gnd    :                   :         :           :                
-adaptive_out_data[4]         : B6        : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[5]        : B6        : output : 3.3-V LVTTL       :         : 8         : N              
 I2C_SCLK                     : B7        : output : 3.3-V LVTTL       :         : 8         : Y              
-emu[39]                      : B8        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[36]                      : B8        : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : B9        : gnd    :                   :         :           :                
-emu[40]                      : B10       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[32]                      : B11       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[36]        : B10       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[24]        : B11       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : B12       : gnd    :                   :         :           :                
 GND                          : B13       : gnd    :                   :         :           :                
 GND+                         : B14       :        :                   :         : 8         :                
@@ -346,19 +346,19 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : B26       :        :                   :      
 GND                          : B27       : gnd    :                   :         :           :                
 VCCIO6                       : B28       : power  :                   : 2.5V    : 6         :                
 GND                          : C1        : gnd    :                   :         :           :                
-error_adaptive_out[30]       : C2        : output : 3.3-V LVTTL       :         : 1         : N              
+test_out_data[18]            : C2        : output : 3.3-V LVTTL       :         : 1         : N              
 test_out_data[25]            : C3        : output : 3.3-V LVTTL       :         : 8         : N              
 test_out_data[2]             : C4        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[14]        : C5        : output : 3.3-V LVTTL       :         : 8         : N              
-test_out_data[13]            : C6        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[3]         : C7        : output : 3.3-V LVTTL       :         : 8         : N              
-error_adaptive_out[0]        : C8        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[20]        : C9        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[22]        : C10       : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[10]        : C11       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[11]                      : C12       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[1]                       : C13       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[8]                       : C14       : output : 3.3-V LVTTL       :         : 8         : N              
+emu[23]                      : C5        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[28]                      : C6        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[22]                      : C7        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[18]                      : C8        : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[14]       : C9        : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[35]        : C10       : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[32]       : C11       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[29]        : C12       : output : 3.3-V LVTTL       :         : 8         : N              
+test_out_data[4]             : C13       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[6]         : C14       : output : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C17       :        :                   :         : 7         :                
@@ -373,20 +373,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C25       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : C26       :        :                   :         : 7         :                
 ADB_D[8]                     : C27       : input  : 2.5 V             :         : 6         : Y              
 GND                          : C28       : gnd    :                   :         :           :                
-adaptive_out_data[36]        : D1        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[31]        : D2        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[12]       : D1        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[0]        : D2        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : D3        : gnd    :                   :         :           :                
-test_out_data[18]            : D4        : output : 3.3-V LVTTL       :         : 8         : N              
-test_out_data[29]            : D5        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[9]         : D6        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[40]        : D7        : output : 3.3-V LVTTL       :         : 8         : N              
-emu[23]                      : D8        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[6]         : D9        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[15]        : D10       : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[8]         : D11       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[9]                       : D12       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[4]                       : D13       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[5]                       : D14       : output : 3.3-V LVTTL       :         : 8         : N              
+test_out_data[1]             : D4        : output : 3.3-V LVTTL       :         : 8         : N              
+test_out_data[21]            : D5        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[13]                      : D6        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[21]                      : D7        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[20]                      : D8        : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[29]       : D9        : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[9]         : D10       : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[13]       : D11       : output : 3.3-V LVTTL       :         : 8         : N              
+test_out_data[13]            : D12       : output : 3.3-V LVTTL       :         : 8         : N              
+emu[9]                       : D13       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[19]        : D14       : output : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D16       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7         :                
@@ -401,20 +401,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D25       :        :                   :      
 ADB_D[9]                     : D26       : input  : 2.5 V             :         : 6         : Y              
 ADA_D[11]                    : D27       : input  : 2.5 V             :         : 6         : Y              
 ADA_D[10]                    : D28       : input  : 2.5 V             :         : 6         : Y              
-adaptive_out_data[13]        : E1        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[27]       : E1        : output : 3.3-V LVTTL       :         : 1         : N              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E2        : input  : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[29]        : E3        : output : 3.3-V LVTTL       :         : 1         : N              
-test_out_data[16]            : E4        : output : 3.3-V LVTTL       :         : 8         : N              
-test_out_data[22]            : E5        : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[7]        : E3        : output : 3.3-V LVTTL       :         : 1         : N              
+test_out_data[9]             : E4        : output : 3.3-V LVTTL       :         : 8         : N              
+test_out_data[29]            : E5        : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : E6        : power  :                   : 3.3V    : 8         :                
-emu[20]                      : E7        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[5]         : E8        : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[41]        : E7        : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[25]        : E8        : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : E9        : power  :                   : 3.3V    : 8         :                
-error_adaptive_out[14]       : E10       : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[42]        : E11       : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[2]         : E12       : output : 3.3-V LVTTL       :         : 8         : N              
+emu[25]                      : E10       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[2]         : E11       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[3]         : E12       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : E13       : power  :                   : 3.3V    : 8         :                
-emu[7]                       : E14       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[20]        : E14       : output : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 7         :                
 VCCIO7                       : E16       : power  :                   : 2.5V    : 7         :                
 HEX0[2]                      : E17       : output : 2.5 V             :         : 7         : Y              
@@ -429,20 +429,20 @@ LEDG[2]                      : E25       : output : 2.5 V             :         
 ADB_D[6]                     : E26       : input  : 2.5 V             :         : 6         : Y              
 ADA_D[9]                     : E27       : input  : 2.5 V             :         : 6         : Y              
 ADA_D[8]                     : E28       : input  : 2.5 V             :         : 6         : Y              
-adaptive_out_data[21]        : F1        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[37]        : F2        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[17]       : F3        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[6]        : F1        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[27]        : F2        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[11]       : F3        : output : 3.3-V LVTTL       :         : 1         : N              
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : F4        : input  : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[16]       : F5        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[17]       : F5        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : F6        : gnd    :                   :         :           :                
-adaptive_out_data[30]        : F7        : output : 3.3-V LVTTL       :         : 8         : N              
-error_adaptive_out[19]       : F8        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[31]                      : F7        : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[34]        : F8        : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : F9        : gnd    :                   :         :           :                
-adaptive_out_data[32]        : F10       : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[39]        : F11       : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[23]        : F12       : output : 3.3-V LVTTL       :         : 8         : N              
+emu[19]                      : F10       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[7]         : F11       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[12]        : F12       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : F13       : gnd    :                   :         :           :                
-emu[14]                      : F14       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[15]        : F14       : output : 3.3-V LVTTL       :         : 8         : N              
 LEDR[14]                     : F15       : output : 2.5 V             :         : 7         : Y              
 GND                          : F16       : gnd    :                   :         :           :                
 LEDG[8]                      : F17       : output : 2.5 V             :         : 7         : Y              
@@ -457,20 +457,20 @@ ADB_D[10]                    : F25       : input  : 2.5 V             :         
 ADB_D[7]                     : F26       : input  : 2.5 V             :         : 6         : Y              
 ADA_D[7]                     : F27       : input  : 2.5 V             :         : 6         : Y              
 ADA_D[6]                     : F28       : input  : 2.5 V             :         : 6         : Y              
-error_adaptive_out[2]        : G1        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[1]        : G2        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[3]        : G3        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[41]        : G4        : output : 3.3-V LVTTL       :         : 1         : N              
-test_out_data[26]            : G5        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[26]        : G6        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[25]        : G7        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[16]        : G8        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[24]        : G9        : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[35]        : G10       : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[1]         : G11       : output : 3.3-V LVTTL       :         : 8         : N              
-adaptive_out_data[11]        : G12       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[6]                       : G13       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[10]                      : G14       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[0]         : G1        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[1]         : G2        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[4]        : G3        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[11]        : G4        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[10]        : G5        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[8]         : G6        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[16]        : G7        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[26]                      : G8        : output : 3.3-V LVTTL       :         : 8         : N              
+emu[41]                      : G9        : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[5]         : G10       : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[1]        : G11       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[18]        : G12       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[40]        : G13       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[39]        : G14       : output : 3.3-V LVTTL       :         : 8         : N              
 LEDR[15]                     : G15       : output : 2.5 V             :         : 7         : Y              
 LEDR[16]                     : G16       : output : 2.5 V             :         : 7         : Y              
 LEDR[9]                      : G17       : output : 2.5 V             :         : 7         : Y              
@@ -487,18 +487,18 @@ ADA_D[5]                     : G27       : input  : 2.5 V             :         
 ADA_D[4]                     : G28       : input  : 2.5 V             :         : 6         : Y              
 VCCIO1                       : H1        : power  :                   : 3.3V    : 1         :                
 GND                          : H2        : gnd    :                   :         :           :                
-error_adaptive_out[5]        : H3        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[7]         : H4        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[6]        : H5        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[12]       : H6        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[38]        : H7        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[0]         : H8        : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[8]        : H3        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[22]       : H4        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[3]        : H5        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[32]        : H6        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[9]        : H7        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[13]        : H8        : output : 3.3-V LVTTL       :         : 8         : N              
 GNDA3                        : H9        : gnd    :                   :         :           :                
-emu[22]                      : H10       : output : 3.3-V LVTTL       :         : 8         : N              
+emu[27]                      : H10       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : H11       : power  :                   : 3.3V    : 8         :                
-adaptive_out_data[27]        : H12       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[30]                      : H13       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[12]                      : H14       : output : 3.3-V LVTTL       :         : 8         : N              
+error_adaptive_out[10]       : H12       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[33]        : H13       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[26]        : H14       : output : 3.3-V LVTTL       :         : 8         : N              
 LEDR[17]                     : H15       : output : 2.5 V             :         : 7         : Y              
 LEDR[11]                     : H16       : output : 2.5 V             :         : 7         : Y              
 LEDR[13]                     : H17       : output : 2.5 V             :         : 7         : Y              
@@ -515,18 +515,18 @@ GND                          : H27       : gnd    :                   :         
 VCCIO6                       : H28       : power  :                   : 2.5V    : 6         :                
 GND+                         : J1        :        :                   :         : 1         :                
 GND                          : J2        : gnd    :                   :         :           :                
-error_adaptive_out[7]        : J3        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[4]        : J4        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[19]       : J3        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[2]        : J4        : output : 3.3-V LVTTL       :         : 1         : N              
 error_adaptive_out[23]       : J5        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[11]       : J6        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[32]       : J7        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[20]       : J6        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[25]       : J7        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCA3                        : J8        : power  :                   : 2.5V    :           :                
 VCCD_PLL3                    : J9        : power  :                   : 1.2V    :           :                
-emu[34]                      : J10       : output : 3.3-V LVTTL       :         : 8         : N              
+emu[17]                      : J10       : output : 3.3-V LVTTL       :         : 8         : N              
 GND                          : J11       : gnd    :                   :         :           :                
-emu[33]                      : J12       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[41]                      : J13       : output : 3.3-V LVTTL       :         : 8         : N              
-emu[24]                      : J14       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[23]        : J12       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[22]        : J13       : output : 3.3-V LVTTL       :         : 8         : N              
+adaptive_out_data[17]        : J14       : output : 3.3-V LVTTL       :         : 8         : N              
 LEDR[10]                     : J15       : output : 2.5 V             :         : 7         : Y              
 LEDR[12]                     : J16       : output : 2.5 V             :         : 7         : Y              
 LEDR[8]                      : J17       : output : 2.5 V             :         : 7         : Y              
@@ -543,12 +543,12 @@ XT_IN_P                      : J27       : input  : 2.5 V             :         
 XT_IN_N                      : J28       : input  : 2.5 V             :         : 6         : Y              
 LCD_DATA[4]                  : K1        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
 LCD_DATA[5]                  : K2        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-adaptive_out_data[18]        : K3        : output : 3.3-V LVTTL       :         : 1         : N              
-adaptive_out_data[19]        : K4        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[37]        : K3        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[26]       : K4        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : K5        : power  :                   : 3.3V    : 1         :                
 GND                          : K6        : gnd    :                   :         :           :                
 LCD_DATA[3]                  : K7        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-error_adaptive_out[22]       : K8        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[28]        : K8        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCCINT                       : K11       : power  :                   : 1.2V    :           :                
@@ -575,8 +575,8 @@ LCD_DATA[0]                  : L3        : bidir  : 3.3-V LVTTL       :         
 LCD_EN                       : L4        : output : 3.3-V LVTTL       :         : 1         : Y              
 LCD_ON                       : L5        : output : 3.3-V LVTTL       :         : 1         : Y              
 LCD_BLON                     : L6        : output : 3.3-V LVTTL       :         : 1         : Y              
-error_adaptive_out[20]       : L7        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[21]       : L8        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[31]       : L7        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[16]       : L8        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : L9        : gnd    :                   :         :           :                
 VCCINT                       : L10       : power  :                   : 1.2V    :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -600,11 +600,11 @@ DA[6]                        : L28       : output : 2.5 V             :         
 LCD_RW                       : M1        : output : 3.3-V LVTTL       :         : 1         : Y              
 LCD_RS                       : M2        : output : 3.3-V LVTTL       :         : 1         : Y              
 LCD_DATA[6]                  : M3        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
-adaptive_out_data[33]        : M4        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[28]       : M4        : output : 3.3-V LVTTL       :         : 1         : N              
 LCD_DATA[7]                  : M5        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
 nSTATUS                      : M6        :        :                   :         : 1         :                
-error_adaptive_out[29]       : M7        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[24]       : M8        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[38]        : M7        : output : 3.3-V LVTTL       :         : 1         : N              
+emu[5]                       : M8        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
 GND                          : M10       : gnd    :                   :         :           :                
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
@@ -627,12 +627,12 @@ ADA_D[1]                     : M27       : input  : 2.5 V             :         
 ADA_D[0]                     : M28       : input  : 2.5 V             :         : 6         : Y              
 VCCIO1                       : N1        : power  :                   : 3.3V    : 1         :                
 GND                          : N2        : gnd    :                   :         :           :                
-error_adaptive_out[13]       : N3        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[10]       : N4        : output : 3.3-V LVTTL       :         : 1         : N              
+error_adaptive_out[24]       : N3        : output : 3.3-V LVTTL       :         : 1         : N              
+emu[8]                       : N4        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : N5        : power  :                   : 3.3V    : 1         :                
 GND                          : N6        : gnd    :                   :         :           :                
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : N7        : input  : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[25]       : N8        : output : 3.3-V LVTTL       :         : 1         : N              
+adaptive_out_data[42]        : N8        : output : 3.3-V LVTTL       :         : 1         : N              
 GND                          : N9        : gnd    :                   :         :           :                
 VCCINT                       : N10       : power  :                   : 1.2V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
@@ -653,8 +653,8 @@ DB[5]                        : N25       : output : 2.5 V             :         
 DB[4]                        : N26       : output : 2.5 V             :         : 6         : Y              
 GND                          : N27       : gnd    :                   :         :           :                
 VCCIO6                       : N28       : power  :                   : 2.5V    : 6         :                
-error_adaptive_out[31]       : P1        : output : 3.3-V LVTTL       :         : 1         : N              
-error_adaptive_out[28]       : P2        : output : 3.3-V LVTTL       :         : 1         : N              
+emu[1]                       : P1        : output : 3.3-V LVTTL       :         : 1         : N              
+test_out_data[0]             : P2        : output : 3.3-V LVTTL       :         : 1         : N              
 ~ALTERA_DCLK~                : P3        : output : 3.3-V LVTTL       :         : 1         : N              
 nCONFIG                      : P4        :        :                   :         : 1         :                
 altera_reserved_tck          : P5        : input  : 3.3-V LVTTL       :         : 1         : N              
@@ -681,13 +681,13 @@ DB[3]                        : P25       : output : 2.5 V             :         
 DB[2]                        : P26       : output : 2.5 V             :         : 6         : Y              
 DA[11]                       : P27       : output : 2.5 V             :         : 6         : Y              
 DA[10]                       : P28       : output : 2.5 V             :         : 6         : Y              
-error_adaptive_out[26]       : R1        : output : 3.3-V LVTTL       :         : 2         : N              
-error_adaptive_out[27]       : R2        : output : 3.3-V LVTTL       :         : 2         : N              
-error_adaptive_out[9]        : R3        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[21]            : R4        : output : 3.3-V LVTTL       :         : 2         : N              
-adaptive_out_data[34]        : R5        : output : 3.3-V LVTTL       :         : 2         : N              
-error_adaptive_out[8]        : R6        : output : 3.3-V LVTTL       :         : 2         : N              
-emu[0]                       : R7        : output : 3.3-V LVTTL       :         : 2         : N              
+error_adaptive_out[30]       : R1        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[7]                       : R2        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[3]                       : R3        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[4]                       : R4        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[0]                       : R5        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[6]                       : R6        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[2]                       : R7        : output : 3.3-V LVTTL       :         : 2         : N              
 nCE                          : R8        :        :                   :         : 1         :                
 GND                          : R9        : gnd    :                   :         :           :                
 VCCINT                       : R10       : power  :                   : 1.2V    :           :                
@@ -711,8 +711,8 @@ DA[3]                        : R27       : output : 2.5 V             :         
 DA[2]                        : R28       : output : 2.5 V             :         : 5         : Y              
 VCCIO2                       : T1        : power  :                   : 3.3V    : 2         :                
 GND                          : T2        : gnd    :                   :         :           :                
-emu[35]                      : T3        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[5]             : T4        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[29]                      : T3        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[10]                      : T4        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : T5        : power  :                   : 3.3V    : 2         :                
 GND                          : T6        : gnd    :                   :         :           :                
 SRAM_ADDR[9]                 : T7        : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -737,14 +737,14 @@ DB[11]                       : T25       : output : 2.5 V             :         
 DB[10]                       : T26       : output : 2.5 V             :         : 5         : Y              
 GND                          : T27       : gnd    :                   :         :           :                
 VCCIO5                       : T28       : power  :                   : 2.5V    : 5         :                
-emu[29]                      : U1        : output : 3.3-V LVTTL       :         : 2         : N              
-emu[26]                      : U2        : output : 3.3-V LVTTL       :         : 2         : N              
-error_adaptive_out[15]       : U3        : output : 3.3-V LVTTL       :         : 2         : N              
-error_adaptive_out[18]       : U4        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[1]             : U5        : output : 3.3-V LVTTL       :         : 2         : N              
-emu[17]                      : U6        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[28]            : U7        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[4]             : U8        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[38]                      : U1        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[35]                      : U2        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[12]                      : U3        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[11]                      : U4        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[3]             : U5        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[27]            : U6        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[24]            : U7        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[20]            : U8        : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : U9        : gnd    :                   :         :           :                
 VCCINT                       : U10       : power  :                   : 1.2V    :           :                
 GND                          : U11       : gnd    :                   :         :           :                
@@ -766,13 +766,13 @@ DB[8]                        : U26       : output : 2.5 V             :         
 DA[1]                        : U27       : output : 2.5 V             :         : 5         : Y              
 DA[0]                        : U28       : output : 2.5 V             :         : 5         : Y              
 emu[15]                      : V1        : output : 3.3-V LVTTL       :         : 2         : N              
-emu[27]                      : V2        : output : 3.3-V LVTTL       :         : 2         : N              
-emu[38]                      : V3        : output : 3.3-V LVTTL       :         : 2         : N              
-emu[31]                      : V4        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[17]            : V5        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[12]            : V6        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[16]                      : V2        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[14]                      : V3        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[32]                      : V4        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[14]            : V5        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[17]            : V6        : output : 3.3-V LVTTL       :         : 2         : N              
 ast_source_valid             : V7        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[30]            : V8        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[8]             : V8        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCINT                       : V9        : power  :                   : 1.2V    :           :                
 GND                          : V10       : gnd    :                   :         :           :                
 VCCINT                       : V11       : power  :                   : 1.2V    :           :                
@@ -793,14 +793,14 @@ DA[5]                        : V25       : output : 2.5 V             :         
 DA[4]                        : V26       : output : 2.5 V             :         : 5         : Y              
 AIC_DIN                      : V27       : output : 2.5 V             :         : 5         : Y              
 AIC_LRCIN                    : V28       : bidir  : 2.5 V             :         : 5         : Y              
-emu[19]                      : W1        : output : 3.3-V LVTTL       :         : 2         : N              
-emu[16]                      : W2        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[27]            : W3        : output : 3.3-V LVTTL       :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W4        :        :                   :         : 2         :                
+emu[24]                      : W1        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[42]                      : W2        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[31]            : W3        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[30]            : W4        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : W5        : power  :                   : 3.3V    : 2         :                
 GND                          : W6        : gnd    :                   :         :           :                
-test_out_data[3]             : W7        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[11]            : W8        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[5]             : W7        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W8        :        :                   :         : 2         :                
 GND                          : W9        : gnd    :                   :         :           :                
 VCCINT                       : W10       : power  :                   : 1.2V    :           :                
 GND                          : W11       : gnd    :                   :         :           :                
@@ -823,11 +823,11 @@ HEX2[5]                      : W27       : output : 2.5 V             :         
 HEX2[6]                      : W28       : output : 2.5 V             :         : 5         : Y              
 FL_RY                        : Y1        : input  : 3.3-V LVTTL       :         : 2         : Y              
 CLOCK_50                     : Y2        : input  : 3.3-V LVTTL       :         : 2         : Y              
-emu[18]                      : Y3        : output : 3.3-V LVTTL       :         : 2         : N              
-emu[28]                      : Y4        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[7]             : Y5        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[14]            : Y6        : output : 3.3-V LVTTL       :         : 2         : N              
-test_out_data[6]             : Y7        : output : 3.3-V LVTTL       :         : 2         : N              
+emu[37]                      : Y3        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[19]            : Y4        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[22]            : Y5        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[6]             : Y6        : output : 3.3-V LVTTL       :         : 2         : N              
+test_out_data[7]             : Y7        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCA1                        : Y8        : power  :                   : 2.5V    :           :                
 VCCD_PLL1                    : Y9        : power  :                   : 1.2V    :           :                
 FL_ADDR[15]                  : Y10       : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -835,7 +835,7 @@ GND                          : Y11       : gnd    :                   :         
 FL_ADDR[4]                   : Y12       : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_ADDR[2]                   : Y13       : output : 3.3-V LVTTL       :         : 3         : Y              
 FL_ADDR[3]                   : Y14       : output : 3.3-V LVTTL       :         : 3         : Y              
-test_out_data[23]            : Y15       : output : 3.3-V LVTTL       :         : 3         : N              
+test_out_data[12]            : Y15       : output : 3.3-V LVTTL       :         : 3         : N              
 GPIO[5]                      : Y16       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GPIO[3]                      : Y17       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : Y18       : gnd    :                   :         :           :                
