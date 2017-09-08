@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 16.0 211 win32 2017.09.01.03:49:57
+# ACDS 16.0 211 win32 2017.09.08.03:38:15
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 16.0 211 win32 2017.09.01.03:49:57
+# ACDS 16.0 211 win32 2017.09.08.03:38:15
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="sram_access"
@@ -157,8 +157,8 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_default_burst_converter.sv \
   $QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_stage.sv \
   $QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v \
+  $QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_003.sv \
   $QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_002.sv \
-  $QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_001.sv \
   $QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router.sv \
   $QSYS_SIMDIR/submodules/altera_merlin_slave_agent.sv \
   $QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv \
@@ -179,12 +179,20 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_std_synchronizer_nocut.v \
   $QSYS_SIMDIR/submodules/altera_avalon_st_idle_remover.v \
   $QSYS_SIMDIR/submodules/altera_avalon_st_idle_inserter.v \
+  $QSYS_SIMDIR/submodules/altera_up_avalon_reset_from_locked_signal.v \
+  $QSYS_SIMDIR/submodules/altera_up_altpll.v \
   $QSYS_SIMDIR/submodules/altera_reset_controller.v \
   $QSYS_SIMDIR/submodules/altera_reset_synchronizer.v \
   $QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0.v \
+  $QSYS_SIMDIR/submodules/altera_up_avalon_video_vga_timing.v \
+  $QSYS_SIMDIR/submodules/sram_access_video_vga_controller.v \
+  $QSYS_SIMDIR/submodules/sram_access_video_rgb_resampler.v \
+  $QSYS_SIMDIR/submodules/sram_access_video_pixel_buffer_dma.v \
+  $QSYS_SIMDIR/submodules/sram_access_video_dual_clock_buffer.v \
   $QSYS_SIMDIR/submodules/sram_access_sram.v \
   $QSYS_SIMDIR/submodules/sram_access_jtag_master.v \
   $QSYS_SIMDIR/submodules/sram_access_bridge.v \
+  $QSYS_SIMDIR/submodules/sram_access_VGA_clock.v \
   $QSYS_SIMDIR/sram_access.v \
   -top $TOP_LEVEL_NAME
 # ----------------------------------------

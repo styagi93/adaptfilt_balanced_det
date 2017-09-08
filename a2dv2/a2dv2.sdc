@@ -68,17 +68,21 @@ set_input_delay -add_delay -min -clock altera_reserved_tck -1.000 { altera_reser
 # Set Output Delay
 #**************************************************************
 
-set_output_delay -add_delay -max -clock CLOCK_50 1.000 {DA[*]    GPIO[*] LEDG[*] adaptive_out_data[*] emu[*] error_adaptive_out[*]}
+set_output_delay -add_delay -max -clock CLOCK_50 1.000 {get_ports DA[*]  GPIO[*] LEDG[*] adaptive_out_data[*] emu[*] error_adaptive_out[*]}
 
-set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {DA[*]    GPIO[*] LEDG[*] adaptive_out_data[*] emu[*] error_adaptive_out[*]}
+set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {get_ports DA[*] GPIO[*] LEDG[*] adaptive_out_data[*] emu[*] error_adaptive_out[*]}
 
 set_output_delay -add_delay -max -clock altera_reserved_tck 1.000 { altera_reserved_tdo }
 
 set_output_delay -add_delay -min -clock altera_reserved_tck -1.000 { altera_reserved_tdo }
 
-set_output_delay -add_delay -max -clock CLOCK_50 0.000 { FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*] SRAM_OE_N}
+set_output_delay -add_delay -max -clock CLOCK_50 0.000 {get_ports FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*] SRAM_OE_N}
 
 set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {get_ports FPGA_CLK_A_N FPGA_CLK_A_P FPGA_CLK_B_P FPGA_CLK_B_N SRAM_DQ[*] SRAM_CE_N SRAM_LB_N SRAM_UB_N SRAM_WE_N SRAM_ADDR[*] SRAM_OE_N}
+
+set_output_delay -add_delay -max -clock CLOCK_50 0.000 {get_ports VGA_BLANK_N VGA_B[*] VGA_R[*] VGA_G[*] VGA_CLK VGA_HS VGA_VS}
+
+set_output_delay -add_delay -min -clock CLOCK_50 -1.000 {get_ports VGA_BLANK_N VGA_B[*] VGA_R[*] VGA_G[*] VGA_CLK VGA_HS VGA_VS }
 
 
 #**************************************************************

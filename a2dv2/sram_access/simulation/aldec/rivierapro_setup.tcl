@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 16.0 211 win32 2017.09.01.03:49:57
+# ACDS 16.0 211 win32 2017.09.08.03:38:15
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------
@@ -180,10 +180,10 @@ ensure_lib                                      ./libraries/cmd_demux
 vmap       cmd_demux                            ./libraries/cmd_demux                           
 ensure_lib                                      ./libraries/sram_avalon_sram_slave_burst_adapter
 vmap       sram_avalon_sram_slave_burst_adapter ./libraries/sram_avalon_sram_slave_burst_adapter
+ensure_lib                                      ./libraries/router_003                          
+vmap       router_003                           ./libraries/router_003                          
 ensure_lib                                      ./libraries/router_002                          
 vmap       router_002                           ./libraries/router_002                          
-ensure_lib                                      ./libraries/router_001                          
-vmap       router_001                           ./libraries/router_001                          
 ensure_lib                                      ./libraries/router                              
 vmap       router                               ./libraries/router                              
 ensure_lib                                      ./libraries/sram_avalon_sram_slave_agent        
@@ -210,16 +210,30 @@ ensure_lib                                      ./libraries/timing_adt
 vmap       timing_adt                           ./libraries/timing_adt                          
 ensure_lib                                      ./libraries/jtag_phy_embedded_in_jtag_master    
 vmap       jtag_phy_embedded_in_jtag_master     ./libraries/jtag_phy_embedded_in_jtag_master    
+ensure_lib                                      ./libraries/reset_from_locked                   
+vmap       reset_from_locked                    ./libraries/reset_from_locked                   
+ensure_lib                                      ./libraries/video_pll                           
+vmap       video_pll                            ./libraries/video_pll                           
 ensure_lib                                      ./libraries/rst_controller                      
 vmap       rst_controller                       ./libraries/rst_controller                      
 ensure_lib                                      ./libraries/mm_interconnect_0                   
 vmap       mm_interconnect_0                    ./libraries/mm_interconnect_0                   
+ensure_lib                                      ./libraries/video_vga_controller                
+vmap       video_vga_controller                 ./libraries/video_vga_controller                
+ensure_lib                                      ./libraries/video_rgb_resampler                 
+vmap       video_rgb_resampler                  ./libraries/video_rgb_resampler                 
+ensure_lib                                      ./libraries/video_pixel_buffer_dma              
+vmap       video_pixel_buffer_dma               ./libraries/video_pixel_buffer_dma              
+ensure_lib                                      ./libraries/video_dual_clock_buffer             
+vmap       video_dual_clock_buffer              ./libraries/video_dual_clock_buffer             
 ensure_lib                                      ./libraries/sram                                
 vmap       sram                                 ./libraries/sram                                
 ensure_lib                                      ./libraries/jtag_master                         
 vmap       jtag_master                          ./libraries/jtag_master                         
 ensure_lib                                      ./libraries/bridge                              
 vmap       bridge                               ./libraries/bridge                              
+ensure_lib                                      ./libraries/VGA_clock                           
+vmap       VGA_clock                            ./libraries/VGA_clock                           
 
 # ----------------------------------------
 # Compile device library files
@@ -258,8 +272,8 @@ alias com {
   eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                                 -work sram_avalon_sram_slave_burst_adapter
   eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_stage.sv"                                 -work sram_avalon_sram_slave_burst_adapter
   eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v"                                   -work sram_avalon_sram_slave_burst_adapter
+  eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_003.sv"                        -work router_003                          
   eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_002.sv"                        -work router_002                          
-  eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_001.sv"                        -work router_001                          
   eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router.sv"                            -work router                              
   eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/altera_merlin_slave_agent.sv"                                       -work sram_avalon_sram_slave_agent        
   eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                                -work sram_avalon_sram_slave_agent        
@@ -283,12 +297,20 @@ alias com {
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_idle_remover.v"                                    -work jtag_phy_embedded_in_jtag_master    
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_idle_inserter.v"                                   -work jtag_phy_embedded_in_jtag_master    
   eval  vlog  $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_stage.sv"                                 -work jtag_phy_embedded_in_jtag_master    
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_up_avalon_reset_from_locked_signal.v"                        -work reset_from_locked                   
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_up_altpll.v"                                                 -work video_pll                           
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                          -work rst_controller                      
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                      
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0.v"                                    -work mm_interconnect_0                   
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_up_avalon_video_vga_timing.v"                                -work video_vga_controller                
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_video_vga_controller.v"                                 -work video_vga_controller                
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_video_rgb_resampler.v"                                  -work video_rgb_resampler                 
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_video_pixel_buffer_dma.v"                               -work video_pixel_buffer_dma              
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_video_dual_clock_buffer.v"                              -work video_dual_clock_buffer             
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_sram.v"                                                 -work sram                                
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_jtag_master.v"                                          -work jtag_master                         
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_bridge.v"                                               -work bridge                              
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_VGA_clock.v"                                            -work VGA_clock                           
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/sram_access.v"                                                                                                           
 }
 
@@ -296,14 +318,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L jtag_master_master_rsp_width_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L sram_avalon_sram_slave_burst_adapter -L router_002 -L router_001 -L router -L sram_avalon_sram_slave_agent -L bridge_avalon_master_agent -L sram_avalon_sram_slave_translator -L bridge_avalon_master_translator -L p2b_adapter -L b2p_adapter -L transacto -L p2b -L b2p -L fifo -L timing_adt -L jtag_phy_embedded_in_jtag_master -L rst_controller -L mm_interconnect_0 -L sram -L jtag_master -L bridge -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L jtag_master_master_rsp_width_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L sram_avalon_sram_slave_burst_adapter -L router_003 -L router_002 -L router -L sram_avalon_sram_slave_agent -L bridge_avalon_master_agent -L sram_avalon_sram_slave_translator -L bridge_avalon_master_translator -L p2b_adapter -L b2p_adapter -L transacto -L p2b -L b2p -L fifo -L timing_adt -L jtag_phy_embedded_in_jtag_master -L reset_from_locked -L video_pll -L rst_controller -L mm_interconnect_0 -L video_vga_controller -L video_rgb_resampler -L video_pixel_buffer_dma -L video_dual_clock_buffer -L sram -L jtag_master -L bridge -L VGA_clock -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with -dbg -O2 option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -dbg -O2 +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L jtag_master_master_rsp_width_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L sram_avalon_sram_slave_burst_adapter -L router_002 -L router_001 -L router -L sram_avalon_sram_slave_agent -L bridge_avalon_master_agent -L sram_avalon_sram_slave_translator -L bridge_avalon_master_translator -L p2b_adapter -L b2p_adapter -L transacto -L p2b -L b2p -L fifo -L timing_adt -L jtag_phy_embedded_in_jtag_master -L rst_controller -L mm_interconnect_0 -L sram -L jtag_master -L bridge -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim -dbg -O2 +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L jtag_master_master_rsp_width_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L sram_avalon_sram_slave_burst_adapter -L router_003 -L router_002 -L router -L sram_avalon_sram_slave_agent -L bridge_avalon_master_agent -L sram_avalon_sram_slave_translator -L bridge_avalon_master_translator -L p2b_adapter -L b2p_adapter -L transacto -L p2b -L b2p -L fifo -L timing_adt -L jtag_phy_embedded_in_jtag_master -L reset_from_locked -L video_pll -L rst_controller -L mm_interconnect_0 -L video_vga_controller -L video_rgb_resampler -L video_pixel_buffer_dma -L video_dual_clock_buffer -L sram -L jtag_master -L bridge -L VGA_clock -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

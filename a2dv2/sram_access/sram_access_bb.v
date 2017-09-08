@@ -14,7 +14,15 @@ module sram_access (
 	sram_conduit_UB_N,
 	sram_conduit_CE_N,
 	sram_conduit_OE_N,
-	sram_conduit_WE_N);	
+	sram_conduit_WE_N,
+	vga_conduit_CLK,
+	vga_conduit_HS,
+	vga_conduit_VS,
+	vga_conduit_BLANK,
+	vga_conduit_SYNC,
+	vga_conduit_R,
+	vga_conduit_G,
+	vga_conduit_B);	
 
 	input	[20:0]	bridge_input_conduit_address;
 	input	[1:0]	bridge_input_conduit_byte_enable;
@@ -31,4 +39,12 @@ module sram_access (
 	output		sram_conduit_CE_N;
 	output		sram_conduit_OE_N;
 	output		sram_conduit_WE_N;
+	output		vga_conduit_CLK;
+	output		vga_conduit_HS;
+	output		vga_conduit_VS;
+	output		vga_conduit_BLANK;
+	output		vga_conduit_SYNC;
+	output	[7:0]	vga_conduit_R;
+	output	[7:0]	vga_conduit_G;
+	output	[7:0]	vga_conduit_B;
 endmodule

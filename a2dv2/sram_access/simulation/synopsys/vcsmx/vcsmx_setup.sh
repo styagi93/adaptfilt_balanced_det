@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 16.0 211 win32 2017.09.01.03:49:57
+# ACDS 16.0 211 win32 2017.09.08.03:38:15
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -101,7 +101,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 16.0 211 win32 2017.09.01.03:49:57
+# ACDS 16.0 211 win32 2017.09.08.03:38:15
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="sram_access"
@@ -149,8 +149,8 @@ mkdir -p ./libraries/rsp_demux/
 mkdir -p ./libraries/cmd_mux/
 mkdir -p ./libraries/cmd_demux/
 mkdir -p ./libraries/sram_avalon_sram_slave_burst_adapter/
+mkdir -p ./libraries/router_003/
 mkdir -p ./libraries/router_002/
-mkdir -p ./libraries/router_001/
 mkdir -p ./libraries/router/
 mkdir -p ./libraries/sram_avalon_sram_slave_agent/
 mkdir -p ./libraries/bridge_avalon_master_agent/
@@ -164,11 +164,18 @@ mkdir -p ./libraries/b2p/
 mkdir -p ./libraries/fifo/
 mkdir -p ./libraries/timing_adt/
 mkdir -p ./libraries/jtag_phy_embedded_in_jtag_master/
+mkdir -p ./libraries/reset_from_locked/
+mkdir -p ./libraries/video_pll/
 mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/mm_interconnect_0/
+mkdir -p ./libraries/video_vga_controller/
+mkdir -p ./libraries/video_rgb_resampler/
+mkdir -p ./libraries/video_pixel_buffer_dma/
+mkdir -p ./libraries/video_dual_clock_buffer/
 mkdir -p ./libraries/sram/
 mkdir -p ./libraries/jtag_master/
 mkdir -p ./libraries/bridge/
+mkdir -p ./libraries/VGA_clock/
 mkdir -p ./libraries/altera_ver/
 mkdir -p ./libraries/lpm_ver/
 mkdir -p ./libraries/sgate_ver/
@@ -214,8 +221,8 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv"                                 -work sram_avalon_sram_slave_burst_adapter
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_stage.sv"                                 -work sram_avalon_sram_slave_burst_adapter
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v"                                   -work sram_avalon_sram_slave_burst_adapter
+  vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_003.sv"                        -work router_003                          
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_002.sv"                        -work router_002                          
-  vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router_001.sv"                        -work router_001                          
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0_router.sv"                            -work router                              
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_slave_agent.sv"                                       -work sram_avalon_sram_slave_agent        
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv"                                -work sram_avalon_sram_slave_agent        
@@ -239,12 +246,20 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_avalon_st_idle_remover.v"                                    -work jtag_phy_embedded_in_jtag_master    
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_avalon_st_idle_inserter.v"                                   -work jtag_phy_embedded_in_jtag_master    
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_stage.sv"                                 -work jtag_phy_embedded_in_jtag_master    
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_avalon_reset_from_locked_signal.v"                        -work reset_from_locked                   
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_altpll.v"                                                 -work video_pll                           
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                          -work rst_controller                      
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                      
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_mm_interconnect_0.v"                                    -work mm_interconnect_0                   
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_up_avalon_video_vga_timing.v"                                -work video_vga_controller                
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_video_vga_controller.v"                                 -work video_vga_controller                
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_video_rgb_resampler.v"                                  -work video_rgb_resampler                 
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_video_pixel_buffer_dma.v"                               -work video_pixel_buffer_dma              
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_video_dual_clock_buffer.v"                              -work video_dual_clock_buffer             
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_sram.v"                                                 -work sram                                
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_jtag_master.v"                                          -work jtag_master                         
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_bridge.v"                                               -work bridge                              
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/sram_access_VGA_clock.v"                                            -work VGA_clock                           
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/sram_access.v"                                                                                                           
 fi
 

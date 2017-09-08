@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="08084701d0b77e617ff1"/>
+    <hash md5_digest_80b="b02764a0f8fca93f2454"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="a2dv2_time_limited.sof" usercode="0xFFFFFFFF"/>
@@ -523,13 +523,13 @@
     </sld_info>
     <sld_info hpath="p_sine:p_sine_inst" name="p_sine_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME p_sine HAS_SOPCINFO 1 GENERATION_ID 1504260501"/>
+        <assignment_value text="QSYS_NAME p_sine HAS_SOPCINFO 1 GENERATION_ID 1504864774"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="sram_access:sram_abc" name="sram_abc">
       <assignment_values>
-        <assignment_value text="QSYS_NAME sram_access HAS_SOPCINFO 1 GENERATION_ID 1504259397"/>
+        <assignment_value text="QSYS_NAME sram_access HAS_SOPCINFO 1 GENERATION_ID 1504863496"/>
       </assignment_values>
       <parameters/>
     </sld_info>

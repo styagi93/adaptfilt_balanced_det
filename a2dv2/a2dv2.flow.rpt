@@ -1,5 +1,5 @@
 Flow report for a2dv2
-Fri Sep 01 04:11:47 2017
+Fri Sep 08 04:03:14 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Sep 01 04:11:35 2017       ;
+; Flow Status                        ; Successful - Fri Sep 08 04:03:02 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; a2dv2                                       ;
 ; Top-level Entity Name              ; a2dv2                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 14,918 / 114,480 ( 13 % )                   ;
-;     Total combinational functions  ; 10,693 / 114,480 ( 9 % )                    ;
-;     Dedicated logic registers      ; 10,321 / 114,480 ( 9 % )                    ;
-; Total registers                    ; 10321                                       ;
-; Total pins                         ; 478 / 529 ( 90 % )                          ;
+; Total logic elements               ; 15,322 / 114,480 ( 13 % )                   ;
+;     Total combinational functions  ; 11,026 / 114,480 ( 10 % )                   ;
+;     Dedicated logic registers      ; 10,553 / 114,480 ( 9 % )                    ;
+; Total registers                    ; 10553                                       ;
+; Total pins                         ; 431 / 529 ( 81 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 38,160 / 3,981,312 ( < 1 % )                ;
+; Total memory bits                  ; 43,536 / 3,981,312 ( 1 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 96 / 532 ( 18 % )                           ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
+; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/01/2017 04:08:07 ;
+; Start date & time ; 09/08/2017 03:59:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; a2dv2               ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+---------------------+
 ; Assignment Name                     ; Value                                                                                                                                                               ; Default Value ; Entity Name ; Section Id          ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+---------------------+
-; COMPILER_SIGNATURE_ID               ; 88398802590963.150426048706836                                                                                                                                      ; --            ; --          ; --                  ;
+; COMPILER_SIGNATURE_ID               ; 88398802590963.150486476107932                                                                                                                                      ; --            ; --          ; --                  ;
 ; EDA_OUTPUT_DATA_FORMAT              ; None                                                                                                                                                                ; --            ; --          ; eda_simulation      ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                                                                                  ; --            ; --          ; --                  ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                                                                                  ; --            ; --          ; --                  ;
@@ -144,7 +144,7 @@ agreement for further details.
 ; SLD_FILE                            ; CIC/synthesis/CIC.debuginfo                                                                                                                                         ; --            ; --          ; --                  ;
 ; SLD_FILE                            ; db/stp3_auto_stripped.stp                                                                                                                                           ; --            ; --          ; --                  ;
 ; SLD_INFO                            ; QSYS_NAME CIC HAS_SOPCINFO 1 GENERATION_ID 1502268978                                                                                                               ; --            ; CIC         ; --                  ;
-; SLD_INFO                            ; QSYS_NAME sram_access HAS_SOPCINFO 1 GENERATION_ID 1504259397                                                                                                       ; --            ; sram_access ; --                  ;
+; SLD_INFO                            ; QSYS_NAME sram_access HAS_SOPCINFO 1 GENERATION_ID 1504863496                                                                                                       ; --            ; sram_access ; --                  ;
 ; SLD_NODE_CREATOR_ID                 ; 110                                                                                                                                                                 ; --            ; --          ; temp                ;
 ; SLD_NODE_CREATOR_ID                 ; 110                                                                                                                                                                 ; --            ; --          ; CIC_20output_20only ;
 ; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                                                                                       ; --            ; --          ; temp                ;
@@ -214,11 +214,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:02:01     ; 1.0                     ; 1180 MB             ; 00:02:38                           ;
-; Fitter                    ; 00:01:12     ; 1.1                     ; 2056 MB             ; 00:01:40                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 815 MB              ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.7                     ; 1088 MB             ; 00:00:14                           ;
-; Total                     ; 00:03:27     ; --                      ; --                  ; 00:04:37                           ;
+; Analysis & Synthesis      ; 00:02:04     ; 1.0                     ; 1207 MB             ; 00:02:44                           ;
+; Fitter                    ; 00:01:21     ; 1.1                     ; 2076 MB             ; 00:01:58                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 818 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 1.7                     ; 1096 MB             ; 00:00:14                           ;
+; Total                     ; 00:03:41     ; --                      ; --                  ; 00:05:01                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

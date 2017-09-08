@@ -85,13 +85,13 @@
    type="SYSTEM_VERILOG"
    library="sram_avalon_sram_slave_burst_adapter" />
  <file
+   path="simulation/submodules/sram_access_mm_interconnect_0_router_003.sv"
+   type="SYSTEM_VERILOG"
+   library="router_003" />
+ <file
    path="simulation/submodules/sram_access_mm_interconnect_0_router_002.sv"
    type="SYSTEM_VERILOG"
    library="router_002" />
- <file
-   path="simulation/submodules/sram_access_mm_interconnect_0_router_001.sv"
-   type="SYSTEM_VERILOG"
-   library="router_001" />
  <file
    path="simulation/submodules/sram_access_mm_interconnect_0_router.sv"
    type="SYSTEM_VERILOG"
@@ -189,6 +189,14 @@
    type="SDC"
    library="jtag_phy_embedded_in_jtag_master" />
  <file
+   path="simulation/submodules/altera_up_avalon_reset_from_locked_signal.v"
+   type="VERILOG"
+   library="reset_from_locked" />
+ <file
+   path="simulation/submodules/altera_up_altpll.v"
+   type="VERILOG"
+   library="video_pll" />
+ <file
    path="simulation/submodules/altera_reset_controller.v"
    type="VERILOG"
    library="rst_controller" />
@@ -205,6 +213,26 @@
    type="VERILOG"
    library="mm_interconnect_0" />
  <file
+   path="simulation/submodules/altera_up_avalon_video_vga_timing.v"
+   type="VERILOG"
+   library="video_vga_controller" />
+ <file
+   path="simulation/submodules/sram_access_video_vga_controller.v"
+   type="VERILOG"
+   library="video_vga_controller" />
+ <file
+   path="simulation/submodules/sram_access_video_rgb_resampler.v"
+   type="VERILOG"
+   library="video_rgb_resampler" />
+ <file
+   path="simulation/submodules/sram_access_video_pixel_buffer_dma.v"
+   type="VERILOG"
+   library="video_pixel_buffer_dma" />
+ <file
+   path="simulation/submodules/sram_access_video_dual_clock_buffer.v"
+   type="VERILOG"
+   library="video_dual_clock_buffer" />
+ <file
    path="simulation/submodules/sram_access_sram.v"
    type="VERILOG"
    library="sram" />
@@ -216,6 +244,10 @@
    path="simulation/submodules/sram_access_bridge.v"
    type="VERILOG"
    library="bridge" />
+ <file
+   path="simulation/submodules/sram_access_VGA_clock.v"
+   type="VERILOG"
+   library="VGA_clock" />
  <file path="simulation/sram_access.v" type="VERILOG" />
  <topLevel name="sram_access" />
  <deviceFamily name="cycloneive" />

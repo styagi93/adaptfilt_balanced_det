@@ -18,34 +18,74 @@ module sram_access (
 		output wire        sram_conduit_UB_N,                //                     .UB_N
 		output wire        sram_conduit_CE_N,                //                     .CE_N
 		output wire        sram_conduit_OE_N,                //                     .OE_N
-		output wire        sram_conduit_WE_N                 //                     .WE_N
+		output wire        sram_conduit_WE_N,                //                     .WE_N
+		output wire        vga_conduit_CLK,                  //          vga_conduit.CLK
+		output wire        vga_conduit_HS,                   //                     .HS
+		output wire        vga_conduit_VS,                   //                     .VS
+		output wire        vga_conduit_BLANK,                //                     .BLANK
+		output wire        vga_conduit_SYNC,                 //                     .SYNC
+		output wire [7:0]  vga_conduit_R,                    //                     .R
+		output wire [7:0]  vga_conduit_G,                    //                     .G
+		output wire [7:0]  vga_conduit_B                     //                     .B
 	);
 
-	wire         jtag_master_master_reset_reset;                         // jtag_master:master_reset_reset -> [rst_controller:reset_in0, rst_controller:reset_in1, rst_controller_001:reset_in0, rst_controller_001:reset_in1]
-	wire  [15:0] bridge_avalon_master_readdata;                          // mm_interconnect_0:bridge_avalon_master_readdata -> bridge:avalon_readdata
-	wire         bridge_avalon_master_waitrequest;                       // mm_interconnect_0:bridge_avalon_master_waitrequest -> bridge:avalon_waitrequest
-	wire   [1:0] bridge_avalon_master_byteenable;                        // bridge:avalon_byteenable -> mm_interconnect_0:bridge_avalon_master_byteenable
-	wire         bridge_avalon_master_read;                              // bridge:avalon_read -> mm_interconnect_0:bridge_avalon_master_read
-	wire  [20:0] bridge_avalon_master_address;                           // bridge:avalon_address -> mm_interconnect_0:bridge_avalon_master_address
-	wire         bridge_avalon_master_write;                             // bridge:avalon_write -> mm_interconnect_0:bridge_avalon_master_write
-	wire  [15:0] bridge_avalon_master_writedata;                         // bridge:avalon_writedata -> mm_interconnect_0:bridge_avalon_master_writedata
-	wire  [31:0] jtag_master_master_readdata;                            // mm_interconnect_0:jtag_master_master_readdata -> jtag_master:master_readdata
-	wire         jtag_master_master_waitrequest;                         // mm_interconnect_0:jtag_master_master_waitrequest -> jtag_master:master_waitrequest
-	wire  [31:0] jtag_master_master_address;                             // jtag_master:master_address -> mm_interconnect_0:jtag_master_master_address
-	wire         jtag_master_master_read;                                // jtag_master:master_read -> mm_interconnect_0:jtag_master_master_read
-	wire   [3:0] jtag_master_master_byteenable;                          // jtag_master:master_byteenable -> mm_interconnect_0:jtag_master_master_byteenable
-	wire         jtag_master_master_readdatavalid;                       // mm_interconnect_0:jtag_master_master_readdatavalid -> jtag_master:master_readdatavalid
-	wire         jtag_master_master_write;                               // jtag_master:master_write -> mm_interconnect_0:jtag_master_master_write
-	wire  [31:0] jtag_master_master_writedata;                           // jtag_master:master_writedata -> mm_interconnect_0:jtag_master_master_writedata
-	wire  [15:0] mm_interconnect_0_sram_avalon_sram_slave_readdata;      // sram:readdata -> mm_interconnect_0:sram_avalon_sram_slave_readdata
-	wire  [19:0] mm_interconnect_0_sram_avalon_sram_slave_address;       // mm_interconnect_0:sram_avalon_sram_slave_address -> sram:address
-	wire         mm_interconnect_0_sram_avalon_sram_slave_read;          // mm_interconnect_0:sram_avalon_sram_slave_read -> sram:read
-	wire   [1:0] mm_interconnect_0_sram_avalon_sram_slave_byteenable;    // mm_interconnect_0:sram_avalon_sram_slave_byteenable -> sram:byteenable
-	wire         mm_interconnect_0_sram_avalon_sram_slave_readdatavalid; // sram:readdatavalid -> mm_interconnect_0:sram_avalon_sram_slave_readdatavalid
-	wire         mm_interconnect_0_sram_avalon_sram_slave_write;         // mm_interconnect_0:sram_avalon_sram_slave_write -> sram:write
-	wire  [15:0] mm_interconnect_0_sram_avalon_sram_slave_writedata;     // mm_interconnect_0:sram_avalon_sram_slave_writedata -> sram:writedata
-	wire         rst_controller_reset_out_reset;                         // rst_controller:reset_out -> [bridge:reset, mm_interconnect_0:bridge_reset_reset_bridge_in_reset_reset, mm_interconnect_0:jtag_master_clk_reset_reset_bridge_in_reset_reset, sram:reset]
-	wire         rst_controller_001_reset_out_reset;                     // rst_controller_001:reset_out -> jtag_master:clk_reset_reset
+	wire         video_dual_clock_buffer_avalon_dc_buffer_source_valid;         // video_dual_clock_buffer:stream_out_valid -> video_vga_controller:valid
+	wire  [29:0] video_dual_clock_buffer_avalon_dc_buffer_source_data;          // video_dual_clock_buffer:stream_out_data -> video_vga_controller:data
+	wire         video_dual_clock_buffer_avalon_dc_buffer_source_ready;         // video_vga_controller:ready -> video_dual_clock_buffer:stream_out_ready
+	wire         video_dual_clock_buffer_avalon_dc_buffer_source_startofpacket; // video_dual_clock_buffer:stream_out_startofpacket -> video_vga_controller:startofpacket
+	wire         video_dual_clock_buffer_avalon_dc_buffer_source_endofpacket;   // video_dual_clock_buffer:stream_out_endofpacket -> video_vga_controller:endofpacket
+	wire         video_pixel_buffer_dma_avalon_pixel_source_valid;              // video_pixel_buffer_dma:stream_valid -> video_rgb_resampler:stream_in_valid
+	wire  [15:0] video_pixel_buffer_dma_avalon_pixel_source_data;               // video_pixel_buffer_dma:stream_data -> video_rgb_resampler:stream_in_data
+	wire         video_pixel_buffer_dma_avalon_pixel_source_ready;              // video_rgb_resampler:stream_in_ready -> video_pixel_buffer_dma:stream_ready
+	wire         video_pixel_buffer_dma_avalon_pixel_source_startofpacket;      // video_pixel_buffer_dma:stream_startofpacket -> video_rgb_resampler:stream_in_startofpacket
+	wire         video_pixel_buffer_dma_avalon_pixel_source_endofpacket;        // video_pixel_buffer_dma:stream_endofpacket -> video_rgb_resampler:stream_in_endofpacket
+	wire         video_rgb_resampler_avalon_rgb_source_valid;                   // video_rgb_resampler:stream_out_valid -> video_dual_clock_buffer:stream_in_valid
+	wire  [29:0] video_rgb_resampler_avalon_rgb_source_data;                    // video_rgb_resampler:stream_out_data -> video_dual_clock_buffer:stream_in_data
+	wire         video_rgb_resampler_avalon_rgb_source_ready;                   // video_dual_clock_buffer:stream_in_ready -> video_rgb_resampler:stream_out_ready
+	wire         video_rgb_resampler_avalon_rgb_source_startofpacket;           // video_rgb_resampler:stream_out_startofpacket -> video_dual_clock_buffer:stream_in_startofpacket
+	wire         video_rgb_resampler_avalon_rgb_source_endofpacket;             // video_rgb_resampler:stream_out_endofpacket -> video_dual_clock_buffer:stream_in_endofpacket
+	wire         vga_clock_vga_clk_clk;                                         // VGA_clock:vga_clk_clk -> [rst_controller_003:clk, video_dual_clock_buffer:clk_stream_out, video_vga_controller:clk]
+	wire  [15:0] bridge_avalon_master_readdata;                                 // mm_interconnect_0:bridge_avalon_master_readdata -> bridge:avalon_readdata
+	wire         bridge_avalon_master_waitrequest;                              // mm_interconnect_0:bridge_avalon_master_waitrequest -> bridge:avalon_waitrequest
+	wire   [1:0] bridge_avalon_master_byteenable;                               // bridge:avalon_byteenable -> mm_interconnect_0:bridge_avalon_master_byteenable
+	wire         bridge_avalon_master_read;                                     // bridge:avalon_read -> mm_interconnect_0:bridge_avalon_master_read
+	wire  [20:0] bridge_avalon_master_address;                                  // bridge:avalon_address -> mm_interconnect_0:bridge_avalon_master_address
+	wire         bridge_avalon_master_write;                                    // bridge:avalon_write -> mm_interconnect_0:bridge_avalon_master_write
+	wire  [15:0] bridge_avalon_master_writedata;                                // bridge:avalon_writedata -> mm_interconnect_0:bridge_avalon_master_writedata
+	wire         video_pixel_buffer_dma_avalon_pixel_dma_master_waitrequest;    // mm_interconnect_0:video_pixel_buffer_dma_avalon_pixel_dma_master_waitrequest -> video_pixel_buffer_dma:master_waitrequest
+	wire  [15:0] video_pixel_buffer_dma_avalon_pixel_dma_master_readdata;       // mm_interconnect_0:video_pixel_buffer_dma_avalon_pixel_dma_master_readdata -> video_pixel_buffer_dma:master_readdata
+	wire  [31:0] video_pixel_buffer_dma_avalon_pixel_dma_master_address;        // video_pixel_buffer_dma:master_address -> mm_interconnect_0:video_pixel_buffer_dma_avalon_pixel_dma_master_address
+	wire         video_pixel_buffer_dma_avalon_pixel_dma_master_read;           // video_pixel_buffer_dma:master_read -> mm_interconnect_0:video_pixel_buffer_dma_avalon_pixel_dma_master_read
+	wire         video_pixel_buffer_dma_avalon_pixel_dma_master_readdatavalid;  // mm_interconnect_0:video_pixel_buffer_dma_avalon_pixel_dma_master_readdatavalid -> video_pixel_buffer_dma:master_readdatavalid
+	wire         video_pixel_buffer_dma_avalon_pixel_dma_master_lock;           // video_pixel_buffer_dma:master_arbiterlock -> mm_interconnect_0:video_pixel_buffer_dma_avalon_pixel_dma_master_lock
+	wire  [31:0] jtag_master_master_readdata;                                   // mm_interconnect_0:jtag_master_master_readdata -> jtag_master:master_readdata
+	wire         jtag_master_master_waitrequest;                                // mm_interconnect_0:jtag_master_master_waitrequest -> jtag_master:master_waitrequest
+	wire  [31:0] jtag_master_master_address;                                    // jtag_master:master_address -> mm_interconnect_0:jtag_master_master_address
+	wire         jtag_master_master_read;                                       // jtag_master:master_read -> mm_interconnect_0:jtag_master_master_read
+	wire   [3:0] jtag_master_master_byteenable;                                 // jtag_master:master_byteenable -> mm_interconnect_0:jtag_master_master_byteenable
+	wire         jtag_master_master_readdatavalid;                              // mm_interconnect_0:jtag_master_master_readdatavalid -> jtag_master:master_readdatavalid
+	wire         jtag_master_master_write;                                      // jtag_master:master_write -> mm_interconnect_0:jtag_master_master_write
+	wire  [31:0] jtag_master_master_writedata;                                  // jtag_master:master_writedata -> mm_interconnect_0:jtag_master_master_writedata
+	wire  [15:0] mm_interconnect_0_sram_avalon_sram_slave_readdata;             // sram:readdata -> mm_interconnect_0:sram_avalon_sram_slave_readdata
+	wire  [19:0] mm_interconnect_0_sram_avalon_sram_slave_address;              // mm_interconnect_0:sram_avalon_sram_slave_address -> sram:address
+	wire         mm_interconnect_0_sram_avalon_sram_slave_read;                 // mm_interconnect_0:sram_avalon_sram_slave_read -> sram:read
+	wire   [1:0] mm_interconnect_0_sram_avalon_sram_slave_byteenable;           // mm_interconnect_0:sram_avalon_sram_slave_byteenable -> sram:byteenable
+	wire         mm_interconnect_0_sram_avalon_sram_slave_readdatavalid;        // sram:readdatavalid -> mm_interconnect_0:sram_avalon_sram_slave_readdatavalid
+	wire         mm_interconnect_0_sram_avalon_sram_slave_write;                // mm_interconnect_0:sram_avalon_sram_slave_write -> sram:write
+	wire  [15:0] mm_interconnect_0_sram_avalon_sram_slave_writedata;            // mm_interconnect_0:sram_avalon_sram_slave_writedata -> sram:writedata
+	wire         rst_controller_reset_out_reset;                                // rst_controller:reset_out -> [VGA_clock:ref_reset_reset, bridge:reset, mm_interconnect_0:bridge_reset_reset_bridge_in_reset_reset, mm_interconnect_0:jtag_master_clk_reset_reset_bridge_in_reset_reset, sram:reset, video_dual_clock_buffer:reset_stream_in, video_pixel_buffer_dma:reset, video_rgb_resampler:reset]
+	wire         jtag_master_master_reset_reset;                                // jtag_master:master_reset_reset -> [rst_controller:reset_in1, rst_controller_001:reset_in0, rst_controller_002:reset_in1, rst_controller_003:reset_in1]
+	wire         vga_clock_reset_source_reset;                                  // VGA_clock:reset_source_reset -> [rst_controller:reset_in2, rst_controller_001:reset_in1, rst_controller_002:reset_in2, rst_controller_003:reset_in2]
+	wire         rst_controller_001_reset_out_reset;                            // rst_controller_001:reset_out -> [rst_controller:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in0]
+	wire         rst_controller_002_reset_out_reset;                            // rst_controller_002:reset_out -> jtag_master:clk_reset_reset
+	wire         rst_controller_003_reset_out_reset;                            // rst_controller_003:reset_out -> [video_dual_clock_buffer:reset_stream_out, video_vga_controller:reset]
+
+	sram_access_VGA_clock vga_clock (
+		.ref_clk_clk        (clk_clk),                        //      ref_clk.clk
+		.ref_reset_reset    (rst_controller_reset_out_reset), //    ref_reset.reset
+		.vga_clk_clk        (vga_clock_vga_clk_clk),          //      vga_clk.clk
+		.reset_source_reset (vga_clock_reset_source_reset)    // reset_source.reset
+	);
 
 	sram_access_bridge bridge (
 		.clk                (clk_clk),                          //                clk.clk
@@ -72,7 +112,7 @@ module sram_access (
 		.FIFO_DEPTHS (2)
 	) jtag_master (
 		.clk_clk              (clk_clk),                            //          clk.clk
-		.clk_reset_reset      (rst_controller_001_reset_out_reset), //    clk_reset.reset
+		.clk_reset_reset      (rst_controller_002_reset_out_reset), //    clk_reset.reset
 		.master_address       (jtag_master_master_address),         //       master.address
 		.master_readdata      (jtag_master_master_readdata),        //             .readdata
 		.master_read          (jtag_master_master_read),            //             .read
@@ -103,36 +143,114 @@ module sram_access (
 		.readdatavalid (mm_interconnect_0_sram_avalon_sram_slave_readdatavalid)  //                   .readdatavalid
 	);
 
+	sram_access_video_dual_clock_buffer video_dual_clock_buffer (
+		.clk_stream_in            (clk_clk),                                                       //         clock_stream_in.clk
+		.reset_stream_in          (rst_controller_reset_out_reset),                                //         reset_stream_in.reset
+		.clk_stream_out           (vga_clock_vga_clk_clk),                                         //        clock_stream_out.clk
+		.reset_stream_out         (rst_controller_003_reset_out_reset),                            //        reset_stream_out.reset
+		.stream_in_ready          (video_rgb_resampler_avalon_rgb_source_ready),                   //   avalon_dc_buffer_sink.ready
+		.stream_in_startofpacket  (video_rgb_resampler_avalon_rgb_source_startofpacket),           //                        .startofpacket
+		.stream_in_endofpacket    (video_rgb_resampler_avalon_rgb_source_endofpacket),             //                        .endofpacket
+		.stream_in_valid          (video_rgb_resampler_avalon_rgb_source_valid),                   //                        .valid
+		.stream_in_data           (video_rgb_resampler_avalon_rgb_source_data),                    //                        .data
+		.stream_out_ready         (video_dual_clock_buffer_avalon_dc_buffer_source_ready),         // avalon_dc_buffer_source.ready
+		.stream_out_startofpacket (video_dual_clock_buffer_avalon_dc_buffer_source_startofpacket), //                        .startofpacket
+		.stream_out_endofpacket   (video_dual_clock_buffer_avalon_dc_buffer_source_endofpacket),   //                        .endofpacket
+		.stream_out_valid         (video_dual_clock_buffer_avalon_dc_buffer_source_valid),         //                        .valid
+		.stream_out_data          (video_dual_clock_buffer_avalon_dc_buffer_source_data)           //                        .data
+	);
+
+	sram_access_video_pixel_buffer_dma video_pixel_buffer_dma (
+		.clk                  (clk_clk),                                                      //                     clk.clk
+		.reset                (rst_controller_reset_out_reset),                               //                   reset.reset
+		.master_readdatavalid (video_pixel_buffer_dma_avalon_pixel_dma_master_readdatavalid), // avalon_pixel_dma_master.readdatavalid
+		.master_waitrequest   (video_pixel_buffer_dma_avalon_pixel_dma_master_waitrequest),   //                        .waitrequest
+		.master_address       (video_pixel_buffer_dma_avalon_pixel_dma_master_address),       //                        .address
+		.master_arbiterlock   (video_pixel_buffer_dma_avalon_pixel_dma_master_lock),          //                        .lock
+		.master_read          (video_pixel_buffer_dma_avalon_pixel_dma_master_read),          //                        .read
+		.master_readdata      (video_pixel_buffer_dma_avalon_pixel_dma_master_readdata),      //                        .readdata
+		.slave_address        (),                                                             //    avalon_control_slave.address
+		.slave_byteenable     (),                                                             //                        .byteenable
+		.slave_read           (),                                                             //                        .read
+		.slave_write          (),                                                             //                        .write
+		.slave_writedata      (),                                                             //                        .writedata
+		.slave_readdata       (),                                                             //                        .readdata
+		.stream_ready         (video_pixel_buffer_dma_avalon_pixel_source_ready),             //     avalon_pixel_source.ready
+		.stream_startofpacket (video_pixel_buffer_dma_avalon_pixel_source_startofpacket),     //                        .startofpacket
+		.stream_endofpacket   (video_pixel_buffer_dma_avalon_pixel_source_endofpacket),       //                        .endofpacket
+		.stream_valid         (video_pixel_buffer_dma_avalon_pixel_source_valid),             //                        .valid
+		.stream_data          (video_pixel_buffer_dma_avalon_pixel_source_data)               //                        .data
+	);
+
+	sram_access_video_rgb_resampler video_rgb_resampler (
+		.clk                      (clk_clk),                                                  //               clk.clk
+		.reset                    (rst_controller_reset_out_reset),                           //             reset.reset
+		.stream_in_startofpacket  (video_pixel_buffer_dma_avalon_pixel_source_startofpacket), //   avalon_rgb_sink.startofpacket
+		.stream_in_endofpacket    (video_pixel_buffer_dma_avalon_pixel_source_endofpacket),   //                  .endofpacket
+		.stream_in_valid          (video_pixel_buffer_dma_avalon_pixel_source_valid),         //                  .valid
+		.stream_in_ready          (video_pixel_buffer_dma_avalon_pixel_source_ready),         //                  .ready
+		.stream_in_data           (video_pixel_buffer_dma_avalon_pixel_source_data),          //                  .data
+		.stream_out_ready         (video_rgb_resampler_avalon_rgb_source_ready),              // avalon_rgb_source.ready
+		.stream_out_startofpacket (video_rgb_resampler_avalon_rgb_source_startofpacket),      //                  .startofpacket
+		.stream_out_endofpacket   (video_rgb_resampler_avalon_rgb_source_endofpacket),        //                  .endofpacket
+		.stream_out_valid         (video_rgb_resampler_avalon_rgb_source_valid),              //                  .valid
+		.stream_out_data          (video_rgb_resampler_avalon_rgb_source_data)                //                  .data
+	);
+
+	sram_access_video_vga_controller video_vga_controller (
+		.clk           (vga_clock_vga_clk_clk),                                         //                clk.clk
+		.reset         (rst_controller_003_reset_out_reset),                            //              reset.reset
+		.data          (video_dual_clock_buffer_avalon_dc_buffer_source_data),          //    avalon_vga_sink.data
+		.startofpacket (video_dual_clock_buffer_avalon_dc_buffer_source_startofpacket), //                   .startofpacket
+		.endofpacket   (video_dual_clock_buffer_avalon_dc_buffer_source_endofpacket),   //                   .endofpacket
+		.valid         (video_dual_clock_buffer_avalon_dc_buffer_source_valid),         //                   .valid
+		.ready         (video_dual_clock_buffer_avalon_dc_buffer_source_ready),         //                   .ready
+		.VGA_CLK       (vga_conduit_CLK),                                               // external_interface.export
+		.VGA_HS        (vga_conduit_HS),                                                //                   .export
+		.VGA_VS        (vga_conduit_VS),                                                //                   .export
+		.VGA_BLANK     (vga_conduit_BLANK),                                             //                   .export
+		.VGA_SYNC      (vga_conduit_SYNC),                                              //                   .export
+		.VGA_R         (vga_conduit_R),                                                 //                   .export
+		.VGA_G         (vga_conduit_G),                                                 //                   .export
+		.VGA_B         (vga_conduit_B)                                                  //                   .export
+	);
+
 	sram_access_mm_interconnect_0 mm_interconnect_0 (
-		.clock_clk_clk                                     (clk_clk),                                                //                                   clock_clk.clk
-		.bridge_reset_reset_bridge_in_reset_reset          (rst_controller_reset_out_reset),                         //          bridge_reset_reset_bridge_in_reset.reset
-		.jtag_master_clk_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                         // jtag_master_clk_reset_reset_bridge_in_reset.reset
-		.bridge_avalon_master_address                      (bridge_avalon_master_address),                           //                        bridge_avalon_master.address
-		.bridge_avalon_master_waitrequest                  (bridge_avalon_master_waitrequest),                       //                                            .waitrequest
-		.bridge_avalon_master_byteenable                   (bridge_avalon_master_byteenable),                        //                                            .byteenable
-		.bridge_avalon_master_read                         (bridge_avalon_master_read),                              //                                            .read
-		.bridge_avalon_master_readdata                     (bridge_avalon_master_readdata),                          //                                            .readdata
-		.bridge_avalon_master_write                        (bridge_avalon_master_write),                             //                                            .write
-		.bridge_avalon_master_writedata                    (bridge_avalon_master_writedata),                         //                                            .writedata
-		.jtag_master_master_address                        (jtag_master_master_address),                             //                          jtag_master_master.address
-		.jtag_master_master_waitrequest                    (jtag_master_master_waitrequest),                         //                                            .waitrequest
-		.jtag_master_master_byteenable                     (jtag_master_master_byteenable),                          //                                            .byteenable
-		.jtag_master_master_read                           (jtag_master_master_read),                                //                                            .read
-		.jtag_master_master_readdata                       (jtag_master_master_readdata),                            //                                            .readdata
-		.jtag_master_master_readdatavalid                  (jtag_master_master_readdatavalid),                       //                                            .readdatavalid
-		.jtag_master_master_write                          (jtag_master_master_write),                               //                                            .write
-		.jtag_master_master_writedata                      (jtag_master_master_writedata),                           //                                            .writedata
-		.sram_avalon_sram_slave_address                    (mm_interconnect_0_sram_avalon_sram_slave_address),       //                      sram_avalon_sram_slave.address
-		.sram_avalon_sram_slave_write                      (mm_interconnect_0_sram_avalon_sram_slave_write),         //                                            .write
-		.sram_avalon_sram_slave_read                       (mm_interconnect_0_sram_avalon_sram_slave_read),          //                                            .read
-		.sram_avalon_sram_slave_readdata                   (mm_interconnect_0_sram_avalon_sram_slave_readdata),      //                                            .readdata
-		.sram_avalon_sram_slave_writedata                  (mm_interconnect_0_sram_avalon_sram_slave_writedata),     //                                            .writedata
-		.sram_avalon_sram_slave_byteenable                 (mm_interconnect_0_sram_avalon_sram_slave_byteenable),    //                                            .byteenable
-		.sram_avalon_sram_slave_readdatavalid              (mm_interconnect_0_sram_avalon_sram_slave_readdatavalid)  //                                            .readdatavalid
+		.clock_clk_clk                                                (clk_clk),                                                      //                                      clock_clk.clk
+		.bridge_reset_reset_bridge_in_reset_reset                     (rst_controller_reset_out_reset),                               //             bridge_reset_reset_bridge_in_reset.reset
+		.jtag_master_clk_reset_reset_bridge_in_reset_reset            (rst_controller_reset_out_reset),                               //    jtag_master_clk_reset_reset_bridge_in_reset.reset
+		.bridge_avalon_master_address                                 (bridge_avalon_master_address),                                 //                           bridge_avalon_master.address
+		.bridge_avalon_master_waitrequest                             (bridge_avalon_master_waitrequest),                             //                                               .waitrequest
+		.bridge_avalon_master_byteenable                              (bridge_avalon_master_byteenable),                              //                                               .byteenable
+		.bridge_avalon_master_read                                    (bridge_avalon_master_read),                                    //                                               .read
+		.bridge_avalon_master_readdata                                (bridge_avalon_master_readdata),                                //                                               .readdata
+		.bridge_avalon_master_write                                   (bridge_avalon_master_write),                                   //                                               .write
+		.bridge_avalon_master_writedata                               (bridge_avalon_master_writedata),                               //                                               .writedata
+		.jtag_master_master_address                                   (jtag_master_master_address),                                   //                             jtag_master_master.address
+		.jtag_master_master_waitrequest                               (jtag_master_master_waitrequest),                               //                                               .waitrequest
+		.jtag_master_master_byteenable                                (jtag_master_master_byteenable),                                //                                               .byteenable
+		.jtag_master_master_read                                      (jtag_master_master_read),                                      //                                               .read
+		.jtag_master_master_readdata                                  (jtag_master_master_readdata),                                  //                                               .readdata
+		.jtag_master_master_readdatavalid                             (jtag_master_master_readdatavalid),                             //                                               .readdatavalid
+		.jtag_master_master_write                                     (jtag_master_master_write),                                     //                                               .write
+		.jtag_master_master_writedata                                 (jtag_master_master_writedata),                                 //                                               .writedata
+		.video_pixel_buffer_dma_avalon_pixel_dma_master_address       (video_pixel_buffer_dma_avalon_pixel_dma_master_address),       // video_pixel_buffer_dma_avalon_pixel_dma_master.address
+		.video_pixel_buffer_dma_avalon_pixel_dma_master_waitrequest   (video_pixel_buffer_dma_avalon_pixel_dma_master_waitrequest),   //                                               .waitrequest
+		.video_pixel_buffer_dma_avalon_pixel_dma_master_read          (video_pixel_buffer_dma_avalon_pixel_dma_master_read),          //                                               .read
+		.video_pixel_buffer_dma_avalon_pixel_dma_master_readdata      (video_pixel_buffer_dma_avalon_pixel_dma_master_readdata),      //                                               .readdata
+		.video_pixel_buffer_dma_avalon_pixel_dma_master_readdatavalid (video_pixel_buffer_dma_avalon_pixel_dma_master_readdatavalid), //                                               .readdatavalid
+		.video_pixel_buffer_dma_avalon_pixel_dma_master_lock          (video_pixel_buffer_dma_avalon_pixel_dma_master_lock),          //                                               .lock
+		.sram_avalon_sram_slave_address                               (mm_interconnect_0_sram_avalon_sram_slave_address),             //                         sram_avalon_sram_slave.address
+		.sram_avalon_sram_slave_write                                 (mm_interconnect_0_sram_avalon_sram_slave_write),               //                                               .write
+		.sram_avalon_sram_slave_read                                  (mm_interconnect_0_sram_avalon_sram_slave_read),                //                                               .read
+		.sram_avalon_sram_slave_readdata                              (mm_interconnect_0_sram_avalon_sram_slave_readdata),            //                                               .readdata
+		.sram_avalon_sram_slave_writedata                             (mm_interconnect_0_sram_avalon_sram_slave_writedata),           //                                               .writedata
+		.sram_avalon_sram_slave_byteenable                            (mm_interconnect_0_sram_avalon_sram_slave_byteenable),          //                                               .byteenable
+		.sram_avalon_sram_slave_readdatavalid                         (mm_interconnect_0_sram_avalon_sram_slave_readdatavalid)        //                                               .readdatavalid
 	);
 
 	altera_reset_controller #(
-		.NUM_RESET_INPUTS          (2),
+		.NUM_RESET_INPUTS          (3),
 		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
 		.SYNC_DEPTH                (2),
 		.RESET_REQUEST_PRESENT     (0),
@@ -157,41 +275,41 @@ module sram_access (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller (
-		.reset_in0      (jtag_master_master_reset_reset), // reset_in0.reset
-		.reset_in1      (jtag_master_master_reset_reset), // reset_in1.reset
-		.clk            (clk_clk),                        //       clk.clk
-		.reset_out      (rst_controller_reset_out_reset), // reset_out.reset
-		.reset_req      (),                               // (terminated)
-		.reset_req_in0  (1'b0),                           // (terminated)
-		.reset_req_in1  (1'b0),                           // (terminated)
-		.reset_in2      (1'b0),                           // (terminated)
-		.reset_req_in2  (1'b0),                           // (terminated)
-		.reset_in3      (1'b0),                           // (terminated)
-		.reset_req_in3  (1'b0),                           // (terminated)
-		.reset_in4      (1'b0),                           // (terminated)
-		.reset_req_in4  (1'b0),                           // (terminated)
-		.reset_in5      (1'b0),                           // (terminated)
-		.reset_req_in5  (1'b0),                           // (terminated)
-		.reset_in6      (1'b0),                           // (terminated)
-		.reset_req_in6  (1'b0),                           // (terminated)
-		.reset_in7      (1'b0),                           // (terminated)
-		.reset_req_in7  (1'b0),                           // (terminated)
-		.reset_in8      (1'b0),                           // (terminated)
-		.reset_req_in8  (1'b0),                           // (terminated)
-		.reset_in9      (1'b0),                           // (terminated)
-		.reset_req_in9  (1'b0),                           // (terminated)
-		.reset_in10     (1'b0),                           // (terminated)
-		.reset_req_in10 (1'b0),                           // (terminated)
-		.reset_in11     (1'b0),                           // (terminated)
-		.reset_req_in11 (1'b0),                           // (terminated)
-		.reset_in12     (1'b0),                           // (terminated)
-		.reset_req_in12 (1'b0),                           // (terminated)
-		.reset_in13     (1'b0),                           // (terminated)
-		.reset_req_in13 (1'b0),                           // (terminated)
-		.reset_in14     (1'b0),                           // (terminated)
-		.reset_req_in14 (1'b0),                           // (terminated)
-		.reset_in15     (1'b0),                           // (terminated)
-		.reset_req_in15 (1'b0)                            // (terminated)
+		.reset_in0      (rst_controller_001_reset_out_reset), // reset_in0.reset
+		.reset_in1      (jtag_master_master_reset_reset),     // reset_in1.reset
+		.reset_in2      (vga_clock_reset_source_reset),       // reset_in2.reset
+		.clk            (clk_clk),                            //       clk.clk
+		.reset_out      (rst_controller_reset_out_reset),     // reset_out.reset
+		.reset_req      (),                                   // (terminated)
+		.reset_req_in0  (1'b0),                               // (terminated)
+		.reset_req_in1  (1'b0),                               // (terminated)
+		.reset_req_in2  (1'b0),                               // (terminated)
+		.reset_in3      (1'b0),                               // (terminated)
+		.reset_req_in3  (1'b0),                               // (terminated)
+		.reset_in4      (1'b0),                               // (terminated)
+		.reset_req_in4  (1'b0),                               // (terminated)
+		.reset_in5      (1'b0),                               // (terminated)
+		.reset_req_in5  (1'b0),                               // (terminated)
+		.reset_in6      (1'b0),                               // (terminated)
+		.reset_req_in6  (1'b0),                               // (terminated)
+		.reset_in7      (1'b0),                               // (terminated)
+		.reset_req_in7  (1'b0),                               // (terminated)
+		.reset_in8      (1'b0),                               // (terminated)
+		.reset_req_in8  (1'b0),                               // (terminated)
+		.reset_in9      (1'b0),                               // (terminated)
+		.reset_req_in9  (1'b0),                               // (terminated)
+		.reset_in10     (1'b0),                               // (terminated)
+		.reset_req_in10 (1'b0),                               // (terminated)
+		.reset_in11     (1'b0),                               // (terminated)
+		.reset_req_in11 (1'b0),                               // (terminated)
+		.reset_in12     (1'b0),                               // (terminated)
+		.reset_req_in12 (1'b0),                               // (terminated)
+		.reset_in13     (1'b0),                               // (terminated)
+		.reset_req_in13 (1'b0),                               // (terminated)
+		.reset_in14     (1'b0),                               // (terminated)
+		.reset_req_in14 (1'b0),                               // (terminated)
+		.reset_in15     (1'b0),                               // (terminated)
+		.reset_req_in15 (1'b0)                                // (terminated)
 	);
 
 	altera_reset_controller #(
@@ -221,13 +339,139 @@ module sram_access (
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_001 (
 		.reset_in0      (jtag_master_master_reset_reset),     // reset_in0.reset
-		.reset_in1      (jtag_master_master_reset_reset),     // reset_in1.reset
+		.reset_in1      (vga_clock_reset_source_reset),       // reset_in1.reset
 		.clk            (),                                   //       clk.clk
 		.reset_out      (rst_controller_001_reset_out_reset), // reset_out.reset
 		.reset_req      (),                                   // (terminated)
 		.reset_req_in0  (1'b0),                               // (terminated)
 		.reset_req_in1  (1'b0),                               // (terminated)
 		.reset_in2      (1'b0),                               // (terminated)
+		.reset_req_in2  (1'b0),                               // (terminated)
+		.reset_in3      (1'b0),                               // (terminated)
+		.reset_req_in3  (1'b0),                               // (terminated)
+		.reset_in4      (1'b0),                               // (terminated)
+		.reset_req_in4  (1'b0),                               // (terminated)
+		.reset_in5      (1'b0),                               // (terminated)
+		.reset_req_in5  (1'b0),                               // (terminated)
+		.reset_in6      (1'b0),                               // (terminated)
+		.reset_req_in6  (1'b0),                               // (terminated)
+		.reset_in7      (1'b0),                               // (terminated)
+		.reset_req_in7  (1'b0),                               // (terminated)
+		.reset_in8      (1'b0),                               // (terminated)
+		.reset_req_in8  (1'b0),                               // (terminated)
+		.reset_in9      (1'b0),                               // (terminated)
+		.reset_req_in9  (1'b0),                               // (terminated)
+		.reset_in10     (1'b0),                               // (terminated)
+		.reset_req_in10 (1'b0),                               // (terminated)
+		.reset_in11     (1'b0),                               // (terminated)
+		.reset_req_in11 (1'b0),                               // (terminated)
+		.reset_in12     (1'b0),                               // (terminated)
+		.reset_req_in12 (1'b0),                               // (terminated)
+		.reset_in13     (1'b0),                               // (terminated)
+		.reset_req_in13 (1'b0),                               // (terminated)
+		.reset_in14     (1'b0),                               // (terminated)
+		.reset_req_in14 (1'b0),                               // (terminated)
+		.reset_in15     (1'b0),                               // (terminated)
+		.reset_req_in15 (1'b0)                                // (terminated)
+	);
+
+	altera_reset_controller #(
+		.NUM_RESET_INPUTS          (3),
+		.OUTPUT_RESET_SYNC_EDGES   ("none"),
+		.SYNC_DEPTH                (2),
+		.RESET_REQUEST_PRESENT     (0),
+		.RESET_REQ_WAIT_TIME       (1),
+		.MIN_RST_ASSERTION_TIME    (3),
+		.RESET_REQ_EARLY_DSRT_TIME (1),
+		.USE_RESET_REQUEST_IN0     (0),
+		.USE_RESET_REQUEST_IN1     (0),
+		.USE_RESET_REQUEST_IN2     (0),
+		.USE_RESET_REQUEST_IN3     (0),
+		.USE_RESET_REQUEST_IN4     (0),
+		.USE_RESET_REQUEST_IN5     (0),
+		.USE_RESET_REQUEST_IN6     (0),
+		.USE_RESET_REQUEST_IN7     (0),
+		.USE_RESET_REQUEST_IN8     (0),
+		.USE_RESET_REQUEST_IN9     (0),
+		.USE_RESET_REQUEST_IN10    (0),
+		.USE_RESET_REQUEST_IN11    (0),
+		.USE_RESET_REQUEST_IN12    (0),
+		.USE_RESET_REQUEST_IN13    (0),
+		.USE_RESET_REQUEST_IN14    (0),
+		.USE_RESET_REQUEST_IN15    (0),
+		.ADAPT_RESET_REQUEST       (0)
+	) rst_controller_002 (
+		.reset_in0      (rst_controller_001_reset_out_reset), // reset_in0.reset
+		.reset_in1      (jtag_master_master_reset_reset),     // reset_in1.reset
+		.reset_in2      (vga_clock_reset_source_reset),       // reset_in2.reset
+		.clk            (),                                   //       clk.clk
+		.reset_out      (rst_controller_002_reset_out_reset), // reset_out.reset
+		.reset_req      (),                                   // (terminated)
+		.reset_req_in0  (1'b0),                               // (terminated)
+		.reset_req_in1  (1'b0),                               // (terminated)
+		.reset_req_in2  (1'b0),                               // (terminated)
+		.reset_in3      (1'b0),                               // (terminated)
+		.reset_req_in3  (1'b0),                               // (terminated)
+		.reset_in4      (1'b0),                               // (terminated)
+		.reset_req_in4  (1'b0),                               // (terminated)
+		.reset_in5      (1'b0),                               // (terminated)
+		.reset_req_in5  (1'b0),                               // (terminated)
+		.reset_in6      (1'b0),                               // (terminated)
+		.reset_req_in6  (1'b0),                               // (terminated)
+		.reset_in7      (1'b0),                               // (terminated)
+		.reset_req_in7  (1'b0),                               // (terminated)
+		.reset_in8      (1'b0),                               // (terminated)
+		.reset_req_in8  (1'b0),                               // (terminated)
+		.reset_in9      (1'b0),                               // (terminated)
+		.reset_req_in9  (1'b0),                               // (terminated)
+		.reset_in10     (1'b0),                               // (terminated)
+		.reset_req_in10 (1'b0),                               // (terminated)
+		.reset_in11     (1'b0),                               // (terminated)
+		.reset_req_in11 (1'b0),                               // (terminated)
+		.reset_in12     (1'b0),                               // (terminated)
+		.reset_req_in12 (1'b0),                               // (terminated)
+		.reset_in13     (1'b0),                               // (terminated)
+		.reset_req_in13 (1'b0),                               // (terminated)
+		.reset_in14     (1'b0),                               // (terminated)
+		.reset_req_in14 (1'b0),                               // (terminated)
+		.reset_in15     (1'b0),                               // (terminated)
+		.reset_req_in15 (1'b0)                                // (terminated)
+	);
+
+	altera_reset_controller #(
+		.NUM_RESET_INPUTS          (3),
+		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
+		.SYNC_DEPTH                (2),
+		.RESET_REQUEST_PRESENT     (0),
+		.RESET_REQ_WAIT_TIME       (1),
+		.MIN_RST_ASSERTION_TIME    (3),
+		.RESET_REQ_EARLY_DSRT_TIME (1),
+		.USE_RESET_REQUEST_IN0     (0),
+		.USE_RESET_REQUEST_IN1     (0),
+		.USE_RESET_REQUEST_IN2     (0),
+		.USE_RESET_REQUEST_IN3     (0),
+		.USE_RESET_REQUEST_IN4     (0),
+		.USE_RESET_REQUEST_IN5     (0),
+		.USE_RESET_REQUEST_IN6     (0),
+		.USE_RESET_REQUEST_IN7     (0),
+		.USE_RESET_REQUEST_IN8     (0),
+		.USE_RESET_REQUEST_IN9     (0),
+		.USE_RESET_REQUEST_IN10    (0),
+		.USE_RESET_REQUEST_IN11    (0),
+		.USE_RESET_REQUEST_IN12    (0),
+		.USE_RESET_REQUEST_IN13    (0),
+		.USE_RESET_REQUEST_IN14    (0),
+		.USE_RESET_REQUEST_IN15    (0),
+		.ADAPT_RESET_REQUEST       (0)
+	) rst_controller_003 (
+		.reset_in0      (rst_controller_001_reset_out_reset), // reset_in0.reset
+		.reset_in1      (jtag_master_master_reset_reset),     // reset_in1.reset
+		.reset_in2      (vga_clock_reset_source_reset),       // reset_in2.reset
+		.clk            (vga_clock_vga_clk_clk),              //       clk.clk
+		.reset_out      (rst_controller_003_reset_out_reset), // reset_out.reset
+		.reset_req      (),                                   // (terminated)
+		.reset_req_in0  (1'b0),                               // (terminated)
+		.reset_req_in1  (1'b0),                               // (terminated)
 		.reset_req_in2  (1'b0),                               // (terminated)
 		.reset_in3      (1'b0),                               // (terminated)
 		.reset_req_in3  (1'b0),                               // (terminated)

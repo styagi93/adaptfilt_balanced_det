@@ -2,6 +2,8 @@ Info: Starting: Create simulation model
 Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access\simulation --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading a2dv2/sram_access.qsys
 Progress: Reading input file
+Progress: Adding VGA_clock [altera_up_avalon_video_pll 15.1]
+Progress: Parameterizing module VGA_clock
 Progress: Adding bridge [altera_up_external_bus_to_avalon_bridge 15.1]
 Progress: Parameterizing module bridge
 Progress: Adding clock [clock_source 16.0]
@@ -10,19 +12,46 @@ Progress: Adding jtag_master [altera_jtag_avalon_master 16.0]
 Progress: Parameterizing module jtag_master
 Progress: Adding sram [altera_up_avalon_sram 15.1]
 Progress: Parameterizing module sram
+Progress: Adding video_dual_clock_buffer [altera_up_avalon_video_dual_clock_buffer 15.1]
+Progress: Parameterizing module video_dual_clock_buffer
+Progress: Adding video_pixel_buffer_dma [altera_up_avalon_video_pixel_buffer_dma 15.1]
+Progress: Parameterizing module video_pixel_buffer_dma
+Progress: Adding video_rgb_resampler [altera_up_avalon_video_rgb_resampler 15.1]
+Progress: Parameterizing module video_rgb_resampler
+Progress: Adding video_scaler [altera_up_avalon_video_scaler 15.1]
+Progress: Parameterizing module video_scaler
+Progress: Adding video_vga_controller [altera_up_avalon_video_vga_controller 15.1]
+Progress: Parameterizing module video_vga_controller
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: sram_access.video_rgb_resampler: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: sram_access.video_scaler: Change in Resolution: 256 x 256 -> 512 x 512
+Info: sram_access.video_vga_controller: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Warning: sram_access.video_pixel_buffer_dma: video_pixel_buffer_dma.avalon_control_slave must be connected to an Avalon-MM master
 Info: sram_access: Generating sram_access "sram_access" for SIM_VERILOG
+Info: VGA_clock: "sram_access" instantiated altera_up_avalon_video_pll "VGA_clock"
 Info: bridge: Starting Generation of External Bus to Avalon Bridge
 Info: bridge: "sram_access" instantiated altera_up_external_bus_to_avalon_bridge "bridge"
 Info: jtag_master: "sram_access" instantiated altera_jtag_avalon_master "jtag_master"
 Info: sram: Starting Generation of SRAM or SSRAM Controller
 Info: sram: "sram_access" instantiated altera_up_avalon_sram "sram"
+Info: video_dual_clock_buffer: Starting Generation of the Dual Clock Buffer
+Info: video_dual_clock_buffer: "sram_access" instantiated altera_up_avalon_video_dual_clock_buffer "video_dual_clock_buffer"
+Info: video_pixel_buffer_dma: Starting Generation of VGA Pixel Buffer
+Info: video_pixel_buffer_dma: "sram_access" instantiated altera_up_avalon_video_pixel_buffer_dma "video_pixel_buffer_dma"
+Info: video_rgb_resampler: Starting Generation of Video RGB Resampler
+Info: video_rgb_resampler: "sram_access" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler"
+Info: video_scaler: Starting Generation of Video Scaler
+Info: video_scaler: "sram_access" instantiated altera_up_avalon_video_scaler "video_scaler"
+Info: video_vga_controller: Starting Generation of VGA Controller
+Info: video_vga_controller: "sram_access" instantiated altera_up_avalon_video_vga_controller "video_vga_controller"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "sram_access" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: rst_controller: "sram_access" instantiated altera_reset_controller "rst_controller"
+Info: video_pll: "VGA_clock" instantiated altera_up_altpll "video_pll"
+Info: reset_from_locked: "VGA_clock" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
 Info: jtag_phy_embedded_in_jtag_master: "jtag_master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
 Info: timing_adt: "jtag_master" instantiated timing_adapter "timing_adt"
 Info: fifo: "jtag_master" instantiated altera_avalon_sc_fifo "fifo"
@@ -36,8 +65,8 @@ Info: sram_avalon_sram_slave_translator: "mm_interconnect_0" instantiated altera
 Info: bridge_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "bridge_avalon_master_agent"
 Info: sram_avalon_sram_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "sram_avalon_sram_slave_agent"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
 Info: sram_avalon_sram_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sram_avalon_sram_slave_burst_adapter"
 Info: Reusing file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/submodules/altera_avalon_st_pipeline_stage.sv
 Info: Reusing file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/submodules/altera_avalon_st_pipeline_base.v
@@ -51,7 +80,7 @@ Info: Reusing file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2
 Info: Reusing file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: sram_access: Done "sram_access" with 29 modules, 50 files
+Info: sram_access: Done "sram_access" with 37 modules, 62 files
 Info: qsys-generate succeeded.
 Info: Finished: Create simulation model
 Info: Starting: Create Modelsim Project.
@@ -68,7 +97,7 @@ Info: Generating the following file(s) for NCSIM simulator in C:/Users/saurabhg/
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	28 .cds.lib files in cadence/cds_libs/ directory
+Info: 	36 .cds.lib files in cadence/cds_libs/ directory
 Info: Generating the following file(s) for RIVIERA simulator in C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/ directory:
 Info: 	aldec/rivierapro_setup.tcl
 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/simulation/.
@@ -78,6 +107,8 @@ Info: Starting: Create HDL design files for synthesis
 Info: qsys-generate C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access.qsys --synthesis=VERILOG --output-directory=C:\Users\saurabhg\Desktop\fpga-spreadspectrum-adaptivefilt\a2dv2\sram_access\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading a2dv2/sram_access.qsys
 Progress: Reading input file
+Progress: Adding VGA_clock [altera_up_avalon_video_pll 15.1]
+Progress: Parameterizing module VGA_clock
 Progress: Adding bridge [altera_up_external_bus_to_avalon_bridge 15.1]
 Progress: Parameterizing module bridge
 Progress: Adding clock [clock_source 16.0]
@@ -86,19 +117,46 @@ Progress: Adding jtag_master [altera_jtag_avalon_master 16.0]
 Progress: Parameterizing module jtag_master
 Progress: Adding sram [altera_up_avalon_sram 15.1]
 Progress: Parameterizing module sram
+Progress: Adding video_dual_clock_buffer [altera_up_avalon_video_dual_clock_buffer 15.1]
+Progress: Parameterizing module video_dual_clock_buffer
+Progress: Adding video_pixel_buffer_dma [altera_up_avalon_video_pixel_buffer_dma 15.1]
+Progress: Parameterizing module video_pixel_buffer_dma
+Progress: Adding video_rgb_resampler [altera_up_avalon_video_rgb_resampler 15.1]
+Progress: Parameterizing module video_rgb_resampler
+Progress: Adding video_scaler [altera_up_avalon_video_scaler 15.1]
+Progress: Parameterizing module video_scaler
+Progress: Adding video_vga_controller [altera_up_avalon_video_vga_controller 15.1]
+Progress: Parameterizing module video_vga_controller
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: sram_access.video_rgb_resampler: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: sram_access.video_scaler: Change in Resolution: 256 x 256 -> 512 x 512
+Info: sram_access.video_vga_controller: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Warning: sram_access.video_pixel_buffer_dma: video_pixel_buffer_dma.avalon_control_slave must be connected to an Avalon-MM master
 Info: sram_access: Generating sram_access "sram_access" for QUARTUS_SYNTH
+Info: VGA_clock: "sram_access" instantiated altera_up_avalon_video_pll "VGA_clock"
 Info: bridge: Starting Generation of External Bus to Avalon Bridge
 Info: bridge: "sram_access" instantiated altera_up_external_bus_to_avalon_bridge "bridge"
 Info: jtag_master: "sram_access" instantiated altera_jtag_avalon_master "jtag_master"
 Info: sram: Starting Generation of SRAM or SSRAM Controller
 Info: sram: "sram_access" instantiated altera_up_avalon_sram "sram"
+Info: video_dual_clock_buffer: Starting Generation of the Dual Clock Buffer
+Info: video_dual_clock_buffer: "sram_access" instantiated altera_up_avalon_video_dual_clock_buffer "video_dual_clock_buffer"
+Info: video_pixel_buffer_dma: Starting Generation of VGA Pixel Buffer
+Info: video_pixel_buffer_dma: "sram_access" instantiated altera_up_avalon_video_pixel_buffer_dma "video_pixel_buffer_dma"
+Info: video_rgb_resampler: Starting Generation of Video RGB Resampler
+Info: video_rgb_resampler: "sram_access" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler"
+Info: video_scaler: Starting Generation of Video Scaler
+Info: video_scaler: "sram_access" instantiated altera_up_avalon_video_scaler "video_scaler"
+Info: video_vga_controller: Starting Generation of VGA Controller
+Info: video_vga_controller: "sram_access" instantiated altera_up_avalon_video_vga_controller "video_vga_controller"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "sram_access" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: rst_controller: "sram_access" instantiated altera_reset_controller "rst_controller"
+Info: video_pll: "VGA_clock" instantiated altera_up_altpll "video_pll"
+Info: reset_from_locked: "VGA_clock" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
 Info: jtag_phy_embedded_in_jtag_master: "jtag_master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
 Info: timing_adt: "jtag_master" instantiated timing_adapter "timing_adt"
 Info: fifo: "jtag_master" instantiated altera_avalon_sc_fifo "fifo"
@@ -112,8 +170,8 @@ Info: sram_avalon_sram_slave_translator: "mm_interconnect_0" instantiated altera
 Info: bridge_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "bridge_avalon_master_agent"
 Info: sram_avalon_sram_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "sram_avalon_sram_slave_agent"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
 Info: sram_avalon_sram_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sram_avalon_sram_slave_burst_adapter"
 Info: Reusing file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
 Info: Reusing file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/synthesis/submodules/altera_avalon_st_pipeline_base.v
@@ -127,6 +185,6 @@ Info: Reusing file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2
 Info: Reusing file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/sram_access/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: sram_access: Done "sram_access" with 29 modules, 50 files
+Info: sram_access: Done "sram_access" with 37 modules, 62 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

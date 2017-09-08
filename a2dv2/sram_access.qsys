@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element VGA_clock
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
    element bridge
    {
       datum _sortIndex
@@ -59,6 +67,38 @@
          type = "String";
       }
    }
+   element video_dual_clock_buffer
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element video_pixel_buffer_dma
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element video_rgb_resampler
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+   element video_vga_controller
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -91,6 +131,27 @@
    internal="sram.external_interface"
    type="conduit"
    dir="end" />
+ <interface
+   name="vga_conduit"
+   internal="video_vga_controller.external_interface"
+   type="conduit"
+   dir="end" />
+ <module
+   name="VGA_clock"
+   kind="altera_up_avalon_video_pll"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="camera" value="5MP Digital Camera" />
+  <parameter name="device_family" value="Cyclone IV E" />
+  <parameter name="gui_refclk" value="50.0" />
+  <parameter name="gui_resolution" value="VGA 640x480" />
+  <parameter name="lcd">7" LCD on VEEK-MT and MTL Module</parameter>
+  <parameter name="lcd_clk_en" value="false" />
+  <parameter name="vga_clk_en" value="true" />
+  <parameter name="video_in_clk_en" value="false" />
+ </module>
  <module
    name="bridge"
    kind="altera_up_external_bus_to_avalon_bridge"
@@ -128,10 +189,67 @@
   <parameter name="board" value="DE2-115" />
   <parameter name="pixel_buffer" value="true" />
  </module>
+ <module
+   name="video_dual_clock_buffer"
+   kind="altera_up_avalon_video_dual_clock_buffer"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_CLOCK_STREAM_IN_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_CLOCK_STREAM_OUT_CLOCK_RATE" value="25000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="color_bits" value="10" />
+  <parameter name="color_planes" value="3" />
+ </module>
+ <module
+   name="video_pixel_buffer_dma"
+   kind="altera_up_avalon_video_pixel_buffer_dma"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="addr_mode" value="X-Y" />
+  <parameter name="back_start_address" value="0" />
+  <parameter name="color_space" value="16-bit RGB" />
+  <parameter name="image_height" value="256" />
+  <parameter name="image_width" value="256" />
+  <parameter name="start_address" value="0" />
+ </module>
+ <module
+   name="video_rgb_resampler"
+   kind="altera_up_avalon_video_rgb_resampler"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="alpha" value="1023" />
+  <parameter name="input_type" value="16-bit RGB" />
+  <parameter name="output_type" value="30-bit RGB" />
+ </module>
+ <module
+   name="video_vga_controller"
+   kind="altera_up_avalon_video_vga_controller"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="25000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="board" value="DE2-115" />
+  <parameter name="device" value="VGA Connector" />
+  <parameter name="resolution" value="VGA 640x480" />
+  <parameter name="underflow_flag" value="false" />
+ </module>
  <connection
    kind="avalon"
    version="16.0"
    start="bridge.avalon_master"
+   end="sram.avalon_sram_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="16.0"
+   start="video_pixel_buffer_dma.avalon_pixel_dma_master"
    end="sram.avalon_sram_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
@@ -146,9 +264,50 @@
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="avalon_streaming"
+   version="16.0"
+   start="video_dual_clock_buffer.avalon_dc_buffer_source"
+   end="video_vga_controller.avalon_vga_sink" />
+ <connection
+   kind="avalon_streaming"
+   version="16.0"
+   start="video_pixel_buffer_dma.avalon_pixel_source"
+   end="video_rgb_resampler.avalon_rgb_sink" />
+ <connection
+   kind="avalon_streaming"
+   version="16.0"
+   start="video_rgb_resampler.avalon_rgb_source"
+   end="video_dual_clock_buffer.avalon_dc_buffer_sink" />
  <connection kind="clock" version="16.0" start="clock.clk" end="jtag_master.clk" />
  <connection kind="clock" version="16.0" start="clock.clk" end="sram.clk" />
  <connection kind="clock" version="16.0" start="clock.clk" end="bridge.clk" />
+ <connection
+   kind="clock"
+   version="16.0"
+   start="clock.clk"
+   end="video_pixel_buffer_dma.clk" />
+ <connection
+   kind="clock"
+   version="16.0"
+   start="clock.clk"
+   end="video_rgb_resampler.clk" />
+ <connection
+   kind="clock"
+   version="16.0"
+   start="clock.clk"
+   end="video_dual_clock_buffer.clock_stream_in" />
+ <connection kind="clock" version="16.0" start="clock.clk" end="VGA_clock.ref_clk" />
+ <connection
+   kind="clock"
+   version="16.0"
+   start="VGA_clock.vga_clk"
+   end="video_vga_controller.clk" />
+ <connection
+   kind="clock"
+   version="16.0"
+   start="VGA_clock.vga_clk"
+   end="video_dual_clock_buffer.clock_stream_out" />
  <connection
    kind="reset"
    version="16.0"
@@ -158,8 +317,38 @@
    kind="reset"
    version="16.0"
    start="clock.clk_reset"
+   end="VGA_clock.ref_reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="clock.clk_reset"
    end="bridge.reset" />
  <connection kind="reset" version="16.0" start="clock.clk_reset" end="sram.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="clock.clk_reset"
+   end="video_pixel_buffer_dma.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="clock.clk_reset"
+   end="video_rgb_resampler.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="clock.clk_reset"
+   end="video_vga_controller.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="clock.clk_reset"
+   end="video_dual_clock_buffer.reset_stream_in" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="clock.clk_reset"
+   end="video_dual_clock_buffer.reset_stream_out" />
  <connection
    kind="reset"
    version="16.0"
@@ -174,12 +363,92 @@
    kind="reset"
    version="16.0"
    start="jtag_master.master_reset"
+   end="VGA_clock.ref_reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="jtag_master.master_reset"
    end="bridge.reset" />
  <connection
    kind="reset"
    version="16.0"
    start="jtag_master.master_reset"
    end="sram.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="jtag_master.master_reset"
+   end="video_pixel_buffer_dma.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="jtag_master.master_reset"
+   end="video_rgb_resampler.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="jtag_master.master_reset"
+   end="video_vga_controller.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="jtag_master.master_reset"
+   end="video_dual_clock_buffer.reset_stream_in" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="jtag_master.master_reset"
+   end="video_dual_clock_buffer.reset_stream_out" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="clock.clk_in_reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="jtag_master.clk_reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="VGA_clock.ref_reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="bridge.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="sram.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="video_pixel_buffer_dma.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="video_rgb_resampler.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="video_vga_controller.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="video_dual_clock_buffer.reset_stream_in" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="video_dual_clock_buffer.reset_stream_out" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

@@ -70,6 +70,16 @@ module a2dv2(
 	SRAM_UB_N,
 	SRAM_WE_N,
 	
+	//////////// VGA //////////
+	VGA_B,
+	VGA_BLANK_N,
+	VGA_CLK,
+	VGA_G,
+	VGA_HS,
+	VGA_R,
+	VGA_SYNC_N,
+	VGA_VS,
+	
 		// Ethernet 0
 //  ENET0_MDC,
 //  ENET0_MDIO,
@@ -120,14 +130,13 @@ module a2dv2(
 //	NCO_OUT,
 // clk_1khz,
 //	ast_source_data,
-	ast_source_valid,
+//	ast_source_valid,
 //	ast_source_error,
 //	DFF_ast_source_data,
 //	CLOCK_20,
-	test_out_data,
+//	test_out_data,
 	adaptive_out_data,
-	error_adaptive_out,
-	emu
+	error_adaptive_out
 );
 
 //=======================================================
@@ -193,6 +202,16 @@ output		          		SRAM_WE_N;
 //////////// I2C for HSMC  //////////
 output		          		I2C_SCLK;
 inout 		          		I2C_SDAT;
+
+//////////// VGA //////////
+output		     [7:0]		VGA_B;
+output		          		VGA_BLANK_N;
+output		          		VGA_CLK;
+output		     [7:0]		VGA_G;
+output		          		VGA_HS;
+output		     [7:0]		VGA_R;
+output		          		VGA_SYNC_N;
+output		          		VGA_VS;
 
 //////////// Flash //////////
 output		    [22:0]		FL_ADDR;
@@ -293,7 +312,7 @@ reg  [13:0] FIFO_random_seq [0:75];
 wire [1:0]  ast_sink_error = 2'b00;
 //output reg[32:0] ast_source_data;
 //output reg [32:0] DFF_ast_source_data;
-output reg  ast_source_valid;
+//output reg  ast_source_valid;
 reg  l_ast_source_valid;
 //output reg  [1:0]  ast_source_error;
 reg [4:0]  coeff_in_address;
@@ -311,11 +330,10 @@ reg [15:0] coeff_in_data;
 //reg switch_prev = 0;
 reg [5:0] i = 6'd0;
 reg ast_sink_valid;
-output [31:0] test_out_data;
+//output [31:0] test_out_data;
 reg [11:0] desired_data;
 output [42:0] adaptive_out_data;
 output [32:0] error_adaptive_out;
-output [42:0] emu;
 reg			[13:0]			o_sine_p;
 wire [7:0] mu;
 wire [7:0] tap;
@@ -773,7 +791,6 @@ adaptive_fir adaptive_fir_inst(
 								.mu_in(mu),
 								.y_out(adaptive_out_data),
 								.e_out(error_adaptive_out),
-								.emu_out(emu),
 								.f_0(f_0),
 								.f_1(f_1),
 								.f_2(f_2),
@@ -1157,11 +1174,16 @@ sram_access sram_abc (
 							.sram_conduit_UB_N(SRAM_UB_N),                //                     .UB_N
 							.sram_conduit_CE_N(SRAM_CE_N),                //                     .CE_N
 							.sram_conduit_OE_N(SRAM_OE_N),                //                     .OE_N
-							.sram_conduit_WE_N(SRAM_WE_N)                 //                     .WE_N
+							.sram_conduit_WE_N(SRAM_WE_N),                 //                     .WE_N
+							.vga_conduit_CLK(VGA_CLK),                  //          vga_conduit.CLK
+							.vga_conduit_HS(VGA_HS),                   //                     .HS
+							.vga_conduit_VS(VGA_VS),                   //                     .VS
+							.vga_conduit_BLANK(VGA_BLANK_N),                //                     .BLANK
+							.vga_conduit_SYNC(VGA_SYNC_N),                 //                     .SYNC
+							.vga_conduit_R(VGA_R),                    //                     .R
+							.vga_conduit_G(VGA_G),                    //                     .G
+							.vga_conduit_B(VGA_B)   
 	);
-
-
-
 
 		
 always @ (negedge out_valid /*or negedge frame_reset*/) ///add negedge reset support

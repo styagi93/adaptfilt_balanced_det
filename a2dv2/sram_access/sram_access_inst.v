@@ -13,6 +13,14 @@
 		.sram_conduit_UB_N                (<connected-to-sram_conduit_UB_N>),                //                     .UB_N
 		.sram_conduit_CE_N                (<connected-to-sram_conduit_CE_N>),                //                     .CE_N
 		.sram_conduit_OE_N                (<connected-to-sram_conduit_OE_N>),                //                     .OE_N
-		.sram_conduit_WE_N                (<connected-to-sram_conduit_WE_N>)                 //                     .WE_N
+		.sram_conduit_WE_N                (<connected-to-sram_conduit_WE_N>),                //                     .WE_N
+		.vga_conduit_CLK                  (<connected-to-vga_conduit_CLK>),                  //          vga_conduit.CLK
+		.vga_conduit_HS                   (<connected-to-vga_conduit_HS>),                   //                     .HS
+		.vga_conduit_VS                   (<connected-to-vga_conduit_VS>),                   //                     .VS
+		.vga_conduit_BLANK                (<connected-to-vga_conduit_BLANK>),                //                     .BLANK
+		.vga_conduit_SYNC                 (<connected-to-vga_conduit_SYNC>),                 //                     .SYNC
+		.vga_conduit_R                    (<connected-to-vga_conduit_R>),                    //                     .R
+		.vga_conduit_G                    (<connected-to-vga_conduit_G>),                    //                     .G
+		.vga_conduit_B                    (<connected-to-vga_conduit_B>)                     //                     .B
 	);
 

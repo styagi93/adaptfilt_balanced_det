@@ -9,7 +9,6 @@ input signed [13:0] d_in,
 input [7:0] mu_in,
 output reg signed [42:0] y_out,
 output reg signed [32:0] e_out,
-output reg signed [42:0] emu_out,
 output reg signed [15:0] f_0,
 output reg signed [15:0] f_1,
 output reg signed [15:0] f_2,
@@ -205,7 +204,6 @@ f[15] <= f[15] + {xemu [15][42],xemu [15][26:12]};
 
 y_out <= y;
 e_out <= e;
-emu_out <= d;
 
 end
 

@@ -44,8 +44,8 @@
 //   ARBITRATION_SCHEME   "no-arb"
 //   PIPELINE_ARB:        0
 //   PKT_TRANS_LOCK:      54 (arbitration locking enabled)
-//   ST_DATA_W:           84
-//   ST_CHANNEL_W:        2
+//   ST_DATA_W:           86
+//   ST_CHANNEL_W:        3
 // ------------------------------------------
 
 module sram_access_mm_interconnect_0_rsp_mux
@@ -54,8 +54,8 @@ module sram_access_mm_interconnect_0_rsp_mux
     // Sinks
     // ----------------------
     input                       sink0_valid,
-    input [84-1   : 0]  sink0_data,
-    input [2-1: 0]  sink0_channel,
+    input [86-1   : 0]  sink0_data,
+    input [3-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
@@ -65,8 +65,8 @@ module sram_access_mm_interconnect_0_rsp_mux
     // Source
     // ----------------------
     output                      src_valid,
-    output [84-1    : 0] src_data,
-    output [2-1 : 0] src_channel,
+    output [86-1    : 0] src_data,
+    output [3-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
     input                       src_ready,
@@ -77,12 +77,12 @@ module sram_access_mm_interconnect_0_rsp_mux
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 84 + 2 + 2;
+    localparam PAYLOAD_W        = 86 + 3 + 2;
     localparam NUM_INPUTS       = 1;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 0;
-    localparam ST_DATA_W        = 84;
-    localparam ST_CHANNEL_W     = 2;
+    localparam ST_DATA_W        = 86;
+    localparam ST_CHANNEL_W     = 3;
     localparam PKT_TRANS_LOCK   = 54;
 
     assign	src_valid			=  sink0_valid;
