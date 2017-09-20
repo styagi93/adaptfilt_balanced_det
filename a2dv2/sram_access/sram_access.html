@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2017.09.08.03:38:16</td>
+    <td class="l">2017.09.10.02:59:51</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -161,7 +161,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clock">clock</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="36">VGA_clock</td>
+      <td class="main" rowspan="39">VGA_clock</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;ref_clk</td>
@@ -332,6 +332,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">reset_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_video_rgb_resampler">video_rgb_resampler</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">reset_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_clipper">video_clipper</a>
       </td>
      </tr>
      <tr>
@@ -535,7 +551,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_jtag_master">jtag_master</a>
       </td>
       <td class="from">master_reset&#160;&#160;</td>
-      <td class="main" rowspan="44">clock</td>
+      <td class="main" rowspan="49">clock</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk_in_reset</td>
@@ -662,6 +678,32 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">clk&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
        <a href="#module_video_rgb_resampler">video_rgb_resampler</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_video_clipper">video_clipper</a>
       </td>
      </tr>
      <tr>
@@ -813,7 +855,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clock">clock</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="34">jtag_master</td>
+      <td class="main" rowspan="37">jtag_master</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -948,6 +990,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">master_reset&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_video_vga_controller">video_vga_controller</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">master_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_clipper">video_clipper</a>
       </td>
      </tr>
      <tr>
@@ -1133,7 +1191,179 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">pixel_buffer</td>
-        <td class="parametervalue">true</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">CYCLONEIVE</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLK_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone IV E</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_video_clipper"> </a>
+  <div>
+   <hr/>
+   <h2>video_clipper</h2>altera_up_avalon_video_clipper v15.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_rgb_resampler">video_rgb_resampler</a>
+      </td>
+      <td class="from">avalon_rgb_source&#160;&#160;</td>
+      <td class="main" rowspan="15">video_clipper</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_clipper_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clock">clock</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_jtag_master">jtag_master</a>
+      </td>
+      <td class="from">master_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_clock">VGA_clock</a>
+      </td>
+      <td class="from">reset_source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_clipper_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_video_dual_clock_buffer">video_dual_clock_buffer</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_dc_buffer_sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">width_in</td>
+        <td class="parametervalue">256</td>
+       </tr>
+       <tr>
+        <td class="parametername">height_in</td>
+        <td class="parametervalue">256</td>
+       </tr>
+       <tr>
+        <td class="parametername">drop_left</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">drop_right</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">drop_top</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">drop_bottom</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">add_left</td>
+        <td class="parametervalue">192</td>
+       </tr>
+       <tr>
+        <td class="parametername">add_right</td>
+        <td class="parametervalue">192</td>
+       </tr>
+       <tr>
+        <td class="parametername">add_top</td>
+        <td class="parametervalue">112</td>
+       </tr>
+       <tr>
+        <td class="parametername">add_bottom</td>
+        <td class="parametervalue">112</td>
+       </tr>
+       <tr>
+        <td class="parametername">add_value_plane_1</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">add_value_plane_2</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">add_value_plane_3</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">add_value_plane_4</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">color_bits</td>
+        <td class="parametervalue">10</td>
+       </tr>
+       <tr>
+        <td class="parametername">color_planes</td>
+        <td class="parametervalue">3</td>
        </tr>
        <tr>
         <td class="parametername">AUTO_DEVICE_FAMILY</td>
@@ -1171,9 +1401,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_video_rgb_resampler">video_rgb_resampler</a>
+       <a href="#module_video_clipper">video_clipper</a>
       </td>
-      <td class="from">avalon_rgb_source&#160;&#160;</td>
+      <td class="from">avalon_clipper_source&#160;&#160;</td>
       <td class="main" rowspan="23">video_dual_clock_buffer</td>
      </tr>
      <tr>
@@ -1393,7 +1623,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <table>
        <tr>
         <td class="parametername">addr_mode</td>
-        <td class="parametervalue">X-Y</td>
+        <td class="parametervalue">Consecutive</td>
        </tr>
        <tr>
         <td class="parametername">start_address</td>
@@ -1445,7 +1675,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <a name="module_video_rgb_resampler"> </a>
   <div>
    <hr/>
-   <h2>video_rgb_resampler</h2>altera_up_avalon_video_rgb_resampler v15.1
+   <h2>video_rgb_resampler</h2>altera_up_avalon_video_rgb_resampler v16.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
@@ -1506,13 +1736,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">avalon_rgb_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_video_dual_clock_buffer">video_dual_clock_buffer</a>
+       <a href="#module_video_clipper">video_clipper</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;avalon_dc_buffer_sink</td>
+      <td class="to">&#160;&#160;avalon_clipper_sink</td>
      </tr>
     </table>
    </div>
@@ -1692,7 +1922,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.00 seconds</td>
-    <td class="r">rendering took 0.01 seconds</td>
+    <td class="r">rendering took 0.03 seconds</td>
    </tr>
   </table>
  </body>

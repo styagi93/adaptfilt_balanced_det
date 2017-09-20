@@ -2,7 +2,7 @@ set_global_assignment -entity "sram_access" -library "sram_access" -name IP_TOOL
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_TOOL_VERSION "16.0"
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "sram_access" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../sram_access.sopcinfo"]
-set_global_assignment -entity "sram_access" -library "sram_access" -name SLD_INFO "QSYS_NAME sram_access HAS_SOPCINFO 1 GENERATION_ID 1504863496"
+set_global_assignment -entity "sram_access" -library "sram_access" -name SLD_INFO "QSYS_NAME sram_access HAS_SOPCINFO 1 GENERATION_ID 1505033991"
 set_global_assignment -library "sram_access" -name MISC_FILE [file join $::quartus(qip_path) "../sram_access.cmp"]
 set_global_assignment -library "sram_access" -name SLD_FILE [file join $::quartus(qip_path) "sram_access.debuginfo"]
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_TARGETED_DEVICE_FAMILY "Cyclone IV E"
@@ -15,7 +15,7 @@ set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMP
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUwNDg2MzQ5Ng==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUwNTAzMzk5MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0Q0UxMTVGMjlDNw==::QXV0byBERVZJQ0U="
 set_global_assignment -entity "sram_access" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -630,7 +630,7 @@ set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_a
 set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_access" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
 set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_access" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_access" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIFVuaXZlcnNpdHkgUHJvZ3JhbQ=="
-set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_access" -name IP_COMPONENT_VERSION "MTUuMQ=="
+set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_access" -name IP_COMPONENT_VERSION "MTYuMA=="
 set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_access" -name IP_COMPONENT_DESCRIPTION "UkdCIFJlc2FtcGxlciBmb3IgREUtc2VyaWVzIEJvYXJkcw=="
 set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_access" -name IP_COMPONENT_PARAMETER "aW5wdXRfdHlwZQ==::MTYtYml0IFJHQg==::SW5jb21pbmcgRm9ybWF0"
 set_global_assignment -entity "sram_access_video_rgb_resampler" -library "sram_access" -name IP_COMPONENT_PARAMETER "b3V0cHV0X3R5cGU=::MzAtYml0IFJHQg==::T3V0Z29pbmcgRm9ybWF0"
@@ -643,7 +643,7 @@ set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sra
 set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sram_access" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIFVuaXZlcnNpdHkgUHJvZ3JhbQ=="
 set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sram_access" -name IP_COMPONENT_VERSION "MTUuMQ=="
 set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sram_access" -name IP_COMPONENT_DESCRIPTION "QSBETUEgQ29udHJvbGxlciBmb3IgYSBQaXhlbCBCdWZmZXIgZm9yIHRoZSBERS1zZXJpZXMgQm9hcmRz"
-set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkcl9tb2Rl::WC1Z::QWRkcmVzc2luZyBNb2Rl"
+set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkcl9tb2Rl::Q29uc2VjdXRpdmU=::QWRkcmVzc2luZyBNb2Rl"
 set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sram_access" -name IP_COMPONENT_PARAMETER "c3RhcnRfYWRkcmVzcw==::MA==::RGVmYXVsdCBCdWZmZXIgU3RhcnQgQWRkcmVzcw=="
 set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sram_access" -name IP_COMPONENT_PARAMETER "YmFja19zdGFydF9hZGRyZXNz::MA==::RGVmYXVsdCBCYWNrIEJ1ZmZlciBTdGFydCBBZGRyZXNz"
 set_global_assignment -entity "sram_access_video_pixel_buffer_dma" -library "sram_access" -name IP_COMPONENT_PARAMETER "aW1hZ2Vfd2lkdGg=::MjU2::V2lkdGggKCMgb2YgcGl4ZWxzKQ=="
@@ -663,6 +663,30 @@ set_global_assignment -entity "sram_access_video_dual_clock_buffer" -library "sr
 set_global_assignment -entity "sram_access_video_dual_clock_buffer" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "sram_access_video_dual_clock_buffer" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19TVFJFQU1fSU5fQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF"
 set_global_assignment -entity "sram_access_video_dual_clock_buffer" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19TVFJFQU1fT1VUX0NMT0NLX1JBVEU=::MjUwMDAwMDA=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_NAME "c3JhbV9hY2Nlc3NfdmlkZW9fY2xpcHBlcg=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_DISPLAY_NAME "Q2xpcHBlcg=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIFVuaXZlcnNpdHkgUHJvZ3JhbQ=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_VERSION "MTUuMQ=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_DESCRIPTION "VmlkZW8gQ2xpcHBlciBmb3IgREUtU2VyaWVzIEJvYXJkcw=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "d2lkdGhfaW4=::MjU2::V2lkdGggKCMgb2YgcGl4ZWxzKQ=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "aGVpZ2h0X2lu::MjU2::SGVpZ2h0ICgjIG9mIGxpbmVzKQ=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "ZHJvcF9sZWZ0::MA==::Q29sdW1ucyB0byByZW1vdmUgZnJvbSB0aGUgbGVmdCBzaWRl"
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "ZHJvcF9yaWdodA==::MA==::Q29sdW1ucyB0byByZW1vdmUgZnJvbSB0aGUgcmlnaHQgc2lkZQ=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "ZHJvcF90b3A=::MA==::Um93cyB0byByZW1vdmUgZnJvbSB0aGUgdG9w"
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "ZHJvcF9ib3R0b20=::MA==::Um93cyB0byByZW1vdmUgZnJvbSB0aGUgYm90dG9t"
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkX2xlZnQ=::MTky::Q29sdW1ucyB0byBhZGQgdG8gdGhlIGxlZnQgc2lkZQ=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkX3JpZ2h0::MTky::Q29sdW1ucyB0byBhZGQgdG8gdGhlIHJpZ2h0IHNpZGU="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkX3RvcA==::MTEy::Um93cyB0byBhZGQgdG8gdGhlIHRvcA=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkX2JvdHRvbQ==::MTEy::Um93cyB0byBhZGQgdG8gdGhlIGJvdHRvbQ=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkX3ZhbHVlX3BsYW5lXzE=::MA==::QWRkZWQgcGl4ZWwgdmFsdWUgZm9yIHBsYW5lIDE="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkX3ZhbHVlX3BsYW5lXzI=::MA==::QWRkZWQgcGl4ZWwgdmFsdWUgZm9yIHBsYW5lIDI="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "YWRkX3ZhbHVlX3BsYW5lXzM=::MA==::QWRkZWQgcGl4ZWwgdmFsdWUgZm9yIHBsYW5lIDM="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "Y29sb3JfYml0cw==::MTA=::Q29sb3IgQml0cw=="
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "Y29sb3JfcGxhbmVz::Mw==::Q29sb3IgUGxhbmVz"
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "sram_access_video_clipper" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF"
 set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_NAME "c3JhbV9hY2Nlc3Nfc3JhbQ=="
 set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_DISPLAY_NAME "U1JBTS9TU1JBTSBDb250cm9sbGVy"
 set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
@@ -671,7 +695,7 @@ set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP
 set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_VERSION "MTUuMQ=="
 set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_DESCRIPTION "U1JBTS9TU1JBTSBDb250cm9sbGVyIGZvciBERS1zZXJpZXMgQm9hcmRz"
 set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_PARAMETER "Ym9hcmQ=::REUyLTExNQ==::REUtU2VyaWVzIEJvYXJk"
-set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_PARAMETER "cGl4ZWxfYnVmZmVy::dHJ1ZQ==::VXNlIGFzIGEgcGl4ZWwgYnVmZmVyIGZvciB2aWRlbyBvdXQ="
+set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_PARAMETER "cGl4ZWxfYnVmZmVy::ZmFsc2U=::VXNlIGFzIGEgcGl4ZWwgYnVmZmVyIGZvciB2aWRlbyBvdXQ="
 set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "sram_access_sram" -library "sram_access" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF"
 set_global_assignment -entity "sram_access_jtag_master" -library "sram_access" -name IP_COMPONENT_NAME "c3JhbV9hY2Nlc3NfanRhZ19tYXN0ZXI="
@@ -875,6 +899,10 @@ set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::qu
 set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sram_access_video_rgb_resampler.v"]
 set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sram_access_video_pixel_buffer_dma.v"]
 set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sram_access_video_dual_clock_buffer.v"]
+set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_video_clipper_add.v"]
+set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_video_clipper_drop.v"]
+set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_video_clipper_counters.v"]
+set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sram_access_video_clipper.v"]
 set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sram_access_sram.v"]
 set_global_assignment -library "sram_access" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sram_access_jtag_master.v"]
 set_global_assignment -library "sram_access" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sram_access_jtag_master_p2b_adapter.sv"]

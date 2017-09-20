@@ -17,7 +17,6 @@ create_clock -period 50 [get_ports FPGA_CLK_A_N]
 
 create_clock -period 100 [get_ports GPIO[8]]
 
-
 #**************************************************************
 # Create Generated Clock
 #**************************************************************

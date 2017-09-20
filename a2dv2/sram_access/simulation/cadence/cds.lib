@@ -40,6 +40,7 @@ DEFINE video_vga_controller                 ./libraries/video_vga_controller/
 DEFINE video_rgb_resampler                  ./libraries/video_rgb_resampler/                 
 DEFINE video_pixel_buffer_dma               ./libraries/video_pixel_buffer_dma/              
 DEFINE video_dual_clock_buffer              ./libraries/video_dual_clock_buffer/             
+DEFINE video_clipper                        ./libraries/video_clipper/                       
 DEFINE sram                                 ./libraries/sram/                                
 DEFINE jtag_master                          ./libraries/jtag_master/                         
 DEFINE bridge                               ./libraries/bridge/                              

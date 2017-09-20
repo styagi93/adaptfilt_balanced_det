@@ -233,6 +233,22 @@
    type="VERILOG"
    library="video_dual_clock_buffer" />
  <file
+   path="simulation/submodules/altera_up_video_clipper_add.v"
+   type="VERILOG"
+   library="video_clipper" />
+ <file
+   path="simulation/submodules/altera_up_video_clipper_drop.v"
+   type="VERILOG"
+   library="video_clipper" />
+ <file
+   path="simulation/submodules/altera_up_video_clipper_counters.v"
+   type="VERILOG"
+   library="video_clipper" />
+ <file
+   path="simulation/submodules/sram_access_video_clipper.v"
+   type="VERILOG"
+   library="video_clipper" />
+ <file
    path="simulation/submodules/sram_access_sram.v"
    type="VERILOG"
    library="sram" />

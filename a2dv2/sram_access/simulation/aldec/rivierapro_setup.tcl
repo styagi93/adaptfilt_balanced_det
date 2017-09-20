@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 16.0 211 win32 2017.09.08.03:38:15
+# ACDS 16.0 211 win32 2017.09.10.02:59:50
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------
@@ -226,6 +226,8 @@ ensure_lib                                      ./libraries/video_pixel_buffer_d
 vmap       video_pixel_buffer_dma               ./libraries/video_pixel_buffer_dma              
 ensure_lib                                      ./libraries/video_dual_clock_buffer             
 vmap       video_dual_clock_buffer              ./libraries/video_dual_clock_buffer             
+ensure_lib                                      ./libraries/video_clipper                       
+vmap       video_clipper                        ./libraries/video_clipper                       
 ensure_lib                                      ./libraries/sram                                
 vmap       sram                                 ./libraries/sram                                
 ensure_lib                                      ./libraries/jtag_master                         
@@ -307,6 +309,10 @@ alias com {
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_video_rgb_resampler.v"                                  -work video_rgb_resampler                 
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_video_pixel_buffer_dma.v"                               -work video_pixel_buffer_dma              
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_video_dual_clock_buffer.v"                              -work video_dual_clock_buffer             
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_up_video_clipper_add.v"                                      -work video_clipper                       
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_up_video_clipper_drop.v"                                     -work video_clipper                       
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_up_video_clipper_counters.v"                                 -work video_clipper                       
+  eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_video_clipper.v"                                        -work video_clipper                       
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_sram.v"                                                 -work sram                                
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_jtag_master.v"                                          -work jtag_master                         
   eval  vlog -v2k5 $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/sram_access_bridge.v"                                               -work bridge                              
@@ -318,14 +324,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L jtag_master_master_rsp_width_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L sram_avalon_sram_slave_burst_adapter -L router_003 -L router_002 -L router -L sram_avalon_sram_slave_agent -L bridge_avalon_master_agent -L sram_avalon_sram_slave_translator -L bridge_avalon_master_translator -L p2b_adapter -L b2p_adapter -L transacto -L p2b -L b2p -L fifo -L timing_adt -L jtag_phy_embedded_in_jtag_master -L reset_from_locked -L video_pll -L rst_controller -L mm_interconnect_0 -L video_vga_controller -L video_rgb_resampler -L video_pixel_buffer_dma -L video_dual_clock_buffer -L sram -L jtag_master -L bridge -L VGA_clock -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L jtag_master_master_rsp_width_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L sram_avalon_sram_slave_burst_adapter -L router_003 -L router_002 -L router -L sram_avalon_sram_slave_agent -L bridge_avalon_master_agent -L sram_avalon_sram_slave_translator -L bridge_avalon_master_translator -L p2b_adapter -L b2p_adapter -L transacto -L p2b -L b2p -L fifo -L timing_adt -L jtag_phy_embedded_in_jtag_master -L reset_from_locked -L video_pll -L rst_controller -L mm_interconnect_0 -L video_vga_controller -L video_rgb_resampler -L video_pixel_buffer_dma -L video_dual_clock_buffer -L video_clipper -L sram -L jtag_master -L bridge -L VGA_clock -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with -dbg -O2 option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -dbg -O2 +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L jtag_master_master_rsp_width_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L sram_avalon_sram_slave_burst_adapter -L router_003 -L router_002 -L router -L sram_avalon_sram_slave_agent -L bridge_avalon_master_agent -L sram_avalon_sram_slave_translator -L bridge_avalon_master_translator -L p2b_adapter -L b2p_adapter -L transacto -L p2b -L b2p -L fifo -L timing_adt -L jtag_phy_embedded_in_jtag_master -L reset_from_locked -L video_pll -L rst_controller -L mm_interconnect_0 -L video_vga_controller -L video_rgb_resampler -L video_pixel_buffer_dma -L video_dual_clock_buffer -L sram -L jtag_master -L bridge -L VGA_clock -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
+  eval vsim -dbg -O2 +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L jtag_master_master_rsp_width_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L sram_avalon_sram_slave_burst_adapter -L router_003 -L router_002 -L router -L sram_avalon_sram_slave_agent -L bridge_avalon_master_agent -L sram_avalon_sram_slave_translator -L bridge_avalon_master_translator -L p2b_adapter -L b2p_adapter -L transacto -L p2b -L b2p -L fifo -L timing_adt -L jtag_phy_embedded_in_jtag_master -L reset_from_locked -L video_pll -L rst_controller -L mm_interconnect_0 -L video_vga_controller -L video_rgb_resampler -L video_pixel_buffer_dma -L video_dual_clock_buffer -L video_clipper -L sram -L jtag_master -L bridge -L VGA_clock -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

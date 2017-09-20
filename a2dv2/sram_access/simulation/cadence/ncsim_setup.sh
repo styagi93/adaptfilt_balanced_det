@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 16.0 211 win32 2017.09.08.03:38:15
+# ACDS 16.0 211 win32 2017.09.10.02:59:50
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -101,7 +101,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 16.0 211 win32 2017.09.08.03:38:15
+# ACDS 16.0 211 win32 2017.09.10.02:59:50
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="sram_access"
@@ -172,6 +172,7 @@ mkdir -p ./libraries/video_vga_controller/
 mkdir -p ./libraries/video_rgb_resampler/
 mkdir -p ./libraries/video_pixel_buffer_dma/
 mkdir -p ./libraries/video_dual_clock_buffer/
+mkdir -p ./libraries/video_clipper/
 mkdir -p ./libraries/sram/
 mkdir -p ./libraries/jtag_master/
 mkdir -p ./libraries/bridge/
@@ -256,6 +257,10 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/sram_access_video_rgb_resampler.v"                                  -work video_rgb_resampler                  -cdslib ./cds_libs/video_rgb_resampler.cds.lib                 
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/sram_access_video_pixel_buffer_dma.v"                               -work video_pixel_buffer_dma               -cdslib ./cds_libs/video_pixel_buffer_dma.cds.lib              
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/sram_access_video_dual_clock_buffer.v"                              -work video_dual_clock_buffer              -cdslib ./cds_libs/video_dual_clock_buffer.cds.lib             
+  ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_video_clipper_add.v"                                      -work video_clipper                        -cdslib ./cds_libs/video_clipper.cds.lib                       
+  ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_video_clipper_drop.v"                                     -work video_clipper                        -cdslib ./cds_libs/video_clipper.cds.lib                       
+  ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_up_video_clipper_counters.v"                                 -work video_clipper                        -cdslib ./cds_libs/video_clipper.cds.lib                       
+  ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/sram_access_video_clipper.v"                                        -work video_clipper                        -cdslib ./cds_libs/video_clipper.cds.lib                       
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/sram_access_sram.v"                                                 -work sram                                 -cdslib ./cds_libs/sram.cds.lib                                
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/sram_access_jtag_master.v"                                          -work jtag_master                          -cdslib ./cds_libs/jtag_master.cds.lib                         
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/sram_access_bridge.v"                                               -work bridge                               -cdslib ./cds_libs/bridge.cds.lib                              

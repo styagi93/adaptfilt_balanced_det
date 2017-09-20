@@ -33,6 +33,7 @@ video_vga_controller:                 ./libraries/video_vga_controller/
 video_rgb_resampler:                  ./libraries/video_rgb_resampler/                 
 video_pixel_buffer_dma:               ./libraries/video_pixel_buffer_dma/              
 video_dual_clock_buffer:              ./libraries/video_dual_clock_buffer/             
+video_clipper:                        ./libraries/video_clipper/                       
 sram:                                 ./libraries/sram/                                
 jtag_master:                          ./libraries/jtag_master/                         
 bridge:                               ./libraries/bridge/                              

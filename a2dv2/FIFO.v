@@ -79,7 +79,6 @@ module FIFO (
 				.wrempty (),
 				.wrusedw ());
 	defparam
-		dcfifo_mixed_widths_component.clocks_are_synchronized = "FALSE",
 		dcfifo_mixed_widths_component.intended_device_family = "Cyclone IV E",
 		dcfifo_mixed_widths_component.lpm_numwords = 128,
 		dcfifo_mixed_widths_component.lpm_showahead = "ON",
@@ -89,10 +88,10 @@ module FIFO (
 		dcfifo_mixed_widths_component.lpm_widthu_r = 9,
 		dcfifo_mixed_widths_component.lpm_width_r = 12,
 		dcfifo_mixed_widths_component.overflow_checking = "ON",
-		dcfifo_mixed_widths_component.rdsync_delaypipe = 3,
+		dcfifo_mixed_widths_component.rdsync_delaypipe = 5,
 		dcfifo_mixed_widths_component.underflow_checking = "ON",
-		dcfifo_mixed_widths_component.use_eab = "OFF",
-		dcfifo_mixed_widths_component.wrsync_delaypipe = 3;
+		dcfifo_mixed_widths_component.use_eab = "ON",
+		dcfifo_mixed_widths_component.wrsync_delaypipe = 5;
 
 
 endmodule
@@ -110,7 +109,7 @@ endmodule
 // Retrieval info: PRIVATE: Empty NUMERIC "1"
 // Retrieval info: PRIVATE: Full NUMERIC "1"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
-// Retrieval info: PRIVATE: LE_BasedFIFO NUMERIC "1"
+// Retrieval info: PRIVATE: LE_BasedFIFO NUMERIC "0"
 // Retrieval info: PRIVATE: LegacyRREQ NUMERIC "0"
 // Retrieval info: PRIVATE: MAX_DEPTH_BY_9 NUMERIC "0"
 // Retrieval info: PRIVATE: OVERFLOW_CHECKING NUMERIC "0"
@@ -133,7 +132,6 @@ endmodule
 // Retrieval info: PRIVATE: wsFull NUMERIC "1"
 // Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
-// Retrieval info: CONSTANT: CLOCKS_ARE_SYNCHRONIZED STRING "FALSE"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "128"
 // Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "ON"
@@ -143,10 +141,10 @@ endmodule
 // Retrieval info: CONSTANT: LPM_WIDTHU_R NUMERIC "9"
 // Retrieval info: CONSTANT: LPM_WIDTH_R NUMERIC "12"
 // Retrieval info: CONSTANT: OVERFLOW_CHECKING STRING "ON"
-// Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "3"
+// Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "5"
 // Retrieval info: CONSTANT: UNDERFLOW_CHECKING STRING "ON"
-// Retrieval info: CONSTANT: USE_EAB STRING "OFF"
-// Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "3"
+// Retrieval info: CONSTANT: USE_EAB STRING "ON"
+// Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "5"
 // Retrieval info: USED_PORT: data 0 0 48 0 INPUT NODEFVAL "data[47..0]"
 // Retrieval info: USED_PORT: q 0 0 12 0 OUTPUT NODEFVAL "q[11..0]"
 // Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL "rdclk"

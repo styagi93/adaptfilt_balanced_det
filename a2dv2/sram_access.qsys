@@ -67,11 +67,19 @@
          type = "String";
       }
    }
-   element video_dual_clock_buffer
+   element video_clipper
    {
       datum _sortIndex
       {
          value = "7";
+         type = "int";
+      }
+   }
+   element video_dual_clock_buffer
+   {
+      datum _sortIndex
+      {
+         value = "8";
          type = "int";
       }
    }
@@ -95,7 +103,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "9";
          type = "int";
       }
    }
@@ -187,7 +195,31 @@
   <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="board" value="DE2-115" />
-  <parameter name="pixel_buffer" value="true" />
+  <parameter name="pixel_buffer" value="false" />
+ </module>
+ <module
+   name="video_clipper"
+   kind="altera_up_avalon_video_clipper"
+   version="15.1"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="add_bottom" value="112" />
+  <parameter name="add_left" value="192" />
+  <parameter name="add_right" value="192" />
+  <parameter name="add_top" value="112" />
+  <parameter name="add_value_plane_1" value="0" />
+  <parameter name="add_value_plane_2" value="0" />
+  <parameter name="add_value_plane_3" value="0" />
+  <parameter name="add_value_plane_4" value="0" />
+  <parameter name="color_bits" value="10" />
+  <parameter name="color_planes" value="3" />
+  <parameter name="drop_bottom" value="0" />
+  <parameter name="drop_left" value="0" />
+  <parameter name="drop_right" value="0" />
+  <parameter name="drop_top" value="0" />
+  <parameter name="height_in" value="256" />
+  <parameter name="width_in" value="256" />
  </module>
  <module
    name="video_dual_clock_buffer"
@@ -207,7 +239,7 @@
    enabled="1">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
-  <parameter name="addr_mode" value="X-Y" />
+  <parameter name="addr_mode" value="Consecutive" />
   <parameter name="back_start_address" value="0" />
   <parameter name="color_space" value="16-bit RGB" />
   <parameter name="image_height" value="256" />
@@ -217,7 +249,7 @@
  <module
    name="video_rgb_resampler"
    kind="altera_up_avalon_video_rgb_resampler"
-   version="15.1"
+   version="16.0"
    enabled="1">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
@@ -267,6 +299,11 @@
  <connection
    kind="avalon_streaming"
    version="16.0"
+   start="video_clipper.avalon_clipper_source"
+   end="video_dual_clock_buffer.avalon_dc_buffer_sink" />
+ <connection
+   kind="avalon_streaming"
+   version="16.0"
    start="video_dual_clock_buffer.avalon_dc_buffer_source"
    end="video_vga_controller.avalon_vga_sink" />
  <connection
@@ -278,7 +315,7 @@
    kind="avalon_streaming"
    version="16.0"
    start="video_rgb_resampler.avalon_rgb_source"
-   end="video_dual_clock_buffer.avalon_dc_buffer_sink" />
+   end="video_clipper.avalon_clipper_sink" />
  <connection kind="clock" version="16.0" start="clock.clk" end="jtag_master.clk" />
  <connection kind="clock" version="16.0" start="clock.clk" end="sram.clk" />
  <connection kind="clock" version="16.0" start="clock.clk" end="bridge.clk" />
@@ -292,6 +329,7 @@
    version="16.0"
    start="clock.clk"
    end="video_rgb_resampler.clk" />
+ <connection kind="clock" version="16.0" start="clock.clk" end="video_clipper.clk" />
  <connection
    kind="clock"
    version="16.0"
@@ -343,6 +381,11 @@
    kind="reset"
    version="16.0"
    start="clock.clk_reset"
+   end="video_clipper.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="clock.clk_reset"
    end="video_dual_clock_buffer.reset_stream_in" />
  <connection
    kind="reset"
@@ -393,6 +436,11 @@
    kind="reset"
    version="16.0"
    start="jtag_master.master_reset"
+   end="video_clipper.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="jtag_master.master_reset"
    end="video_dual_clock_buffer.reset_stream_in" />
  <connection
    kind="reset"
@@ -439,6 +487,11 @@
    version="16.0"
    start="VGA_clock.reset_source"
    end="video_vga_controller.reset" />
+ <connection
+   kind="reset"
+   version="16.0"
+   start="VGA_clock.reset_source"
+   end="video_clipper.reset" />
  <connection
    kind="reset"
    version="16.0"

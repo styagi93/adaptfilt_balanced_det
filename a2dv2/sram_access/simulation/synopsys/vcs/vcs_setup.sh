@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 16.0 211 win32 2017.09.08.03:38:15
+# ACDS 16.0 211 win32 2017.09.10.02:59:50
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 16.0 211 win32 2017.09.08.03:38:15
+# ACDS 16.0 211 win32 2017.09.10.02:59:50
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="sram_access"
@@ -189,6 +189,10 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/sram_access_video_rgb_resampler.v \
   $QSYS_SIMDIR/submodules/sram_access_video_pixel_buffer_dma.v \
   $QSYS_SIMDIR/submodules/sram_access_video_dual_clock_buffer.v \
+  $QSYS_SIMDIR/submodules/altera_up_video_clipper_add.v \
+  $QSYS_SIMDIR/submodules/altera_up_video_clipper_drop.v \
+  $QSYS_SIMDIR/submodules/altera_up_video_clipper_counters.v \
+  $QSYS_SIMDIR/submodules/sram_access_video_clipper.v \
   $QSYS_SIMDIR/submodules/sram_access_sram.v \
   $QSYS_SIMDIR/submodules/sram_access_jtag_master.v \
   $QSYS_SIMDIR/submodules/sram_access_bridge.v \

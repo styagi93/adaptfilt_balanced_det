@@ -29,6 +29,11 @@ module sram_access (
 		output wire [7:0]  vga_conduit_B                     //                     .B
 	);
 
+	wire         video_clipper_avalon_clipper_source_valid;                     // video_clipper:stream_out_valid -> video_dual_clock_buffer:stream_in_valid
+	wire  [29:0] video_clipper_avalon_clipper_source_data;                      // video_clipper:stream_out_data -> video_dual_clock_buffer:stream_in_data
+	wire         video_clipper_avalon_clipper_source_ready;                     // video_dual_clock_buffer:stream_in_ready -> video_clipper:stream_out_ready
+	wire         video_clipper_avalon_clipper_source_startofpacket;             // video_clipper:stream_out_startofpacket -> video_dual_clock_buffer:stream_in_startofpacket
+	wire         video_clipper_avalon_clipper_source_endofpacket;               // video_clipper:stream_out_endofpacket -> video_dual_clock_buffer:stream_in_endofpacket
 	wire         video_dual_clock_buffer_avalon_dc_buffer_source_valid;         // video_dual_clock_buffer:stream_out_valid -> video_vga_controller:valid
 	wire  [29:0] video_dual_clock_buffer_avalon_dc_buffer_source_data;          // video_dual_clock_buffer:stream_out_data -> video_vga_controller:data
 	wire         video_dual_clock_buffer_avalon_dc_buffer_source_ready;         // video_vga_controller:ready -> video_dual_clock_buffer:stream_out_ready
@@ -39,11 +44,11 @@ module sram_access (
 	wire         video_pixel_buffer_dma_avalon_pixel_source_ready;              // video_rgb_resampler:stream_in_ready -> video_pixel_buffer_dma:stream_ready
 	wire         video_pixel_buffer_dma_avalon_pixel_source_startofpacket;      // video_pixel_buffer_dma:stream_startofpacket -> video_rgb_resampler:stream_in_startofpacket
 	wire         video_pixel_buffer_dma_avalon_pixel_source_endofpacket;        // video_pixel_buffer_dma:stream_endofpacket -> video_rgb_resampler:stream_in_endofpacket
-	wire         video_rgb_resampler_avalon_rgb_source_valid;                   // video_rgb_resampler:stream_out_valid -> video_dual_clock_buffer:stream_in_valid
-	wire  [29:0] video_rgb_resampler_avalon_rgb_source_data;                    // video_rgb_resampler:stream_out_data -> video_dual_clock_buffer:stream_in_data
-	wire         video_rgb_resampler_avalon_rgb_source_ready;                   // video_dual_clock_buffer:stream_in_ready -> video_rgb_resampler:stream_out_ready
-	wire         video_rgb_resampler_avalon_rgb_source_startofpacket;           // video_rgb_resampler:stream_out_startofpacket -> video_dual_clock_buffer:stream_in_startofpacket
-	wire         video_rgb_resampler_avalon_rgb_source_endofpacket;             // video_rgb_resampler:stream_out_endofpacket -> video_dual_clock_buffer:stream_in_endofpacket
+	wire         video_rgb_resampler_avalon_rgb_source_valid;                   // video_rgb_resampler:stream_out_valid -> video_clipper:stream_in_valid
+	wire  [29:0] video_rgb_resampler_avalon_rgb_source_data;                    // video_rgb_resampler:stream_out_data -> video_clipper:stream_in_data
+	wire         video_rgb_resampler_avalon_rgb_source_ready;                   // video_clipper:stream_in_ready -> video_rgb_resampler:stream_out_ready
+	wire         video_rgb_resampler_avalon_rgb_source_startofpacket;           // video_rgb_resampler:stream_out_startofpacket -> video_clipper:stream_in_startofpacket
+	wire         video_rgb_resampler_avalon_rgb_source_endofpacket;             // video_rgb_resampler:stream_out_endofpacket -> video_clipper:stream_in_endofpacket
 	wire         vga_clock_vga_clk_clk;                                         // VGA_clock:vga_clk_clk -> [rst_controller_003:clk, video_dual_clock_buffer:clk_stream_out, video_vga_controller:clk]
 	wire  [15:0] bridge_avalon_master_readdata;                                 // mm_interconnect_0:bridge_avalon_master_readdata -> bridge:avalon_readdata
 	wire         bridge_avalon_master_waitrequest;                              // mm_interconnect_0:bridge_avalon_master_waitrequest -> bridge:avalon_waitrequest
@@ -73,7 +78,7 @@ module sram_access (
 	wire         mm_interconnect_0_sram_avalon_sram_slave_readdatavalid;        // sram:readdatavalid -> mm_interconnect_0:sram_avalon_sram_slave_readdatavalid
 	wire         mm_interconnect_0_sram_avalon_sram_slave_write;                // mm_interconnect_0:sram_avalon_sram_slave_write -> sram:write
 	wire  [15:0] mm_interconnect_0_sram_avalon_sram_slave_writedata;            // mm_interconnect_0:sram_avalon_sram_slave_writedata -> sram:writedata
-	wire         rst_controller_reset_out_reset;                                // rst_controller:reset_out -> [VGA_clock:ref_reset_reset, bridge:reset, mm_interconnect_0:bridge_reset_reset_bridge_in_reset_reset, mm_interconnect_0:jtag_master_clk_reset_reset_bridge_in_reset_reset, sram:reset, video_dual_clock_buffer:reset_stream_in, video_pixel_buffer_dma:reset, video_rgb_resampler:reset]
+	wire         rst_controller_reset_out_reset;                                // rst_controller:reset_out -> [VGA_clock:ref_reset_reset, bridge:reset, mm_interconnect_0:bridge_reset_reset_bridge_in_reset_reset, mm_interconnect_0:jtag_master_clk_reset_reset_bridge_in_reset_reset, sram:reset, video_clipper:reset, video_dual_clock_buffer:reset_stream_in, video_pixel_buffer_dma:reset, video_rgb_resampler:reset]
 	wire         jtag_master_master_reset_reset;                                // jtag_master:master_reset_reset -> [rst_controller:reset_in1, rst_controller_001:reset_in0, rst_controller_002:reset_in1, rst_controller_003:reset_in1]
 	wire         vga_clock_reset_source_reset;                                  // VGA_clock:reset_source_reset -> [rst_controller:reset_in2, rst_controller_001:reset_in1, rst_controller_002:reset_in2, rst_controller_003:reset_in2]
 	wire         rst_controller_001_reset_out_reset;                            // rst_controller_001:reset_out -> [rst_controller:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in0]
@@ -143,16 +148,31 @@ module sram_access (
 		.readdatavalid (mm_interconnect_0_sram_avalon_sram_slave_readdatavalid)  //                   .readdatavalid
 	);
 
+	sram_access_video_clipper video_clipper (
+		.clk                      (clk_clk),                                             //                   clk.clk
+		.reset                    (rst_controller_reset_out_reset),                      //                 reset.reset
+		.stream_in_data           (video_rgb_resampler_avalon_rgb_source_data),          //   avalon_clipper_sink.data
+		.stream_in_startofpacket  (video_rgb_resampler_avalon_rgb_source_startofpacket), //                      .startofpacket
+		.stream_in_endofpacket    (video_rgb_resampler_avalon_rgb_source_endofpacket),   //                      .endofpacket
+		.stream_in_valid          (video_rgb_resampler_avalon_rgb_source_valid),         //                      .valid
+		.stream_in_ready          (video_rgb_resampler_avalon_rgb_source_ready),         //                      .ready
+		.stream_out_ready         (video_clipper_avalon_clipper_source_ready),           // avalon_clipper_source.ready
+		.stream_out_data          (video_clipper_avalon_clipper_source_data),            //                      .data
+		.stream_out_startofpacket (video_clipper_avalon_clipper_source_startofpacket),   //                      .startofpacket
+		.stream_out_endofpacket   (video_clipper_avalon_clipper_source_endofpacket),     //                      .endofpacket
+		.stream_out_valid         (video_clipper_avalon_clipper_source_valid)            //                      .valid
+	);
+
 	sram_access_video_dual_clock_buffer video_dual_clock_buffer (
 		.clk_stream_in            (clk_clk),                                                       //         clock_stream_in.clk
 		.reset_stream_in          (rst_controller_reset_out_reset),                                //         reset_stream_in.reset
 		.clk_stream_out           (vga_clock_vga_clk_clk),                                         //        clock_stream_out.clk
 		.reset_stream_out         (rst_controller_003_reset_out_reset),                            //        reset_stream_out.reset
-		.stream_in_ready          (video_rgb_resampler_avalon_rgb_source_ready),                   //   avalon_dc_buffer_sink.ready
-		.stream_in_startofpacket  (video_rgb_resampler_avalon_rgb_source_startofpacket),           //                        .startofpacket
-		.stream_in_endofpacket    (video_rgb_resampler_avalon_rgb_source_endofpacket),             //                        .endofpacket
-		.stream_in_valid          (video_rgb_resampler_avalon_rgb_source_valid),                   //                        .valid
-		.stream_in_data           (video_rgb_resampler_avalon_rgb_source_data),                    //                        .data
+		.stream_in_ready          (video_clipper_avalon_clipper_source_ready),                     //   avalon_dc_buffer_sink.ready
+		.stream_in_startofpacket  (video_clipper_avalon_clipper_source_startofpacket),             //                        .startofpacket
+		.stream_in_endofpacket    (video_clipper_avalon_clipper_source_endofpacket),               //                        .endofpacket
+		.stream_in_valid          (video_clipper_avalon_clipper_source_valid),                     //                        .valid
+		.stream_in_data           (video_clipper_avalon_clipper_source_data),                      //                        .data
 		.stream_out_ready         (video_dual_clock_buffer_avalon_dc_buffer_source_ready),         // avalon_dc_buffer_source.ready
 		.stream_out_startofpacket (video_dual_clock_buffer_avalon_dc_buffer_source_startofpacket), //                        .startofpacket
 		.stream_out_endofpacket   (video_dual_clock_buffer_avalon_dc_buffer_source_endofpacket),   //                        .endofpacket

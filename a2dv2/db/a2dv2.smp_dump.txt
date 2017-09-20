@@ -6,6 +6,12 @@ s_pixel_buffer.STATE_1_WAIT_FOR_LAST_PIXEL 0 0 1 1
 s_pixel_buffer.STATE_2_READ_BUFFER 0 1 0 1 
 s_pixel_buffer.STATE_3_MAX_PENDING_READS_STALL 1 0 0 1 
 
+State Machine - |a2dv2|sram_access:sram_abc|sram_access_video_clipper:video_clipper|altera_up_video_clipper_drop:Clipper_Drop|s_video_clipper_drop
+Name s_video_clipper_drop.STATE_0_WAIT_FOR_START s_video_clipper_drop.STATE_2_ADD_MISSING_PART s_video_clipper_drop.STATE_1_RUN_CLIPPER 
+s_video_clipper_drop.STATE_0_WAIT_FOR_START 0 0 0 
+s_video_clipper_drop.STATE_1_RUN_CLIPPER 1 0 1 
+s_video_clipper_drop.STATE_2_ADD_MISSING_PART 1 1 0 
+
 State Machine - |a2dv2|sram_access:sram_abc|sram_access_jtag_master:jtag_master|altera_avalon_packets_to_master:transacto|packets_to_master:p2m|state
 Name state.READ_SEND_WAIT state.READ_SEND_ISSUE state.READ_DATA_WAIT state.READ_CMD_WAIT state.READ_ASSERT state.RETURN_PACKET state.WRITE_WAIT state.GET_WRITE_DATA state.GET_ADDR4 state.GET_ADDR3 state.GET_ADDR2 state.GET_ADDR1 state.GET_SIZE2 state.GET_SIZE1 state.GET_EXTRA state.0000 
 state.0000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 

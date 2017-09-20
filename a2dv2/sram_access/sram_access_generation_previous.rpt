@@ -12,22 +12,23 @@ Progress: Adding jtag_master [altera_jtag_avalon_master 16.0]
 Progress: Parameterizing module jtag_master
 Progress: Adding sram [altera_up_avalon_sram 15.1]
 Progress: Parameterizing module sram
+Progress: Adding video_clipper [altera_up_avalon_video_clipper 15.1]
+Progress: Parameterizing module video_clipper
 Progress: Adding video_dual_clock_buffer [altera_up_avalon_video_dual_clock_buffer 15.1]
 Progress: Parameterizing module video_dual_clock_buffer
 Progress: Adding video_pixel_buffer_dma [altera_up_avalon_video_pixel_buffer_dma 15.1]
 Progress: Parameterizing module video_pixel_buffer_dma
-Progress: Adding video_rgb_resampler [altera_up_avalon_video_rgb_resampler 15.1]
+Progress: Adding video_rgb_resampler [altera_up_avalon_video_rgb_resampler 16.0]
+Warning: altera_up_avalon_video_rgb_resampler: Catalog mismatch; expected v15.1 but found v16.0
 Progress: Parameterizing module video_rgb_resampler
-Progress: Adding video_scaler [altera_up_avalon_video_scaler 15.1]
-Progress: Parameterizing module video_scaler
 Progress: Adding video_vga_controller [altera_up_avalon_video_vga_controller 15.1]
 Progress: Parameterizing module video_vga_controller
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: sram_access.video_clipper: Change in Resolution: 256 x 256 -> 640 x 480
 Info: sram_access.video_rgb_resampler: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
-Info: sram_access.video_scaler: Change in Resolution: 256 x 256 -> 512 x 512
 Info: sram_access.video_vga_controller: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
 Warning: sram_access.video_pixel_buffer_dma: video_pixel_buffer_dma.avalon_control_slave must be connected to an Avalon-MM master
 Info: sram_access: Generating sram_access "sram_access" for SIM_VERILOG
@@ -37,14 +38,14 @@ Info: bridge: "sram_access" instantiated altera_up_external_bus_to_avalon_bridge
 Info: jtag_master: "sram_access" instantiated altera_jtag_avalon_master "jtag_master"
 Info: sram: Starting Generation of SRAM or SSRAM Controller
 Info: sram: "sram_access" instantiated altera_up_avalon_sram "sram"
+Info: video_clipper: Starting generation of the video clipper
+Info: video_clipper: "sram_access" instantiated altera_up_avalon_video_clipper "video_clipper"
 Info: video_dual_clock_buffer: Starting Generation of the Dual Clock Buffer
 Info: video_dual_clock_buffer: "sram_access" instantiated altera_up_avalon_video_dual_clock_buffer "video_dual_clock_buffer"
 Info: video_pixel_buffer_dma: Starting Generation of VGA Pixel Buffer
 Info: video_pixel_buffer_dma: "sram_access" instantiated altera_up_avalon_video_pixel_buffer_dma "video_pixel_buffer_dma"
 Info: video_rgb_resampler: Starting Generation of Video RGB Resampler
 Info: video_rgb_resampler: "sram_access" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler"
-Info: video_scaler: Starting Generation of Video Scaler
-Info: video_scaler: "sram_access" instantiated altera_up_avalon_video_scaler "video_scaler"
 Info: video_vga_controller: Starting Generation of VGA Controller
 Info: video_vga_controller: "sram_access" instantiated altera_up_avalon_video_vga_controller "video_vga_controller"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -117,22 +118,22 @@ Progress: Adding jtag_master [altera_jtag_avalon_master 16.0]
 Progress: Parameterizing module jtag_master
 Progress: Adding sram [altera_up_avalon_sram 15.1]
 Progress: Parameterizing module sram
+Progress: Adding video_clipper [altera_up_avalon_video_clipper 15.1]
+Progress: Parameterizing module video_clipper
 Progress: Adding video_dual_clock_buffer [altera_up_avalon_video_dual_clock_buffer 15.1]
 Progress: Parameterizing module video_dual_clock_buffer
 Progress: Adding video_pixel_buffer_dma [altera_up_avalon_video_pixel_buffer_dma 15.1]
 Progress: Parameterizing module video_pixel_buffer_dma
-Progress: Adding video_rgb_resampler [altera_up_avalon_video_rgb_resampler 15.1]
+Progress: Adding video_rgb_resampler [altera_up_avalon_video_rgb_resampler 16.0]
 Progress: Parameterizing module video_rgb_resampler
-Progress: Adding video_scaler [altera_up_avalon_video_scaler 15.1]
-Progress: Parameterizing module video_scaler
 Progress: Adding video_vga_controller [altera_up_avalon_video_vga_controller 15.1]
 Progress: Parameterizing module video_vga_controller
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: sram_access.video_clipper: Change in Resolution: 256 x 256 -> 640 x 480
 Info: sram_access.video_rgb_resampler: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
-Info: sram_access.video_scaler: Change in Resolution: 256 x 256 -> 512 x 512
 Info: sram_access.video_vga_controller: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
 Warning: sram_access.video_pixel_buffer_dma: video_pixel_buffer_dma.avalon_control_slave must be connected to an Avalon-MM master
 Info: sram_access: Generating sram_access "sram_access" for QUARTUS_SYNTH
@@ -142,14 +143,14 @@ Info: bridge: "sram_access" instantiated altera_up_external_bus_to_avalon_bridge
 Info: jtag_master: "sram_access" instantiated altera_jtag_avalon_master "jtag_master"
 Info: sram: Starting Generation of SRAM or SSRAM Controller
 Info: sram: "sram_access" instantiated altera_up_avalon_sram "sram"
+Info: video_clipper: Starting generation of the video clipper
+Info: video_clipper: "sram_access" instantiated altera_up_avalon_video_clipper "video_clipper"
 Info: video_dual_clock_buffer: Starting Generation of the Dual Clock Buffer
 Info: video_dual_clock_buffer: "sram_access" instantiated altera_up_avalon_video_dual_clock_buffer "video_dual_clock_buffer"
 Info: video_pixel_buffer_dma: Starting Generation of VGA Pixel Buffer
 Info: video_pixel_buffer_dma: "sram_access" instantiated altera_up_avalon_video_pixel_buffer_dma "video_pixel_buffer_dma"
 Info: video_rgb_resampler: Starting Generation of Video RGB Resampler
 Info: video_rgb_resampler: "sram_access" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler"
-Info: video_scaler: Starting Generation of Video Scaler
-Info: video_scaler: "sram_access" instantiated altera_up_avalon_video_scaler "video_scaler"
 Info: video_vga_controller: Starting Generation of VGA Controller
 Info: video_vga_controller: "sram_access" instantiated altera_up_avalon_video_vga_controller "video_vga_controller"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0

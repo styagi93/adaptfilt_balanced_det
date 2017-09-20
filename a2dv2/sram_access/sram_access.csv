@@ -1,12 +1,12 @@
-# system info sram_access on 2017.09.08.03:38:15
+# system info sram_access on 2017.09.10.02:59:49
 system_info:
 name,value
 DEVICE,EP4CE115F29C7
 DEVICE_FAMILY,Cyclone IV E
-GENERATION_ID,1504863490
+GENERATION_ID,1505033982
 #
 #
-# Files generated for sram_access on 2017.09.08.03:38:15
+# Files generated for sram_access on 2017.09.10.02:59:49
 files:
 filepath,kind,attributes,module,is_top
 simulation/sram_access.v,VERILOG,,sram_access,true
@@ -14,6 +14,10 @@ simulation/submodules/sram_access_VGA_clock.v,VERILOG,,sram_access_VGA_clock,fal
 simulation/submodules/sram_access_bridge.v,VERILOG,,sram_access_bridge,false
 simulation/submodules/sram_access_jtag_master.v,VERILOG,,sram_access_jtag_master,false
 simulation/submodules/sram_access_sram.v,VERILOG,,sram_access_sram,false
+simulation/submodules/altera_up_video_clipper_add.v,VERILOG,,sram_access_video_clipper,false
+simulation/submodules/altera_up_video_clipper_drop.v,VERILOG,,sram_access_video_clipper,false
+simulation/submodules/altera_up_video_clipper_counters.v,VERILOG,,sram_access_video_clipper,false
+simulation/submodules/sram_access_video_clipper.v,VERILOG,,sram_access_video_clipper,false
 simulation/submodules/sram_access_video_dual_clock_buffer.v,VERILOG,,sram_access_video_dual_clock_buffer,false
 simulation/submodules/sram_access_video_pixel_buffer_dma.v,VERILOG,,sram_access_video_pixel_buffer_dma,false
 simulation/submodules/sram_access_video_rgb_resampler.v,VERILOG,,sram_access_video_rgb_resampler,false
@@ -91,6 +95,7 @@ sram_access.jtag_master.b2p_adapter,sram_access_jtag_master_b2p_adapter
 sram_access.jtag_master.p2b_adapter,sram_access_jtag_master_p2b_adapter
 sram_access.jtag_master.rst_controller,altera_reset_controller
 sram_access.sram,sram_access_sram
+sram_access.video_clipper,sram_access_video_clipper
 sram_access.video_dual_clock_buffer,sram_access_video_dual_clock_buffer
 sram_access.video_pixel_buffer_dma,sram_access_video_pixel_buffer_dma
 sram_access.video_rgb_resampler,sram_access_video_rgb_resampler
