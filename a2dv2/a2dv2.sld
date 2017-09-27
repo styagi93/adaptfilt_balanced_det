@@ -7,7 +7,7 @@
     </sld_info>
     <sld_info hpath="p_sine:p_sine_inst" name="p_sine_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME p_sine HAS_SOPCINFO 1 GENERATION_ID 1505890254"/>
+        <assignment_value text="QSYS_NAME p_sine HAS_SOPCINFO 1 GENERATION_ID 1506465643"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="sram_access:sram_abc" name="sram_abc">

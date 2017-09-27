@@ -49,9 +49,9 @@ set_input_delay -add_delay -max -clock ADB_DCO 1.000 {ADB_D[*] ADB_OR}
 
 set_input_delay -add_delay -min -clock ADB_DCO -1.000 {ADB_D[*] ADB_OR}
 
-set_input_delay -add_delay -max -clock CLOCK_50 1.000 {KEY[0] KEY[3] SW[16] SRAM_DQ[*]}
+set_input_delay -add_delay -max -clock CLOCK_50 1.000 {KEY[0] KEY[3] SW[16] SRAM_DQ[*] GPIO[*]}
 
-set_input_delay -add_delay -min -clock CLOCK_50 -1.000 {KEY[0] KEY[3] SW[16] SRAM_DQ[*]}
+set_input_delay -add_delay -min -clock CLOCK_50 -1.000 {KEY[0] KEY[3] SW[16] SRAM_DQ[*] GPIO[*]}
 
 set_input_delay -add_delay -max -clock altera_reserved_tck 1.000 { altera_reserved_tdi }
 

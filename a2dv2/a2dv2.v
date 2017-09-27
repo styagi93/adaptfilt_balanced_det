@@ -1116,15 +1116,22 @@ wire [3:0] out_channel;
 reg [47:0] cic_encoded_data = 47'd0;
 reg overflw_reg;
 wire overflow;
-wire [2:0] dummy;
+wire dummy;
+wire markXin;
+reg markXin_reg;
+wire markYin;
+reg markYin_reg;
 
+
+assign markXin = GPIO[14];
+assign markYin = GPIO[15];
 
 always @ (negedge out_valid)
 begin
-cic_encoded_data <= {3'd0,overflw_reg,out_channel,out_data[3:0],
-							3'd0,overflw_reg,out_channel,out_data[7:4],
-							3'd0,overflw_reg,out_channel,out_data[11:8],
-							3'd0,overflw_reg,out_channel,out_data[15:12]			//MSB				
+cic_encoded_data <= {1'd0,overflw_reg,markYin_reg,markXin_reg,out_channel,out_data[3:0],
+							1'd0,overflw_reg,markYin_reg,markXin_reg,out_channel,out_data[7:4],
+							1'd0,overflw_reg,markYin_reg,markXin_reg,out_channel,out_data[11:8],
+							1'd0,overflw_reg,markYin_reg,markXin_reg,out_channel,out_data[15:12]			//MSB				
 							};
 end
 
@@ -1137,7 +1144,7 @@ end
 	.rdreq(1'b1),
 	.wrclk(out_valid),
 	.wrreq(1'b1),
-	.q({dummy,GPIO[10],GPIO[7:0]}),   
+	.q({dummy,GPIO[10],GPIO[13],GPIO[12],GPIO[7:0]}),   
 	.rdempty(GPIO[11]),
 	.wrfull(overflow)
 	);
@@ -1147,7 +1154,11 @@ end
 always @(posedge out_valid)
 begin
 overflw_reg <= overflow;
+markXin_reg <= markXin;
+markYin_reg <= markYin;
 end
+
+
 	
 
 	
