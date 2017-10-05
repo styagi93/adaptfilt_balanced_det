@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="p_sine" kind="p_sine" version="1.0" fabric="QSYS">
  <!-- Format version 16.0 211 (Future versions may contain additional information.) -->
- <!-- 2017.09.26.16:40:43 -->
+ <!-- 2017.10.05.16:36:14 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1506465643</value>
+  <value>1507242974</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>

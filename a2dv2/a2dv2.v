@@ -279,9 +279,9 @@ input 		          		XT_IN_P;
 wire						reset_n;
 wire						sys_clk;
 reg			[13:0]	per_a2da_d;
-reg			[13:0]	a2da_data;
+(*noprune*) reg			[13:0]	a2da_data;
 reg			[13:0]	per_a2db_d;
-reg			[13:0]	a2db_data;
+(*noprune*) reg			[13:0]	a2db_data;
 
 //////////// NCO //////////
 
@@ -298,48 +298,51 @@ reg			[13:0]	a2db_data;
 //wire [19:0] NCO_IN;
 //assign NCO_IN =temp;
 //assign	filter_change_sw	= SW[17];	
-reg l_CLOCK_50;
-reg ll_CLOCK_50;
-reg lll_CLOCK_50;
-wire  [0:0] lfsr_out;
+//reg l_CLOCK_50;
+//reg ll_CLOCK_50;
+//reg lll_CLOCK_50;
+wire lfsr_out;
 reg  [13:0] FIFO_random_seq [0:75];
 //reg signed [11:0] l_random_seq;
-
+wire reset_frame;
+reg reg_reset_frame;
+reg l_reg_reset_frame;
+assign reset_frame = GPIO[34];
 
 //////////// FIR //////////
 
 
-wire [1:0]  ast_sink_error = 2'b00;
+//wire [1:0]  ast_sink_error = 2'b00;
 //output reg[32:0] ast_source_data;
 //output reg [32:0] DFF_ast_source_data;
 //output reg  ast_source_valid;
-reg  l_ast_source_valid;
+//reg  l_ast_source_valid;
 //output reg  [1:0]  ast_source_error;
-reg [4:0]  coeff_in_address;
+//reg [4:0]  coeff_in_address;
 //reg        coeff_in_areset=1'b0;
 //reg        coeff_in_read = 1'b0;
 //reg [0:0]  coeff_out_valid;
 //reg [15:0] coeff_out_data;
 //reg [0:0]  coeff_in_we=1'b0;
-reg [15:0] coeff_in_data;
+//reg [15:0] coeff_in_data;
 //reg [15:0] mem [0:31];
 //reg [15:0] mem1 [0:31];
 //reg [1:0] state_f = 2'd0;
 //wire sw_17_debounced;
 //parameter IDLE  = 2'd0,COUNT_ON = 2'd1,WRITE_COEFF = 2'd2;
 //reg switch_prev = 0;
-reg [5:0] i = 6'd0;
-reg ast_sink_valid;
+//reg [5:0] i = 6'd0;
+//reg ast_sink_valid;
 //output [31:0] test_out_data;
-reg [11:0] desired_data;
+//reg [11:0] desired_data;
 output [42:0] adaptive_out_data;
 output [32:0] error_adaptive_out;
-reg			[13:0]			o_sine_p;
+(*noprune*) reg			[13:0]			o_sine_p;
 wire [7:0] mu;
 wire [7:0] tap;
 wire CLOCK_20;
 wire adc_clock;
-reg [2:0] phasecounterselect = 3'b001;
+//reg [2:0] phasecounterselect = 3'b001;
 
 
 //	wire system_clk, clk_125, clk_25, clk_2p5;
@@ -460,7 +463,7 @@ assign	ADB_OE			= 1'b0;				// enable ADA output
 assign	ADB_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
 
  // assign for DAC output data
-  assign	DA =  o_sine_p;
+assign DA =  o_sine_p;
 
 						
 always @(negedge reset_n or posedge sys_clk)
@@ -519,17 +522,17 @@ end
 
 
 //--- probe points for data capture
-a2d_data_a	a2d_data_a_inst(
-			.probe(a2da_data),
-			.source());
-			
-a2d_data_a	a2d_data_b_inst(
-			.probe(a2db_data),
-			.source());			
-			
-p_sine	p_sine_inst(
-			.probe(o_sine_p),
-			.source());
+//a2d_data_a	a2d_data_a_inst(
+//			.probe(a2da_data),
+//			.source());
+//			
+//a2d_data_a	a2d_data_b_inst(
+//			.probe(a2db_data),
+//			.source());			
+//			
+//p_sine	p_sine_inst(
+//			.probe(o_sine_p),
+//			.source());
 			
 			
 
@@ -845,52 +848,52 @@ FIFO_random_seq[26] <= FIFO_random_seq[25];
 FIFO_random_seq[27] <= FIFO_random_seq[26];
 FIFO_random_seq[28] <= FIFO_random_seq[27];
 FIFO_random_seq[29] <= FIFO_random_seq[28];
-FIFO_random_seq[30] <= FIFO_random_seq[29];
-FIFO_random_seq[31] <= FIFO_random_seq[30];
-FIFO_random_seq[32] <= FIFO_random_seq[31];
-FIFO_random_seq[33] <= FIFO_random_seq[32];
-FIFO_random_seq[34] <= FIFO_random_seq[33];
-FIFO_random_seq[35] <= FIFO_random_seq[34];
-FIFO_random_seq[36] <= FIFO_random_seq[35];
-FIFO_random_seq[37] <= FIFO_random_seq[36];
-FIFO_random_seq[38] <= FIFO_random_seq[37];
-FIFO_random_seq[39] <= FIFO_random_seq[38];
-FIFO_random_seq[40] <= FIFO_random_seq[39];
-FIFO_random_seq[41] <= FIFO_random_seq[40];
-FIFO_random_seq[42] <= FIFO_random_seq[41];
-FIFO_random_seq[43] <= FIFO_random_seq[42];
-FIFO_random_seq[44] <= FIFO_random_seq[43];
-FIFO_random_seq[45] <= FIFO_random_seq[44];
-FIFO_random_seq[46] <= FIFO_random_seq[45];
-FIFO_random_seq[47] <= FIFO_random_seq[46];
-FIFO_random_seq[48] <= FIFO_random_seq[47];
-FIFO_random_seq[49] <= FIFO_random_seq[48];
-FIFO_random_seq[50] <= FIFO_random_seq[49];
-FIFO_random_seq[51] <= FIFO_random_seq[50];
-FIFO_random_seq[52] <= FIFO_random_seq[51];
-FIFO_random_seq[53] <= FIFO_random_seq[52];
-FIFO_random_seq[54] <= FIFO_random_seq[53];
-FIFO_random_seq[55] <= FIFO_random_seq[54];
-FIFO_random_seq[56] <= FIFO_random_seq[55];
-FIFO_random_seq[57] <= FIFO_random_seq[56];
-FIFO_random_seq[58] <= FIFO_random_seq[57];
-FIFO_random_seq[59] <= FIFO_random_seq[58];
-FIFO_random_seq[60] <= FIFO_random_seq[59];
-FIFO_random_seq[61] <= FIFO_random_seq[60];
-FIFO_random_seq[62] <= FIFO_random_seq[61];
-FIFO_random_seq[63] <= FIFO_random_seq[62];
-FIFO_random_seq[64] <= FIFO_random_seq[63];
-FIFO_random_seq[65] <= FIFO_random_seq[64];
-FIFO_random_seq[66] <= FIFO_random_seq[65];
-FIFO_random_seq[67] <= FIFO_random_seq[66];
-FIFO_random_seq[68] <= FIFO_random_seq[67];
-FIFO_random_seq[69] <= FIFO_random_seq[68];
-FIFO_random_seq[70] <= FIFO_random_seq[69];
-FIFO_random_seq[71] <= FIFO_random_seq[70];
-FIFO_random_seq[72] <= FIFO_random_seq[71];
-FIFO_random_seq[73] <= FIFO_random_seq[72];
-FIFO_random_seq[74] <= FIFO_random_seq[73];
-FIFO_random_seq[75] <= FIFO_random_seq[74];
+//FIFO_random_seq[30] <= FIFO_random_seq[29];
+//FIFO_random_seq[31] <= FIFO_random_seq[30];
+//FIFO_random_seq[32] <= FIFO_random_seq[31];
+//FIFO_random_seq[33] <= FIFO_random_seq[32];
+//FIFO_random_seq[34] <= FIFO_random_seq[33];
+//FIFO_random_seq[35] <= FIFO_random_seq[34];
+//FIFO_random_seq[36] <= FIFO_random_seq[35];
+//FIFO_random_seq[37] <= FIFO_random_seq[36];
+//FIFO_random_seq[38] <= FIFO_random_seq[37];
+//FIFO_random_seq[39] <= FIFO_random_seq[38];
+//FIFO_random_seq[40] <= FIFO_random_seq[39];
+//FIFO_random_seq[41] <= FIFO_random_seq[40];
+//FIFO_random_seq[42] <= FIFO_random_seq[41];
+//FIFO_random_seq[43] <= FIFO_random_seq[42];
+//FIFO_random_seq[44] <= FIFO_random_seq[43];
+//FIFO_random_seq[45] <= FIFO_random_seq[44];
+//FIFO_random_seq[46] <= FIFO_random_seq[45];
+//FIFO_random_seq[47] <= FIFO_random_seq[46];
+//FIFO_random_seq[48] <= FIFO_random_seq[47];
+//FIFO_random_seq[49] <= FIFO_random_seq[48];
+//FIFO_random_seq[50] <= FIFO_random_seq[49];
+//FIFO_random_seq[51] <= FIFO_random_seq[50];
+//FIFO_random_seq[52] <= FIFO_random_seq[51];
+//FIFO_random_seq[53] <= FIFO_random_seq[52];
+//FIFO_random_seq[54] <= FIFO_random_seq[53];
+//FIFO_random_seq[55] <= FIFO_random_seq[54];
+//FIFO_random_seq[56] <= FIFO_random_seq[55];
+//FIFO_random_seq[57] <= FIFO_random_seq[56];
+//FIFO_random_seq[58] <= FIFO_random_seq[57];
+//FIFO_random_seq[59] <= FIFO_random_seq[58];
+//FIFO_random_seq[60] <= FIFO_random_seq[59];
+//FIFO_random_seq[61] <= FIFO_random_seq[60];
+//FIFO_random_seq[62] <= FIFO_random_seq[61];
+//FIFO_random_seq[63] <= FIFO_random_seq[62];
+//FIFO_random_seq[64] <= FIFO_random_seq[63];
+//FIFO_random_seq[65] <= FIFO_random_seq[64];
+//FIFO_random_seq[66] <= FIFO_random_seq[65];
+//FIFO_random_seq[67] <= FIFO_random_seq[66];
+//FIFO_random_seq[68] <= FIFO_random_seq[67];
+//FIFO_random_seq[69] <= FIFO_random_seq[68];
+//FIFO_random_seq[70] <= FIFO_random_seq[69];
+//FIFO_random_seq[71] <= FIFO_random_seq[70];
+//FIFO_random_seq[72] <= FIFO_random_seq[71];
+//FIFO_random_seq[73] <= FIFO_random_seq[72];
+//FIFO_random_seq[74] <= FIFO_random_seq[73];
+//FIFO_random_seq[75] <= FIFO_random_seq[74];
 end
 								
 
@@ -1010,7 +1013,7 @@ wire [3:0] out_channel;
 	  .out_endofpacket   (out_endofpacket),   //          .endofpacket
 	  .out_channel       (out_channel),       //          .channel
 	  .clk               (CLOCK_20),               //     clock.clk
-	  .reset_n           (reset_n)            //     reset.reset_n
+	  .reset_n           (~reset_frame)            //     reset.reset_n
  );
 
 
@@ -1167,23 +1170,23 @@ end
 
 /////////////////////////////////////////////////////
 //////////////////////Delaying CIC outputs for feeding in SRAM///////////////////
-
-reg  delay1_out_valid;
-reg  delay2_out_valid;
-reg [15:0] delay1_out_data;
-reg [15:0] delay2_out_data;
-
-
-always @ (posedge CLOCK_50)
-begin
-
-delay1_out_valid <= out_valid;
-delay2_out_valid <= delay1_out_valid;
-
-delay1_out_data <= out_data ;
-delay2_out_data <= delay1_out_data;
-
-end
+//
+//reg  delay1_out_valid;
+//reg  delay2_out_valid;
+//reg [15:0] delay1_out_data;
+//reg [15:0] delay2_out_data;
+//
+//
+//always @ (posedge CLOCK_50)
+//begin
+//
+//delay1_out_valid <= out_valid;
+//delay2_out_valid <= delay1_out_valid;
+//
+//delay1_out_data <= out_data ;
+//delay2_out_data <= delay1_out_data;
+//
+//end
 
 //////////////////////////////////////////////////////
 
@@ -1219,22 +1222,47 @@ sram_access sram_abc (
 							.vga_conduit_B(VGA_B)   
 	);
 
-		
-always @ (negedge out_valid /*or negedge frame_reset*/) ///add negedge reset support
+	
+always @ (posedge CLOCK_20)
 begin
-
-if (sram_address < 22'd2097152)         ////////////// 256*256*16 = 1048576 * 2 (for byte addressing) = 2097152
-	sram_address <= sram_address + 2'b10;
+reg_reset_frame <= reset_frame;
+l_reg_reset_frame <= reg_reset_frame;
 end
+	
+always @ (negedge out_valid or posedge reg_reset_frame) 
+begin
+(~l_reg_reset_frame) ? sram_address <= 22'd0 : 
+												sram_address < 22'd2097152 ?  sram_address <= sram_address + 2'b10 : #0;
+
+//if (l_reg_reset_frame == 1'b0)
+//	sram_address <= 22'd0;
+//else	if (sram_address < 22'd2097152)
+//begin
+//	sram_address <= sram_address + 2'b10;
+//end
+
+
+//if (~reset_frame)
+//begin
+//sram_address <= 22'd0;
+//end
+//if (sram_address < 22'd2097152)         ////////////// 256*256*16 = 1048576 * 2 (for byte addressing) = 2097152
+//	begin
+//		sram_address <= sram_address + 2'b10;
+//	end
+end
+
+
 
 (*noprune*) reg [19:0] temp_counter = 20'd0;
 (*noprune*) reg [19:0] temp_counter1 = 20'd0;
 
-always @(posedge out_valid)
-begin
-temp_counter <= temp_counter + 1'd1;
-temp_counter1 <= temp_counter;
-end
+
+//always @(posedge out_valid)
+//begin
+//temp_counter <= temp_counter + 1'd1;
+//temp_counter1 <= temp_counter;
+//end
 
 	
 endmodule
