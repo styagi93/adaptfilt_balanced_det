@@ -1222,40 +1222,83 @@ sram_access sram_abc (
 							.vga_conduit_B(VGA_B)   
 	);
 
+
+reg  delay1_out_valid;
 	
 always @ (posedge CLOCK_20)
 begin
 reg_reset_frame <= reset_frame;
 l_reg_reset_frame <= reg_reset_frame;
+
+delay1_out_valid <= out_valid;
 end
-	
-always @ (negedge out_valid or posedge reg_reset_frame) 
+
+////////////////////////////////////STATE MACHINE FOR SRAM DATA TRANSFER////////////////////////////
+reg [1:0] state_mach;
+
+
+always @ (posedge CLOCK_20)
 begin
-(~l_reg_reset_frame) ? sram_address <= 22'd0 : 
-												sram_address < 22'd2097152 ?  sram_address <= sram_address + 2'b10 : #0;
 
-//if (l_reg_reset_frame == 1'b0)
-//	sram_address <= 22'd0;
-//else	if (sram_address < 22'd2097152)
-//begin
-//	sram_address <= sram_address + 2'b10;
-//end
+case (state_mach)
 
-
-//if (~reset_frame)
-//begin
-//sram_address <= 22'd0;
-//end
-//if (sram_address < 22'd2097152)         ////////////// 256*256*16 = 1048576 * 2 (for byte addressing) = 2097152
-//	begin
-//		sram_address <= sram_address + 2'b10;
-//	end
+INIT:
+begin
+if (reg_reset_frame == 1'b1 && l_reg_reset_frame == 1'b0) begin
+sram_address <= 22'd0;
+state_mach <= INCREMENT;
+end
 end
 
+INCREMENT:
+begin
+if (sram_address < 22'd2097152) begin
+	if (out_valid == 1'b0 && delay1_out_valid== 1'b1) begin	
+	sram_address <= sram_address + 2'b10;
+	end
+end
+end
+
+STOP:
+begin 
+
+end
+
+default: state_mach <= INIT;
+
+endcase
+
+end
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+	
+//always @ (negedge out_valid or posedge reg_reset_frame) 
+//begin
+//(~l_reg_reset_frame) ? sram_address <= 22'd0 : 
+//												sram_address < 22'd2097152 ?  sram_address <= sram_address + 2'b10 : #0;
+//
+////if (l_reg_reset_frame == 1'b0)
+////	sram_address <= 22'd0;
+////else	if (sram_address < 22'd2097152)
+////begin
+////	sram_address <= sram_address + 2'b10;
+////end
+//
+//
+////if (~reset_frame)
+////begin
+////sram_address <= 22'd0;
+////end
+////if (sram_address < 22'd2097152)         ////////////// 256*256*16 = 1048576 * 2 (for byte addressing) = 2097152
+////	begin
+////		sram_address <= sram_address + 2'b10;
+////	end
+//end
 
 
-(*noprune*) reg [19:0] temp_counter = 20'd0;
-(*noprune*) reg [19:0] temp_counter1 = 20'd0;
+
+//(*noprune*) reg [19:0] temp_counter = 20'd0;
+//(*noprune*) reg [19:0] temp_counter1 = 20'd0;
 
 
 //always @(posedge out_valid)
