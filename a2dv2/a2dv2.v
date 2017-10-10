@@ -302,7 +302,7 @@ reg			[13:0]	per_a2db_d;
 //reg ll_CLOCK_50;
 //reg lll_CLOCK_50;
 wire lfsr_out;
-reg  [13:0] FIFO_random_seq [0:75];
+reg  [13:0] FIFO_random_seq [0:29];
 //reg signed [11:0] l_random_seq;
 wire reset_frame;
 reg reg_reset_frame;
@@ -521,7 +521,7 @@ begin
 end
 
 
-//--- probe points for data capture
+////--- probe points for data capture
 //a2d_data_a	a2d_data_a_inst(
 //			.probe(a2da_data),
 //			.source());
@@ -548,7 +548,7 @@ PLL_200MHz PLL_200MHz_inst (
 //				.c2(clk_125),
 //				.c3(clk_25),
 //				.c4(clk_10mhz),
-				.locked(LEDG[1]),
+				.locked(LEDG[1])
 //				.phasecounterselect(phasecounterselect),
 //				.phasestep(~KEY[1]),
 //				.phaseupdown(1'b1),
@@ -1013,7 +1013,7 @@ wire [3:0] out_channel;
 	  .out_endofpacket   (out_endofpacket),   //          .endofpacket
 	  .out_channel       (out_channel),       //          .channel
 	  .clk               (CLOCK_20),               //     clock.clk
-	  .reset_n           (~reset_frame)            //     reset.reset_n
+	  .reset_n           (reset_frame)            //     reset.reset_n
  );
 
 
@@ -1234,41 +1234,41 @@ delay1_out_valid <= out_valid;
 end
 
 ////////////////////////////////////STATE MACHINE FOR SRAM DATA TRANSFER////////////////////////////
-reg [1:0] state_mach;
-
-
-always @ (posedge CLOCK_20)
-begin
-
-case (state_mach)
-
-INIT:
-begin
-if (reg_reset_frame == 1'b1 && l_reg_reset_frame == 1'b0) begin
-sram_address <= 22'd0;
-state_mach <= INCREMENT;
-end
-end
-
-INCREMENT:
-begin
-if (sram_address < 22'd2097152) begin
-	if (out_valid == 1'b0 && delay1_out_valid== 1'b1) begin	
-	sram_address <= sram_address + 2'b10;
-	end
-end
-end
-
-STOP:
-begin 
-
-end
-
-default: state_mach <= INIT;
-
-endcase
-
-end
+//reg [1:0] state_mach;
+//
+//
+//always @ (posedge CLOCK_20)
+//begin
+//
+//case (state_mach)
+//
+//INIT:
+//begin
+//if (reg_reset_frame == 1'b1 && l_reg_reset_frame == 1'b0) begin
+//sram_address <= 22'd0;
+//state_mach <= INCREMENT;
+//end
+//end
+//
+//INCREMENT:
+//begin
+//if (sram_address < 22'd2097152) begin
+//	if (out_valid == 1'b0 && delay1_out_valid== 1'b1) begin	
+//	sram_address <= sram_address + 2'b10;
+//	end
+//end
+//end
+//
+//STOP:
+//begin 
+//
+//end
+//
+//default: state_mach <= INIT;
+//
+//endcase
+//
+//end
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 	

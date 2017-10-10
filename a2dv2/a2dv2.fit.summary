@@ -1,16 +1,16 @@
-Fitter Status : Successful - Tue Oct 03 15:29:20 2017
+Fitter Status : Successful - Mon Oct 09 16:45:54 2017
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : a2dv2
 Top-level Entity Name : a2dv2
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 10,854 / 114,480 ( 9 % )
-    Total combinational functions : 8,328 / 114,480 ( 7 % )
-    Dedicated logic registers : 7,161 / 114,480 ( 6 % )
-Total registers : 7161
+Total logic elements : 7,369 / 114,480 ( 6 % )
+    Total combinational functions : 6,278 / 114,480 ( 5 % )
+    Dedicated logic registers : 4,339 / 114,480 ( 4 % )
+Total registers : 4339
 Total pins : 431 / 529 ( 81 % )
 Total virtual pins : 0
-Total memory bits : 43,792 / 3,981,312 ( 1 % )
+Total memory bits : 45,200 / 3,981,312 ( 1 % )
 Embedded Multiplier 9-bit elements : 96 / 532 ( 18 % )
 Total PLLs : 2 / 4 ( 50 % )

@@ -2,7 +2,7 @@
   <sld_infos>
     <sld_info hpath="CIC:u0" name="u0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME CIC HAS_SOPCINFO 1 GENERATION_ID 1505890069"/>
+        <assignment_value text="QSYS_NAME CIC HAS_SOPCINFO 1 GENERATION_ID 1507586954"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="sram_access:sram_abc" name="sram_abc">
