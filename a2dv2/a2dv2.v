@@ -330,6 +330,7 @@ assign reset_frame = GPIO[34];
 //reg [1:0] state_f = 2'd0;
 //wire sw_17_debounced;
 //parameter IDLE  = 2'd0,COUNT_ON = 2'd1,WRITE_COEFF = 2'd2;
+parameter INIT  = 1'd0,INCREMENT = 1'd1;
 //reg switch_prev = 0;
 //reg [5:0] i = 6'd0;
 //reg ast_sink_valid;
@@ -1013,7 +1014,7 @@ wire [3:0] out_channel;
 	  .out_endofpacket   (out_endofpacket),   //          .endofpacket
 	  .out_channel       (out_channel),       //          .channel
 	  .clk               (CLOCK_20),               //     clock.clk
-	  .reset_n           (reset_frame)            //     reset.reset_n
+	  .reset_n           (~reg_reset_frame)            //     reset.reset_n
  );
 
 
@@ -1197,11 +1198,11 @@ end
 
 
 sram_access sram_abc (
-							.bridge_input_conduit_address((sram_address >= 22'd2097152) ? 21'bzzzzzzzzzzzzzzzzzzzz : sram_address),     // bridge_input_conduit.address
-							.bridge_input_conduit_byte_enable((sram_address >= 22'd2097152) ? 2'bzz : 2'b11), //                     .byte_enable
+							.bridge_input_conduit_address((sram_write_done) ? 21'bzzzzzzzzzzzzzzzzzzzz : sram_address),     // bridge_input_conduit.address
+							.bridge_input_conduit_byte_enable((sram_write_done) ? 2'bzz : 2'b11), //                     .byte_enable
 							.bridge_input_conduit_read(),        //                     .read
-							.bridge_input_conduit_write((sram_address >= 22'd2097152) ? 1'bz : out_valid),       //                     .write
-							.bridge_input_conduit_write_data((sram_address >= 22'd2097152) ? 16'bzzzzzzzzzzzzzzzz : out_data),  //                     .write_data
+							.bridge_input_conduit_write((sram_write_done) ? 1'bz : out_valid),       //                     .write
+							.bridge_input_conduit_write_data((sram_write_done) ? 16'bzzzzzzzzzzzzzzzz : out_data),  //                     .write_data
 							.bridge_input_conduit_acknowledge(), //                     .acknowledge
 							.bridge_input_conduit_read_data(),   //                     .read_data
 							.clk_clk(CLOCK_50),                          //                  clk.clk
@@ -1229,46 +1230,45 @@ always @ (posedge CLOCK_20)
 begin
 reg_reset_frame <= reset_frame;
 l_reg_reset_frame <= reg_reset_frame;
-
 delay1_out_valid <= out_valid;
 end
 
 ////////////////////////////////////STATE MACHINE FOR SRAM DATA TRANSFER////////////////////////////
-//reg [1:0] state_mach;
-//
-//
-//always @ (posedge CLOCK_20)
-//begin
-//
-//case (state_mach)
-//
-//INIT:
-//begin
-//if (reg_reset_frame == 1'b1 && l_reg_reset_frame == 1'b0) begin
-//sram_address <= 22'd0;
-//state_mach <= INCREMENT;
-//end
-//end
-//
-//INCREMENT:
-//begin
-//if (sram_address < 22'd2097152) begin
-//	if (out_valid == 1'b0 && delay1_out_valid== 1'b1) begin	
-//	sram_address <= sram_address + 2'b10;
-//	end
-//end
-//end
-//
-//STOP:
-//begin 
-//
-//end
-//
-//default: state_mach <= INIT;
-//
-//endcase
-//
-//end
+reg state_mach;
+reg sram_write_done = 1'b0;
+
+
+always @ (posedge CLOCK_20)
+begin
+
+case (state_mach)
+
+INIT:
+begin
+if (reg_reset_frame == 1'b1 && l_reg_reset_frame == 1'b0) begin
+	sram_address <= 22'd0;
+	state_mach <= INCREMENT;
+	sram_write_done <= 1'b0;
+end
+end
+
+INCREMENT:
+begin
+if (reg_reset_frame == 1'b1 && sram_address < 22'd2097152) begin
+	if (out_valid == 1'b0 && delay1_out_valid== 1'b1)
+		sram_address <= sram_address + 2'b10;
+	else begin
+		state_mach <= INIT;
+		sram_write_done <= 1'b1;
+	end
+end
+end
+
+default: state_mach <= INIT;
+
+endcase
+
+end
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 	

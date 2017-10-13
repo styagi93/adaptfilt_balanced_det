@@ -1,5 +1,5 @@
 Assembler report for a2dv2
-Mon Oct 09 16:46:02 2017
+Fri Oct 13 01:35:52 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Oct 09 16:46:02 2017 ;
+; Assembler Status      ; Successful - Fri Oct 13 01:35:52 2017 ;
 ; Revision Name         ; a2dv2                                 ;
 ; Top-level Entity Name ; a2dv2                                 ;
 ; Family                ; Cyclone IV E                          ;
@@ -80,8 +80,8 @@ agreement for further details.
 ; Option         ; Setting                                                                                          ;
 +----------------+--------------------------------------------------------------------------------------------------+
 ; Device         ; EP4CE115F29C7                                                                                    ;
-; JTAG usercode  ; 0x009EA8E4                                                                                       ;
-; Checksum       ; 0x009EA8E4                                                                                       ;
+; JTAG usercode  ; 0x009F51BE                                                                                       ;
+; Checksum       ; 0x009F51BE                                                                                       ;
 +----------------+--------------------------------------------------------------------------------------------------+
 
 
@@ -91,15 +91,15 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Mon Oct 09 16:45:57 2017
+    Info: Processing started: Fri Oct 13 01:35:47 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off a2dv2 -c a2dv2
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info (115017): Design contains a time-limited core -- only a single, time-limited programming file can be generated
 Warning (210042): Can't convert time-limited SOF into POF, HEX File, TTF, or RBF
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 791 megabytes
-    Info: Processing ended: Mon Oct 09 16:46:02 2017
+    Info: Peak virtual memory: 790 megabytes
+    Info: Processing ended: Fri Oct 13 01:35:52 2017
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

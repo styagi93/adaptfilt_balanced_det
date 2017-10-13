@@ -47,7 +47,7 @@ DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,adaptive_fir:adaptive_fir_inst|lpm_mult:
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,adaptive_fir:adaptive_fir_inst|lpm_mult:Mult29|mult_26t:auto_generated|mac_out4,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,adaptive_fir:adaptive_fir_inst|lpm_mult:Mult30|mult_26t:auto_generated|mac_out4,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,adaptive_fir:adaptive_fir_inst|lpm_mult:Mult31|mult_26t:auto_generated|mac_out4,
-PLL_COMPENSATED_INPUTS_LIST,PLL_200MHz:PLL_200MHz_inst|altpll:altpll_component|PLL_200MHz_altpll:auto_generated|pll1,GPIO[34]; GPIO[34],
+PLL_COMPENSATED_INPUTS_LIST,PLL_200MHz:PLL_200MHz_inst|altpll:altpll_component|PLL_200MHz_altpll:auto_generated|pll1,GPIO[34],
 PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,adaptive_fir:adaptive_fir_inst|lpm_mult:Mult1|mult_46t:auto_generated|mac_mult1,
 PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,adaptive_fir:adaptive_fir_inst|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1,
 PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,adaptive_fir:adaptive_fir_inst|lpm_mult:Mult2|mult_46t:auto_generated|mac_mult1,
