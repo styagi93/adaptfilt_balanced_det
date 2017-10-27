@@ -1,5 +1,5 @@
 Flow report for a2dv2
-Fri Oct 13 01:36:01 2017
+Fri Oct 27 01:42:40 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Oct 13 01:35:52 2017       ;
+; Flow Status                        ; Successful - Fri Oct 27 01:42:31 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; a2dv2                                       ;
 ; Top-level Entity Name              ; a2dv2                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 7,437 / 114,480 ( 6 % )                     ;
-;     Total combinational functions  ; 6,352 / 114,480 ( 6 % )                     ;
+; Total logic elements               ; 7,414 / 114,480 ( 6 % )                     ;
+;     Total combinational functions  ; 6,354 / 114,480 ( 6 % )                     ;
 ;     Dedicated logic registers      ; 4,366 / 114,480 ( 4 % )                     ;
 ; Total registers                    ; 4366                                        ;
 ; Total pins                         ; 431 / 529 ( 81 % )                          ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/13/2017 01:33:34 ;
+; Start date & time ; 10/27/2017 01:40:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; a2dv2               ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------+-------------+---------------------+
 ; Assignment Name                     ; Value                                                                                                         ; Default Value ; Entity Name ; Section Id          ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------+---------------+-------------+---------------------+
-; COMPILER_SIGNATURE_ID               ; 88398803683689.150788001406724                                                                                ; --            ; --          ; --                  ;
+; COMPILER_SIGNATURE_ID               ; 88398802590963.150909002209632                                                                                ; --            ; --          ; --                  ;
 ; EDA_OUTPUT_DATA_FORMAT              ; None                                                                                                          ; --            ; --          ; eda_simulation      ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                            ; --            ; --          ; --                  ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                            ; --            ; --          ; --                  ;
@@ -191,11 +191,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:15     ; 1.0                     ; 1064 MB             ; 00:01:41                           ;
-; Fitter                    ; 00:00:47     ; 1.1                     ; 1953 MB             ; 00:01:02                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 789 MB              ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:08     ; 1.4                     ; 1022 MB             ; 00:00:10                           ;
-; Total                     ; 00:02:15     ; --                      ; --                  ; 00:02:58                           ;
+; Analysis & Synthesis      ; 00:01:11     ; 1.0                     ; 1062 MB             ; 00:01:44                           ;
+; Fitter                    ; 00:00:44     ; 1.1                     ; 1963 MB             ; 00:01:00                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 790 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.5                     ; 1022 MB             ; 00:00:10                           ;
+; Total                     ; 00:02:07     ; --                      ; --                  ; 00:02:58                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -204,10 +204,10 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; ENS12198         ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; ENS12198         ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; ENS12198         ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; ENS12198         ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ENS12249         ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ENS12249         ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ENS12249         ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ENS12249         ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

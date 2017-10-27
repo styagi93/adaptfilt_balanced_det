@@ -127,6 +127,7 @@ module a2dv2(
 	J1_152,
 	XT_IN_N,
 	XT_IN_P,
+//	test_bool,
 //	NCO_OUT,
 // clk_1khz,
 //	ast_source_data,
@@ -1014,7 +1015,7 @@ wire [3:0] out_channel;
 	  .out_endofpacket   (out_endofpacket),   //          .endofpacket
 	  .out_channel       (out_channel),       //          .channel
 	  .clk               (CLOCK_20),               //     clock.clk
-	  .reset_n           (~reg_reset_frame)            //     reset.reset_n
+	  .reset_n           (reg_reset_frame)            //     reset.reset_n
  );
 
 
@@ -1234,9 +1235,10 @@ delay1_out_valid <= out_valid;
 end
 
 ////////////////////////////////////STATE MACHINE FOR SRAM DATA TRANSFER////////////////////////////
-reg state_mach;
+reg state_mach = 1'd0;
 reg sram_write_done = 1'b0;
-
+//(*keep*) output wire test_bool;
+//assign test_bool = (reg_reset_frame == 1'b0 || sram_address >= 22'd2097152);
 
 always @ (posedge CLOCK_20)
 begin
@@ -1254,20 +1256,17 @@ end
 
 INCREMENT:
 begin
-if (reg_reset_frame == 1'b1 && sram_address < 22'd2097152) begin
-	if (out_valid == 1'b0 && delay1_out_valid== 1'b1)
-		sram_address <= sram_address + 2'b10;
-	else begin
-		state_mach <= INIT;
-		sram_write_done <= 1'b1;
+if (out_valid == 1'b0 && delay1_out_valid== 1'b1) begin // if neg edge of out_valid
+	sram_address <= sram_address + 2'b10;
 	end
-end
+
+if (reg_reset_frame == 1'b0 || sram_address >= 22'd2097152) begin
+	state_mach <= INIT;
+	sram_write_done <= 1'b1;
 end
 
-default: state_mach <= INIT;
-
+end
 endcase
-
 end
 
 //////////////////////////////////////////////////////////////////////////////////////////////
