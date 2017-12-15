@@ -453,8 +453,7 @@ assign	FPGA_CLK_A_P	=  CLOCK_20;
 assign	FPGA_CLK_A_N	=  ~CLOCK_20;
 assign	FPGA_CLK_B_P	=  CLOCK_20;
 assign	FPGA_CLK_B_N	=  ~CLOCK_20;
-assign	LEDG[3]			=  ADA_OR;
-assign	LEDG[4]			=  ADB_OR;
+assign	LEDG[3]			=  ADA_OR ;
 
  // assign for ADC control signal
 assign	AD_SCLK			= 1'b1;			// (DFS)Data Format Select
@@ -979,7 +978,7 @@ wire in_ready;
 wire CIC_out_ready = 1'b1;
 wire CIC_in_valid = 1'b1;
 wire [1:0] CIC_in_error = 2'b0;
-wire [15:0] out_data;
+(*keep*)wire [15:0] out_data;
 wire [1:0] out_error;
 wire out_valid;
 wire out_startofpacket;
@@ -1015,7 +1014,7 @@ wire [3:0] out_channel;
 	  .out_endofpacket   (out_endofpacket),   //          .endofpacket
 	  .out_channel       (out_channel),       //          .channel
 	  .clk               (CLOCK_20),               //     clock.clk
-	  .reset_n           (reg_reset_frame)            //     reset.reset_n
+	  .reset_n           (SW[15]? 1'b1: reg_reset_frame)            //     reset.reset_n
  );
 
 
@@ -1202,7 +1201,7 @@ sram_access sram_abc (
 							.bridge_input_conduit_address((sram_write_done) ? 21'bzzzzzzzzzzzzzzzzzzzz : sram_address),     // bridge_input_conduit.address
 							.bridge_input_conduit_byte_enable((sram_write_done) ? 2'bzz : 2'b11), //                     .byte_enable
 							.bridge_input_conduit_read(),        //                     .read
-							.bridge_input_conduit_write((sram_write_done) ? 1'bz : out_valid),       //                     .write
+							.bridge_input_conduit_write((sram_write_done) ? 1'bz : delay1_out_valid),       //                     .write
 							.bridge_input_conduit_write_data((sram_write_done) ? 16'bzzzzzzzzzzzzzzzz : out_data),  //                     .write_data
 							.bridge_input_conduit_acknowledge(), //                     .acknowledge
 							.bridge_input_conduit_read_data(),   //                     .read_data
@@ -1225,13 +1224,15 @@ sram_access sram_abc (
 	);
 
 
-reg  delay1_out_valid;
+(*noprune*)reg  delay1_out_valid;
+reg  delay2_out_valid;
 	
 always @ (posedge CLOCK_20)
 begin
 reg_reset_frame <= reset_frame;
 l_reg_reset_frame <= reg_reset_frame;
 delay1_out_valid <= out_valid;
+delay2_out_valid <= delay1_out_valid;
 end
 
 ////////////////////////////////////STATE MACHINE FOR SRAM DATA TRANSFER////////////////////////////
@@ -1256,7 +1257,7 @@ end
 
 INCREMENT:
 begin
-if (out_valid == 1'b0 && delay1_out_valid== 1'b1) begin // if neg edge of out_valid
+if (delay1_out_valid == 1'b0 && delay2_out_valid== 1'b1) begin // if neg edge of delay1_out_valid
 	sram_address <= sram_address + 2'b10;
 	end
 

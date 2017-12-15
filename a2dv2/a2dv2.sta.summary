@@ -3,43 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : 1.180
+Slack : 1.227
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 13.684
+Slack : 13.678
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
-Slack : 32.735
+Slack : 34.410
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
-Slack : 35.587
+Slack : 35.895
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'ADA_DCO'
-Slack : 44.249
+Slack : 44.557
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'ADB_DCO'
-Slack : 44.533
+Slack : 44.598
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'GPIO[8]'
-Slack : 95.567
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'GPIO[8]'
-Slack : 0.262
+Slack : 95.398
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.300
+Slack : 0.291
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.350
+Slack : 0.344
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
@@ -47,59 +43,63 @@ Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
-Slack : 0.402
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'GPIO[8]'
+Slack : 0.440
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'ADA_DCO'
-Slack : 2.016
+Slack : 2.066
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'ADB_DCO'
-Slack : 2.077
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Recovery 'ADB_DCO'
-Slack : 2.282
+Slack : 2.106
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'ADA_DCO'
-Slack : 2.296
+Slack : 1.909
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'ADB_DCO'
+Slack : 3.086
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 10.728
+Slack : 10.785
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'CLOCK_50'
-Slack : 13.319
+Slack : 13.210
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 93.996
+Slack : 94.769
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'CLOCK_50'
-Slack : 1.026
+Slack : 1.027
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
-Slack : 1.050
+Slack : 1.069
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.701
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Removal 'ADA_DCO'
-Slack : 2.821
+Slack : 1.535
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'ADB_DCO'
-Slack : 2.879
+Slack : 3.103
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'ADA_DCO'
+Slack : 3.220
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.553
+Slack : 9.555
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK2_50'
@@ -111,11 +111,11 @@ Slack : 16.000
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
-Slack : 19.700
+Slack : 19.699
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ADA_DCO'
-Slack : 24.758
+Slack : 24.755
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ADB_DCO'
@@ -131,91 +131,91 @@ Slack : 45.790
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.492
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO[8]'
-Slack : 49.664
+Slack : 49.488
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 249.611
+Slack : 49.611
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO[8]'
+Slack : 49.663
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : 1.891
+Slack : 1.983
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 14.346
+Slack : 14.349
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
-Slack : 33.392
+Slack : 34.948
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 36.645
+Slack : 36.909
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'ADA_DCO'
-Slack : 44.854
+Slack : 45.148
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'ADB_DCO'
-Slack : 45.103
+Slack : 45.184
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'GPIO[8]'
-Slack : 96.005
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'GPIO[8]'
-Slack : 0.279
+Slack : 95.790
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.307
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
-Slack : 0.352
+Slack : 0.302
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.353
+Slack : 0.351
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
 Slack : 0.354
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'GPIO[8]'
+Slack : 0.387
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Hold 'ADA_DCO'
-Slack : 1.726
+Slack : 1.780
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'ADB_DCO'
-Slack : 1.794
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Recovery 'ADB_DCO'
-Slack : 3.116
+Slack : 1.822
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'ADA_DCO'
-Slack : 3.131
+Slack : 2.584
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'ADB_DCO'
+Slack : 3.829
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 11.708
+Slack : 11.587
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'CLOCK_50'
-Slack : 13.897
+Slack : 13.740
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 94.436
+Slack : 95.165
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'CLOCK_50'
@@ -223,19 +223,19 @@ Slack : 0.938
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.958
+Slack : 0.974
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.372
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Removal 'ADA_DCO'
-Slack : 2.503
+Slack : 1.226
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'ADB_DCO'
-Slack : 2.523
+Slack : 2.719
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'ADA_DCO'
+Slack : 2.836
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
@@ -255,11 +255,11 @@ Slack : 19.703
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADA_DCO'
-Slack : 24.779
+Slack : 24.778
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADB_DCO'
-Slack : 24.781
+Slack : 24.782
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA_CLK_A_N'
@@ -274,112 +274,112 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
 Slack : 49.401
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO[8]'
-Slack : 49.689
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 49.632
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 249.630
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO[8]'
+Slack : 49.688
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : 3.933
+Slack : 3.972
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 15.674
+Slack : 15.683
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
-Slack : 36.610
+Slack : 37.525
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 41.590
+Slack : 41.748
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'ADA_DCO'
-Slack : 46.068
+Slack : 46.245
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'ADB_DCO'
-Slack : 46.188
+Slack : 46.251
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'GPIO[8]'
-Slack : 97.859
+Slack : 97.761
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.109
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'GPIO[8]'
-Slack : 0.119
+Slack : 0.107
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.146
+Slack : 0.144
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.172
+Slack : 0.175
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
-Slack : 0.180
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'GPIO[8]'
+Slack : 0.201
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ADB_DCO'
-Slack : 0.455
+Slack : 0.471
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ADA_DCO'
-Slack : 0.480
+Slack : 0.507
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'ADA_DCO'
-Slack : 4.974
+Slack : 4.736
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'ADB_DCO'
-Slack : 4.977
+Slack : 5.399
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 14.044
+Slack : 14.032
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'CLOCK_50'
-Slack : 16.343
+Slack : 16.368
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 96.787
+Slack : 97.221
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.385
+Slack : 0.287
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'CLOCK_50'
-Slack : 0.486
+Slack : 0.487
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.498
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'ADA_DCO'
-Slack : 0.781
+Slack : 0.508
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'ADB_DCO'
-Slack : 0.857
+Slack : 0.955
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ADA_DCO'
+Slack : 1.031
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.202
+Slack : 9.201
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK2_50'
@@ -391,7 +391,7 @@ Slack : 16.000
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sram_abc|vga_clock|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
-Slack : 19.765
+Slack : 19.763
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ADA_DCO'
@@ -411,7 +411,7 @@ Slack : 46.000
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO[8]'
-Slack : 49.197
+Slack : 49.194
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
@@ -419,7 +419,7 @@ Slack : 49.285
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PLL_200MHz_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 249.750
+Slack : 49.750
 TNS   : 0.000
 
 ------------------------------------------------------------

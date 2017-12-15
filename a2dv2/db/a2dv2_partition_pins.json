@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LEDG[4]",
-					"strict" : false
-				},
-				{
 					"name" : "SRAM_ADDR[0]",
 					"strict" : false
 				},
@@ -720,10 +716,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADB_OR",
-					"strict" : false
-				},
-				{
 					"name" : "ADB_D[13]",
 					"strict" : false
 				},
@@ -849,6 +841,10 @@
 				},
 				{
 					"name" : "ADB_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[15]",
 					"strict" : false
 				},
 				{
