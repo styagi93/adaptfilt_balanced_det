@@ -1,33 +1,40 @@
-fileID = fopen('C:\Users\saurabhg\Desktop\binary_dump\file11.bin','r');
+fileID = fopen('C:\Users\saurabhg\Desktop\binary_dump\20171213\file11.bin','r');
 A = fread(fileID,'int16');
 fclose(fileID);
 B = reshape(A,16,[]);
 B = B';
+B = [B(:,16),B(:,1:15)]; %% TO CORRECT CIC DIFFERENTIAL DELAY --- COEFFICIENT 16
 filter_converged_samples = A(33:size(A,1),:);
 %%
 C = reshape(B,256,256,16);
 
 %%
+% Fs = 10000000;
+% time_slice = (1/Fs );
 % for (slice=1:16)
 % figure;
 % k = C(:,:,slice);
 % k = k';
+% k=k*-1; %% INVERT PMT RESPONSE
 % imagesc(k);
 % colorbar;
-% caxis([min(filter_converged_samples),max(filter_converged_samples)]);
-% caxis ([-6500,500]);
-% title (sprintf('slice = %i',slice));
+% set(gca,'YTick',[]);
+% set(gca,'XTick',[]);
+% set(gca,'FontSize',15);
+% % caxis([min(filter_converged_samples),max(filter_converged_samples)]);
+% % caxis ([-3000,500]);
+% t_slice = (slice-2)*time_slice;
+% title (sprintf('Time slice = %i s',t_slice));
 % end
 
 %%
-% slice=1;
+% slice=12;
 % hist(reshape(C(:,:,slice),[256*256,1]),512)
-% xlim([-500,500]);
+% xlim([-1000,1000]);
 
 %%
-
+% 
 % summedresponse = sum(B,1);
-% summedresponse = [summedresponse(16), summedresponse(1:15)];
 % figure;
 % title ('summed response');
 % plot(summedresponse);
@@ -41,17 +48,25 @@ C = reshape(B,256,256,16);
 % 
 %% PCA eigenvectors
 figure;
-plot(V(:,1:3));
-title ('eigenvectors');
-legend({'comp1','comp2','comp3'});
+Fs = 10000000;
+temp = -1/Fs:1/Fs:14/Fs;
+h=plot(temp,V(:,1:3));
+set(h,'LineWidth',4);
+set(gca,'FontSize',15);
+title ('Eigenvectors');
+legend({'Component 1','Component 2','Component 3'});
 % 
 %% PCA projections
 for (icomp = 1:6)
-% icomp = 1;
+% icomp = 3;
 figure;
 Icomp = reshape(U(:,icomp),[256,256]);
-imagesc(Icomp.');
+Icomp = Icomp.';
+imagesc(Icomp);
 caxis([-1,1]*0.02); colorbar;
+set(gca,'YTick',[]);
+set(gca,'XTick',[]);
+set(gca,'FontSize',15);
 title (sprintf('PCA projection for component = %i',icomp));
 end
 
@@ -78,6 +93,8 @@ end
 % summed_area_2 = summed_area_2./ min(summed_area_2); % Normalize data
 
 %% grab region from stack
+% [x,y] = ginput(2); 
+% pixels = 10;
 % signal_roi = C(50:100,200:250,:);
 % mean_signal_roi = squeeze(sum( sum( signal_roi, 1), 2));
 
@@ -105,3 +122,17 @@ end
 % imagesc(exp_fit_image.');
 % colorbar;
 % title ('Exponential model fit per pixel');
+
+%%
+% leave 25 pixels (400 values) and take 231 pixels (3696 values) from A
+% k=1;
+% for (i=1:256)
+%    for j= 1:4096 
+%        if j>400
+%         temp = A((i-1)*4096+j,1);
+%         cropped_A(k,1)= temp;
+%         k=k+1;
+%        end
+%    end
+%         
+% end
