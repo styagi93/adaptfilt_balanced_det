@@ -1,5 +1,5 @@
 Analysis & Synthesis report for a2dv2
-Fri Dec 15 15:52:34 2017
+Tue Jan 09 15:19:19 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -279,7 +279,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 15 15:52:33 2017       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jan 09 15:19:19 2018       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; a2dv2                                       ;
 ; Top-level Entity Name              ; a2dv2                                       ;
@@ -399,7 +399,7 @@ agreement for further details.
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -8570,18 +8570,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Fri Dec 15 15:51:25 2017
+    Info: Processing started: Tue Jan 09 15:18:11 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off a2dv2 -c a2dv2
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Qsys system entity "p_sine.qsys"
-Info (12250): 2017.12.15.15:51:37 Progress: Loading a2dv2/p_sine.qsys
-Info (12250): 2017.12.15.15:51:38 Progress: Reading input file
-Info (12250): 2017.12.15.15:51:38 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 16.0]
-Info (12250): 2017.12.15.15:51:38 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2017.12.15.15:51:38 Progress: Building connections
-Info (12250): 2017.12.15.15:51:38 Progress: Parameterizing connections
-Info (12250): 2017.12.15.15:51:38 Progress: Validating
-Info (12250): 2017.12.15.15:51:38 Progress: Done reading input file
+Info (12250): 2018.01.09.15:18:24 Progress: Loading a2dv2/p_sine.qsys
+Info (12250): 2018.01.09.15:18:24 Progress: Reading input file
+Info (12250): 2018.01.09.15:18:24 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 16.0]
+Info (12250): 2018.01.09.15:18:24 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2018.01.09.15:18:24 Progress: Building connections
+Info (12250): 2018.01.09.15:18:24 Progress: Parameterizing connections
+Info (12250): 2018.01.09.15:18:24 Progress: Validating
+Info (12250): 2018.01.09.15:18:25 Progress: Done reading input file
 Info (12250): P_sine: Generating p_sine "p_sine" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "p_sine" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): P_sine: Done "p_sine" with 2 modules, 2 files
@@ -9498,7 +9498,7 @@ Warning (12020): Port "counter_max" on the entity instantiation of "counter_fs_i
 Warning (12020): Port "counter_max" on the entity instantiation of "counter_ch_inst" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/synthesis/submodules/auk_dspip_downsample.sv Line: 79
 Warning (12020): Port "counter_max" on the entity instantiation of "counter_fs_inst" is connected to a signal of width 32. The formal width of the signal in the module is 10.  The extra bits will be ignored. File: C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/CIC/synthesis/submodules/auk_dspip_downsample.sv Line: 50
 Info (11170): Start IP generation for the debug fabric within sld_hub.
-Info (11172): 2017.12.15.15:52:02 Progress: Loading sld56d4e773/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.01.09.15:18:48 Progress: Loading sld56d4e773/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -10342,10 +10342,10 @@ Info (21057): Implemented 8415 device resources after synthesis - the final reso
     Info (21065): Implemented 2 PLLs
     Info (21062): Implemented 96 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 582 warnings
-    Info: Peak virtual memory: 1056 megabytes
-    Info: Processing ended: Fri Dec 15 15:52:34 2017
-    Info: Elapsed time: 00:01:09
-    Info: Total CPU time (on all processors): 00:01:44
+    Info: Peak virtual memory: 1041 megabytes
+    Info: Processing ended: Tue Jan 09 15:19:19 2018
+    Info: Elapsed time: 00:01:08
+    Info: Total CPU time (on all processors): 00:01:41
 
 
 +------------------------------------------+

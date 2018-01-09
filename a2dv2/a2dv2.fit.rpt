@@ -1,5 +1,5 @@
 Fitter report for a2dv2
-Fri Dec 15 15:53:17 2017
+Tue Jan 09 15:20:03 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -80,7 +80,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Dec 15 15:53:17 2017       ;
+; Fitter Status                      ; Successful - Tue Jan 09 15:20:03 2018       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; a2dv2                                       ;
 ; Top-level Entity Name              ; a2dv2                                       ;
@@ -173,7 +173,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.9%      ;
+;     Processor 2            ;   3.8%      ;
 ;     Processor 3            ;   3.5%      ;
 ;     Processor 4            ;   3.3%      ;
 +----------------------------+-------------+
@@ -7926,7 +7926,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "ENET1_TX_EN" is assigned to location or region, but does not exist in design
     Warning (15706): Node "ENET1_TX_ER" is assigned to location or region, but does not exist in design
     Warning (15706): Node "ENETCLK_25" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:09
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:08
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
@@ -7940,7 +7940,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:07
-Info (11888): Total time spent on timing analysis during the Fitter is 7.29 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 7.34 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -8100,9 +8100,9 @@ Warning (169064): Following 68 pins have no output enable or a GND or VCC output
     Info (169065): Pin FPGA_CLK_B_P has a permanently enabled output enable File: C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.v Line: 254
 Info (144001): Generated suppressed messages file C:/Users/saurabhg/Desktop/fpga-spreadspectrum-adaptivefilt/a2dv2/a2dv2.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 129 warnings
-    Info: Peak virtual memory: 1945 megabytes
-    Info: Processing ended: Fri Dec 15 15:53:19 2017
-    Info: Elapsed time: 00:00:44
+    Info: Peak virtual memory: 1941 megabytes
+    Info: Processing ended: Tue Jan 09 15:20:05 2018
+    Info: Elapsed time: 00:00:45
     Info: Total CPU time (on all processors): 00:00:59
 
 
